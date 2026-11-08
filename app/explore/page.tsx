@@ -4,6 +4,7 @@ import Spotlight from "@/components/events/Spotlight";
 import WorkshopList from "@/components/events/WorkshopList";
 import AddToCalendar from "@/components/events/AddToCalendar";
 import Testimonials from "@/components/sections/Testimonials";
+import Split from "@/components/Split";
 import { Cta, Head, PageHero } from "@/components/ui/Blocks";
 import { getSpotlight, getWorkshops } from "@/lib/workshops";
 
@@ -40,7 +41,7 @@ export default function ExplorePage() {
 
       <section className="field--mark section--s" aria-labelledby="saturday-title">
         <div className="container saturday">
-          <p className="saturday__day" aria-hidden="true">Saturday</p>
+          <Split as="p" className="saturday__day" aria-hidden="true">Saturday</Split>
           <div className="saturday__copy">
             <h2 id="saturday-title">Free community session, every Saturday</h2>
             <p>Meet fellow learners and get a taste of what we build together.</p>

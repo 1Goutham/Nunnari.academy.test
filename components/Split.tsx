@@ -5,7 +5,7 @@ import clsx from "@/lib/clsx";
 type Props = { as?: ElementType; className?: string; children: ReactNode } & Record<string, unknown>;
 
 /**
- * Heading whose words rise in one after another when it scrolls into view.
+ * Heading whose words rise into place one after another, each inside its own mask, when it scrolls into view.
  * Strings are split into words at render time (no DOM mutation after hydration).
  */
 export default function Split({ as: Tag = "h2", className, children, ...rest }: Props) {
@@ -17,7 +17,7 @@ export default function Split({ as: Tag = "h2", className, children, ...rest }: 
           .split(/(\s+)/)
           .map((part, k) =>
             !part || /^\s+$/.test(part) ? part : (
-              <span key={k} className="w" style={{ "--wi": wi++ } as React.CSSProperties}>{part}</span>
+              <span key={k} className="w"><span className="w__i" style={{ "--wi": wi++ } as React.CSSProperties}>{part}</span></span>
             ),
           );
       }

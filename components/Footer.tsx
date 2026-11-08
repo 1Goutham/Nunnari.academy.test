@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import { site } from "@/lib/site";
+import Mast from "@/components/Mast";
 
 const cols = [
   { title: "Programs", links: [["/programs/recorded", "Recorded"], ["/programs/regular", "Regular"], ["/programs/premium", "Premium"], ["/programs", "All programs"]] },
@@ -15,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="container">
-        <p className="mast" aria-hidden="true"><span className="mast__w">Nunnari <span>Academy</span></span></p>
+        <Mast />
       </div>
       <div className="container footer__grid">
         <div className="footer__brand">

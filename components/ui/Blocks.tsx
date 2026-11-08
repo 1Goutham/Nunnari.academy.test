@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Icon from "@/components/Icon";
+import Split from "@/components/Split";
 import Art from "./Art";
 
 /**
@@ -8,18 +9,18 @@ import Art from "./Art";
  * `split` sets the line beside the head (baselines aligned); `action` puts a link at the far edge.
  */
 export function Head({ title, lead, action, split, as = "h2", id }: { title: ReactNode; lead?: ReactNode; action?: ReactNode; split?: boolean; as?: "h1" | "h2"; id?: string }) {
-  const H = as;
+  const H = ({ children }: { children: ReactNode }) => <Split as={as} id={id}>{children}</Split>;
   if (action) {
     return (
       <div className="head head--row">
-        <div className="head"><H id={id}>{title}</H>{lead && <p className="lead">{lead}</p>}</div>
+        <div className="head"><H>{title}</H>{lead && <p className="lead">{lead}</p>}</div>
         <div>{action}</div>
       </div>
     );
   }
   return (
     <div className={`head${split ? " head--split" : ""}`}>
-      <H id={id}>{title}</H>
+      <H>{title}</H>
       {lead && <p className="lead">{lead}</p>}
     </div>
   );
@@ -49,7 +50,7 @@ export function PageHero({ crumbs, title, lead, facts, actions, art, children }:
               ))}
             </nav>
           )}
-          <h1>{title}</h1>
+          <Split as="h1">{title}</Split>
           {lead && <p className="lead">{lead}</p>}
           {facts && (
             <dl className="facts" style={{ "--n": facts.length } as React.CSSProperties}>
@@ -71,7 +72,7 @@ export function Cta({ title, lead, actions, art, id }: { title: ReactNode; lead?
     <section className="plate section--s" id={id}>
       <div className={`container cta${art ? "" : " cta--wide"}`}>
         <div className="cta__copy">
-          <h2>{title}</h2>
+          <Split as="h2">{title}</Split>
           {lead && <p className="lead">{lead}</p>}
           <div className="actions">{actions}</div>
         </div>

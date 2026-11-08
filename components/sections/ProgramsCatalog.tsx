@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Icon, { type IconName } from "@/components/Icon";
 import Art from "@/components/ui/Art";
 import { programList, type ProgramKey } from "@/lib/programs";
@@ -12,6 +12,19 @@ const icons: Record<ProgramKey, IconName> = { recorded: "play", regular: "users"
 export default function ProgramsCatalog() {
   const [active, setActive] = useState<ProgramKey>("recorded");
   const refs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const list = useRef<HTMLDivElement>(null);
+  // the marker slides to the chosen tab (measured, so it follows wrapping and resizes)
+  useLayoutEffect(() => {
+    const place = () => {
+      const t = refs.current[active], l = list.current;
+      if (!t || !l) return;
+      l.style.setProperty("--bar-y", `${t.offsetTop}px`);
+      l.style.setProperty("--bar-h", `${t.offsetHeight}px`);
+    };
+    place();
+    addEventListener("resize", place);
+    return () => removeEventListener("resize", place);
+  }, [active]);
   useEffect(() => {
     const h = location.hash.slice(1) as ProgramKey;
     if (programList.some((p) => p.key === h)) setActive(h);
@@ -25,7 +38,8 @@ export default function ProgramsCatalog() {
   };
   return (
     <div className="catalog">
-      <div className="tablist" role="tablist" aria-label="Programmes" aria-orientation="vertical">
+      <div className="tablist" role="tablist" aria-label="Programmes" aria-orientation="vertical" ref={list}>
+        <span className="tab__bar" aria-hidden="true" />
         {programList.map((p, i) => (
           <button key={p.key} ref={(el) => { refs.current[p.key] = el; }} className="tab" role="tab" id={`tab-${p.key}`} aria-controls={`panel-${p.key}`}
             aria-selected={active === p.key} tabIndex={active === p.key ? 0 : -1} type="button" onClick={() => setActive(p.key)} onKeyDown={(e) => onKey(e, i)}>

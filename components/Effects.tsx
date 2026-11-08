@@ -61,6 +61,18 @@ export default function Effects() {
       el.dataset.when = now < s ? "upcoming" : now <= e ? "live" : "past";
     });
 
+    /* hero overprint: the paper copy of the head only keeps the words that reach the violet field */
+    const over = document.querySelector<HTMLElement>(".hero__over"), field = document.querySelector<HTMLElement>(".hero__field");
+    if (over && field) {
+      const mark = () => {
+        const fx = ((field.offsetParent as HTMLElement | null)?.getBoundingClientRect().left ?? 0) + field.offsetLeft; // offsetLeft ignores the entrance transform
+        over.querySelectorAll<HTMLElement>(".w").forEach((w) => w.classList.toggle("is-off", w.getBoundingClientRect().right < fx));
+      };
+      mark();
+      addEventListener("resize", mark);
+      off.push(() => removeEventListener("resize", mark));
+    }
+
     /* back to top */
     all("[data-to-top]").forEach((b) => {
       const f = () => scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
