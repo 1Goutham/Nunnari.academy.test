@@ -5,7 +5,7 @@
  *
  * Coordinates: x ≈ -1.6…1.6, y ≈ -1…1, z small. `acc`: 0 base, 1 accent, 2/3 back layer (base/accent), 4 dust.
  */
-export type Shape = { pos: Float32Array; acc: Float32Array; n: number; spin: number; tilt: number; path?: Float32Array; zoom?: number };
+export type Shape = { pos: Float32Array; acc: Float32Array; n: number; spin: number; tilt: number };
 
 const W = 320, H = 200, B = "#0000ff", A = "#ff0000";
 type Ctx = CanvasRenderingContext2D;
@@ -190,52 +190,10 @@ function globe(n: number, seed: number) {
 
 const flat: Record<string, (c: Ctx) => void> = { recorded, regular, institutions, corporates, saturday };
 
-/**
- * The Nunnari Academy mark: a diamond lattice of nodes with the zigzag "N" of linked nodes running through it.
- * Lattice nodes are clusters of paper-white points; the N path is ink and carries `path` progress (0 to 1),
- * so a pulse can travel along it like a signal through a network.
- */
-function mark(seed: number) {
-  const r = rng(seed), S = 0.25, gauss = () => (r() + r() + r() - 1.5) / 1.5;
-  const N: [number, number][] = [[-3, 1], [-2, 0], [-1, -1], [0, 0], [1, 1], [2, 0], [3, -1]];
-  const onN = (dx: number, dy: number) => N.findIndex(([a, b]) => a === dx && b === dy);
-  const nodes: { x: number; y: number; z: number; k: number }[] = [];
-  for (let dy = -4; dy <= 4; dy++) for (let dx = -4; dx <= 4; dx++) {
-    if ((dx + dy) % 2 !== 0 || Math.abs(dx) + Math.abs(dy) > 4) continue;
-    nodes.push({ x: dx * S, y: -dy * S, z: (r() - 0.5) * 0.3, k: onN(dx, dy) });
-  }
-  const PER = 46, PER_N = 96, PER_E = 64, nd = 160;
-  const nN = nodes.filter((d) => d.k >= 0).length;
-  const n = (nodes.length - nN) * PER + nN * PER_N + (N.length - 1) * PER_E + nd;
-  const pos = new Float32Array(n * 3), acc = new Float32Array(n), path = new Float32Array(n).fill(-1);
-  let q = 0;
-  for (const d of nodes) {
-    const big = d.k >= 0, cnt = big ? PER_N : PER, rad = big ? 0.05 : 0.026;
-    for (let i = 0; i < cnt; i++, q++) {
-      pos.set([d.x + gauss() * rad, d.y + gauss() * rad, d.z + gauss() * rad * 0.6], q * 3);
-      acc[q] = big ? 1 : 0;
-      if (big) path[q] = d.k / (N.length - 1);
-    }
-  }
-  const at = (k: number) => nodes.find((d) => d.k === k)!;
-  for (let e = 0; e < N.length - 1; e++) {
-    const a = at(e), b = at(e + 1);
-    for (let i = 0; i < PER_E; i++, q++) {
-      const t = (i + 0.5) / PER_E;
-      pos.set([a.x + (b.x - a.x) * t + gauss() * 0.01, a.y + (b.y - a.y) * t + gauss() * 0.01, a.z + (b.z - a.z) * t], q * 3);
-      acc[q] = 1;
-      path[q] = (e + t) / (N.length - 1);
-    }
-  }
-  dust(pos, acc, q, nd, r);
-  return { pos, acc, n, path };
-}
-
-export const particleNames = ["mark", "recorded", "regular", "premium", "institutions", "corporates", "community", "saturday"];
+export const particleNames = ["recorded", "regular", "premium", "institutions", "corporates", "community", "saturday"];
 
 export function buildShape(name: string): Shape | null {
   const seed = name.length * 977 + name.charCodeAt(0);
-  if (name === "mark") return { ...mark(seed), spin: 0, tilt: 0.12, zoom: 1.75 };
   if (name === "premium") return { ...gem(2400, seed), spin: 0.32, tilt: 0.32 };
   if (name === "community") return { ...globe(2600, seed), spin: 0.22, tilt: 0.28 };
   const draw = flat[name];

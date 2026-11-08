@@ -1,0 +1,1937 @@
+{
+ "v": 1,
+ "at": "2026-11-08T16:24:05.193Z",
+ "scope": "page",
+ "summary": {
+  "fails": 192,
+  "reflex": 153,
+  "warns": 26
+ },
+ "files": {
+  "app/explore/page.tsx": {
+   "handlers": [],
+   "links": [
+    "#community",
+    "#testimonials",
+    "#workshops",
+    "https://aitamilnadu.org/"
+   ],
+   "fields": [
+    "arrow-ur",
+    "calendar",
+    "globe",
+    "message",
+    "saturday"
+   ],
+   "hooks": [],
+   "ids": [
+    "community",
+    "testimonials",
+    "workshops"
+   ],
+   "scripts": []
+  },
+  "app/layout.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "main"
+   ],
+   "scripts": []
+  },
+  "app/not-found.tsx": {
+   "handlers": [],
+   "links": [
+    "/",
+    "/programs"
+   ],
+   "fields": [
+    "arrow"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "app/page.tsx": {
+   "handlers": [],
+   "links": [
+    "{<Link className=\"link\" href=\"/explore\">View all events <Icon name=\"arrow-ur\" /></Link>}",
+    "{<Link className=\"link\" href=\"/programs\">All programs <Icon name=\"arrow-ur\" /></Link>}"
+   ],
+   "fields": [
+    "arrow",
+    "arrow-ur"
+   ],
+   "hooks": [],
+   "ids": [
+    "events",
+    "programs",
+    "who-we-are"
+   ],
+   "scripts": []
+  },
+  "app/template.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "app/help/page.tsx": {
+   "handlers": [],
+   "links": [
+    "{`mailto:${site.email}`}",
+    "{site.phone.href}"
+   ],
+   "fields": [
+    "arrow",
+    "mail",
+    "phone"
+   ],
+   "hooks": [],
+   "ids": [
+    "contact"
+   ],
+   "scripts": []
+  },
+  "app/partner/corporates/page.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "corporates"
+   ],
+   "scripts": []
+  },
+  "app/partner/institutions/page.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "institutions"
+   ],
+   "scripts": []
+  },
+  "app/privacy/page.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "privacy"
+   ],
+   "scripts": []
+  },
+  "app/programs/layout.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "app/programs/page.tsx": {
+   "handlers": [],
+   "links": [
+    "{`/programs/${p.key}`}"
+   ],
+   "fields": [
+    "arrow",
+    "arrow-ur"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "app/programs/premium/page.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "premium"
+   ],
+   "scripts": []
+  },
+  "app/programs/recorded/page.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "recorded"
+   ],
+   "scripts": []
+  },
+  "app/programs/regular/page.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "regular"
+   ],
+   "scripts": []
+  },
+  "app/refund/page.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "refund"
+   ],
+   "scripts": []
+  },
+  "app/terms/page.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "terms"
+   ],
+   "scripts": []
+  },
+  "app/workshops/[slug]/page.tsx": {
+   "handlers": [],
+   "links": [
+    "#recording",
+    "/explore#workshops",
+    "https://www.youtube.com/@NunnariAcademy-v6y",
+    "{w.register}"
+   ],
+   "fields": [
+    "arrow",
+    "arrow-ur"
+   ],
+   "hooks": [],
+   "ids": [
+    "recording"
+   ],
+   "scripts": []
+  },
+  "components/Effects.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/Enquiry.tsx": {
+   "handlers": [
+    "onBlur={blur(\"email\")}",
+    "onBlur={blur(\"message\")}",
+    "onBlur={blur(\"name\")}",
+    "onBlur={blur(\"phone\")}",
+    "onChange={set(\"email\")}",
+    "onChange={set(\"message\")}",
+    "onChange={set(\"name\")}",
+    "onChange={set(\"phone\")}",
+    "onClick={(e) => { if (e.target === ref.current) close(); }}",
+    "onClick={close}",
+    "onSubmit={submit}"
+   ],
+   "links": [
+    "{site.phone.href}"
+   ],
+   "fields": [
+    "arrow",
+    "check",
+    "clock",
+    "close",
+    "email",
+    "message",
+    "name",
+    "phone",
+    "website"
+   ],
+   "hooks": [],
+   "ids": [
+    "e-email",
+    "e-name",
+    "e-phone",
+    "enquire-title",
+    "f-email",
+    "f-msg",
+    "f-name",
+    "f-phone"
+   ],
+   "scripts": []
+  },
+  "components/Footer.tsx": {
+   "handlers": [],
+   "links": [
+    "{`mailto:${site.email}`}",
+    "{href}",
+    "{s.href}",
+    "{site.phone.href}"
+   ],
+   "fields": [
+    "arrow-up",
+    "mail",
+    "phone"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/Header.tsx": {
+   "handlers": [
+    "onClick={() => setDrawer((d) => !d)}",
+    "onClick={() => setDrawer(false)}",
+    "onClick={() => setOpenKey((k) => (k === item.key ? null : item.key))}",
+    "onClick={() => { setOpenKey(null); setDrawer(false); }}",
+    "onPointerEnter={enter(item.key)}",
+    "onPointerLeave={leave}"
+   ],
+   "links": [
+    "#main",
+    "/",
+    "{item.href!}",
+    "{l.href}"
+   ],
+   "fields": [
+    "arrow",
+    "chevron"
+   ],
+   "hooks": [],
+   "ids": [
+    "primary-nav"
+   ],
+   "scripts": []
+  },
+  "components/Icon.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/IconSprite.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [
+    "arrow"
+   ],
+   "hooks": [],
+   "ids": [
+    "i-arrow",
+    "i-arrow-left",
+    "i-arrow-up",
+    "i-arrow-ur",
+    "i-award",
+    "i-book",
+    "i-box",
+    "i-briefcase",
+    "i-building",
+    "i-bulb",
+    "i-calendar",
+    "i-calendar-plus",
+    "i-cap",
+    "i-chart",
+    "i-check",
+    "i-chevron",
+    "i-chevron-r",
+    "i-clock",
+    "i-close",
+    "i-code",
+    "i-cpu",
+    "i-crown",
+    "i-eye",
+    "i-file",
+    "i-folder",
+    "i-globe",
+    "i-handshake",
+    "i-history",
+    "i-image",
+    "i-infinity",
+    "i-instagram",
+    "i-lang",
+    "i-laptop",
+    "i-layers",
+    "i-linkedin",
+    "i-mail",
+    "i-message",
+    "i-monitor",
+    "i-network",
+    "i-phone",
+    "i-phone-wave",
+    "i-play",
+    "i-plus",
+    "i-rocket",
+    "i-route",
+    "i-shield",
+    "i-spark",
+    "i-star",
+    "i-star4",
+    "i-target",
+    "i-trend",
+    "i-uni",
+    "i-user",
+    "i-users",
+    "i-wrench",
+    "i-x",
+    "i-youtube",
+    "i-zap",
+    "ig",
+    "ig-light"
+   ],
+   "scripts": []
+  },
+  "components/Split.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/StickyCta.tsx": {
+   "handlers": [
+    "onClick={dismiss}"
+   ],
+   "links": [
+    "{site.phone.href}"
+   ],
+   "fields": [
+    "arrow-ur",
+    "close",
+    "phone"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/canvas/Aurora.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/events/AddToCalendar.tsx": {
+   "handlers": [
+    "onClick={() => setOpen((o) => !o)}",
+    "onClick={done}",
+    "onClick={downloadIcs}"
+   ],
+   "links": [
+    "{links().google}",
+    "{links().outlook}"
+   ],
+   "fields": [
+    "calendar"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/events/EventCard.tsx": {
+   "handlers": [],
+   "links": [
+    "{href}",
+    "{w.register}"
+   ],
+   "fields": [
+    "arrow",
+    "arrow-ur",
+    "calendar",
+    "monitor"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/events/Spotlight.tsx": {
+   "handlers": [],
+   "links": [
+    "{`/workshops/${w.slug}`}",
+    "{w.register}"
+   ],
+   "fields": [
+    "arrow",
+    "arrow-ur",
+    "calendar",
+    "clock",
+    "monitor"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/events/WorkshopCarousel.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/events/WorkshopList.tsx": {
+   "handlers": [
+    "onClick={() => setFilter(f.key)}"
+   ],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/events/YouTube.tsx": {
+   "handlers": [
+    "onClick={() => setPlay(true)}"
+   ],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/sections/Company.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "company",
+    "company-title"
+   ],
+   "scripts": []
+  },
+  "components/sections/Hero.tsx": {
+   "handlers": [],
+   "links": [
+    "#programs",
+    "#why"
+   ],
+   "fields": [
+    "arrow"
+   ],
+   "hooks": [],
+   "ids": [
+    "hero-title"
+   ],
+   "scripts": []
+  },
+  "components/sections/Impact.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "impact",
+    "lc-grad"
+   ],
+   "scripts": []
+  },
+  "components/sections/ProgramsCatalog.tsx": {
+   "handlers": [
+    "onClick={() => setActive(p.key)}",
+    "onKeyDown={(e) => onKey(e, i)}"
+   ],
+   "links": [
+    "{`/programs/${p.key}`}"
+   ],
+   "fields": [
+    "arrow"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/sections/Testimonials.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/sections/TrackList.tsx": {
+   "handlers": [
+    "onClick={() => setAll((v) => !v)}"
+   ],
+   "links": [],
+   "fields": [
+    "chevron",
+    "clock"
+   ],
+   "hooks": [],
+   "ids": [
+    "track-list"
+   ],
+   "scripts": []
+  },
+  "components/sections/WhoWeAre.tsx": {
+   "handlers": [
+    "onClick={() => go(i)}"
+   ],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/sections/WhyCards.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "why"
+   ],
+   "scripts": []
+  },
+  "components/templates/LegalPage.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/templates/PartnerPage.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [
+    "arrow"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/templates/ProgramPage.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [
+    "arrow"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/ui/Accordion.tsx": {
+   "handlers": [
+    "onClick={() => setOpen(isOpen ? null : i)}"
+   ],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/ui/Art.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/ui/Blocks.tsx": {
+   "handlers": [],
+   "links": [
+    "{c.href}"
+   ],
+   "fields": [
+    "arrow",
+    "chevron-r"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/ui/BrochureButton.tsx": {
+   "handlers": [],
+   "links": [
+    "{href}"
+   ],
+   "fields": [
+    "file"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/ui/Carousel.tsx": {
+   "handlers": [
+    "onClick={() => track.current?.scrollTo({ left: i * track.current.clientWidth, behavior: \"smooth\" })}",
+    "onClick={next}",
+    "onClick={prev}"
+   ],
+   "links": [],
+   "fields": [
+    "arrow",
+    "arrow-left"
+   ],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/ui/Faq.tsx": {
+   "handlers": [
+    "onClick={() => setCat(c.key)}"
+   ],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/ui/Marquee.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  },
+  "components/ui/Particles.tsx": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [],
+   "scripts": []
+  }
+ },
+ "wiring": {
+  "handlers": [
+   "onBlur={blur(\"email\")}",
+   "onBlur={blur(\"message\")}",
+   "onBlur={blur(\"name\")}",
+   "onBlur={blur(\"phone\")}",
+   "onChange={set(\"email\")}",
+   "onChange={set(\"message\")}",
+   "onChange={set(\"name\")}",
+   "onChange={set(\"phone\")}",
+   "onClick={() => go(i)}",
+   "onClick={() => setActive(p.key)}",
+   "onClick={() => setAll((v) => !v)}",
+   "onClick={() => setCat(c.key)}",
+   "onClick={() => setDrawer((d) => !d)}",
+   "onClick={() => setDrawer(false)}",
+   "onClick={() => setFilter(f.key)}",
+   "onClick={() => setOpen((o) => !o)}",
+   "onClick={() => setOpen(isOpen ? null : i)}",
+   "onClick={() => setOpenKey((k) => (k === item.key ? null : item.key))}",
+   "onClick={() => setPlay(true)}",
+   "onClick={() => track.current?.scrollTo({ left: i * track.current.clientWidth, behavior: \"smooth\" })}",
+   "onClick={() => { setOpenKey(null); setDrawer(false); }}",
+   "onClick={(e) => { if (e.target === ref.current) close(); }}",
+   "onClick={close}",
+   "onClick={dismiss}",
+   "onClick={done}",
+   "onClick={downloadIcs}",
+   "onClick={next}",
+   "onClick={prev}",
+   "onKeyDown={(e) => onKey(e, i)}",
+   "onPointerEnter={enter(item.key)}",
+   "onPointerLeave={leave}",
+   "onSubmit={submit}"
+  ],
+  "links": [
+   "#community",
+   "#main",
+   "#programs",
+   "#recording",
+   "#testimonials",
+   "#why",
+   "#workshops",
+   "/",
+   "/explore#workshops",
+   "/programs",
+   "https://aitamilnadu.org/",
+   "https://www.youtube.com/@NunnariAcademy-v6y",
+   "{<Link className=\"link\" href=\"/explore\">View all events <Icon name=\"arrow-ur\" /></Link>}",
+   "{<Link className=\"link\" href=\"/programs\">All programs <Icon name=\"arrow-ur\" /></Link>}",
+   "{`/programs/${p.key}`}",
+   "{`/workshops/${w.slug}`}",
+   "{`mailto:${site.email}`}",
+   "{c.href}",
+   "{href}",
+   "{item.href!}",
+   "{l.href}",
+   "{links().google}",
+   "{links().outlook}",
+   "{s.href}",
+   "{site.phone.href}",
+   "{w.register}"
+  ],
+  "fields": [
+   "arrow",
+   "arrow-left",
+   "arrow-up",
+   "arrow-ur",
+   "calendar",
+   "check",
+   "chevron",
+   "chevron-r",
+   "clock",
+   "close",
+   "email",
+   "file",
+   "globe",
+   "mail",
+   "message",
+   "monitor",
+   "name",
+   "phone",
+   "saturday",
+   "website"
+  ],
+  "hooks": [],
+  "ids": [
+   "community",
+   "company",
+   "company-title",
+   "contact",
+   "corporates",
+   "e-email",
+   "e-name",
+   "e-phone",
+   "enquire-title",
+   "events",
+   "f-email",
+   "f-msg",
+   "f-name",
+   "f-phone",
+   "hero-title",
+   "i-arrow",
+   "i-arrow-left",
+   "i-arrow-up",
+   "i-arrow-ur",
+   "i-award",
+   "i-book",
+   "i-box",
+   "i-briefcase",
+   "i-building",
+   "i-bulb",
+   "i-calendar",
+   "i-calendar-plus",
+   "i-cap",
+   "i-chart",
+   "i-check",
+   "i-chevron",
+   "i-chevron-r",
+   "i-clock",
+   "i-close",
+   "i-code",
+   "i-cpu",
+   "i-crown",
+   "i-eye",
+   "i-file",
+   "i-folder",
+   "i-globe",
+   "i-handshake",
+   "i-history",
+   "i-image",
+   "i-infinity",
+   "i-instagram",
+   "i-lang",
+   "i-laptop",
+   "i-layers",
+   "i-linkedin",
+   "i-mail",
+   "i-message",
+   "i-monitor",
+   "i-network",
+   "i-phone",
+   "i-phone-wave",
+   "i-play",
+   "i-plus",
+   "i-rocket",
+   "i-route",
+   "i-shield",
+   "i-spark",
+   "i-star",
+   "i-star4",
+   "i-target",
+   "i-trend",
+   "i-uni",
+   "i-user",
+   "i-users",
+   "i-wrench",
+   "i-x",
+   "i-youtube",
+   "i-zap",
+   "ig",
+   "ig-light",
+   "impact",
+   "institutions",
+   "lc-grad",
+   "main",
+   "premium",
+   "primary-nav",
+   "privacy",
+   "programs",
+   "recorded",
+   "recording",
+   "refund",
+   "regular",
+   "terms",
+   "testimonials",
+   "track-list",
+   "who-we-are",
+   "why",
+   "workshops"
+  ]
+ },
+ "scripts": {},
+ "pages": {
+  "http://localhost:6300/": {
+   "links": [
+    "#main",
+    "/",
+    "/programs/recorded",
+    "/programs/regular",
+    "/programs/premium",
+    "/partner/institutions",
+    "/partner/corporates",
+    "#who-we-are",
+    "/explore#workshops",
+    "/explore#testimonials",
+    "/explore#community",
+    "#programs",
+    "#why",
+    "/programs",
+    "/explore",
+    "/workshops/physical-ai-world-models-vla-robotics",
+    "/workshops/ai-for-small-business",
+    "/workshops/deploying-llms-and-ai-agents",
+    "/workshops/loop-vs-graph",
+    "/workshops/become-an-ai-powered-full-stack-developer",
+    "/workshops/from-generative-ai-to-agentic-ai",
+    "https://www.linkedin.com/company/nunnari-academy/",
+    "https://x.com/NunnariLabs",
+    "https://www.instagram.com/nunnari.academy/",
+    "https://www.youtube.com/@NunnariAcademy-v6y",
+    "#company",
+    "/help",
+    "/terms",
+    "/privacy",
+    "/refund",
+    "mailto:enquiry@nunnari.academy",
+    "tel:+919003313175"
+   ],
+   "fields": [
+    "name",
+    "email",
+    "phone",
+    "message",
+    "website"
+   ],
+   "actions": [],
+   "forms": [
+    {
+     "key": "form 1",
+     "attrs": [
+      "method=get",
+      "novalidate"
+     ],
+     "fields": [
+      "name",
+      "email",
+      "phone",
+      "message",
+      "website"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "button[type=button]",
+      "input[name=name]",
+      "input[type=email][name=email]",
+      "input[type=tel][name=phone]",
+      "textarea[name=message]",
+      "input[type=text][name=website]",
+      "button[type=submit]"
+     ]
+    }
+   ],
+   "hooked": [],
+   "headings": [
+    "learn ai. create what doesn’t exist yet.",
+    "learn. build. grow. with real support.",
+    "learn in english & tamil",
+    "hands-on ai programs",
+    "1 year of lms access",
+    "global ai community",
+    "more than an ai academy. a higher possibility.",
+    "making ai learning accessible for everyone.",
+    "a growing community of ai builders.",
+    "real people. real progress.",
+    "backed by nunnari labs & deepweaver.",
+    "nunnari labs",
+    "deepweaver",
+    "nunnarivu",
+    "creating real opportunities through ai programs.",
+    "training & speaking engagements per year",
+    "learn ai at your own pace and path.",
+    "learn ai at your own pace.",
+    "build a strong foundation in ai & ml.",
+    "learn from industry leaders.",
+    "where opportunity evolves.",
+    "physical ai: world models, vla, and the future of robotics",
+    "ai for small business",
+    "deploying llms and ai agents",
+    "loop vs graph",
+    "become an ai powered full stack developer",
+    "from generative ai to agentic ai: building autonomous systems",
+    "ready to start your ai journey?",
+    "programs",
+    "partner with us",
+    "explore",
+    "support",
+    "talk to our team"
+   ],
+   "figures": [
+    "1year",
+    "10,000+",
+    "50+",
+    "100+",
+    "500+",
+    "200+",
+    "2020",
+    "2023",
+    "85+",
+    "25+",
+    "42201958202064202171202268202396202411220251582026",
+    "12weeks",
+    "2026",
+    "+919003313175"
+   ],
+   "images": [
+    "image"
+   ],
+   "controls": 33,
+   "words": 683
+  },
+  "http://localhost:6300/explore": {
+   "links": [
+    "#main",
+    "/",
+    "/programs/recorded",
+    "/programs/regular",
+    "/programs/premium",
+    "/partner/institutions",
+    "/partner/corporates",
+    "/#who-we-are",
+    "#workshops",
+    "#testimonials",
+    "#community",
+    "/workshops/physical-ai-world-models-vla-robotics",
+    "/workshops/ai-for-small-business",
+    "/workshops/deploying-llms-and-ai-agents",
+    "/workshops/loop-vs-graph",
+    "/workshops/become-an-ai-powered-full-stack-developer",
+    "/workshops/from-generative-ai-to-agentic-ai",
+    "https://aitamilnadu.org/",
+    "https://www.linkedin.com/company/nunnari-academy/",
+    "https://x.com/NunnariLabs",
+    "https://www.instagram.com/nunnari.academy/",
+    "https://www.youtube.com/@NunnariAcademy-v6y",
+    "/programs",
+    "/#company",
+    "/help",
+    "/terms",
+    "/privacy",
+    "/refund",
+    "mailto:enquiry@nunnari.academy",
+    "tel:+919003313175"
+   ],
+   "fields": [
+    "name",
+    "email",
+    "phone",
+    "message",
+    "website"
+   ],
+   "actions": [],
+   "forms": [
+    {
+     "key": "form 1",
+     "attrs": [
+      "method=get",
+      "novalidate"
+     ],
+     "fields": [
+      "name",
+      "email",
+      "phone",
+      "message",
+      "website"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "button[type=button]",
+      "input[name=name]",
+      "input[type=email][name=email]",
+      "input[type=tel][name=phone]",
+      "textarea[name=message]",
+      "input[type=text][name=website]",
+      "button[type=submit]"
+     ]
+    }
+   ],
+   "hooked": [],
+   "headings": [
+    "workshops, stories and a growing ai community.",
+    "learn live. watch anytime.",
+    "physical ai: world models, vla, and the future of robotics",
+    "free community session",
+    "ai for small business",
+    "deploying llms and ai agents",
+    "loop vs graph",
+    "become an ai powered full stack developer",
+    "from generative ai to agentic ai: building autonomous systems",
+    "learners who found their next step.",
+    "join our community.",
+    "programs",
+    "partner with us",
+    "explore",
+    "support",
+    "talk to our team"
+   ],
+   "figures": [
+    "2026",
+    "07:00",
+    "09:00pm",
+    "+919003313175"
+   ],
+   "images": [
+    "image"
+   ],
+   "controls": 25,
+   "words": 662
+  },
+  "http://localhost:6300/programs": {
+   "links": [
+    "#main",
+    "/",
+    "/programs/recorded",
+    "/programs/regular",
+    "/programs/premium",
+    "/partner/institutions",
+    "/partner/corporates",
+    "/#who-we-are",
+    "/explore#workshops",
+    "/explore#testimonials",
+    "/explore#community",
+    "https://www.linkedin.com/company/nunnari-academy/",
+    "https://x.com/NunnariLabs",
+    "https://www.instagram.com/nunnari.academy/",
+    "https://www.youtube.com/@NunnariAcademy-v6y",
+    "/programs",
+    "/#company",
+    "/help",
+    "/terms",
+    "/privacy",
+    "/refund",
+    "mailto:enquiry@nunnari.academy",
+    "tel:+919003313175"
+   ],
+   "fields": [
+    "name",
+    "email",
+    "phone",
+    "message",
+    "website"
+   ],
+   "actions": [],
+   "forms": [
+    {
+     "key": "form 1",
+     "attrs": [
+      "method=get",
+      "novalidate"
+     ],
+     "fields": [
+      "name",
+      "email",
+      "phone",
+      "message",
+      "website"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "button[type=button]",
+      "input[name=name]",
+      "input[type=email][name=email]",
+      "input[type=tel][name=phone]",
+      "textarea[name=message]",
+      "input[type=text][name=website]",
+      "button[type=submit]"
+     ]
+    }
+   ],
+   "hooked": [],
+   "headings": [
+    "learn ai at your own pace and path.",
+    "recorded programme",
+    "regular programme",
+    "premium programme",
+    "12-week tracks for every path.",
+    "generative & agentic ai",
+    "machine learning & deep learning",
+    "full stack development with ai",
+    "questions, answered.",
+    "not sure where to start?",
+    "programs",
+    "partner with us",
+    "explore",
+    "support",
+    "talk to our team"
+   ],
+   "figures": [
+    "12weeks",
+    "2026",
+    "+919003313175"
+   ],
+   "images": [
+    "image"
+   ],
+   "controls": 23,
+   "words": 308
+  },
+  "http://localhost:6300/programs/recorded": {
+   "links": [
+    "#main",
+    "/",
+    "/programs/recorded",
+    "/programs/regular",
+    "/programs/premium",
+    "/partner/institutions",
+    "/partner/corporates",
+    "/#who-we-are",
+    "/explore#workshops",
+    "/explore#testimonials",
+    "/explore#community",
+    "/programs",
+    "https://www.linkedin.com/company/nunnari-academy/",
+    "https://x.com/NunnariLabs",
+    "https://www.instagram.com/nunnari.academy/",
+    "https://www.youtube.com/@NunnariAcademy-v6y",
+    "/#company",
+    "/help",
+    "/terms",
+    "/privacy",
+    "/refund",
+    "mailto:enquiry@nunnari.academy",
+    "tel:+919003313175"
+   ],
+   "fields": [
+    "name",
+    "email",
+    "phone",
+    "message",
+    "website"
+   ],
+   "actions": [],
+   "forms": [
+    {
+     "key": "form 1",
+     "attrs": [
+      "method=get",
+      "novalidate"
+     ],
+     "fields": [
+      "name",
+      "email",
+      "phone",
+      "message",
+      "website"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "button[type=button]",
+      "input[name=name]",
+      "input[type=email][name=email]",
+      "input[type=tel][name=phone]",
+      "textarea[name=message]",
+      "input[type=text][name=website]",
+      "button[type=submit]"
+     ]
+    }
+   ],
+   "hooked": [],
+   "headings": [
+    "learn ai at your own pace.",
+    "designed for you.",
+    "k12 students",
+    "college students",
+    "from learning to real impact.",
+    "fundamentals",
+    "hands-on projects",
+    "a portfolio",
+    "questions, answered.",
+    "start your ai journey.",
+    "programs",
+    "partner with us",
+    "explore",
+    "support",
+    "talk to our team"
+   ],
+   "figures": [
+    "12weeks",
+    "2026",
+    "+919003313175"
+   ],
+   "images": [
+    "image"
+   ],
+   "controls": 25,
+   "words": 292
+  },
+  "http://localhost:6300/programs/regular": {
+   "links": [
+    "#main",
+    "/",
+    "/programs/recorded",
+    "/programs/regular",
+    "/programs/premium",
+    "/partner/institutions",
+    "/partner/corporates",
+    "/#who-we-are",
+    "/explore#workshops",
+    "/explore#testimonials",
+    "/explore#community",
+    "/programs",
+    "https://www.linkedin.com/company/nunnari-academy/",
+    "https://x.com/NunnariLabs",
+    "https://www.instagram.com/nunnari.academy/",
+    "https://www.youtube.com/@NunnariAcademy-v6y",
+    "/#company",
+    "/help",
+    "/terms",
+    "/privacy",
+    "/refund",
+    "mailto:enquiry@nunnari.academy",
+    "tel:+919003313175"
+   ],
+   "fields": [
+    "name",
+    "email",
+    "phone",
+    "message",
+    "website"
+   ],
+   "actions": [],
+   "forms": [
+    {
+     "key": "form 1",
+     "attrs": [
+      "method=get",
+      "novalidate"
+     ],
+     "fields": [
+      "name",
+      "email",
+      "phone",
+      "message",
+      "website"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "button[type=button]",
+      "input[name=name]",
+      "input[type=email][name=email]",
+      "input[type=tel][name=phone]",
+      "textarea[name=message]",
+      "input[type=text][name=website]",
+      "button[type=submit]"
+     ]
+    }
+   ],
+   "hooked": [],
+   "headings": [
+    "build a strong foundation in ai & ml.",
+    "designed for you.",
+    "college students",
+    "early professionals",
+    "skills today for tomorrow.",
+    "from learning to real impact.",
+    "learn",
+    "practice",
+    "build",
+    "impact",
+    "industry-standard tools.",
+    "questions, answered.",
+    "start your ai journey.",
+    "programs",
+    "partner with us",
+    "explore",
+    "support",
+    "talk to our team"
+   ],
+   "figures": [
+    "12weeks",
+    "2026",
+    "+919003313175"
+   ],
+   "images": [
+    "image"
+   ],
+   "controls": 26,
+   "words": 358
+  },
+  "http://localhost:6300/programs/premium": {
+   "links": [
+    "#main",
+    "/",
+    "/programs/recorded",
+    "/programs/regular",
+    "/programs/premium",
+    "/partner/institutions",
+    "/partner/corporates",
+    "/#who-we-are",
+    "/explore#workshops",
+    "/explore#testimonials",
+    "/explore#community",
+    "/programs",
+    "https://www.linkedin.com/company/nunnari-academy/",
+    "https://x.com/NunnariLabs",
+    "https://www.instagram.com/nunnari.academy/",
+    "https://www.youtube.com/@NunnariAcademy-v6y",
+    "/#company",
+    "/help",
+    "/terms",
+    "/privacy",
+    "/refund",
+    "mailto:enquiry@nunnari.academy",
+    "tel:+919003313175"
+   ],
+   "fields": [
+    "name",
+    "email",
+    "phone",
+    "message",
+    "website"
+   ],
+   "actions": [],
+   "forms": [
+    {
+     "key": "form 1",
+     "attrs": [
+      "method=get",
+      "novalidate"
+     ],
+     "fields": [
+      "name",
+      "email",
+      "phone",
+      "message",
+      "website"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "button[type=button]",
+      "input[name=name]",
+      "input[type=email][name=email]",
+      "input[type=tel][name=phone]",
+      "textarea[name=message]",
+      "input[type=text][name=website]",
+      "button[type=submit]"
+     ]
+    }
+   ],
+   "hooked": [],
+   "headings": [
+    "learn from industry leaders.",
+    "designed for you.",
+    "advanced learners (l3+)",
+    "c-suite & leadership",
+    "from learning to real impact.",
+    "expert-led",
+    "leadership view",
+    "12 weeks",
+    "questions, answered.",
+    "start your ai journey.",
+    "programs",
+    "partner with us",
+    "explore",
+    "support",
+    "talk to our team"
+   ],
+   "figures": [
+    "12weeks",
+    "48hours",
+    "2026",
+    "+919003313175"
+   ],
+   "images": [
+    "image"
+   ],
+   "controls": 25,
+   "words": 272
+  },
+  "http://localhost:6300/partner/institutions": {
+   "links": [
+    "#main",
+    "/",
+    "/programs/recorded",
+    "/programs/regular",
+    "/programs/premium",
+    "/partner/institutions",
+    "/partner/corporates",
+    "/#who-we-are",
+    "/explore#workshops",
+    "/explore#testimonials",
+    "/explore#community",
+    "https://www.linkedin.com/company/nunnari-academy/",
+    "https://x.com/NunnariLabs",
+    "https://www.instagram.com/nunnari.academy/",
+    "https://www.youtube.com/@NunnariAcademy-v6y",
+    "/programs",
+    "/#company",
+    "/help",
+    "/terms",
+    "/privacy",
+    "/refund",
+    "mailto:enquiry@nunnari.academy",
+    "tel:+919003313175"
+   ],
+   "fields": [
+    "name",
+    "email",
+    "phone",
+    "message",
+    "website"
+   ],
+   "actions": [],
+   "forms": [
+    {
+     "key": "form 1",
+     "attrs": [
+      "method=get",
+      "novalidate"
+     ],
+     "fields": [
+      "name",
+      "email",
+      "phone",
+      "message",
+      "website"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "button[type=button]",
+      "input[name=name]",
+      "input[type=email][name=email]",
+      "input[type=tel][name=phone]",
+      "textarea[name=message]",
+      "input[type=text][name=website]",
+      "button[type=submit]"
+     ]
+    }
+   ],
+   "hooked": [],
+   "headings": [
+    "are your students ready for the industry, or just the classroom?",
+    "built for real impact.",
+    "industry-aligned learning",
+    "expert-led programmes",
+    "real-world opportunities",
+    "trusted by leading institutions.",
+    "partnerships that turn into progress.",
+    "activities per year",
+    "how far each activity went",
+    "what our partners say.",
+    "is your institution ready for the next leap in ai?",
+    "programs",
+    "partner with us",
+    "explore",
+    "support",
+    "talk to our team"
+   ],
+   "figures": [
+    "10,000+",
+    "85+",
+    "200+",
+    "500+",
+    "0244872961202",
+    "20%",
+    "22%",
+    "10%",
+    "6%",
+    "2%",
+    "48hours",
+    "2026",
+    "+919003313175"
+   ],
+   "images": [
+    "image"
+   ],
+   "controls": 16,
+   "words": 382
+  },
+  "http://localhost:6300/partner/corporates": {
+   "links": [
+    "#main",
+    "/",
+    "/programs/recorded",
+    "/programs/regular",
+    "/programs/premium",
+    "/partner/institutions",
+    "/partner/corporates",
+    "/#who-we-are",
+    "/explore#workshops",
+    "/explore#testimonials",
+    "/explore#community",
+    "https://www.linkedin.com/company/nunnari-academy/",
+    "https://x.com/NunnariLabs",
+    "https://www.instagram.com/nunnari.academy/",
+    "https://www.youtube.com/@NunnariAcademy-v6y",
+    "/programs",
+    "/#company",
+    "/help",
+    "/terms",
+    "/privacy",
+    "/refund",
+    "mailto:enquiry@nunnari.academy",
+    "tel:+919003313175"
+   ],
+   "fields": [
+    "name",
+    "email",
+    "phone",
+    "message",
+    "website"
+   ],
+   "actions": [],
+   "forms": [
+    {
+     "key": "form 1",
+     "attrs": [
+      "method=get",
+      "novalidate"
+     ],
+     "fields": [
+      "name",
+      "email",
+      "phone",
+      "message",
+      "website"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "button[type=button]",
+      "input[name=name]",
+      "input[type=email][name=email]",
+      "input[type=tel][name=phone]",
+      "textarea[name=message]",
+      "input[type=text][name=website]",
+      "button[type=submit]"
+     ]
+    }
+   ],
+   "hooked": [],
+   "headings": [
+    "equip your teams for what’s next with ai.",
+    "built for real impact.",
+    "custom learning paths",
+    "experienced practitioners",
+    "hands-on workshops",
+    "real business use cases",
+    "partners in building ai-ready teams.",
+    "partnerships that turn into progress.",
+    "training by domain",
+    "growth in corporate training",
+    "what our partners say.",
+    "ready to upskill your team with ai?",
+    "programs",
+    "partner with us",
+    "explore",
+    "support",
+    "talk to our team"
+   ],
+   "figures": [
+    "5,000+",
+    "100+",
+    "200+",
+    "95%",
+    "02040608010017",
+    "48hours",
+    "2026",
+    "+919003313175"
+   ],
+   "images": [
+    "image"
+   ],
+   "controls": 16,
+   "words": 355
+  },
+  "http://localhost:6300/help": {
+   "links": [
+    "#main",
+    "/",
+    "/programs/recorded",
+    "/programs/regular",
+    "/programs/premium",
+    "/partner/institutions",
+    "/partner/corporates",
+    "/#who-we-are",
+    "/explore#workshops",
+    "/explore#testimonials",
+    "/explore#community",
+    "tel:+919003313175",
+    "mailto:enquiry@nunnari.academy",
+    "https://www.linkedin.com/company/nunnari-academy/",
+    "https://x.com/NunnariLabs",
+    "https://www.instagram.com/nunnari.academy/",
+    "https://www.youtube.com/@NunnariAcademy-v6y",
+    "/programs",
+    "/#company",
+    "/help",
+    "/terms",
+    "/privacy",
+    "/refund"
+   ],
+   "fields": [
+    "name",
+    "email",
+    "phone",
+    "message",
+    "website"
+   ],
+   "actions": [],
+   "forms": [
+    {
+     "key": "form 1",
+     "attrs": [
+      "method=get",
+      "novalidate"
+     ],
+     "fields": [
+      "name",
+      "email",
+      "phone",
+      "message",
+      "website"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "button[type=button]",
+      "input[name=name]",
+      "input[type=email][name=email]",
+      "input[type=tel][name=phone]",
+      "textarea[name=message]",
+      "input[type=text][name=website]",
+      "button[type=submit]"
+     ]
+    }
+   ],
+   "hooked": [],
+   "headings": [
+    "help & support.",
+    "call us",
+    "email us",
+    "prefer a call back?",
+    "programs",
+    "partner with us",
+    "explore",
+    "support",
+    "talk to our team"
+   ],
+   "figures": [
+    "+919003313175",
+    "48hours",
+    "2026"
+   ],
+   "images": [
+    "image"
+   ],
+   "controls": 15,
+   "words": 108
+  },
+  "http://localhost:6300/terms": {
+   "links": [
+    "#main",
+    "/",
+    "/programs/recorded",
+    "/programs/regular",
+    "/programs/premium",
+    "/partner/institutions",
+    "/partner/corporates",
+    "/#who-we-are",
+    "/explore#workshops",
+    "/explore#testimonials",
+    "/explore#community",
+    "https://www.linkedin.com/company/nunnari-academy/",
+    "https://x.com/NunnariLabs",
+    "https://www.instagram.com/nunnari.academy/",
+    "https://www.youtube.com/@NunnariAcademy-v6y",
+    "/programs",
+    "/#company",
+    "/help",
+    "/terms",
+    "/privacy",
+    "/refund",
+    "mailto:enquiry@nunnari.academy",
+    "tel:+919003313175"
+   ],
+   "fields": [
+    "name",
+    "email",
+    "phone",
+    "message",
+    "website"
+   ],
+   "actions": [],
+   "forms": [
+    {
+     "key": "form 1",
+     "attrs": [
+      "method=get",
+      "novalidate"
+     ],
+     "fields": [
+      "name",
+      "email",
+      "phone",
+      "message",
+      "website"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "button[type=button]",
+      "input[name=name]",
+      "input[type=email][name=email]",
+      "input[type=tel][name=phone]",
+      "textarea[name=message]",
+      "input[type=text][name=website]",
+      "button[type=submit]"
+     ]
+    }
+   ],
+   "hooked": [],
+   "headings": [
+    "terms & conditions",
+    "eligibility",
+    "acceptable use",
+    "intellectual property",
+    "payments & enrollment",
+    "limitation of liability",
+    "amendments",
+    "contact",
+    "programs",
+    "partner with us",
+    "explore",
+    "support",
+    "talk to our team"
+   ],
+   "figures": [
+    "+919003313175",
+    "2026"
+   ],
+   "images": [
+    "image"
+   ],
+   "controls": 14,
+   "words": 314
+  },
+  "http://localhost:6300/workshops/loop-vs-graph": {
+   "links": [
+    "#main",
+    "/",
+    "/programs/recorded",
+    "/programs/regular",
+    "/programs/premium",
+    "/partner/institutions",
+    "/partner/corporates",
+    "/#who-we-are",
+    "/explore#workshops",
+    "/explore#testimonials",
+    "/explore#community",
+    "/explore",
+    "#recording",
+    "https://www.youtube.com/@NunnariAcademy-v6y",
+    "https://www.linkedin.com/company/nunnari-academy/",
+    "https://x.com/NunnariLabs",
+    "https://www.instagram.com/nunnari.academy/",
+    "/programs",
+    "/#company",
+    "/help",
+    "/terms",
+    "/privacy",
+    "/refund",
+    "mailto:enquiry@nunnari.academy",
+    "tel:+919003313175"
+   ],
+   "fields": [
+    "name",
+    "email",
+    "phone",
+    "message",
+    "website"
+   ],
+   "actions": [],
+   "forms": [
+    {
+     "key": "form 1",
+     "attrs": [
+      "method=get",
+      "novalidate"
+     ],
+     "fields": [
+      "name",
+      "email",
+      "phone",
+      "message",
+      "website"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "button[type=button]",
+      "input[name=name]",
+      "input[type=email][name=email]",
+      "input[type=tel][name=phone]",
+      "textarea[name=message]",
+      "input[type=text][name=website]",
+      "button[type=submit]"
+     ]
+    }
+   ],
+   "hooked": [],
+   "headings": [
+    "loop vs graph",
+    "don’t miss the next one.",
+    "programs",
+    "partner with us",
+    "explore",
+    "support",
+    "talk to our team"
+   ],
+   "figures": [
+    "2026",
+    "07:00",
+    "09:00pm",
+    "+919003313175"
+   ],
+   "images": [
+    "image"
+   ],
+   "controls": 16,
+   "words": 129
+  }
+ }
+}

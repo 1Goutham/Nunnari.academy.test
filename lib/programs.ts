@@ -110,7 +110,7 @@ export const programs: Record<ProgramKey, Program> = {
       { q: "Who is the Premium Programme for?", cats: ["program"], a: "Advanced learners (L3+) and the C-Suite." },
       { q: "Who leads the sessions?", cats: ["program"], a: "Industry experts and board-level leaders." },
       { q: "How long is it?", cats: ["program"], a: "12 weeks." },
-      { q: "How do I join?", cats: ["program"], a: "Talk to our team and we will connect you within 24 to 48 hours." },
+      { q: "How do I join?", cats: ["program"], a: "Talk to our team and we will connect you within 24–48 hours." },
     ],
   },
 };

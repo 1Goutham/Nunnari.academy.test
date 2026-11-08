@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import { site } from "@/lib/site";
-import Mast from "@/components/Mast";
 
 const cols = [
   { title: "Programs", links: [["/programs/recorded", "Recorded"], ["/programs/regular", "Regular"], ["/programs/premium", "Premium"], ["/programs", "All programs"]] },
@@ -11,13 +10,9 @@ const cols = [
   { title: "Support", links: [["/help", "Help & contact"], ["/terms", "Terms"], ["/privacy", "Privacy"], ["/refund", "Refund policy"]] },
 ];
 
-/** Footer as a mast: the name set large over the links, then the contact line. */
 export default function Footer() {
   return (
     <footer className="site-footer">
-      <div className="container">
-        <Mast />
-      </div>
       <div className="container footer__grid">
         <div className="footer__brand">
           <Image src="/assets/brand/academy-horizontal-ink.png" alt="Nunnari Academy" width={617} height={216} />

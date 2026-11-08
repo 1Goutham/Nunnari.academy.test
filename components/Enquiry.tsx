@@ -16,7 +16,7 @@ const EMPTY = { name: "", email: "", phone: "", message: "" };
 /**
  * Site-wide contact form (doc 1.2): Name, Email, Phone (required) and an optional message,
  * validated with regex, submitted with "Schedule A Call". After a successful submission it shows
- * "Our Experts will reach you within 24 to 48 hours" and then returns to its original state.
+ * "Our Experts will reach you within 24-48 hours" and then returns to its original state.
  * Any element with data-enquire="Topic" opens it (Talk to us, Enroll Now, Become a Partner, Register…).
  */
 export default function EnquiryProvider({ children }: { children: ReactNode }) {
@@ -103,7 +103,10 @@ export default function EnquiryProvider({ children }: { children: ReactNode }) {
       <dialog ref={ref} className="modal" aria-labelledby="enquire-title" onClick={(e) => { if (e.target === ref.current) close(); }}>
         <form className="modal__inner" onSubmit={submit} noValidate>
           <div className="modal__head">
-            <h2 id="enquire-title">{title}</h2>
+            <div>
+              <span className="eyebrow eyebrow--violet">Nunnari Academy</span>
+              <h2 className="h4" id="enquire-title" style={{ fontSize: "1.5rem", marginTop: 8 }}>{title}</h2>
+            </div>
             <button className="modal__close" type="button" aria-label="Close" onClick={close}><Icon name="close" /></button>
           </div>
 
@@ -111,7 +114,7 @@ export default function EnquiryProvider({ children }: { children: ReactNode }) {
             <div className="modal__sent" role="status" aria-live="polite">
               <span className="modal__tick"><Icon name="check" /></span>
               <p className="modal__sent-title">Thank you, {values.name.split(" ")[0] || "there"}!</p>
-              <p>Our Experts will reach you within 24 to 48 hours.</p>
+              <p>Our Experts will reach you within 24-48 hours.</p>
             </div>
           ) : (
             <>
@@ -149,7 +152,7 @@ export default function EnquiryProvider({ children }: { children: ReactNode }) {
               <button className="btn btn--primary btn--lg btn--block" type="submit" disabled={status === "sending"}>
                 {status === "sending" ? "Scheduling…" : "Schedule A Call"} <Icon name="arrow" className="i--arrow" />
               </button>
-              <p className="modal__note"><Icon name="clock" /> Our Experts will reach you within 24 to 48 hours.</p>
+              <p className="modal__note"><Icon name="clock" /> Our Experts will reach you within 24-48 hours.</p>
             </>
           )}
         </form>

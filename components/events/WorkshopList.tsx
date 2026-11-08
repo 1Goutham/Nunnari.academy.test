@@ -18,13 +18,13 @@ export default function WorkshopList({ items }: { items: WorkshopCard[] }) {
   });
   return (
     <>
-      <div className="seg" role="group" aria-label="Filter workshops">
+      <div className="seg" role="group" aria-label="Filter workshops" style={{ marginBottom: 28 }}>
         {FILTERS.map((f) => <button key={f.key} type="button" aria-pressed={filter === f.key} onClick={() => setFilter(f.key)}>{f.label}</button>)}
       </div>
-      <div className="ev-grid">
+      <div className="grid grid--3">
         {shown.map((w) => <div className="ev-slot" key={`${filter}-${w.slug}`}><EventCard w={w} /></div>)}
       </div>
-      {shown.length === 0 && <p className="empty">No upcoming workshops right now. Join the community to hear about the next one first.</p>}
+      {shown.length === 0 && <p className="card" style={{ textAlign: "center" }}>No upcoming workshops right now — join the community to hear about the next one first.</p>}
     </>
   );
 }

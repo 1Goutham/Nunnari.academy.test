@@ -13,10 +13,11 @@ function LineChart() {
     d += ` C${(p1[0] + (p2[0] - p0[0]) * t).toFixed(1)} ${(p1[1] + (p2[1] - p0[1]) * t).toFixed(1)} ${(p2[0] - (p3[0] - p1[0]) * t).toFixed(1)} ${(p2[1] - (p3[1] - p1[1]) * t).toFixed(1)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
   }
   return (
-    <figure className="chart linechart" data-inview="">
+    <figure className="card chart-card linechart" data-inview="">
       <h3>Training &amp; speaking engagements per year</h3>
       <svg viewBox="0 0 640 236" role="img" aria-label={data.map(([y, v]) => `${y}: ${v}`).join(", ")}>
-                <g className="grid"><line x1="20" x2="620" y1="200" y2="200" /></g>
+        <defs><linearGradient id="lc-grad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#9f88ff" stopOpacity=".35" /><stop offset="1" stopColor="#9f88ff" stopOpacity="0" /></linearGradient></defs>
+        <g className="grid"><line x1="20" x2="620" y1="200" y2="200" /></g>
         <path className="area" d={`${d} L${pts.at(-1)![0]} 200 L${pts[0][0]} 200Z`} />
         <path className="line" pathLength={1} d={d} />
         {data.map(([y, v], k) => (
@@ -31,18 +32,18 @@ function LineChart() {
   );
 }
 
-/** Impact on the brand-violet field: the three figures at display size, then the year-by-year chart. */
+/** Trust & credibility (doc §1.5): numbers and graph reveal on scroll. */
 export default function Impact() {
   return (
-    <section className="field section" id="impact">
+    <section className="section" id="impact">
       <div className="container">
-        <Head split title="Creating real opportunities through AI programs." lead="From classrooms to corporates, our programs keep creating opportunities every year." />
-        <div className="figures">
-          <div><strong data-count="10000" data-suffix="+">10,000+</strong><span>Learners trained</span></div>
-          <div><strong data-count="85" data-suffix="+">85+</strong><span>Universities &amp; colleges</span></div>
-          <div><strong data-count="25" data-suffix="+">25+</strong><span>Corporate &amp; government organisations</span></div>
+        <Head pill="Our impact" title={<>Creating real opportunities through <span className="grad">AI programs.</span></>} lead="From classrooms to corporates, our programs keep creating opportunities every year." />
+        <div className="stats" data-reveal="">
+          <div className="stat"><strong data-count="10000" data-suffix="+">10,000+</strong><span>Learners trained</span></div>
+          <div className="stat"><strong data-count="85" data-suffix="+">85+</strong><span>Universities &amp; colleges</span></div>
+          <div className="stat"><strong data-count="25" data-suffix="+">25+</strong><span>Corporate &amp; government organisations</span></div>
         </div>
-        <LineChart />
+        <div style={{ marginTop: 28 }}><LineChart /></div>
       </div>
     </section>
   );

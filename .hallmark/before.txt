@@ -1,0 +1,371 @@
+FAIL 7a styles/theme.css:64 pure #fff: color: #fff (.skip) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:95 pure #fff: background: #fff (.pill) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:113 pure #fff: color: #fff (.btn--primary) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:115 pure #fff: background: #fff (.btn--light) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:117 pure #fff: background: #fff (.btn--ghost) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:197 pure #fff: background: #fff (.menu) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:285 pure #fff: background: #fff (.story__dashes i::after) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:311 pure #fff: background: #fff (.company__facts li) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:373 pure #fff: background: #fff (.tab[aria-selected="true"]) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:411 pure #000: background: #000 (.video) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:506 pure #fff: background: #fff (.sticky-cta) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:518 pure #fff: background: #fff (dialog.modal) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:540 pure #fff: color: #fff (.modal__tick) | fix: Tint the base toward the anchor hue
+FAIL 7a styles/theme.css:546 pure #fff: background: #fff (.atc__menu) | fix: Tint the base toward the anchor hue
+FAIL 10a styles/theme.css:435 transitioning width on .carousel__dots button | fix: Animate transform or opacity instead
+FAIL 19 components/events/WorkshopList.tsx:27 dash "—" in copy | fix: A comma, a colon, a full stop or parentheses; never a dash
+FAIL 34 http://localhost:6300/partner/institutions:1 [375px] div.card.chart-card runs 24px past the 375 screen, hidden only by the page's clip | fix: Stack it under 60rem: drop the desktop column gap, widths and offsets on the phone
+FAIL 39a styles/theme.css:122 disabled via opacity alone on .btn[disabled], .btn[aria-disabled="true"] | fix: Three disabled channels: fill, ink and cursor, plus the disabled attribute
+FAIL 39a styles/theme.css:439 disabled via opacity alone on .icon-btn[disabled] | fix: Three disabled channels: fill, ink and cursor, plus the disabled attribute
+FAIL 40 http://localhost:6300/:1 [1280px] contrast 3.56:1 against the pixels behind < 4.5:1 on p.story__label "MISSION & VISION" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/:1 [1280px] contrast 3.58:1 against the pixels behind < 4.5:1 on span "Community members" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/:1 [1280px] contrast 2.32:1 against the pixels behind < 3:1 on span.soft "Backed by" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/:1 [1280px] contrast 3.72:1 against the pixels behind < 4.5:1 on small "K12 & college students" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/:1 [1280px] contrast 3.72:1 against the pixels behind < 4.5:1 on span.card__meta "31 Oct 2026" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on h3 "PROGRAMS" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on p "© 2026 Nunnari Academy." | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/explore:1 [1280px] contrast 3.72:1 against the pixels behind < 4.5:1 on span "Saturday" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/explore:1 [1280px] contrast 3.72:1 against the pixels behind < 4.5:1 on span.card__meta "22 Oct 2026" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/explore:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on h3 "PROGRAMS" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/explore:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on p "© 2026 Nunnari Academy." | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/help:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on h3 "PROGRAMS" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/help:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on p "© 2026 Nunnari Academy." | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/partner/corporates:1 [1280px] contrast 3.58:1 against the pixels behind < 4.5:1 on span "Professionals trained" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/partner/corporates:1 [1280px] contrast 3.72:1 against the pixels behind < 4.5:1 on p "Corporate sessions acros" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/partner/corporates:1 [1280px] contrast 3.72:1 against the pixels behind < 4.5:1 on em "’21" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/partner/corporates:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on h3 "PROGRAMS" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/partner/institutions:1 [1280px] contrast 3.72:1 against the pixels behind < 4.5:1 on span "Sri Krishna Institutions" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/partner/institutions:1 [1280px] contrast 3.72:1 against the pixels behind < 4.5:1 on p "Each activity counted on" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/partner/institutions:1 [1280px] contrast 3.72:1 against the pixels behind < 4.5:1 on em "’16" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/partner/institutions:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on h3 "PROGRAMS" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs:1 [1280px] contrast 3.72:1 against the pixels behind < 4.5:1 on span.card__meta "12 weeks" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on h3 "PROGRAMS" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on p "© 2026 Nunnari Academy." | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs:1 [1280px] computed contrast 3.72:1 < 4.5:1 on small "Request a callback from " | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/premium:1 [1280px] contrast 3.20:1 against the pixels behind < 4.5:1 on a "Programs" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/premium:1 [1280px] contrast 3.27:1 against the pixels behind < 4.5:1 on span "Premium Programme" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/premium:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on h3 "PROGRAMS" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/premium:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on p "© 2026 Nunnari Academy." | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/premium:1 [1280px] computed contrast 3.72:1 < 4.5:1 on small "Request a callback from " | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/recorded:1 [1280px] contrast 3.20:1 against the pixels behind < 4.5:1 on a "Programs" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/recorded:1 [1280px] contrast 3.27:1 against the pixels behind < 4.5:1 on span "Recorded Programme" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/recorded:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on h3 "PROGRAMS" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/recorded:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on p "© 2026 Nunnari Academy." | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/recorded:1 [1280px] computed contrast 3.72:1 < 4.5:1 on small "Request a callback from " | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/regular:1 [1280px] contrast 3.20:1 against the pixels behind < 4.5:1 on a "Programs" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/regular:1 [1280px] contrast 3.27:1 against the pixels behind < 4.5:1 on span "Regular Programme" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/regular:1 [1280px] contrast 3.69:1 against the pixels behind < 4.5:1 on span.eyebrow "AVERAGE SALARY" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/regular:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on h3 "PROGRAMS" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/regular:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on p "© 2026 Nunnari Academy." | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/programs/regular:1 [1280px] computed contrast 3.72:1 < 4.5:1 on small "Request a callback from " | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/terms:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on h3 "PROGRAMS" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/terms:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on p "© 2026 Nunnari Academy." | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/workshops/loop-vs-graph:1 [1280px] contrast 3.30:1 against the pixels behind < 4.5:1 on a "Explore" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/workshops/loop-vs-graph:1 [1280px] contrast 3.42:1 against the pixels behind < 4.5:1 on span "Loop vs Graph" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/workshops/loop-vs-graph:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on h3 "PROGRAMS" | fix: Raise the contrast to threshold
+FAIL 40 http://localhost:6300/workshops/loop-vs-graph:1 [1280px] contrast 3.34:1 against the pixels behind < 4.5:1 on p "© 2026 Nunnari Academy." | fix: Raise the contrast to threshold
+FAIL 48 styles/theme.css:60 colour literal rgb(108 59 255 / 18%) outside tokens (background on ::selection) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:64 colour literal #fff outside tokens (color on .skip) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:92 colour literal #a29dc2 outside tokens (color on .soft) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:95 colour literal #fff outside tokens (background on .pill) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:96 colour literal rgb(108 59 255 / 16%) outside tokens (box-shadow on .pill::before) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:113 colour literal #fff outside tokens (color on .btn--primary) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:113 colour literal rgb(255 255 255 / 18%) outside tokens (box-shadow on .btn--primary) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:113 colour literal rgb(108 59 255 / 80%) outside tokens (box-shadow on .btn--primary) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:114 colour literal rgb(255 255 255 / 22%) outside tokens (box-shadow on .btn--primary:hover) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:114 colour literal rgb(108 59 255 / 95%) outside tokens (box-shadow on .btn--primary:hover) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:115 colour literal #fff outside tokens (background on .btn--light) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:115 colour literal #0b0920 outside tokens (color on .btn--light) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:116 colour literal #ece8ff outside tokens (background on .btn--light:hover) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:117 colour literal #fff outside tokens (background on .btn--ghost) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:118 colour literal rgb(108 59 255 / 32.0%) outside tokens (border-color on .btn--ghost:hover) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:118 colour literal rgb(76 46 190 / 4.5%) outside tokens (background on .btn--ghost:hover) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:129 colour literal rgb(20 15 54 / 3%) outside tokens (box-shadow on .card) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:129 colour literal rgb(76 46 190 / 22%) outside tokens (box-shadow on .card) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:130 colour literal rgb(20 15 54 / 3%) outside tokens (box-shadow on .card:hover) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:130 colour literal rgb(76 46 190 / 32%) outside tokens (box-shadow on .card:hover) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:136 colour literal #f1ebff outside tokens (background on .ico) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:136 colour literal rgb(108 59 255 / 12%) outside tokens (border on .ico) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:140 colour literal #efe9ff outside tokens (background on .tag) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:142 colour literal rgb(76 46 190 / 5.4%) outside tokens (background on .tag--done) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:147 colour literal #ece5ff outside tokens (background on .art) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:147 colour literal #f6f2ff outside tokens (background on .art) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:147 colour literal #fdfcff outside tokens (background on .art) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:148 colour literal rgb(139 108 255 / 22%) outside tokens (background on .art::before) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:150 colour literal rgb(108 59 255 / 16%) outside tokens (background-image on .art__floor) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:152 colour literal #000 outside tokens (-webkit-mask-image on .art__floor) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:152 colour literal #000 outside tokens (mask-image on .art__floor) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:154 colour literal #8b6cff outside tokens (background-image on .art__stars) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:154 colour literal #b7a4ff outside tokens (background-image on .art__stars) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:156 colour literal #5b34e6 outside tokens (stroke on .art .ln) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:157 colour literal rgb(108 59 255 / 38%) outside tokens (stroke on .art .ln-soft) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:158 colour literal #fff outside tokens (fill on .art .fill-soft) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:159 colour literal #6c3bff outside tokens (fill on .art .fill-p) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:184 colour literal rgb(251 250 255 / 94%) outside tokens (background on .site-header.is-scrolled) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:185 colour literal rgb(251 250 255 / 78%) outside tokens (background on .site-header.is-scrolled) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:193 colour literal rgb(76 46 190 / 4.5%) outside tokens (background on .nav__link:hover, .nav__item.…) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:197 colour literal #fff outside tokens (background on .menu) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:202 colour literal rgb(76 46 190 / 4.5%) outside tokens (background on .menu a:hover) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:239 colour literal rgb(139 108 255 / 30%) outside tokens (background on .hero__fallback) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:239 colour literal rgb(147 51 234 / 16%) outside tokens (background on .hero__fallback) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:240 colour literal rgb(108 59 255 / 6%) outside tokens (background-image on .hero__grid) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:241 colour literal #000 outside tokens (-webkit-mask-image on .hero__grid) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:241 colour literal #000 outside tokens (mask-image on .hero__grid) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:261 colour literal rgb(139 108 255 / 20%) outside tokens (background on .page-hero::before) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:261 colour literal rgb(147 51 234 / 8%) outside tokens (background on .page-hero::before) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:261 colour literal #f3efff outside tokens (background on .page-hero::before) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:284 colour literal rgb(255 255 255 / 30%) outside tokens (background on .story__dashes i) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:285 colour literal #fff outside tokens (background on .story__dashes i::after) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:286 colour literal rgb(8 6 26 / 70%) outside tokens (background on .story__shade) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:311 colour literal #fff outside tokens (background on .company__facts li) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:347 colour literal #6c3bff outside tokens (background on .vbar i) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:347 colour literal #b7a4ff outside tokens (background on .vbar i) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:354 colour literal rgb(76 46 190 / 5.4%) outside tokens (background on .hbar__track) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:371 colour literal rgb(76 46 190 / 2%) outside tokens (background on .tab) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:373 colour literal rgb(108 59 255 / 45%) outside tokens (border-color on .tab[aria-selected="true"]) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:373 colour literal #fff outside tokens (background on .tab[aria-selected="true"]) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:373 colour literal rgb(76 46 190 / 45%) outside tokens (box-shadow on .tab[aria-selected="true"]) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:404 colour literal rgb(76 46 190 / 2%) outside tokens (background on .seg) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:406 colour literal rgb(76 46 190 / 8.1%) outside tokens (background on .seg [aria-pressed="true"], .…) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:411 colour literal #000 outside tokens (background on .video) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:413 colour literal rgb(8 6 26 / 10%) outside tokens (background on .video button) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:413 colour literal rgb(8 6 26 / 55%) outside tokens (background on .video button) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:414 colour literal rgb(108 59 255 / 90%) outside tokens (box-shadow on .video button span) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:416 colour literal #fff outside tokens (border-color on .video button span::after) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:417 colour literal #f6f2ff outside tokens (background on .video--empty) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:417 colour literal #fff outside tokens (background on .video--empty) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:446 colour literal #000 outside tokens (-webkit-mask-image on .marquee) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:446 colour literal #000 outside tokens (mask-image on .marquee) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:455 colour literal #efe9ff outside tokens (background on .avatar) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:481 colour literal #efe9ff outside tokens (background on .faq__cats button[aria-select…) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:483 colour literal rgb(76 46 190 / 2%) outside tokens (background on .acc__item) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:499 colour literal rgb(139 108 255 / 22%) outside tokens (background on .cta) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:499 colour literal rgb(147 51 234 / 8%) outside tokens (background on .cta) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:499 colour literal #fff outside tokens (background on .cta) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:506 colour literal #fff outside tokens (background on .sticky-cta) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:514 colour literal rgb(76 46 190 / 5.4%) outside tokens (background on .sticky-cta__close:hover) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:518 colour literal #fff outside tokens (background on dialog.modal) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:519 colour literal rgb(20 15 54 / 40%) outside tokens (background on dialog.modal::backdrop) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:525 colour literal rgb(76 46 190 / 5.4%) outside tokens (background on .modal__close:hover) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:529 colour literal rgb(76 46 190 / 2.7%) outside tokens (background on .field input, .field textarea) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:532 colour literal rgb(124 92 245 / 20%) outside tokens (box-shadow on .field input:focus, .field te…) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:540 colour literal #fff outside tokens (color on .modal__tick) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:540 colour literal rgb(108 59 255 / 90%) outside tokens (box-shadow on .modal__tick) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:546 colour literal #fff outside tokens (background on .atc__menu) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:548 colour literal rgb(76 46 190 / 5.4%) outside tokens (background on .atc__menu a:hover, .atc__men…) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:549 colour literal #efe9ff outside tokens (background on .atc__ic) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:589 colour literal #2a1a7a outside tokens (background on .art--dark) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:589 colour literal #160f45 outside tokens (background on .art--dark) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:589 colour literal #0d0a2a outside tokens (background on .art--dark) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:589 colour literal rgb(20 15 54 / 20%) outside tokens (border-color on .art--dark) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:590 colour literal rgb(139 108 255 / 45%) outside tokens (background on .art--dark::before) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:591 colour literal rgb(167 139 250 / 30%) outside tokens (background-image on .art--dark .art__floor) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:592 colour literal #fff outside tokens (background-image on .art--dark .art__stars) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:592 colour literal #c4b5fd outside tokens (background-image on .art--dark .art__stars) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:592 colour literal #a78bfa outside tokens (background-image on .art--dark .art__stars) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:593 colour literal #ddd3ff outside tokens (stroke on .art--dark .ln) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:593 colour literal rgb(167 139 250 / 70%) outside tokens (filter on .art--dark .ln) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:594 colour literal rgb(201 188 255 / 45%) outside tokens (stroke on .art--dark .ln-soft) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:595 colour literal rgb(124 92 245 / 32%) outside tokens (fill on .art--dark .fill-soft) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:596 colour literal #c4b5fd outside tokens (fill on .art--dark .fill-p) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:597 colour literal rgb(20 15 54 / 25%) outside tokens (border-bottom-color on .event .art--dark) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:601 colour literal #efe9ff outside tokens (background on .art--fx) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:601 colour literal #f7f4ff outside tokens (background on .art--fx) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:601 colour literal #fdfcff outside tokens (background on .art--fx) | fix: Lift the value into the token block
+FAIL 48 styles/theme.css:602 colour literal rgb(139 108 255 / 16%) outside tokens (background on .art--fx::before) | fix: Lift the value into the token block
+FAIL 54 app/explore/page.tsx:42 eyebrow "Every Saturday" before <h3> | fix: Cut it; the heading already says this (craft.md § 7 has twelve other openings)
+FAIL 54 components/events/Spotlight.tsx:16 eyebrow "Recent" before <h3> | fix: Cut it; the heading already says this (craft.md § 7 has twelve other openings)
+FAIL 58 http://localhost:6300/:1 [1440px] 161 words on one screen (from y=6900) | fix: One idea per screen: cut to about 80 words, make the section an object
+FAIL 58 http://localhost:6300/explore:1 [1440px] 346 words on one screen (from y=2750) | fix: One idea per screen: cut to about 80 words, make the section an object
+FAIL 58 http://localhost:6300/partner/corporates:1 [1440px] 117 words on one screen (from y=2000) | fix: One idea per screen: cut to about 80 words, make the section an object
+FAIL 58 http://localhost:6300/partner/institutions:1 [1440px] 123 words on one screen (from y=2050) | fix: One idea per screen: cut to about 80 words, make the section an object
+FAIL 58 http://localhost:6300/programs:1 [1440px] 128 words on one screen (from y=700) | fix: One idea per screen: cut to about 80 words, make the section an object
+FAIL 58 http://localhost:6300/terms:1 [1440px] 204 words on one screen (from y=350) | fix: One idea per screen: cut to about 80 words, make the section an object
+FAIL 62 styles/theme.css:280 .story__img is hidden at rest (opacity: 0) and depends on a script to appear | fix: Visible by default: scope the hidden state under a .js class the script adds, or animate from visible with @starting-style
+FAIL 62 styles/theme.css:507 .sticky-cta is hidden at rest (opacity: 0) and depends on a script to appear | fix: Visible by default: scope the hidden state under a .js class the script adds, or animate from visible with @starting-style
+FAIL 67 styles/theme.css:97 .eyebrow: uppercase tracked 0.2em in a label role | fix: Labels, captions, table heads, nav links and meta are the body face (or the theme's label face), a step smaller, sentence case, untracked
+FAIL 67 styles/theme.css:140 .tag: letter-spaced tracked 0.06em in a label role | fix: Labels, captions, table heads, nav links and meta are the body face (or the theme's label face), a step smaller, sentence case, untracked
+FAIL 67 styles/theme.css:289 .story__label: uppercase tracked 0.2em in a label role | fix: Labels, captions, table heads, nav links and meta are the body face (or the theme's label face), a step smaller, sentence case, untracked
+FAIL 73 http://localhost:6300/programs:1 [1440px] text painted under another element: button.acc__btn over "Recorded is for "; button.acc__btn over "All three p… | fix: Give the text its own space, or put it above what covers it on a surface of its own
+FAIL 73 http://localhost:6300/programs/premium:1 [1440px] text painted under another element: button.acc__btn over "Advanced learner"; button.acc__btn over "Industry ex… | fix: Give the text its own space, or put it above what covers it on a surface of its own
+FAIL 73 http://localhost:6300/programs/recorded:1 [1440px] text painted under another element: button.acc__btn over "K12 and college "; button.acc__btn over "12 weeks, d… | fix: Give the text its own space, or put it above what covers it on a surface of its own
+FAIL 73 http://localhost:6300/programs/regular:1 [1440px] text painted under another element: button.acc__btn over "Beginners, colle"; button.acc__btn over "12 weeks of… | fix: Give the text its own space, or put it above what covers it on a surface of its own
+REFLEX 2b styles/theme.css:91 gradient text on .grad | fix: Solid ink; weight or a display face. Guard: a single-hue ramp from two tokens with 40 and 41 passing
+REFLEX 2b styles/theme.css:320 gradient text on .company__ta | fix: Solid ink; weight or a display face. Guard: a single-hue ramp from two tokens with 40 and 41 passing
+REFLEX 3 http://localhost:6300/:1 [1440px] equal columns of icon-above-heading tiles (div.grid) | fix: Vary the widths, set the icon inline with the heading, or drop the icons
+REFLEX 3 http://localhost:6300/partner/corporates:1 [1440px] equal columns of icon-above-heading tiles (div.grid) | fix: Vary the widths, set the icon inline with the heading, or drop the icons
+REFLEX 3 http://localhost:6300/partner/institutions:1 [1440px] equal columns of icon-above-heading tiles (div.grid) | fix: Vary the widths, set the icon inline with the heading, or drop the icons
+REFLEX 3 http://localhost:6300/programs:1 [1440px] equal columns of icon-above-heading tiles (div.grid) | fix: Vary the widths, set the icon inline with the heading, or drop the icons
+REFLEX 3 http://localhost:6300/programs/premium:1 [1440px] equal columns of icon-above-heading tiles (div.journey) | fix: Vary the widths, set the icon inline with the heading, or drop the icons
+REFLEX 3 http://localhost:6300/programs/recorded:1 [1440px] equal columns of icon-above-heading tiles (div.journey) | fix: Vary the widths, set the icon inline with the heading, or drop the icons
+REFLEX 3 http://localhost:6300/programs/regular:1 [1440px] equal columns of icon-above-heading tiles (div.journey) | fix: Vary the widths, set the icon inline with the heading, or drop the icons
+REFLEX 7b styles/theme.css:129 pure #fff: background: var(--surface) (.card) | fix: Tint the base toward the anchor hue
+REFLEX 7b styles/theme.css:279 pure #fff: background: var(--surface) (.story__frame) | fix: Tint the base toward the anchor hue
+REFLEX 7b styles/theme.css:378 pure #fff: background: var(--surface) (.panel) | fix: Tint the base toward the anchor hue
+REFLEX 24b styles/theme.css:64 padding: 10px 16px (off the 4px scale) on .skip | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:95 gap: 10px (off the 4px scale) on .pill | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:95 padding: 7px 16px 7px 13px (off the 4px scale) on .pill | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:100 gap: 18px (off the 4px scale) on .head | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:104 gap: 18px (off the 4px scale) on .head--row > div | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:108 gap: 10px (off the 4px scale) on .btn | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:108 padding: 0 22px (off the 4px scale) on .btn | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:120 padding: 0 26px (off the 4px scale) on .btn--lg | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:129 gap: 14px (off the 4px scale) on .card | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:129 padding: 26px (off the 4px scale) on .card | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:140 gap: 7px (off the 4px scale) on .tag | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:140 padding: 0 11px (off the 4px scale) on .tag | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:192 gap: 6px (off the 4px scale) on .nav__link | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:192 padding: 0 14px (off the 4px scale) on .nav__link | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:201 padding: 10px 12px (off the 4px scale) on .menu a | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:207 gap: 10px (off the 4px scale) on .header__cta | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:208 gap: 5px (off the 4px scale) on .burger | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:254 padding-top: 7px (off the 4px scale) on .hero__scroll | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:263 gap: 22px (off the 4px scale) on .page-hero__copy | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:270 gap: 14px 28px (off the 4px scale) on .facts | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:271 gap: 10px (off the 4px scale) on .fact | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:311 padding: 7px 14px (off the 4px scale) on .company__facts li | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:313 gap: 18px (off the 4px scale) on .company__card | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:317 gap: 10px (off the 4px scale) on .company__list | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:317 padding-top: 18px (off the 4px scale) on .company__list | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:318 padding-left: 18px (off the 4px scale) on .company__list li | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:325 padding: 26px 20px 4px 0 (off the 4px scale) on .stat | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:328 margin-top: 10px (off the 4px scale) on .stat span | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:330 padding: clamp(20px, 3vw, 30px) (off the 4px scale) on .chart-card | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:333 margin-top: 18px (off the 4px scale) on .linechart svg | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:343 margin-top: 22px (off the 4px scale) on .vbars | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:344 padding-bottom: 22px (off the 4px scale) on .vbars__y | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:345 padding-bottom: 22px (off the 4px scale) on .vbars__plot | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:352 margin-top: 22px (off the 4px scale) on .hbars | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:359 margin-top: 22px (off the 4px scale) on .funnel | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:362 gap: 10px 24px (off the 4px scale) on .legend | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:362 margin-top: 18px (off the 4px scale) on .legend | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:363 gap: 10px (off the 4px scale) on .legend li | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:371 padding: 18px (off the 4px scale) on .tab | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:378 padding: clamp(22px, 3.4vw, 36px) (off the 4px scale) on .panel | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:381 gap: 14px (off the 4px scale) on .panel__copy | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:383 padding-bottom: 6px (off the 4px scale) on .tablist | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:386 padding: 18px 16px 0 0 (off the 4px scale) on .facts-row > div | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:394 padding: 22px (off the 4px scale) on .event__body | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:395 gap: 10px (off the 4px scale) on .event__top | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:398 padding-top: 6px (off the 4px scale) on .event__foot | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:407 margin-right: 6px (off the 4px scale) on .seg .i | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:408 padding: clamp(18px, 2.6vw, 28px) (off the 4px scale) on .featured | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:409 gap: 18px (off the 4px scale) on .featured__copy | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:416 margin-left: 5px (off the 4px scale) on .video button span::after | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:443 gap: 14px (off the 4px scale) on .carousel__track | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:461 padding: 24px 14px (off the 4px scale) on .logo-tile | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:479 padding: 11px 16px (off the 4px scale) on .faq__cats button | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:482 gap: 10px (off the 4px scale) on .acc | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:485 padding: 18px 20px (off the 4px scale) on .acc__btn | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:493 padding: 0 20px 18px (off the 4px scale) on .acc__panel p | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:500 gap: 18px (off the 4px scale) on .cta__copy | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:506 padding: 10px 10px 10px 22px (off the 4px scale) on .sticky-cta | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:523 margin-top: 6px (off the 4px scale) on .modal__head h2 | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:526 gap: 6px (off the 4px scale) on .field | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:529 padding: 12px 14px (off the 4px scale) on .field input, .field textarea | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:539 gap: 10px (off the 4px scale) on .modal__sent | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:539 padding: 16px 0 6px (off the 4px scale) on .modal__sent | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:546 padding: 6px (off the 4px scale) on .atc__menu | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:547 padding: 10px 12px (off the 4px scale) on .atc__menu a, .atc__menu button | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:555 gap: 18px (off the 4px scale) on .footer__brand | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:561 gap: 10px (off the 4px scale) on .socials | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:566 gap: 10px (off the 4px scale) on .footer__col ul | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:569 gap: 14px 28px (off the 4px scale) on .footer__bottom | fix: Use the 4px spacing scale
+REFLEX 24b styles/theme.css:570 gap: 10px 24px (off the 4px scale) on .footer__contact | fix: Use the 4px spacing scale
+REFLEX 39b http://localhost:6300/:1 [1440px] control height outside 44 to 52px: button.to-top 23px | fix: Marketing controls stand 44 to 52px; app UI 32 to 40px with a 44px hit target
+REFLEX 39b http://localhost:6300/explore:1 [1440px] control height outside 44 to 52px: button 40px, button 40px, button 40px | fix: Marketing controls stand 44 to 52px; app UI 32 to 40px with a 44px hit target
+REFLEX 39b http://localhost:6300/help:1 [1440px] control height outside 44 to 52px: button.to-top 23px | fix: Marketing controls stand 44 to 52px; app UI 32 to 40px with a 44px hit target
+REFLEX 39b http://localhost:6300/partner/corporates:1 [1440px] control height outside 44 to 52px: button.to-top 23px | fix: Marketing controls stand 44 to 52px; app UI 32 to 40px with a 44px hit target
+REFLEX 39b http://localhost:6300/partner/institutions:1 [1440px] control height outside 44 to 52px: button.to-top 23px | fix: Marketing controls stand 44 to 52px; app UI 32 to 40px with a 44px hit target
+REFLEX 39b http://localhost:6300/programs:1 [1440px] control height outside 44 to 52px: button.acc__btn 62px, button.acc__btn 62px, button.acc__btn 62px | fix: Marketing controls stand 44 to 52px; app UI 32 to 40px with a 44px hit target
+REFLEX 39b http://localhost:6300/programs/premium:1 [1440px] control height outside 44 to 52px: button.acc__btn 62px, button.acc__btn 62px, button.acc__btn 62px | fix: Marketing controls stand 44 to 52px; app UI 32 to 40px with a 44px hit target
+REFLEX 39b http://localhost:6300/programs/recorded:1 [1440px] control height outside 44 to 52px: button.acc__btn 62px, button.acc__btn 62px, button.acc__btn 62px | fix: Marketing controls stand 44 to 52px; app UI 32 to 40px with a 44px hit target
+REFLEX 39b http://localhost:6300/programs/regular:1 [1440px] control height outside 44 to 52px: button.acc__btn 62px, button.acc__btn 62px, button.acc__btn 62px | fix: Marketing controls stand 44 to 52px; app UI 32 to 40px with a 44px hit target
+REFLEX 39b http://localhost:6300/terms:1 [1440px] control height outside 44 to 52px: button.to-top 23px | fix: Marketing controls stand 44 to 52px; app UI 32 to 40px with a 44px hit target
+REFLEX 39b http://localhost:6300/workshops/loop-vs-graph:1 [1440px] control height outside 44 to 52px: button.to-top 23px | fix: Marketing controls stand 44 to 52px; app UI 32 to 40px with a 44px hit target
+REFLEX 44c http://localhost:6300/explore:1 [1440px] hero ends at 606px of a 900px screen | fix: Fill the first screen with the visual or the headline, not with copy
+REFLEX 44c http://localhost:6300/help:1 [1440px] hero ends at 438px of a 900px screen | fix: Fill the first screen with the visual or the headline, not with copy
+REFLEX 44c http://localhost:6300/partner/corporates:1 [1440px] hero ends at 638px of a 900px screen | fix: Fill the first screen with the visual or the headline, not with copy
+REFLEX 44c http://localhost:6300/partner/institutions:1 [1440px] hero ends at 674px of a 900px screen | fix: Fill the first screen with the visual or the headline, not with copy
+REFLEX 44c http://localhost:6300/programs:1 [1440px] hero ends at 503px of a 900px screen | fix: Fill the first screen with the visual or the headline, not with copy
+REFLEX 44c http://localhost:6300/programs/premium:1 [1440px] hero ends at 717px of a 900px screen | fix: Fill the first screen with the visual or the headline, not with copy
+REFLEX 44c http://localhost:6300/programs/recorded:1 [1440px] hero ends at 717px of a 900px screen | fix: Fill the first screen with the visual or the headline, not with copy
+REFLEX 44c http://localhost:6300/programs/regular:1 [1440px] hero ends at 717px of a 900px screen | fix: Fill the first screen with the visual or the headline, not with copy
+REFLEX 44c http://localhost:6300/terms:1 [1440px] hero ends at 385px of a 900px screen | fix: Fill the first screen with the visual or the headline, not with copy
+REFLEX 44c http://localhost:6300/workshops/loop-vs-graph:1 [1440px] hero ends at 638px of a 900px screen | fix: Fill the first screen with the visual or the headline, not with copy
+REFLEX 44c http://localhost:6300/workshops/loop-vs-graph:1 [1440px] hero text ends 327px short of its visual | fix: Widen the text column or bring the visual in: the text and the visual stand 48 to 120px apart (layout.md § 6)
+REFLEX 49b http://localhost:6300/:1 [320px] link "Physical AI: World Models, VLA, " wraps to 3 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/:1 [320px] link "View summary" wraps to 2 lines (a.link) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/:1 [320px] link "Deploying LLMs and AI Agents" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/:1 [320px] link "Become an AI powered Full Stack " wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/:1 [320px] link "From Generative AI to Agentic AI" wraps to 3 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/:1 [320px] link "Nunnari Labs & DeepWeaver" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/:1 [414px] link "Physical AI: World Models, VLA, " wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/:1 [414px] link "From Generative AI to Agentic AI" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/explore:1 [320px] link "Deploying LLMs and AI Agents" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/explore:1 [320px] link "Become an AI powered Full Stack " wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/explore:1 [320px] link "View summary" wraps to 2 lines (a.link) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/explore:1 [320px] link "From Generative AI to Agentic AI" wraps to 3 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/explore:1 [320px] link "Nunnari Labs & DeepWeaver" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/explore:1 [375px] link "From Generative AI to Agentic AI" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/help:1 [320px] link "Nunnari Labs & DeepWeaver" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/partner/corporates:1 [320px] link "Nunnari Labs & DeepWeaver" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/partner/institutions:1 [320px] link "Nunnari Labs & DeepWeaver" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/programs:1 [320px] link "Nunnari Labs & DeepWeaver" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/programs/premium:1 [320px] link "Nunnari Labs & DeepWeaver" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/programs/recorded:1 [320px] link "Nunnari Labs & DeepWeaver" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/programs/regular:1 [320px] link "Nunnari Labs & DeepWeaver" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/terms:1 [320px] link "Nunnari Labs & DeepWeaver" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 49b http://localhost:6300/workshops/loop-vs-graph:1 [320px] link "Nunnari Labs & DeepWeaver" wraps to 2 lines (a) | fix: Shorten the label or set nowrap
+REFLEX 71 http://localhost:6300/:1 [1440px] heads nearer what precedes them than what they head: h2.t-h2 "Learn. Build. Grow" 18px over, 141px under; h2.t… | fix: At least twice the space above a head as below it
+REFLEX 71 http://localhost:6300/partner/corporates:1 [1440px] heads nearer what precedes them than what they head: h2.t-h2 "Built for real imp" 18px over, 141px under; h2.t… | fix: At least twice the space above a head as below it
+REFLEX 71 http://localhost:6300/partner/institutions:1 [1440px] heads nearer what precedes them than what they head: h2.t-h2 "Built for real imp" 18px over, 141px under; h2.t… | fix: At least twice the space above a head as below it
+REFLEX 71 http://localhost:6300/programs:1 [1440px] heads nearer what precedes them than what they head: h2.t-h2 "12-week tracks for" 18px over, 92px under; h2.t-… | fix: At least twice the space above a head as below it
+REFLEX 71 http://localhost:6300/programs/premium:1 [1440px] heads nearer what precedes them than what they head: h2.t-h2 "Designed for you." 18px over, 141px under; h2.t-… | fix: At least twice the space above a head as below it
+REFLEX 71 http://localhost:6300/programs/recorded:1 [1440px] heads nearer what precedes them than what they head: h2.t-h2 "Designed for you." 18px over, 141px under; h2.t-… | fix: At least twice the space above a head as below it
+REFLEX 71 http://localhost:6300/programs/regular:1 [1440px] heads nearer what precedes them than what they head: h2.t-h2 "Designed for you." 18px over, 141px under; h2.t-… | fix: At least twice the space above a head as below it
+REFLEX 72 http://localhost:6300/programs:1 [1440px] text crowds the edge of its box: div.acc__item bottom -49px; div.acc__item bottom -23px; div.acc__item bottom … | fix: Pad the box: max(8px, 0.5em) at the sides, max(4px, 0.3em) above and below
+REFLEX 72 http://localhost:6300/programs/premium:1 [1440px] text crowds the edge of its box: div.acc__item bottom -23px; div.acc__item bottom -23px; div.acc__item bottom … | fix: Pad the box: max(8px, 0.5em) at the sides, max(4px, 0.3em) above and below
+REFLEX 72 http://localhost:6300/programs/recorded:1 [1440px] text crowds the edge of its box: div.acc__item bottom -23px; div.acc__item bottom -23px; div.acc__item bottom … | fix: Pad the box: max(8px, 0.5em) at the sides, max(4px, 0.3em) above and below
+REFLEX 72 http://localhost:6300/programs/regular:1 [1440px] text crowds the edge of its box: div.acc__item bottom -23px; div.acc__item bottom -23px; div.acc__item bottom … | fix: Pad the box: max(8px, 0.5em) at the sides, max(4px, 0.3em) above and below
+REFLEX 79 http://localhost:6300/explore:1 [1440px] 390px of nothing between the hero's last content (y 510) and the fold | fix: Centre the content in the screen and grow the visual or the head (layout.md § 6); never fill it with copy
+REFLEX 79 http://localhost:6300/help:1 [1440px] 558px of nothing between the hero's last content (y 342) and the fold | fix: Centre the content in the screen and grow the visual or the head (layout.md § 6); never fill it with copy
+REFLEX 79 http://localhost:6300/partner/corporates:1 [1440px] 329px of nothing between the hero's last content (y 571) and the fold | fix: Centre the content in the screen and grow the visual or the head (layout.md § 6); never fill it with copy
+REFLEX 79 http://localhost:6300/partner/institutions:1 [1440px] 311px of nothing between the hero's last content (y 589) and the fold | fix: Centre the content in the screen and grow the visual or the head (layout.md § 6); never fill it with copy
+REFLEX 79 http://localhost:6300/programs:1 [1440px] 493px of nothing between the hero's last content (y 407) and the fold | fix: Centre the content in the screen and grow the visual or the head (layout.md § 6); never fill it with copy
+REFLEX 79 http://localhost:6300/programs/premium:1 [1440px] 279px of nothing between the hero's last content (y 621) and the fold | fix: Centre the content in the screen and grow the visual or the head (layout.md § 6); never fill it with copy
+REFLEX 79 http://localhost:6300/programs/recorded:1 [1440px] 279px of nothing between the hero's last content (y 621) and the fold | fix: Centre the content in the screen and grow the visual or the head (layout.md § 6); never fill it with copy
+REFLEX 79 http://localhost:6300/programs/regular:1 [1440px] 279px of nothing between the hero's last content (y 621) and the fold | fix: Centre the content in the screen and grow the visual or the head (layout.md § 6); never fill it with copy
+REFLEX 79 http://localhost:6300/terms:1 [1440px] 611px of nothing between the hero's last content (y 289) and the fold | fix: Centre the content in the screen and grow the visual or the head (layout.md § 6); never fill it with copy
+REFLEX 79 http://localhost:6300/workshops/loop-vs-graph:1 [1440px] 329px of nothing between the hero's last content (y 571) and the fold | fix: Centre the content in the screen and grow the visual or the head (layout.md § 6); never fill it with copy
+REFLEX 80 http://localhost:6300/:1 [1440px] drawn illustration: div.art (338x190, 11 shapes) | fix: A photograph (theme.mjs photos), the product built, or type at scale; SVG is for icons, logos and labelled charts or diagrams (imagery.md § 7)
+REFLEX 80 http://localhost:6300/explore:1 [1440px] drawn illustration: div.art (339x190, 11 shapes) | fix: A photograph (theme.mjs photos), the product built, or type at scale; SVG is for icons, logos and labelled charts or diagrams (imagery.md § 7)
+REFLEX 81 http://localhost:6300/:1 [1440px] 7 empty pictures: div.story__shade 555x208, a gradient with nothing in it; span.art__stars 385x215, a gradient… | fix: Put the picture in: the user's image, a library photograph (theme.mjs photos) or the product built at full fidelity; the wash is only a loading colour (imagery.md § 3)
+REFLEX 81 http://localhost:6300/explore:1 [1440px] 6 empty pictures: span.art__stars 545x374, a gradient with nothing in it; span.art__stars 385x215, a gradient … | fix: Put the picture in: the user's image, a library photograph (theme.mjs photos) or the product built at full fidelity; the wash is only a loading colour (imagery.md § 3)
+REFLEX 81 http://localhost:6300/workshops/loop-vs-graph:1 [1440px] 2 empty pictures: span.art__stars 548x376, a gradient with nothing in it; span.art__stars 477x297, a gradient … | fix: Put the picture in: the user's image, a library photograph (theme.mjs photos) or the product built at full fidelity; the wash is only a loading colour (imagery.md § 3)
+WARN 25 styles/theme.css:560 measure 32ch on .footer__brand p (45-75ch range) | fix: Set prose measure between 45 and 75ch; a one-sentence lede or caption from 28ch
+WARN 28a components/events/YouTube.tsx:15 lazy-loaded first image (likely LCP) | fix: fetchpriority=high on the LCP element
+WARN 29 styles/theme.css:185 glass panel: backdrop-filter blur over a translucent white on .site-header.is-scrolled | fix: Solid or grained surface; elevation by lightness
+WARN 58 components/sections/Hero.tsx:48 hero paragraph runs 21 words | fix: One sentence, twelve words or fewer
+WARN 58 http://localhost:6300/programs/premium:1 [1440px] 87 words on one screen (from y=850) | fix: Close to the 80-word screen budget
+WARN 58 http://localhost:6300/programs/recorded:1 [1440px] 93 words on one screen (from y=850) | fix: Close to the 80-word screen budget
+WARN 58 http://localhost:6300/programs/regular:1 [1440px] 87 words on one screen (from y=850) | fix: Close to the 80-word screen budget
+WARN 77 http://localhost:6300/:1 [1440px] 2 sections, hero and footer included | fix: A landing strip, not a page: six to nine sections, five on a thin prompt (layout.md § 3)
+WARN 77 http://localhost:6300/explore:1 [1440px] 2 sections, hero and footer included | fix: A landing strip, not a page: six to nine sections, five on a thin prompt (layout.md § 3)
+WARN 77 http://localhost:6300/help:1 [1440px] 2 sections, hero and footer included | fix: A landing strip, not a page: six to nine sections, five on a thin prompt (layout.md § 3)
+WARN 77 http://localhost:6300/partner/corporates:1 [1440px] 2 sections, hero and footer included | fix: A landing strip, not a page: six to nine sections, five on a thin prompt (layout.md § 3)
+WARN 77 http://localhost:6300/partner/institutions:1 [1440px] 2 sections, hero and footer included | fix: A landing strip, not a page: six to nine sections, five on a thin prompt (layout.md § 3)
+WARN 77 http://localhost:6300/programs:1 [1440px] 2 sections, hero and footer included | fix: A landing strip, not a page: six to nine sections, five on a thin prompt (layout.md § 3)
+WARN 77 http://localhost:6300/programs/premium:1 [1440px] 2 sections, hero and footer included | fix: A landing strip, not a page: six to nine sections, five on a thin prompt (layout.md § 3)
+WARN 77 http://localhost:6300/programs/recorded:1 [1440px] 2 sections, hero and footer included | fix: A landing strip, not a page: six to nine sections, five on a thin prompt (layout.md § 3)
+WARN 77 http://localhost:6300/programs/regular:1 [1440px] 2 sections, hero and footer included | fix: A landing strip, not a page: six to nine sections, five on a thin prompt (layout.md § 3)
+WARN 77 http://localhost:6300/terms:1 [1440px] 2 sections, hero and footer included | fix: A landing strip, not a page: six to nine sections, five on a thin prompt (layout.md § 3)
+WARN 77 http://localhost:6300/workshops/loop-vs-graph:1 [1440px] 2 sections, hero and footer included | fix: A landing strip, not a page: six to nine sections, five on a thin prompt (layout.md § 3)
+WARN F5 styles/theme.css:437 icon-in-coloured-circle coin: .icon-btn | fix: Drop the tinted coin; set the icon at text size in currentColor
+WARN F6 styles/theme.css:143 numeric selector .num at display size without tabular figures | fix: Add font-variant-numeric: tabular-nums
+WARN F6 styles/theme.css:328 numeric selector .stat span at display size without tabular figures | fix: Add font-variant-numeric: tabular-nums
+WARN F15 app/globals.css:1 7 different column gaps across multi-column sections (80px), 24px, 96px), 72px), 28px, 48px), 32px) | fix: One column gap for every multi-column section
+WARN F15 styles/theme.css:1 7 different column gaps across multi-column sections (80px), 24px, 96px), 72px), 28px, 48px), 32px) | fix: One column gap for every multi-column section
+WARN F20 http://localhost:6300/:1 [1440px] ul.company__facts leaves one item alone on its last row (2 + 1) | fix: Change the count or the columns so the last row is not an orphan
+WARN F20 http://localhost:6300/partner/institutions:1 [1440px] ul.legend leaves one item alone on its last row (2 + 2 + 2 + 1) | fix: Change the count or the columns so the last row is not an orphan
+WARN F24 styles/theme.css:197 a hairline border under a wide soft shadow on .menu | fix: Commit to one: a defined edge, or elevation by shadow

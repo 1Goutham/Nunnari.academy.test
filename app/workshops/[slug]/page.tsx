@@ -27,6 +27,7 @@ export default async function WorkshopPage({ params }: { params: Promise<{ slug:
     <div data-date={w.start} data-end={w.end} data-when={whenOf(w.start, w.end)}>
       <PageHero
         crumbs={[{ href: "/explore", label: "Explore" }, { href: "/explore#workshops", label: "Workshops" }, { href: `/workshops/${w.slug}`, label: w.title }]}
+        pill={w.type}
         title={w.title}
         lead={w.description}
         art={w.art}
@@ -43,30 +44,31 @@ export default async function WorkshopPage({ params }: { params: Promise<{ slug:
               : <button className="btn btn--primary btn--lg" type="button" data-enquire={`Register: ${w.title}`}>Register Now <Icon name="arrow" className="i--arrow" /></button>}
             <AddToCalendar title={w.title} description={w.description} start={w.start} end={w.end} />
           </span>
-          <span data-show="live" className="tag tag--live" role="status">Happening now, registration closed</span>
+          <span data-show="live" className="tag tag--live">Happening now · registration closed</span>
           <a data-show="past" className="btn btn--primary btn--lg" href="#recording">{yt ? "Watch the recording" : "Read the summary"} <Icon name="arrow" className="i--arrow" /></a>
         </>}
       />
 
-      <section className="section section--top0" id="recording">
-        <div className="container ws">
-          <div data-show="past">
-            <h2>Recording</h2>
+      <section className="section" id="recording">
+        <div className="container" style={{ display: "grid", gap: 40, maxWidth: 900 }}>
+          <div data-show="past" style={{ display: "grid", gap: 16 }}>
+            <span className="pill">Recording</span>
             {yt ? <YouTube id={yt} title={w.title} /> : (
               <div className="video video--empty"><p>The recording will be published here soon. <a className="link" href="https://www.youtube.com/@NunnariAcademy-v6y" target="_blank" rel="noopener">Visit our YouTube <Icon name="arrow-ur" /></a></p></div>
             )}
           </div>
           {w.summaryHtml && (
-            <div>
-              <h2><span data-show="past">Summary</span><span data-show="upcoming live">About this session</span></h2>
+            <div style={{ display: "grid", gap: 16 }}>
+              <span className="pill"><span data-show="past">Summary</span><span data-show="upcoming live">About this session</span></span>
               <div className="prose" dangerouslySetInnerHTML={{ __html: w.summaryHtml }} />
             </div>
           )}
         </div>
       </section>
+
       <Cta
         art={w.art}
-        title="Don’t miss the next one."
+        title={<>Don’t miss the <span className="grad">next one.</span></>}
         lead="See every upcoming workshop and join the community to hear about new sessions first."
         actions={<a className="btn btn--primary btn--lg" href="/explore#workshops">All workshops <Icon name="arrow" className="i--arrow" /></a>}
       />

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Icon from "@/components/Icon";
+import Art from "@/components/ui/Art";
 import Spotlight from "@/components/events/Spotlight";
 import WorkshopList from "@/components/events/WorkshopList";
 import AddToCalendar from "@/components/events/AddToCalendar";
 import Testimonials from "@/components/sections/Testimonials";
-import Split from "@/components/Split";
 import { Cta, Head, PageHero } from "@/components/ui/Blocks";
 import { getSpotlight, getWorkshops } from "@/lib/workshops";
 
@@ -20,56 +20,56 @@ export default function ExplorePage() {
   return (
     <>
       <PageHero
-        title="Workshops, stories and a growing AI community."
+        pill="Explore"
+        title={<>Workshops, stories and a growing <span className="grad">AI community.</span></>}
         lead="Learn from industry experts, meet fellow learners and catch up on every session you missed."
-      >
-        <nav aria-label="Explore sections">
-          <ul className="jump">
-            <li><a href="#workshops">Workshops</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#community">Community</a></li>
-          </ul>
-        </nav>
-      </PageHero>
+        actions={
+          <nav className="seg" aria-label="Explore sections">
+            <a href="#workshops"><Icon name="calendar" />Workshops</a>
+            <a href="#testimonials"><Icon name="message" />Testimonials</a>
+            <a href="#community"><Icon name="globe" />Community</a>
+          </nav>
+        }
+      />
 
-      <section className="section section--top0" id="workshops">
+      <section className="section" id="workshops">
         <div className="container">
-          <Head split title="Learn live. Watch anytime." lead="Register for upcoming sessions, or watch recordings and summaries of completed ones." />
+          <Head pill="Workshops" title={<>Learn live. <span className="grad">Watch anytime.</span></>} lead="Register for upcoming sessions, or watch recordings and summaries of completed ones." />
           {spot && <Spotlight w={spot} />}
-        </div>
-      </section>
 
-      <section className="field--mark section--s" aria-labelledby="saturday-title">
-        <div className="container saturday">
-          <Split as="p" className="saturday__day" aria-hidden="true">Saturday</Split>
-          <div className="saturday__copy">
-            <h2 id="saturday-title">Free community session, every Saturday</h2>
-            <p>Meet fellow learners and get a taste of what we build together.</p>
-            <AddToCalendar weeklySaturday title="Nunnari Academy — Free Saturday community session" description="Free community session: meet fellow learners and get a taste of what we build together." className="btn btn--primary btn--lg" />
+          <div className="card featured" style={{ marginTop: 20 }} data-reveal="">
+            <div className="featured__copy">
+              <span className="tag">Every Saturday</span>
+              <h3 className="t-h3">Free community session</h3>
+              <p>Meet fellow learners and get a taste of what we build together.</p>
+              <div className="actions">
+                <AddToCalendar weeklySaturday title="Nunnari Academy — Free Saturday community session" description="Free community session: meet fellow learners and get a taste of what we build together." className="btn btn--primary btn--lg" />
+              </div>
+            </div>
+            <Art name="saturday" />
+          </div>
+
+          <div style={{ marginTop: 56 }}>
+            <WorkshopList items={all.filter((w) => w.slug !== spot?.slug)} />
           </div>
         </div>
       </section>
 
-      <section className="section" aria-label="All workshops">
+      <section className="section" id="testimonials" style={{ overflow: "hidden" }}>
         <div className="container">
-          <WorkshopList items={all.filter((w) => w.slug !== spot?.slug)} />
+          <Head pill="Testimonials" title={<>Learners who found their <span className="grad">next step.</span></>} />
         </div>
+        <div data-reveal=""><Testimonials /></div>
       </section>
 
-      <section className="section section--top0" id="testimonials">
-        <div className="container">
-          <Head title="Learners who found their next step." />
-        </div>
-        <Testimonials />
-      </section>
-
-      <Cta
-        id="community"
-        art="community"
-        title="Join our community."
-        lead="Connect with AI learners, attend exclusive events, network with experts and discover global opportunities."
-        actions={<a className="btn btn--primary btn--lg" href="https://aitamilnadu.org/" target="_blank" rel="noopener">Join the Community <Icon name="arrow-ur" className="i--ur" /></a>}
-      />
+      <div id="community">
+        <Cta
+          art="community"
+          title={<>Join our <span className="grad">community.</span></>}
+          lead="Connect with AI learners, attend exclusive events, network with experts and discover global opportunities."
+          actions={<a className="btn btn--primary btn--lg" href="https://aitamilnadu.org/" target="_blank" rel="noopener">Join the Community <Icon name="arrow-ur" className="i--ur" /></a>}
+        />
+      </div>
     </>
   );
 }
