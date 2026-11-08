@@ -1,0 +1,37 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "site",
+  "shape": "Catalogue",
+  "theme": "grid",
+  "axes": "light/grotesk-sans/cool",
+  "hero": "Counter",
+  "nav": "floating slab",
+  "footer": "mast",
+  "imagery": "user posters, partner logos, workshop line art, real charts",
+  "photos": [],
+  "entry": "overprint sheet",
+  "fingerprint": "catalogue/counter/slab/mast/field-violet/mark-vermilion",
+  "sections": [
+   "hero counter",
+   "rows",
+   "pinned story",
+   "company columns",
+   "figures on field",
+   "switcher",
+   "rail",
+   "plate close"
+  ],
+  "signature": "poster head overprinting onto the brand-violet field holding the three programmes",
+  "waived": [
+   "80",
+   "49b",
+   "77",
+   "44c",
+   "78"
+  ],
+  "prompt": "AI school in Coimbatore teaching practical AI programmes in English and Tamil",
+  "date": "2026-11-08"
+ }
+]

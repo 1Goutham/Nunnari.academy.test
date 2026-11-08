@@ -19,6 +19,7 @@ export default function Header() {
   const [hidden, setHidden] = useState(false);
   const progress = useRef<HTMLElement>(null);
   const closeT = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const hoverAt = useRef(0);
   const active = sectionOf(pathname);
 
   // close menus on navigation
@@ -67,7 +68,7 @@ export default function Header() {
   const isDesktop = () => matchMedia("(min-width: 1024px)").matches;
   const enter = (key: string) => (e: React.PointerEvent) => {
     if (e.pointerType !== "mouse" || !isDesktop()) return;
-    clearTimeout(closeT.current); setOpenKey(key);
+    clearTimeout(closeT.current); hoverAt.current = performance.now(); setOpenKey(key);
   };
   const leave = (e: React.PointerEvent) => {
     if (e.pointerType !== "mouse" || !isDesktop()) return;
@@ -94,7 +95,7 @@ export default function Header() {
                       type="button"
                       aria-expanded={openKey === item.key}
                       aria-controls={`m-${item.key}`}
-                      onClick={() => setOpenKey((k) => (k === item.key ? null : item.key))}
+                      onClick={() => setOpenKey((k) => (k === item.key && performance.now() - hoverAt.current > 600 ? null : item.key))}
                     >
                       {item.label} <Icon name="chevron" />
                     </button>

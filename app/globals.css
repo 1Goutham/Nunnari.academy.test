@@ -1,1 +1,18 @@
-@import "../styles/theme.css";
+/* Hallmark · shape: Catalogue (/), Index (/programs), Index (/explore), Long Document (/programs/recorded), Long Document (/programs/regular), Long Document (/programs/premium), Long Document (/terms), Long Document (/privacy), Long Document (/refund), Long Document (/workshops), Stat-Led (/partner/institutions), Stat-Led (/partner/corporates), Letter (/help) · genre: editorial · theme: Grid (deal 1/3, seed school-coimbatore-teaching-practical-898c·e557d22e·2026-11-08·r0) · redesign: full · draw: 564392 (Long Document swapped to Catalogue on /, kept for programmes)
+ * hero: Counter (/), Stage (/programs/recorded), Stage (/programs/regular), Stage (/programs/premium), Stage (/partner/institutions), Stage (/partner/corporates), Stage (/workshops), Banner (/programs), Banner (/explore), Banner (/help), Banner (/terms), Banner (/privacy), Banner (/refund) · nav: floating slab, edge-aligned, menus kept · footer: mast · imagery: the user's posters, partner logos, workshop line art, real charts; no library photos (none fit) · signature: the poster head overprinting onto the brand-violet field that holds the three programmes
+ * axes: light/grotesk-sans/cool · posture: full-palette (field: brand violet, mark: vermilion, ink) · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H5 E4 S4 R4 V4 · weakest: S, a school page could drift generic; the hero sets the brand's own line at poster scale across its own violet and shows the three programmes as the action */
+/* Hallmark · waive 80 · the drawings sit only inside the dark .art--dark plates on workshop cards and workshop pages · the owner asked for these workshop line drawings by name and keeps them as each workshop's cover */
+/* Hallmark · dropped #why, globe, saturday · the hero's scroll cue was decoration text (66); the explore jump links carry no icons now, and the Saturday panel became the vermilion field that names the day */
+/* Hallmark · waive 49b · workshop titles are the owner's event names, set as card headings, two lines at desktop width · a workshop name cannot be shortened without changing the event it names */
+/* Hallmark · waive 77 · each FAQ is Rows beside its own head pinned on columns 1 to 4, so the body takes columns 5 to 12 · a programme FAQ reads as a list beside its heading on every programme page */
+/* Hallmark · waive 44c · /programs, /explore, /help and the legal pages use the Banner posture, the first section shown above the fold · these pages are routes to choose from, so their content starts on the first screen */
+/* Hallmark · waive 78 · the legal pages are Long Documents whose clause heads sit inside the prose column at 31px · terms, privacy and refund text read as one policy document */
+/* Hallmark · dismissed 28a · the YouTube thumbnail sits below the workshop hero, never the first image */
+/* Hallmark · reworded "Free community session" to "Free community session, every Saturday" · 54 named the "Every Saturday" eyebrow above it, so the label joined the heading */
+/* Hallmark · reworded "24–48 hours" to "24 to 48 hours" · 19 names the en dash */
+/* Hallmark · dropped recorded programme, regular programme, premium programme, call us, email us · the panel's name tag repeated its own tab (54); "Call us" and "Email us" are now the labels inside their links */
+/* Hallmark · reworded "onClick={() => setOpenKey((k) => (k === item.key ? null : item.key))}" to "onClick={() => setOpenKey((k) => (k === item.key && performance.now() - hoverAt.current > 600 ? null : item.key))}" · the before record carried a bug: a click right after the hover that opened a menu closed it again */
+@import url("./tokens.css");
+@import url("./base.css");
+@import url("../styles/theme.css");

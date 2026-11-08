@@ -9,18 +9,16 @@ import type { WorkshopCard } from "./EventCard";
 /** Big workshop card at the top of /explore. */
 export default function Spotlight({ w }: { w: WorkshopCard }) {
   return (
-    <article className="card featured" data-date={w.start} data-end={w.end} data-when={whenOf(w.start, w.end)} data-reveal="">
+    <article className="featured" data-date={w.start} data-end={w.end} data-when={whenOf(w.start, w.end)} data-reveal="">
       <div className="featured__copy">
-        <span className="tag" data-show="upcoming">Upcoming {w.type.toLowerCase()}</span>
-        <span className="tag tag--live" data-show="live">Happening now</span>
-        <span className="tag tag--done" data-show="past">Recent {w.type.toLowerCase()}</span>
-        <h3 className="t-h2" style={{ fontSize: "clamp(1.7rem,3vw,2.4rem)" }}>{w.title}</h3>
+        <span className="tag tag--live" data-show="live" role="status">Happening now</span>
+        <h3>{w.title}</h3>
         {w.description && <p>{w.description}</p>}
-        <div className="facts">
-          <div className="fact"><Icon name="calendar" /><div><b>{fmtDate(w.start)}</b><span>{fmtDay(w.start)}</span></div></div>
-          <div className="fact"><Icon name="clock" /><div><b>{fmtTime(w.start, w.end)}</b><span>{w.language ? `In ${w.language}` : "Live session"}</span></div></div>
-          <div className="fact"><Icon name="monitor" /><div><b>{w.mode}</b><span>{w.type}</span></div></div>
-        </div>
+        <dl className="facts">
+          <div><dt>{fmtDate(w.start)}</dt><dd>{fmtDay(w.start)}</dd></div>
+          <div><dt>{fmtTime(w.start, w.end)}</dt><dd>{w.language ? `In ${w.language}` : "Live session"}</dd></div>
+          <div><dt>{w.mode}</dt><dd>{w.type}</dd></div>
+        </dl>
         <div className="actions">
           <span data-show="upcoming" style={{ display: "contents" }}>
             {w.register

@@ -1,26 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "@/lib/clsx";
 
-type Chapter = { id: string; label: string; title: ReactNode; text: string; img: string; alt: string; stats?: [number, string][] };
+type Chapter = { id: string; label: string; title: string; text: string; img: string; alt: string; stats?: [number, string][] };
 
 const chapters: Chapter[] = [
   {
     id: "mission", label: "Mission & vision", img: "/assets/img/mission-800.webp", alt: "A learner looking out over a city of AI possibilities",
-    title: <>Making AI learning accessible <span className="grad">for everyone.</span></>,
+    title: "Making AI learning accessible for everyone.",
     text: "We empower students and professionals with real AI skills, whatever their background, language or location.",
   },
   {
     id: "community-events", label: "Community & events", img: "/assets/img/community-800.webp", alt: "AI Tamil Nadu and ML.Cbe community meetups, workshops and expert talks",
-    title: <>A growing community of <span className="grad">AI builders.</span></>,
+    title: "A growing community of AI builders.",
     text: "Hands-on workshops, hackathons, expert talks and networking, together with AI Tamil Nadu and ML.Cbe.",
     stats: [[10000, "Community members"], [50, "Workshops & events"], [100, "Experts & speakers"]],
   },
   {
     id: "learners-partners", label: "Learners & partners", img: "/assets/img/learners-logo-800.webp", alt: "Nunnari Academy partners across government, enterprises, schools and universities",
-    title: <>Real people. <span className="grad">Real progress.</span></>,
+    title: "Real people. Real progress.",
     text: "Our learners build projects, get placed, start ventures and work at leading companies.",
     stats: [[500, "Students trained"], [200, "Projects built"], [50, "Placements & internships"]],
   },
@@ -29,7 +29,7 @@ const chapters: Chapter[] = [
 /** Who we are — a sticky illustration that cross-fades as the chapters scroll past. */
 export default function WhoWeAre() {
   const wrap = useRef<HTMLDivElement>(null);
-  const dashes = useRef<HTMLDivElement>(null);
+  const dashes = useRef<HTMLSpanElement>(null);
   const blocks = useRef<(HTMLElement | null)[]>([]);
   const [active, setActive] = useState(0);
 
@@ -50,26 +50,27 @@ export default function WhoWeAre() {
 
   return (
     <div className="story" ref={wrap}>
-      <div className="story__visual" aria-hidden="true">
+      <figure className="story__visual" aria-hidden="true">
         <div className="story__frame">
           {chapters.map((c, i) => (
             <Image key={c.id} src={c.img} alt="" fill sizes="(max-width: 960px) 0px, 560px" className={clsx("story__img", i === active && "is-active")} />
           ))}
-          <div className="story__shade" />
-          <div className="story__dashes" ref={dashes}>
-            {chapters.map((c, i) => <button key={c.id} type="button" tabIndex={-1} aria-label={c.label} onClick={() => go(i)} style={{ "--i": i } as React.CSSProperties}><i /></button>)}
-          </div>
         </div>
-      </div>
-      <div>
+        <figcaption className="story__cap">
+          <span>{chapters[active].label}</span>
+          <span className="story__dashes" ref={dashes}>
+            {chapters.map((c, i) => <button key={c.id} type="button" tabIndex={-1} aria-label={c.label} className={clsx(i === active && "is-active")} onClick={() => go(i)}><i /></button>)}
+          </span>
+        </figcaption>
+      </figure>
+      <div className="story__chapters">
         {chapters.map((c, i) => (
-          <article key={c.id} id={c.id} data-i={i} ref={(el) => { blocks.current[i] = el; }} className={clsx("story__chapter", i === active && "is-active")}>
+          <article key={c.id} id={c.id} data-i={i} ref={(el) => { blocks.current[i] = el; }} className={clsx("story__chapter", i === active && "is-active")} aria-label={c.label}>
             <div className="story__mobile-img"><Image src={c.img} alt={c.alt} width={800} height={1421} sizes="(max-width: 960px) 92vw, 1px" /></div>
-            <p className="story__label">{c.label}</p>
             <h3 className="story__title">{c.title}</h3>
             <p className="story__text">{c.text}</p>
             {c.stats && (
-              <div className="story__stats">
+              <div className="figures">
                 {c.stats.map(([n, l]) => <div key={l}><strong data-count={n} data-suffix="+">{n.toLocaleString("en-IN")}+</strong><span>{l}</span></div>)}
               </div>
             )}

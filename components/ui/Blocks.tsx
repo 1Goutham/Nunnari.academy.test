@@ -1,87 +1,93 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Icon from "@/components/Icon";
-import Split from "@/components/Split";
 import Art from "./Art";
 
-/** Section heading: pill + title + optional lead (+ optional action on the right). Same on every page. */
-export function Head({ pill, title, lead, center, action, as = "h2" }: { pill?: string; title: ReactNode; lead?: ReactNode; center?: boolean; action?: ReactNode; as?: "h1" | "h2" }) {
-  const body = (
-    <>
-      {pill && <span className="pill" data-reveal="">{pill}</span>}
-      <Split as={as} className={as === "h1" ? "t-h1" : "t-h2"}>{title}</Split>
-      {lead && <p className="lead" data-reveal="" style={{ "--d": ".15s" } as React.CSSProperties}>{lead}</p>}
-    </>
+/**
+ * Section head: the heading on the column line and at most one line with it.
+ * `split` sets the line beside the head (baselines aligned); `action` puts a link at the far edge.
+ */
+export function Head({ title, lead, action, split, as = "h2", id }: { title: ReactNode; lead?: ReactNode; action?: ReactNode; split?: boolean; as?: "h1" | "h2"; id?: string }) {
+  const H = as;
+  if (action) {
+    return (
+      <div className="head head--row">
+        <div className="head"><H id={id}>{title}</H>{lead && <p className="lead">{lead}</p>}</div>
+        <div>{action}</div>
+      </div>
+    );
+  }
+  return (
+    <div className={`head${split ? " head--split" : ""}`}>
+      <H id={id}>{title}</H>
+      {lead && <p className="lead">{lead}</p>}
+    </div>
   );
-  if (action) return <div className="head head--row"><div>{body}</div><div data-reveal="">{action}</div></div>;
-  return <div className={`head${center ? " head--center" : ""}`}>{body}</div>;
 }
 
-/** Inner-page hero: crumbs, pill, title, lead, facts, actions, and a line-art panel on the right. */
-export function PageHero({ crumbs, pill, title, lead, facts, actions, art, children }: {
-  crumbs?: { href: string; label: string }[]; pill?: string; title: ReactNode; lead?: ReactNode;
-  facts?: { icon: Parameters<typeof Icon>[0]["name"]; title: string; sub: string }[]; actions?: ReactNode; art?: string; children?: ReactNode;
+type Crumb = { href?: string; label: string };
+type Fact = { icon?: Parameters<typeof Icon>[0]["name"]; title: string; sub: string };
+
+/**
+ * Inner-page hero. With a visual it is a Stage (text on six columns, the panel on the other six,
+ * bleeding off the edge); without one it is a Banner (the head at poster scale).
+ */
+export function PageHero({ crumbs, title, lead, facts, actions, art, children }: {
+  crumbs?: Crumb[]; title: ReactNode; lead?: ReactNode; facts?: Fact[]; actions?: ReactNode; art?: string; children?: ReactNode;
 }) {
   return (
-    <section className={`page-hero${art ? "" : " page-hero--center"}`}>
-      <div className="container">
-        <div className={art ? "page-hero__grid" : undefined}>
-          <div className="page-hero__copy">
-            {crumbs && (
-              <nav className="crumbs" aria-label="Breadcrumb" data-reveal="">
-                {crumbs.map((c, i) => (
-                  <span key={c.href} style={{ display: "contents" }}>
-                    {i > 0 && <Icon name="chevron-r" />}
-                    {i === crumbs.length - 1 ? <span aria-current="page">{c.label}</span> : <Link href={c.href}>{c.label}</Link>}
-                  </span>
-                ))}
-              </nav>
-            )}
-            {pill && <span className="pill" data-reveal="">{pill}</span>}
-            <Split as="h1" className="t-h1">{title}</Split>
-            {lead && <p className="lead" data-reveal="" style={{ "--d": ".15s" } as React.CSSProperties}>{lead}</p>}
-            {facts && (
-              <div className="facts" data-reveal="" style={{ "--d": ".25s" } as React.CSSProperties}>
-                {facts.map((f) => <div className="fact" key={f.title}><Icon name={f.icon} /><div><b>{f.title}</b><span>{f.sub}</span></div></div>)}
-              </div>
-            )}
-            {actions && <div className="actions" data-reveal="" style={{ "--d": ".35s" } as React.CSSProperties}>{actions}</div>}
-            {children}
-          </div>
-          {art && <div data-reveal="" style={{ "--d": ".2s" } as React.CSSProperties}><Art name={art} /></div>}
+    <section className={`page-hero${art ? "" : " page-hero--banner"}`}>
+      <div className="container page-hero__grid">
+        <div className="page-hero__copy">
+          {crumbs && (
+            <nav className="crumbs" aria-label="Breadcrumb">
+              {crumbs.map((c, i) => (
+                <span key={c.label} style={{ display: "contents" }}>
+                  {i > 0 && <Icon name="chevron-r" />}
+                  {i === crumbs.length - 1 ? <span aria-current="page">{c.label}</span> : c.href ? <Link href={c.href}>{c.label}</Link> : <span>{c.label}</span>}
+                </span>
+              ))}
+            </nav>
+          )}
+          <h1>{title}</h1>
+          {lead && <p className="lead">{lead}</p>}
+          {facts && (
+            <dl className="facts" style={{ "--n": facts.length } as React.CSSProperties}>
+              {facts.map((f) => <div key={f.title}><dt>{f.title}</dt><dd>{f.sub}</dd></div>)}
+            </dl>
+          )}
+          {actions && <div className="actions">{actions}</div>}
+          {children}
         </div>
+        {art && <div className="page-hero__visual"><Art name={art} /></div>}
       </div>
     </section>
   );
 }
 
-/** Closing call-to-action band (every page ends with one). */
-export function Cta({ title, lead, actions, art = "community" }: { title: ReactNode; lead?: ReactNode; actions: ReactNode; art?: string }) {
+/** Closing band on the ink plate: the head, one line, the page's action, and the page's panel beside it. */
+export function Cta({ title, lead, actions, art, id }: { title: ReactNode; lead?: ReactNode; actions: ReactNode; art?: string; id?: string }) {
   return (
-    <section className="section">
-      <div className="container">
-        <div className="cta" data-reveal="">
-          <div className="cta__copy">
-            <h2 className="t-h2">{title}</h2>
-            {lead && <p className="lead">{lead}</p>}
-            <div className="actions">{actions}</div>
-          </div>
-          <Art name={art} />
+    <section className="plate section--s" id={id}>
+      <div className={`container cta${art ? "" : " cta--wide"}`}>
+        <div className="cta__copy">
+          <h2>{title}</h2>
+          {lead && <p className="lead">{lead}</p>}
+          <div className="actions">{actions}</div>
         </div>
+        {art && <Art name={art} />}
       </div>
     </section>
   );
 }
 
-/** Uniform card: icon, title, three-line description. */
-export function Card({ icon, title, text, children, k }: { icon?: Parameters<typeof Icon>[0]["name"]; title: string; text?: string; children?: ReactNode; k?: number }) {
+/** A row: the title (with its icon inline) on the left, its line on the right. */
+export function Row({ icon, title, text }: { icon?: Parameters<typeof Icon>[0]["name"]; title: string; text: string }) {
   return (
-    <div className="card" data-reveal="" style={k !== undefined ? ({ "--d": `${k * 0.06}s` } as React.CSSProperties) : undefined}>
-      {icon && <span className="ico"><Icon name={icon} /></span>}
-      <h3>{title}</h3>
-      {text && <p className="clamp3">{text}</p>}
-      {children}
-    </div>
+    <li>
+      <h3>{icon && <Icon name={icon} />}{title}</h3>
+      <p>{text}</p>
+    </li>
   );
 }
 

@@ -40,15 +40,14 @@ export default function ProgramsCatalog() {
           <section key={p.key} className={`panel${active === p.key ? " is-active" : ""}`} role="tabpanel" id={`panel-${p.key}`} aria-labelledby={`tab-${p.key}`} aria-hidden={active !== p.key} inert={active !== p.key}>
             <div className="panel__top">
               <div className="panel__copy">
-                <span className="tag">{p.name}</span>
-                <h3 className="t-h2" style={{ fontSize: "clamp(1.8rem,3vw,2.4rem)" }}>{p.title[0]} <span className="grad">{p.title[1]}</span></h3>
+                <h3>{p.title[0]} {p.title[1]}</h3>
                 <p>{p.lead}</p>
               </div>
               <Art name={p.art} />
             </div>
-            <div className="facts-row" style={{ "--n": p.facts.length } as React.CSSProperties}>
-              {p.facts.map((f) => <div key={f.title}><b>{f.title}</b><span>{f.sub}</span></div>)}
-            </div>
+            <dl className="facts" style={{ "--n": p.facts.length } as React.CSSProperties}>
+              {p.facts.map((f) => <div key={f.title}><dt>{f.title}</dt><dd>{f.sub}</dd></div>)}
+            </dl>
             <div className="panel__cta">
               <Link className="btn btn--primary btn--lg" href={`/programs/${p.key}`}>View Programme Details <Icon name="arrow" className="i--arrow" /></Link>
             </div>

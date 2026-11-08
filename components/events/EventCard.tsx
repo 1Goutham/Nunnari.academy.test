@@ -11,7 +11,7 @@ export type WorkshopCard = Omit<Workshop, "summaryHtml">;
 export default function EventCard({ w }: { w: WorkshopCard }) {
   const href = `/workshops/${w.slug}`;
   return (
-    <article className="card event" data-date={w.start} data-end={w.end} data-when={whenOf(w.start, w.end)}>
+    <article className="event" data-date={w.start} data-end={w.end} data-when={whenOf(w.start, w.end)}>
       <Art name={w.art} />
       <div className="event__body">
         <div className="event__top">
@@ -21,7 +21,7 @@ export default function EventCard({ w }: { w: WorkshopCard }) {
           <span className="card__meta"><Icon name="calendar" />{fmtDate(w.start)}</span>
         </div>
         <h3><Link href={href}>{w.title}</Link></h3>
-        <p className="clamp3">{w.description || [w.type, w.mode, fmtDuration(w.start, w.end)].join(" · ")}</p>
+        <p className="clamp3">{w.description || `${w.type}, ${w.mode}, ${fmtDuration(w.start, w.end)}`}</p>
         <div className="event__foot">
           <span className="card__meta"><Icon name="monitor" />{w.mode}</span>
           <span data-show="upcoming">

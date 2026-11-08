@@ -26,7 +26,7 @@ export default function HomePage() {
 
       <section className="section" id="who-we-are">
         <div className="container">
-          <Head pill="Who we are" title={<>More than an AI academy. <span className="grad">A higher possibility.</span></>} lead="Practical, accessible, future-ready AI education, from India for global learners." />
+          <Head split title="More than an AI academy. A higher possibility." lead="Practical, accessible, future-ready AI education, from India for global learners." />
           <WhoWeAre />
         </div>
       </section>
@@ -36,21 +36,20 @@ export default function HomePage() {
 
       <section className="section" id="programs">
         <div className="container">
-          <Head pill="Our programs" title={<>Learn AI at your own <span className="grad">pace and path.</span></>} action={<Link className="link" href="/programs">All programs <Icon name="arrow-ur" /></Link>} />
-          <div data-reveal=""><ProgramsCatalog /></div>
+          <Head title="Learn AI at your own pace and path." action={<Link className="link" href="/programs">All programs <Icon name="arrow-ur" /></Link>} />
+          <ProgramsCatalog />
         </div>
       </section>
 
-      <section className="section" id="events">
+      <section className="section section--top0" id="events">
         <div className="container">
-          <Head pill="Workshops & events" title={<>Where opportunity <span className="grad">evolves.</span></>} action={<Link className="link" href="/explore">View all events <Icon name="arrow-ur" /></Link>} />
-          <div data-reveal=""><WorkshopCarousel items={workshops} /></div>
+          <Head title="Where opportunity evolves." action={<Link className="link" href="/explore">View all events <Icon name="arrow-ur" /></Link>} />
+          <WorkshopCarousel items={workshops} />
         </div>
       </section>
 
       <Cta
-        art="regular"
-        title={<>Ready to start <span className="grad">your AI journey?</span></>}
+        title="Ready to start your AI journey?"
         lead="Talk to our team. We will help you find the right program."
         actions={<button className="btn btn--primary btn--lg" type="button" data-enquire="Talk to our experts">Talk to our experts <Icon name="arrow" className="i--arrow" /></button>}
       />

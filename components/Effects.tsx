@@ -16,14 +16,14 @@ export default function Effects() {
     const off: Array<() => void> = [];
 
     /* auto-tag blocks below the fold so every section animates in (no flash for what is already on screen) */
-    const AUTO = ".grid > *, .logos > *, .stats > *, .company__cards > *, .facts-row, .journey, .catalog, .carousel, .faq, .cta, .featured, .story__chapter, .chart-card, .panel-wrap .art, .page-hero .art, .seg, .marquee";
+    const AUTO = ".rows > *, .figures > *, .steps > li, .pair > div, .logos > li, .quotes > *, .charts > *, .company__cols > *, .index > li, .tracks > li, .ev-grid, .carousel, .faq, .cta__copy, .cta > .art, .featured, .story__chapter, .catalog, .typeset, .reach > a, .statement > *, .saturday > *, .linechart, .page-hero__visual, .prose";
     const fold = innerHeight * 0.92;
     all(AUTO).forEach((el) => {
       if (el.hasAttribute("data-reveal") || el.hasAttribute("data-auto-reveal")) return;
       if (el.getBoundingClientRect().top < fold) return;
       const sib = el.parentElement ? [...el.parentElement.children].indexOf(el) : 0;
       el.setAttribute("data-auto-reveal", "");
-      el.style.setProperty("--ad", `${Math.min(sib, 6) * 0.07}s`);
+      el.style.setProperty("--ad", `${Math.min(sib, 6) * 0.05}s`);
     });
 
     /* reveal on scroll */
@@ -34,9 +34,9 @@ export default function Effects() {
     all("[data-reveal], [data-split], [data-inview], [data-auto-reveal]").forEach((el) => reveal.observe(el));
     off.push(() => reveal.disconnect());
 
-    /* line-art and marquees only animate while on screen */
+    /* line art only animates while on screen (the quotes marquee manages itself) */
     const pause = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle("is-paused", !e.isIntersecting)));
-    all(".art, .marquee").forEach((el) => pause.observe(el));
+    all(".art").forEach((el) => pause.observe(el));
     off.push(() => pause.disconnect());
 
     /* counters */

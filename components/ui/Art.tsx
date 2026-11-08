@@ -11,7 +11,6 @@ export default function Art({ name, className = "", label }: { name: string; cla
   const fx = particleNames.includes(name);
   return (
     <div className={`art ${fx ? "art--fx" : "art--dark"} ${className}`} role={label ? "img" : undefined} aria-label={label} aria-hidden={label ? undefined : true}>
-      {!fx && <span className="art__stars" />}
       <span className="art__floor" />
       {fx ? <Particles name={name} /> : <svg className="art__poster" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid meet" focusable="false" dangerouslySetInnerHTML={{ __html: workshopArts[name] ?? "" }} />}
     </div>

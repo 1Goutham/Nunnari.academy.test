@@ -55,7 +55,7 @@ void main() {
 }`;
 
 const hex = (h: string) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255);
-const COLORS = { uB0: hex("#2b1689"), uB1: hex("#6c3bff"), uA0: hex("#9b5cf6"), uA1: hex("#d36bf2") };
+const COLORS = { uB0: hex("#fbfaff"), uB1: hex("#ddd2ff"), uA0: hex("#140f36"), uA1: hex("#2b1689") }; // paper dots on the violet field, ink for the accent
 
 function starts(n: number, seed: number) {
   // loose cloud the points fly in from
@@ -84,7 +84,7 @@ function still(host: HTMLElement, sh: Shape) {
       const x = sh.pos[i * 3], y = sh.pos[i * 3 + 1], z = 6.5 - sh.pos[i * 3 + 2], sx = ((x / asp) * fit * 6.5) / z, sy = (y * fit * 6.5) / z;
       const a = sh.acc[i];
       if (a > 3.5) continue;
-      c.fillStyle = a % 2 ? (a > 1.5 ? "rgba(155,92,246,.3)" : "rgba(155,92,246,.85)") : a > 1.5 ? "rgba(43,22,137,.25)" : "rgba(43,22,137,.75)";
+      c.fillStyle = a % 2 ? (a > 1.5 ? "rgba(20,15,54,.3)" : "rgba(20,15,54,.85)") : a > 1.5 ? "rgba(251,250,255,.3)" : "rgba(251,250,255,.85)";
       c.beginPath(); c.arc((sx * 0.5 + 0.5) * cv.width, (0.5 - sy * 0.5) * cv.height, 1.3 * dpr, 0, 7); c.fill();
     }
   };

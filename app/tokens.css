@@ -1,0 +1,40 @@
+/* Grid (Hallmark theme) carrying the Nunnari Academy brand: the brand violet (#6c3bff) is the field,
+   the brand ink (#140f36) is the ink, the paper is tinted toward the violet. Every colour and font lives here. */
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1.0625rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-poster: clamp(3rem, 5.6vw + 0.4rem, 6rem); --text-figure: clamp(3.5rem, 8vw, 8.5rem);
+  --text-section: clamp(2.125rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --nav-h: 72px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  /* paper: white stock tinted toward the brand violet */
+  --color-paper: oklch(98.6% 0.005 290); --color-paper-2: oklch(95.4% 0.014 290); --color-paper-3: oklch(91.6% 0.022 290);
+  /* ink: the brand's deep violet-black */
+  --color-ink: oklch(20.3% 0.073 284); --color-ink-2: oklch(31% 0.07 284); --color-muted: oklch(45% 0.04 284);
+  --color-rule: oklch(87% 0.018 290);
+  /* field: the brand violet, flooded; accent: the same hue, a step deeper for text links */
+  --color-field: oklch(54.4% 0.265 285); --color-field-ink: oklch(98.6% 0.005 290); --color-field-soft: oklch(80% 0.11 290);
+  --color-accent: oklch(50% 0.262 282); --color-accent-ink: oklch(98.6% 0.005 290); --color-focus: oklch(50% 0.262 282);
+  /* mark: one Swiss vermilion for what is chosen or current, and one field a page */
+  --color-mark: oklch(57% 0.215 29); --color-mark-ink: oklch(98.6% 0.005 290);
+  /* the dark plate the workshop covers are drawn on */
+  --color-plate: oklch(20.3% 0.073 284); --color-plate-ink: oklch(92% 0.03 290);
+  /* the workshop line art on the plate */
+  --color-art-line: oklch(90% 0.05 290); --color-art-soft: oklch(80% 0.11 290 / 0.45); --color-art-fill: oklch(54.4% 0.265 285 / 0.32); --color-art-accent: oklch(80% 0.11 290);
+  --color-scrim: oklch(20.3% 0.073 284 / 0.55); --shadow-pop: 0 1px 2px oklch(20% 0.05 284 / 0.14), 0 0 0 1px oklch(20% 0.05 284 / 0.08);
+  /* chart series: one hue in steps, the mark for what declined */
+  --chart-1: oklch(80% 0.11 290); --chart-2: oklch(68% 0.19 287); --chart-3: oklch(54.4% 0.265 285); --chart-4: oklch(40% 0.2 284); --chart-5: oklch(88% 0.05 290); --chart-6: oklch(55% 0.03 284); --chart-7: oklch(57% 0.215 29);
+
+  --font-display: "Radio Canada Big Variable", "Radio Canada Big", ui-sans-serif, system-ui, sans-serif; --font-body: "Radio Canada Variable", "Radio Canada", ui-sans-serif, system-ui, sans-serif;
+  --font-tamil: "Noto Sans Tamil", "Latha", var(--font-body);
+  --font-outlier: var(--font-display);
+  --radius-card: 0; --radius-pill: 0; --rule-hair: 1px; --shadow-card: none;
+  --tracking-display: -0.035em; --display-weight: 700;
+}

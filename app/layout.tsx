@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/inter";
-import "@fontsource-variable/inter-tight";
+import "@fontsource-variable/radio-canada-big";
+import "@fontsource-variable/radio-canada";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";

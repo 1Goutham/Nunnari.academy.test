@@ -1,7 +1,7 @@
 # Nunnari Academy — Website
 
 Next.js (App Router, TypeScript) site for Nunnari Academy — School of AI.
-Light theme in the brand ink-violet tones, one brand violet. Workshop cards use dark line-art; every other panel is an interactive particle illustration.
+Designed with the Hallmark skill (theme: Grid, carrying the Nunnari brand): violet-tinted white paper, the brand ink, the brand violet as a flooded colour field, one vermilion mark for what is current, Radio Canada Big over Radio Canada, square corners and no boxed cards. Workshop cards keep their dark line art; programme and partner panels show interactive particle formations on the violet field.
 
 ## Run it
 
@@ -41,7 +41,11 @@ components/
   events/                workshop card, carousel, list, spotlight, YouTube, add-to-calendar
   Header, Footer, Enquiry (contact form), Effects (scroll reveals, counters, workshop state)
 lib/                     all content: site & nav, programs, partners, legal, testimonials, workshop loader
-styles/theme.css         the whole design system (tokens at the top)
+app/tokens.css           every colour, font and spacing token (Hallmark scaffold, brand values)
+app/base.css             base rules (Hallmark scaffold)
+styles/theme.css         the components
+app/globals.css          the Hallmark stamp (decisions, waivers) and the imports
+.hallmark/               Hallmark's build log; screenshots and before/after records stay local
 public/assets/           brand logos, partner college logos, illustrations
 ```
 
@@ -50,7 +54,8 @@ public/assets/           brand logos, partner college logos, illustrations
 - **Programme content:** `lib/programs.ts`. All three programme pages and the home catalogue read from it.
 - **Partner pages (offers, logos, stats, quotes):** `lib/partners.ts`.
 - **Contact details, socials, navigation:** `lib/site.ts`.
-- **Colours:** the tokens at the top of `styles/theme.css`.
+- **Colours, fonts, spacing:** `app/tokens.css`.
+- **Design checks:** `node .claude/skills/hallmark/scripts/sloplint.mjs app components styles --genre editorial --render --url http://localhost:3000/` (the render tier needs `puppeteer-core` and Chrome).
 - **Contact form:** posts to `app/api/enquiry/route.ts`. Set `ENQUIRY_WEBHOOK_URL` in Vercel to forward submissions to your CRM, Google Sheet, Zapier or Slack.
 - **Brochures:** put the PDFs in `public/brochures/` and set their paths in `lib/programs.ts` (`brochures`).
 

@@ -10,9 +10,13 @@ const cols = [
   { title: "Support", links: [["/help", "Help & contact"], ["/terms", "Terms"], ["/privacy", "Privacy"], ["/refund", "Refund policy"]] },
 ];
 
+/** Footer as a mast: the name set large over the links, then the contact line. */
 export default function Footer() {
   return (
     <footer className="site-footer">
+      <div className="container">
+        <p className="mast" aria-hidden="true"><span className="mast__w">Nunnari <span>Academy</span></span></p>
+      </div>
       <div className="container footer__grid">
         <div className="footer__brand">
           <Image src="/assets/brand/academy-horizontal-ink.png" alt="Nunnari Academy" width={617} height={216} />
