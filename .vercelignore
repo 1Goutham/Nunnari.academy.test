@@ -1,0 +1,4 @@
+# Claude Code skills are for local and cloud coding sessions; they are not part of the website.
+.claude
+.agents
+skills-lock.json
