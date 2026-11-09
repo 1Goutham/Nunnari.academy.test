@@ -34,16 +34,25 @@ export default function WhoWeAre() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) setActive(Number((e.target as HTMLElement).dataset.i)); }), { rootMargin: "-48% 0px -48% 0px" });
-    blocks.current.forEach((b) => b && io.observe(b));
     const w = wrap.current, d = dashes.current;
     let raf = 0, visible = false;
-    const apply = () => { raf = 0; if (!w || !d) return; const r = w.getBoundingClientRect(); const p = Math.min(1, Math.max(0, (innerHeight * 0.6 - r.top) / r.height)); d.style.setProperty("--story-p", (p * chapters.length).toFixed(3)); };
+    // the active chapter is the one whose centre is nearest the middle of the screen, so one is always active
+    let current = -1;
+    const apply = () => {
+      raf = 0;
+      if (!w || !d) return;
+      const r = w.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (innerHeight * 0.6 - r.top) / r.height));
+      d.style.setProperty("--story-p", (p * chapters.length).toFixed(3));
+      let best = 0, bestD = Infinity;
+      blocks.current.forEach((b, i) => { if (!b) return; const br = b.getBoundingClientRect(); const dist = Math.abs(br.top + br.height / 2 - innerHeight / 2); if (dist < bestD) { bestD = dist; best = i; } });
+      if (best !== current) { current = best; setActive(best); }
+    };
     const onScroll = () => { if (visible && !raf) raf = requestAnimationFrame(apply); };
     const vio = new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) onScroll(); });
     if (w) vio.observe(w);
     addEventListener("scroll", onScroll, { passive: true });
-    return () => { io.disconnect(); vio.disconnect(); removeEventListener("scroll", onScroll); cancelAnimationFrame(raf); };
+    return () => { vio.disconnect(); removeEventListener("scroll", onScroll); cancelAnimationFrame(raf); };
   }, []);
 
   const go = (i: number) => blocks.current[i]?.scrollIntoView({ behavior: "smooth", block: "center" });
