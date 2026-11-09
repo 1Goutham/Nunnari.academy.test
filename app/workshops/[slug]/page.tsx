@@ -44,7 +44,7 @@ export default async function WorkshopPage({ params }: { params: Promise<{ slug:
               : <button className="btn btn--primary btn--lg" type="button" data-enquire={`Register: ${w.title}`}>Register Now <Icon name="arrow" className="i--arrow" /></button>}
             <AddToCalendar title={w.title} description={w.description} start={w.start} end={w.end} />
           </span>
-          <span data-show="live" className="tag tag--live">Happening now · registration closed</span>
+          <span data-show="live" className="tag tag--live">Happening now, registration closed</span>
           <a data-show="past" className="btn btn--primary btn--lg" href="#recording">{yt ? "Watch the recording" : "Read the summary"} <Icon name="arrow" className="i--arrow" /></a>
         </>}
       />

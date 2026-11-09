@@ -16,7 +16,7 @@ const EMPTY = { name: "", email: "", phone: "", message: "" };
 /**
  * Site-wide contact form (doc 1.2): Name, Email, Phone (required) and an optional message,
  * validated with regex, submitted with "Schedule A Call". After a successful submission it shows
- * "Our Experts will reach you within 24-48 hours" and then returns to its original state.
+ * "Our Experts will reach you within 24 to 48 hours" and then returns to its original state.
  * Any element with data-enquire="Topic" opens it (Talk to us, Enroll Now, Become a Partner, Register…).
  */
 export default function EnquiryProvider({ children }: { children: ReactNode }) {
@@ -114,7 +114,7 @@ export default function EnquiryProvider({ children }: { children: ReactNode }) {
             <div className="modal__sent" role="status" aria-live="polite">
               <span className="modal__tick"><Icon name="check" /></span>
               <p className="modal__sent-title">Thank you, {values.name.split(" ")[0] || "there"}!</p>
-              <p>Our Experts will reach you within 24-48 hours.</p>
+              <p>Our Experts will reach you within 24 to 48 hours.</p>
             </div>
           ) : (
             <>
@@ -152,7 +152,7 @@ export default function EnquiryProvider({ children }: { children: ReactNode }) {
               <button className="btn btn--primary btn--lg btn--block" type="submit" disabled={status === "sending"}>
                 {status === "sending" ? "Scheduling…" : "Schedule A Call"} <Icon name="arrow" className="i--arrow" />
               </button>
-              <p className="modal__note"><Icon name="clock" /> Our Experts will reach you within 24-48 hours.</p>
+              <p className="modal__note"><Icon name="clock" /> Our Experts will reach you within 24 to 48 hours.</p>
             </>
           )}
         </form>

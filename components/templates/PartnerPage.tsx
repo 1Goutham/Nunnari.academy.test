@@ -90,7 +90,7 @@ export default function PartnerPage({ id }: { id: Partner["key"] }) {
         </div>
       </section>
 
-      <Cta art={p.art} title={<>{p.closing[0]} <span className="grad">{p.closing[1]}</span></>} lead="Our team will connect with you within 24–48 hours." actions={btn()} />
+      <Cta art={p.art} title={<>{p.closing[0]} <span className="grad">{p.closing[1]}</span></>} lead="Our team will connect with you within 24 to 48 hours." actions={btn()} />
     </>
   );
 }

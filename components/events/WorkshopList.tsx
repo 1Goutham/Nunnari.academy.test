@@ -24,7 +24,7 @@ export default function WorkshopList({ items }: { items: WorkshopCard[] }) {
       <div className="grid grid--3">
         {shown.map((w) => <div className="ev-slot" key={`${filter}-${w.slug}`}><EventCard w={w} /></div>)}
       </div>
-      {shown.length === 0 && <p className="card" style={{ textAlign: "center" }}>No upcoming workshops right now — join the community to hear about the next one first.</p>}
+      {shown.length === 0 && <p className="card" style={{ textAlign: "center" }}>No upcoming workshops right now. Join the community to hear about the next one first.</p>}
     </>
   );
 }

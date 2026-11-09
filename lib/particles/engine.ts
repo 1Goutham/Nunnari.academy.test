@@ -7,10 +7,10 @@
 import { buildShape, type Shape } from "./shapes";
 
 const VS = `
-attribute vec3 aT; attribute vec3 aS; attribute float aR; attribute float aA;
+attribute vec3 aT; attribute vec3 aS; attribute float aR; attribute float aA; attribute float aP;
 uniform float uT, uRev, uAsp, uFit, uDpr, uSize, uHover, uRy, uRx, uCT;
 uniform vec2 uM, uC;
-varying float vA, vR, vF, vG;
+varying float vA, vR, vF, vG, vP;
 float eo(float x) { x = clamp(x, 0.0, 1.0); return 1.0 - pow(1.0 - x, 3.0); }
 void main() {
   float dust = step(3.5, aA), back = step(1.5, aA) * (1.0 - dust), acc = mod(aA, 2.0) * (1.0 - dust);
@@ -37,25 +37,30 @@ void main() {
   float tw = pow(max(0.0, sin(uT * 1.6 + aR * 90.0)), 30.0) * step(0.88, fract(aR * 13.0)) * (1.0 - dust);
   gl_Position = vec4(ndc, 0.0, 1.0);
   gl_PointSize = uSize * uDpr * (0.75 + aR * 0.5) * (1.0 - dust * 0.35) * (1.0 - back * 0.15) * (6.5 / z) * (1.0 + f * 0.7 + w * 1.4 + tw * 0.9) * (0.35 + 0.65 * k);
-  vA = acc; vR = aR; vG = clamp(f + w * 1.5 + tw, 0.0, 1.0);
+  // the brand mark: a signal runs along its N, node to node
+  float sig = aP < 0.0 ? 0.0 : exp(-pow((fract(uT * 0.2) * 1.4 - 0.2 - aP) * 9.0, 2.0)) * k;
+  gl_PointSize *= 1.0 + sig * 1.1;
+  vA = acc; vR = aR; vG = clamp(f + w * 1.5 + tw, 0.0, 1.0); vP = sig;
   vF = (1.0 - back * 0.55) * (1.0 - dust * 0.62) * clamp(0.85 + p.z * 0.5, 0.45, 1.0) * (0.12 + 0.88 * k);
 }`;
 
 const FS = `
 precision mediump float;
-uniform vec3 uB0, uB1, uA0, uA1;
-varying float vA, vR, vF, vG;
+uniform vec3 uB0, uB1, uA0, uA1, uGl;
+varying float vA, vR, vF, vG, vP;
 void main() {
   float d = length(gl_PointCoord - 0.5);
   float a = smoothstep(0.5, 0.3, d) * 0.85 + smoothstep(0.3, 0.0, d) * 0.15;
   vec3 col = mix(mix(uB0, uB1, vR * 0.8), mix(uA0, uA1, vR), vA);
   col = mix(col, uA1, vG * 0.7);
+  col = mix(col, uGl, vP);
+  a = max(a, smoothstep(0.5, 0.0, d) * vP);
   a *= vF * (0.7 + 0.3 * vR) * (1.0 + vG * 0.4);
   gl_FragColor = vec4(col * a, a);
 }`;
 
 const hex = (h: string) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255);
-const COLORS = { uB0: hex("#2b1689"), uB1: hex("#6c3bff"), uA0: hex("#9b5cf6"), uA1: hex("#d36bf2") };
+const COLORS = { uB0: hex("#2b1689"), uB1: hex("#6c3bff"), uA0: hex("#9b5cf6"), uA1: hex("#d36bf2"), uGl: hex("#8b6cff") };
 
 function starts(n: number, seed: number) {
   // loose cloud the points fly in from
@@ -78,7 +83,7 @@ function still(host: HTMLElement, sh: Shape) {
   const draw = () => {
     const rect = host.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
     cv.width = rect.width * dpr; cv.height = rect.height * dpr;
-    const c = cv.getContext("2d")!, asp = rect.width / Math.max(1, rect.height), fit = Math.min((0.8 * asp) / 1.6, 0.72);
+    const c = cv.getContext("2d")!, asp = rect.width / Math.max(1, rect.height), fit = Math.min((0.8 * asp) / 1.6, 0.72) * (sh.zoom ?? 1);
     c.clearRect(0, 0, cv.width, cv.height);
     for (let i = 0; i < sh.n; i++) {
       const x = sh.pos[i * 3], y = sh.pos[i * 3 + 1], z = 6.5 - sh.pos[i * 3 + 2], sx = ((x / asp) * fit * 6.5) / z, sy = (y * fit * 6.5) / z;
@@ -122,11 +127,11 @@ export function mount(host: HTMLElement, name: string) {
     gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
     const loc = gl.getAttribLocation(prog, key); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, size, gl.FLOAT, false, 0, 0);
   };
-  attr("aT", sh.pos, 3); attr("aS", aS, 3); attr("aR", rnd, 1); attr("aA", sh.acc, 1);
+  attr("aT", sh.pos, 3); attr("aS", aS, 3); attr("aR", rnd, 1); attr("aA", sh.acc, 1); attr("aP", sh.path ?? new Float32Array(sh.n).fill(-1), 1);
 
   const U: Record<string, WebGLUniformLocation | null> = {};
-  ["uT", "uRev", "uAsp", "uFit", "uDpr", "uSize", "uHover", "uCT", "uC", "uRy", "uRx", "uM", "uB0", "uB1", "uA0", "uA1"].forEach((k) => (U[k] = gl.getUniformLocation(prog, k)));
-  (Object.keys(COLORS) as (keyof typeof COLORS)[]).forEach((k) => gl.uniform3fv(U[k], COLORS[k]));
+  ["uT", "uRev", "uAsp", "uFit", "uDpr", "uSize", "uHover", "uCT", "uC", "uRy", "uRx", "uM", "uB0", "uB1", "uA0", "uA1", "uGl"].forEach((k) => (U[k] = gl.getUniformLocation(prog, k)));
+  (Object.keys(COLORS) as (keyof typeof COLORS)[]).forEach((k) => gl.uniform3fv(U[k], sh.colors?.[k] ? hex(sh.colors[k]) : COLORS[k]));
   gl.enable(gl.BLEND);
   gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
   gl.clearColor(0, 0, 0, 0);
@@ -140,7 +145,7 @@ export function mount(host: HTMLElement, name: string) {
     gl.viewport(0, 0, canvas.width, canvas.height);
     asp = r.width / r.height;
     gl.uniform1f(U.uAsp, asp);
-    gl.uniform1f(U.uFit, Math.min((0.8 * asp) / 1.6, 0.72));
+    gl.uniform1f(U.uFit, Math.min((0.8 * asp) / 1.6, 0.72) * (sh.zoom ?? 1));
     gl.uniform1f(U.uDpr, dpr);
     gl.uniform1f(U.uSize, Math.max(2.4, Math.min(3.4, r.width / 170)));
     if (!raf) draw();

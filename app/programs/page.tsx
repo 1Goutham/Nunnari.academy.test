@@ -18,7 +18,7 @@ const faq = [
   { q: "Which programme is right for me?", cats: ["choose"], a: "Recorded is for K12 and college students, Regular for beginners (L1), and Premium for advanced learners (L3+) and the C-Suite." },
   { q: "How long are the programmes?", cats: ["choose"], a: "All three programmes are 12 weeks." },
   { q: "Which languages are the classes in?", cats: ["choose"], a: "English and Tamil." },
-  { q: "How do I enroll?", cats: ["enrol"], a: "Choose a programme and click Enroll Now, or talk to our team. We reach out within 24–48 hours." },
+  { q: "How do I enroll?", cats: ["enrol"], a: "Choose a programme and click Enroll Now, or talk to our team. We reach out within 24 to 48 hours." },
   { q: "Do I get access to the learning platform?", cats: ["enrol"], a: "Yes, one year of access to our LMS with all course resources and updates." },
 ];
 
