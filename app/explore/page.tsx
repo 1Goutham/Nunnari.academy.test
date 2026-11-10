@@ -20,6 +20,7 @@ export default function ExplorePage() {
   return (
     <>
       <PageHero
+        full
         pill="Explore"
         title={<>Workshops, stories and a growing <span className="grad">AI community.</span></>}
         lead="Learn from industry experts, meet fellow learners and catch up on every session you missed."

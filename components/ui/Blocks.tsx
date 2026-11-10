@@ -18,12 +18,12 @@ export function Head({ pill, title, lead, center, action, as = "h2" }: { pill?: 
 }
 
 /** Inner-page hero: crumbs, pill, title, lead, facts, actions, and a line-art panel on the right. */
-export function PageHero({ crumbs, pill, title, lead, facts, actions, art, children }: {
-  crumbs?: { href: string; label: string }[]; pill?: string; title: ReactNode; lead?: ReactNode;
+export function PageHero({ crumbs, pill, title, lead, facts, actions, art, children, full }: {
+  crumbs?: { href: string; label: string }[]; pill?: string; title: ReactNode; lead?: ReactNode; full?: boolean;
   facts?: { icon: Parameters<typeof Icon>[0]["name"]; title: string; sub: string }[]; actions?: ReactNode; art?: string; children?: ReactNode;
 }) {
   return (
-    <section className={`page-hero${art ? "" : " page-hero--center"}`}>
+    <section className={`page-hero${art ? "" : " page-hero--center"}${full ? " page-hero--full" : ""}`}>
       <div className="container">
         <div className={art ? "page-hero__grid" : undefined}>
           <div className="page-hero__copy">
