@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 
 import { programs } from "@/lib/programs";
 import { partners } from "@/lib/partners";
 import { toolIcons } from "@/lib/toolIcons";
+import Globe from "./Globe";
 
 /**
  * Illustration panels as small, real-looking scenes of the thing itself (a lesson player, a 12-week
@@ -156,18 +157,8 @@ function Corporates() {
 /* ---------- community and the Saturday session ---------- */
 
 function Community() {
-  return (
-    <Stage name="community">
-      <Layer z={6} i={0} className="vg-card vg-comm">
-        <div className="vg-head"><strong>AI Tamil Nadu</strong><span>with ML.Cbe</span></div>
-        <div className="vg-comm__stack">
-          {["Hands-on workshops", "Hackathons", "Expert talks"].map((t, k) => <span key={t} style={{ "--k": k } as CSSProperties}>{t}</span>)}
-        </div>
-      </Layer>
-      <Layer z={22} i={1} className="vg-card vg-stat"><strong>10,000+</strong><span>Community members</span></Layer>
-      <Layer z={14} i={2} className="vg-card vg-stat vg-stat--2"><strong>50+</strong><span>Workshops &amp; events</span></Layer>
-    </Stage>
-  );
+  // the community panel only appears in the dark closing band
+  return <Globe dark />;
 }
 
 function Saturday() {

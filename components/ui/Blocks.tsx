@@ -56,7 +56,7 @@ export function PageHero({ crumbs, pill, title, lead, facts, actions, art, child
 }
 
 /** Closing call-to-action band (every page ends with one). */
-export function Cta({ title, lead, actions, art = "community" }: { title: ReactNode; lead?: ReactNode; actions: ReactNode; art?: string }) {
+export function Cta({ title, lead, actions, art = "community", visual }: { title: ReactNode; lead?: ReactNode; actions: ReactNode; art?: string; visual?: ReactNode }) {
   return (
     <section className="section">
       <div className="container">
@@ -66,7 +66,7 @@ export function Cta({ title, lead, actions, art = "community" }: { title: ReactN
             {lead && <p className="lead">{lead}</p>}
             <div className="actions">{actions}</div>
           </div>
-          <Art name={art} />
+          {visual ? <div className="cta__visual">{visual}</div> : <Art name={art} />}
         </div>
       </div>
     </section>

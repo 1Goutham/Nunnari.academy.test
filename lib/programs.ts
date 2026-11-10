@@ -16,8 +16,12 @@ type Program = {
   outcomes: { icon: IconName; title: string; text: string }[];
   faqCats: { key: string; label: string }[];
   faq: QA[];
-  tools: string[];          // keys of lib/toolIcons
+  packages: string[];       // libraries (keys of lib/toolIcons)
+  tools: string[];          // platforms and models (keys of lib/toolIcons)
+  skills: { core: [string, string]; chips: string[]; lead: string };
 };
+
+export const roles = ["AI Engineer", "Machine Learning Engineer", "ML Scientist", "Generative AI Engineer", "MLOps Engineer", "Applied AI Engineer"];
 
 /** All programme content in one place. Every programme page renders from this. */
 export const programs: Record<ProgramKey, Program> = {
@@ -50,7 +54,9 @@ export const programs: Record<ProgramKey, Program> = {
       { q: "What will I have at the end?", cats: ["program"], a: "Foundational AI skills, real projects, and a portfolio built with guided exercises." },
       { q: "How do I access the lessons?", cats: ["access"], a: "Online, through our learning platform." },
     ],
-    tools: ["python", "jupyter", "googlecolab", "claude", "googlegemini", "streamlit"],
+    packages: ["numpy", "pandas", "scikitlearn", "plotly"],
+    tools: ["python", "jupyter", "googlecolab", "streamlit", "claude", "googlegemini"],
+    skills: { core: ["12 Weeks", "Self-paced"], chips: ["Fundamentals", "Hands-on projects", "A portfolio", "K12 & college", "Online", "English & Tamil"], lead: "Build foundational AI skills and real projects alongside your studies, at a pace that suits you." },
   },
   regular: {
     key: "regular",
@@ -81,10 +87,12 @@ export const programs: Record<ProgramKey, Program> = {
       { q: "Is it suitable for complete beginners?", cats: ["eligibility"], a: "Yes. It is built for beginners and career switchers (L1 & L2) and starts with a strong foundation before moving to projects." },
       { q: "How long is the programme?", cats: ["program"], a: "12 weeks of guided, hands-on learning with live sessions, projects and mentorship." },
       { q: "Is it online or offline?", cats: ["program"], a: "Both. Talk to our team to find the batch that suits you." },
-      { q: "Which tools will I use?", cats: ["curriculum"], a: "Python, LangChain, LangGraph, CrewAI, Hugging Face, Ollama, Claude, Gemini, n8n, FastAPI, Docker and GitHub." },
+      { q: "Which tools will I use?", cats: ["curriculum"], a: "Packages: LangChain, LangGraph, CrewAI, Hugging Face, pandas and NumPy. Tools: Python, Ollama, Claude, Gemini, n8n, FastAPI, Docker and GitHub." },
       { q: "What will I build?", cats: ["curriculum"], a: "Real-world projects and a portfolio, from fundamentals to portfolio-ready work." },
     ],
-    tools: ["python", "langchain", "langgraph", "crewai", "huggingface", "ollama", "claude", "googlegemini", "n8n", "fastapi", "docker", "github"],
+    packages: ["langchain", "langgraph", "crewai", "huggingface", "pandas", "numpy"],
+    tools: ["python", "ollama", "claude", "googlegemini", "n8n", "fastapi", "docker", "github"],
+    skills: { core: ["₹8.5 LPA", "Average salary"], chips: roles, lead: "Gain in-demand skills, build a portfolio, and get guidance to start your journey in GenAI and Agentic AI." },
   },
   premium: {
     key: "premium",
@@ -115,13 +123,14 @@ export const programs: Record<ProgramKey, Program> = {
       { q: "How long is it?", cats: ["program"], a: "12 weeks." },
       { q: "How do I join?", cats: ["program"], a: "Talk to our team and we will connect you within 24 to 48 hours." },
     ],
-    tools: ["pytorch", "huggingface", "langgraph", "crewai", "claude", "mistralai", "ollama", "docker"],
+    packages: ["pytorch", "huggingface", "langgraph", "crewai", "keras", "opencv"],
+    tools: ["python", "claude", "mistralai", "ollama", "gradio", "docker", "github"],
+    skills: { core: ["L3+", "Advanced"], chips: ["Expert-led", "Leadership view", "C-Suite", "12 weeks", "Industry experts", "Board-level leaders"], lead: "Go beyond the basics with industry experts and board-level leaders, in a programme built for advanced learners." },
   },
 };
 export const programList = [programs.recorded, programs.regular, programs.premium];
 
 /** Regular programme extras */
-export const roles = ["AI Engineer", "Machine Learning Engineer", "ML Scientist", "Generative AI Engineer", "MLOps Engineer", "Applied AI Engineer"];
 
 
 /** 12-week Regular programme tracks (from the previous nunnari.academy course library). */
