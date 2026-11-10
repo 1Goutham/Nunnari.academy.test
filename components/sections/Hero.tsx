@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero__wash" aria-hidden="true" />
-      <FlowLines className="hero__flow" />
+      <FlowLines className="hero__flow" lines={9} />
       <div className="container hero__inner">
         <div className="hero__copy">
           <h1 className="t-display" id="hero-title">
@@ -30,11 +30,6 @@ export default function Hero() {
             </button>
             <a className="btn btn--ghost btn--lg" href="#programs">Explore programs</a>
           </div>
-          <ul className="hero__facts" data-in="" style={{ "--d": ".62s" } as React.CSSProperties}>
-            <li><Icon name="lang" /><span><b>English &amp; Tamil</b>Every programme</span></li>
-            <li><Icon name="clock" /><span><b>12 weeks</b>Three programmes</span></li>
-            <li><Icon name="users" /><span><b>10,000+</b>Learners trained</span></li>
-          </ul>
         </div>
         <div className="hero__visual" data-in="" style={{ "--d": ".3s" } as React.CSSProperties}>
           <HeroLattice />

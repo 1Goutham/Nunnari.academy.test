@@ -14,7 +14,7 @@ const bars = (years: number[], vals: number[], max: number) => (
 
 function Charts({ kind }: { kind: Partner["charts"] }) {
   if (kind === "institutions") {
-    const f: [string, number, string][] = [["Delivered", 97, "#A9A4C4"], ["Confirmed", 104, "#77749B"], ["Invited", 104, "#4F4975"], ["Proposal", 94, "#3E3960"], ["Enquiry", 46, "#D8D3E8"], ["Unclear", 27, "#9A98A8"], ["Declined", 9, "#C46B6B"]];
+    const f: [string, number, string][] = [["Delivered", 97, "#B3A9EA"], ["Confirmed", 104, "#7B6FD0"], ["Invited", 104, "#4A3BAF"], ["Proposal", 94, "#3B2F96"], ["Enquiry", 46, "#DDD6F8"], ["Unclear", 27, "#9D97BE"], ["Declined", 9, "#C46B6B"]];
     const total = f.reduce((a, b) => a + b[1], 0);
     return (
       <div className="grid grid--2" style={{ marginTop: 20 }}>

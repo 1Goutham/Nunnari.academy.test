@@ -42,8 +42,8 @@ export default function FlowLines({ lines = 24, className = "" }: { lines?: numb
         // a band that sweeps from lower left up to the right
         const base = H * (0.5 + 0.42 * k) - scroll * H * 0.12;
         const amp = H * (0.07 + 0.05 * Math.sin(k * 3.1));
-        const a = 0.05 + 0.22 * Math.sin(Math.PI * k);
-        c.strokeStyle = `rgba(98, 91, 137, ${a.toFixed(3)})`;
+        const a = 0.04 + 0.12 * Math.sin(Math.PI * k);
+        c.strokeStyle = `rgba(91, 75, 196, ${a.toFixed(3)})`;
         c.lineWidth = 1;
         c.beginPath();
         for (let x = -step; x <= W + step; x += step) {

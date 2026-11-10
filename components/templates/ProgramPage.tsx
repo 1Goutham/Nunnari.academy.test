@@ -36,8 +36,9 @@ export default function ProgramPage({ id }: { id: ProgramKey }) {
       {id === "regular" && (
         <section className="section">
           <div className="container split">
-            <Head pill="Growth & opportunities" title={<>Skills today for <span className="grad">tomorrow.</span></>} lead="Gain in-demand skills, build a portfolio, and get guidance to start your journey in AI & ML." />
-            <div className="card" data-reveal="">
+            <Head pill="Growth & opportunities" title={<>Skills today for <span className="grad">tomorrow.</span></>} lead="Gain in-demand skills, build a portfolio, and get guidance to start your journey in GenAI and Agentic AI." />
+            <div className="card card--skills" data-reveal="">
+              <span className="ico ico--lit ico--xl" aria-hidden="true"><Icon name="trend" /></span>
               <span className="eyebrow">Average salary</span>
               <strong style={{ font: "500 clamp(2.4rem,5vw,3.4rem)/1 var(--font-display)", color: "var(--text)", letterSpacing: "-0.04em" }}>₹8.5 LPA</strong>
               <div className="actions" style={{ gap: 8, marginTop: 6 }}>

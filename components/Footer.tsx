@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import { site } from "@/lib/site";
-import WaveLines from "@/components/ui/WaveLines";
 
 const cols = [
   { title: "Programs", links: [["/programs/recorded", "Recorded"], ["/programs/regular", "Regular"], ["/programs/premium", "Premium"], ["/programs", "All programs"]] },
@@ -14,7 +13,6 @@ const cols = [
 export default function Footer() {
   return (
     <footer className="site-footer">
-      <WaveLines count={5} />
       <div className="container footer__grid">
         <div className="footer__brand">
           <Image src="/assets/brand/academy-horizontal-ink.png" alt="Nunnari Academy" width={617} height={216} />

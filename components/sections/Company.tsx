@@ -1,5 +1,4 @@
 import Image from "next/image";
-import WaveLines from "@/components/ui/WaveLines";
 
 const facts = ["Founded in Coimbatore, 2020", "ISO/IEC 42001:2023 certified", "India & Australia"];
 
@@ -7,7 +6,6 @@ const facts = ["Founded in Coimbatore, 2020", "ISO/IEC 42001:2023 certified", "I
 export default function Company() {
   return (
     <section className="section section--band" id="company" aria-labelledby="company-title">
-      <WaveLines count={6} />
       <div className="container">
         <div className="company__top">
           <div className="company__copy">
