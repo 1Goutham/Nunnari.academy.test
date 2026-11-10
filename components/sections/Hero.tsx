@@ -1,6 +1,5 @@
 import Icon from "@/components/Icon";
 import HeroLattice from "./HeroLattice";
-import FlowLines from "@/components/canvas/FlowLines";
 
 /**
  * Home hero: the line, one sentence and two actions on the left; on the right the Nunnari mark
@@ -11,7 +10,6 @@ export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero__wash" aria-hidden="true" />
-      <FlowLines className="hero__flow" lines={9} />
       <div className="container hero__inner">
         <div className="hero__copy">
           <h1 className="t-display" id="hero-title">

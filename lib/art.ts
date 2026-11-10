@@ -34,10 +34,11 @@ export const workshopArts: Record<string, string> = {
     <g class="float" style="--d:-2s"><rect class="ln fill-soft" x="250" y="96" width="36" height="36" rx="10"/><ellipse class="ln" cx="268" cy="106" rx="9" ry="3"/><path class="ln" d="M259 106v14c0 2 4 3 9 3s9-1 9-3v-14"/></g>
     <path class="ln-soft dash" d="M80 60c20 0 20 20 40 14M244 54c-20 0-24 14-40 16"/>`,
   graph: `
-    <g class="ln"><text x="90" y="44" text-anchor="middle" fill="#ECE8FC" font-size="15" font-weight="600" letter-spacing="2" font-family="Inter,sans-serif">LOOP</text>
-      <text x="230" y="44" text-anchor="middle" fill="#ECE8FC" font-size="15" font-weight="600" letter-spacing="2" font-family="Inter,sans-serif">GRAPH</text>
-      <g class="spin" style="animation-duration:6s"><path d="M90 78a32 32 0 1 1-30 21" /><path d="M54 92l6 8 8-5"/></g>
-      <text x="160" y="118" text-anchor="middle" fill="#CFC7F4" font-size="14" font-weight="600" font-family="Inter,sans-serif">VS</text>
+    <g fill="#ECE8FC" font-size="11" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="1.5"><text x="90" y="160">LOOP</text><text x="230" y="160">GRAPH</text></g>
+    <text x="160" y="106" text-anchor="middle" fill="#CFC7F4" font-size="12" font-weight="600" letter-spacing="1" font-family="Inter,sans-serif">VS</text>
+    <g class="ln"><circle cx="90" cy="102" r="30" class="fill-soft" style="stroke:none"/>
+      <g class="spin" style="animation-duration:8s;transform-origin:90px 102px"><path d="M90 72a30 30 0 1 1-28.5 20.7"/><path d="M56 88l5.5 5 6-4.5"/></g>
+      <circle class="fill-p" cx="90" cy="72" r="4" style="stroke:none"/>
       <path d="M230 80l-26 26m26-26 26 26m-26-26v44m-26-18 26 18 26-18"/>
       <circle class="fill-soft" cx="230" cy="80" r="7"/><circle class="fill-soft" cx="204" cy="106" r="7"/><circle class="fill-soft" cx="256" cy="106" r="7"/><circle class="fill-soft" cx="230" cy="124" r="7"/>
       <circle class="pulse" cx="230" cy="80" r="7" style="fill:none"/><circle class="pulse" cx="230" cy="124" r="7" style="fill:none;--d:1.3s"/></g>`,

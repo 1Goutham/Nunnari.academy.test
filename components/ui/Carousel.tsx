@@ -58,25 +58,23 @@ export default function Carousel({ children, label, nav = "side", renderControls
   return (
     <div className={clsx("carousel", className)}>
       {renderControls?.({ prev, next, canPrev, canNext })}
-      {nav === "side" && (
-        <button className="icon-btn carousel__nav carousel__nav--prev" type="button" onClick={prev} disabled={!canPrev} aria-label="Previous">
-          <Icon name="arrow-left" />
-        </button>
-      )}
       <div className="carousel__track" ref={track} id={trackId} tabIndex={0} role="region" aria-label={label}>
         {children}
       </div>
-      {nav === "side" && (
-        <button className="icon-btn carousel__nav carousel__nav--next" type="button" onClick={next} disabled={!canNext} aria-label="Next">
-          <Icon name="arrow" />
-        </button>
-      )}
-      {pages > 1 && (
-        <div className="carousel__dots">
-          {Array.from({ length: pages }, (_, i) => (
-            <button key={i} type="button" aria-label={`Go to slide ${i + 1}`} aria-current={i === page}
-              onClick={() => track.current?.scrollTo({ left: i * track.current.clientWidth, behavior: "smooth" })} />
-          ))}
+      {(pages > 1 || nav === "side") && (
+        <div className="carousel__foot">
+          <div className="carousel__dots">
+            {pages > 1 && Array.from({ length: pages }, (_, i) => (
+              <button key={i} type="button" aria-label={`Go to slide ${i + 1}`} aria-current={i === page}
+                onClick={() => track.current?.scrollTo({ left: i * track.current.clientWidth, behavior: "smooth" })} />
+            ))}
+          </div>
+          {nav === "side" && (canPrev || canNext) && (
+            <div className="carousel__navs">
+              <button className="icon-btn carousel__nav" type="button" onClick={prev} disabled={!canPrev} aria-label="Previous"><Icon name="arrow-left" /></button>
+              <button className="icon-btn carousel__nav" type="button" onClick={next} disabled={!canNext} aria-label="Next"><Icon name="arrow" /></button>
+            </div>
+          )}
         </div>
       )}
     </div>

@@ -10,10 +10,12 @@ const CHIP_ICONS: IconName[] = ["cpu", "layers", "trend", "code", "spark", "rock
 
 /** Skills: the headline fact on a lit pedestal under a beam, connected to the roles or outcomes around it. */
 export function SkillsHub({ core, chips }: { core: [string, string]; chips: string[] }) {
-  const n = chips.length;
+  // two aligned columns either side of the core: left chips end at 31%, right chips start at 69%
+  const n = chips.length, nl = Math.ceil(n / 2);
   const pos = chips.map((_, i) => {
-    const a = (-90 + (360 / n) * i + (n % 2 ? 0 : 180 / n)) * (Math.PI / 180);
-    return { x: 50 + Math.cos(a) * 42, y: 46 + Math.sin(a) * 36 };
+    const left = i < nl, k = left ? i : i - nl, m = left ? nl : n - nl;
+    const y = m === 1 ? 50 : 16 + (68 / (m - 1)) * k;
+    return { x: left ? 31 : 69, y, left };
   });
   return (
     <div className="hub" aria-hidden="true">
@@ -26,7 +28,7 @@ export function SkillsHub({ core, chips }: { core: [string, string]; chips: stri
         <ellipse cx="50" cy="63" rx="40" ry="11" fill="url(#hub-floor)" />
         <ellipse cx="50" cy="63" rx="30" ry="7.5" className="hub__ring" />
         <ellipse cx="50" cy="63" rx="21" ry="5.2" className="hub__ring hub__ring--2" />
-        {pos.map((p, i) => <path key={i} d={`M 50 30 Q ${(50 + p.x) / 2} ${Math.min(30, p.y) - 6} ${p.x} ${p.y}`} className="hub__wire" style={{ "--i": i } as React.CSSProperties} pathLength={1} />)}
+        {pos.map((p, i) => { const y = p.y * 0.8, ex = p.left ? 41 : 59; return <path key={i} d={`M ${ex} 30 C ${(ex + p.x) / 2} 30 ${(ex + p.x) / 2} ${y} ${p.x} ${y}`} className="hub__wire" style={{ "--i": i } as React.CSSProperties} pathLength={1} />; })}
         <polygon points="40,58 60,58 56,24 44,24" fill="url(#hub-beam)" />
         <path d="M 38 56 L 38 60 A 12 3.2 0 0 0 62 60 L 62 56 Z" fill="url(#hub-side)" />
         <ellipse cx="50" cy="56" rx="12" ry="3.2" fill="#FFFFFF" stroke="#DDD6F8" strokeWidth=".3" />
@@ -35,7 +37,7 @@ export function SkillsHub({ core, chips }: { core: [string, string]; chips: stri
       <div className="hub__core"><strong>{core[0]}</strong><span>{core[1]}</span></div>
       <ul className="hub__chips">
         {chips.map((c, i) => (
-          <li key={c} style={{ left: `${pos[i].x}%`, top: `${pos[i].y * 1.25}%`, "--i": i } as React.CSSProperties}>
+          <li key={c} className={pos[i].left ? "is-left" : "is-right"} style={{ left: `${pos[i].x}%`, top: `${pos[i].y}%`, "--i": i } as React.CSSProperties}>
             <span className="hub__ico"><Icon name={CHIP_ICONS[i % CHIP_ICONS.length]} /></span>{c}
           </li>
         ))}
