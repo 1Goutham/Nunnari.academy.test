@@ -10,7 +10,7 @@ import { useEffect, useRef } from "react";
  * Paused off screen; drawn once, still, under reduced motion.
  */
 const N: [number, number][] = [[-3, 1], [-2, 0], [-1, -1], [0, 0], [1, 1], [2, 0], [3, -1]];
-const VIOLET = "108, 59, 255", INK = "20, 15, 54";
+const VIOLET = "98, 91, 137", INK = "21, 19, 43"; // Dusty Purple, Midnight
 
 type Node = { gx: number; gy: number; x: number; y: number; ox: number; oy: number; k: number; ph: number; d0: number };
 

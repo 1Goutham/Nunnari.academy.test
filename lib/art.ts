@@ -34,10 +34,10 @@ export const workshopArts: Record<string, string> = {
     <g class="float" style="--d:-2s"><rect class="ln fill-soft" x="250" y="96" width="36" height="36" rx="10"/><ellipse class="ln" cx="268" cy="106" rx="9" ry="3"/><path class="ln" d="M259 106v14c0 2 4 3 9 3s9-1 9-3v-14"/></g>
     <path class="ln-soft dash" d="M80 60c20 0 20 20 40 14M244 54c-20 0-24 14-40 16"/>`,
   graph: `
-    <g class="ln"><text x="90" y="44" text-anchor="middle" fill="#e5dcff" font-size="15" font-weight="600" letter-spacing="2" font-family="Inter,sans-serif">LOOP</text>
-      <text x="230" y="44" text-anchor="middle" fill="#e5dcff" font-size="15" font-weight="600" letter-spacing="2" font-family="Inter,sans-serif">GRAPH</text>
+    <g class="ln"><text x="90" y="44" text-anchor="middle" fill="#E8E5F1" font-size="15" font-weight="600" letter-spacing="2" font-family="Inter,sans-serif">LOOP</text>
+      <text x="230" y="44" text-anchor="middle" fill="#E8E5F1" font-size="15" font-weight="600" letter-spacing="2" font-family="Inter,sans-serif">GRAPH</text>
       <g class="spin" style="animation-duration:6s"><path d="M90 78a32 32 0 1 1-30 21" /><path d="M54 92l6 8 8-5"/></g>
-      <text x="160" y="118" text-anchor="middle" fill="#bda7ff" font-size="14" font-weight="600" font-family="Inter,sans-serif">VS</text>
+      <text x="160" y="118" text-anchor="middle" fill="#C9C4DD" font-size="14" font-weight="600" font-family="Inter,sans-serif">VS</text>
       <path d="M230 80l-26 26m26-26 26 26m-26-26v44m-26-18 26 18 26-18"/>
       <circle class="fill-soft" cx="230" cy="80" r="7"/><circle class="fill-soft" cx="204" cy="106" r="7"/><circle class="fill-soft" cx="256" cy="106" r="7"/><circle class="fill-soft" cx="230" cy="124" r="7"/>
       <circle class="pulse" cx="230" cy="80" r="7" style="fill:none"/><circle class="pulse" cx="230" cy="124" r="7" style="fill:none;--d:1.3s"/></g>`,
@@ -47,13 +47,13 @@ export const workshopArts: Record<string, string> = {
       <rect x="224" y="76" width="56" height="48" rx="10" class="fill-soft"/><path d="M240 100l8 8 16-16"/>
       <circle class="pulse" cx="160" cy="100" r="26" style="fill:none"/></g>
     <path class="ln dash" d="M98 100h34M188 100h34"/>
-    <g fill="#e5dcff" font-size="10" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="1.5"><text x="68" y="146">GENERATE</text><text x="160" y="146">REASON</text><text x="252" y="146">ACT</text></g>`,
+    <g fill="#E8E5F1" font-size="10" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="1.5"><text x="68" y="146">GENERATE</text><text x="160" y="146">REASON</text><text x="252" y="146">ACT</text></g>`,
   stack: `
     <g class="ln">
       <g class="float" style="--d:0s"><path class="fill-soft" d="M160 52l70 26-70 26-70-26z"/></g>
       <g class="float" style="--d:-.6s"><path d="M90 102l70 26 70-26" /></g>
       <g class="float" style="--d:-1.2s"><path d="M90 126l70 26 70-26"/></g>
     </g>
-    <g fill="#e5dcff" font-size="9" font-family="Inter,sans-serif" letter-spacing="1.5"><text x="236" y="80">UI</text><text x="236" y="106">API</text><text x="236" y="130">DATA</text></g>
+    <g fill="#E8E5F1" font-size="9" font-family="Inter,sans-serif" letter-spacing="1.5"><text x="236" y="80">UI</text><text x="236" y="106">API</text><text x="236" y="130">DATA</text></g>
     <g class="float" style="--d:-2s"><circle class="ln fill-soft" cx="62" cy="52" r="16"/><path class="ln" d="M62 44v16m-8-8h16"/><circle class="ln pulse" cx="62" cy="52" r="16" style="fill:none"/></g>`,
 };
