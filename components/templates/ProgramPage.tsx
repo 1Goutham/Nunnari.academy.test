@@ -23,7 +23,7 @@ export default function ProgramPage({ id }: { id: ProgramKey }) {
       <PageHero
         crumbs={[{ href: "/programs", label: "Programs" }, { href: `/programs/${id}`, label: p.name }]}
         pill={`${p.name} · ${p.num}`}
-        title={<>{p.title[0]} <span className="grad">{p.title[1]}</span></>}
+        title={<span className="t-2l">{p.title[0]}<br /><span className="grad">{p.title[1]}</span></span>}
         lead={p.lead}
         facts={p.facts}
         art={p.art}

@@ -1255,3 +1255,12 @@ h1, h2, h3, h4 { color: var(--text); }
   .vg-card { font-size: max(10px, 2.4cqw); }
   .vg .vg__scene { padding: 5cqw; gap: 2.4cqw; }
 }
+
+/* programme titles: always exactly two lines; the type shrinks so the longer line never wraps */
+.page-hero__copy, .panel__copy { container-type: inline-size; }
+.t-2l { display: block; white-space: nowrap; font-size: min(1em, 100cqi / 12.6); }
+/* hero facts: three equal columns on every programme, so the actions sit at the same height */
+.page-hero .facts { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 14px 24px; align-items: start; }
+.page-hero .fact { align-items: flex-start; }
+.page-hero .fact .i { flex: none; margin-top: 2px; }
+@media (max-width: 560px) { .page-hero .facts { grid-template-columns: 1fr 1fr; } }

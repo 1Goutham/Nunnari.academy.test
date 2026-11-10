@@ -41,7 +41,7 @@ export default function ProgramsCatalog() {
             <div className="panel__top">
               <div className="panel__copy">
                 <span className="tag">{p.name}</span>
-                <h3 className="t-h2" style={{ fontSize: "clamp(1.8rem,3vw,2.4rem)" }}>{p.title[0]} <span className="grad">{p.title[1]}</span></h3>
+                <h3 className="t-h2" style={{ fontSize: "clamp(1.8rem,3vw,2.4rem)" }}><span className="t-2l">{p.title[0]}<br /><span className="grad">{p.title[1]}</span></span></h3>
                 <p>{p.lead}</p>
               </div>
               <Art name={p.art} />

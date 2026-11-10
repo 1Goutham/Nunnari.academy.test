@@ -8,7 +8,7 @@ type Program = {
   num: string;
   name: string;
   short: string;            // audience line (tabs, menus)
-  title: [string, string];  // [plain, gradient]
+  title: [string, string];  // two lines: [plain, gradient]
   lead: string;
   art: string;
   facts: { icon: IconName; title: string; sub: string }[];
@@ -63,7 +63,7 @@ export const programs: Record<ProgramKey, Program> = {
     num: "02",
     name: "Regular Programme",
     short: "Beginners & career switchers (L1 & L2)",
-    title: ["Build a strong foundation in", "GenAI and Agentic AI."],
+    title: ["Build a strong foundation", "in GenAI and Agentic AI."],
     lead: "A 12-week, hands-on programme in GenAI and Agentic AI for beginners and career switchers.",
     art: "regular",
     facts: [
