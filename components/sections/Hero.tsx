@@ -1,10 +1,10 @@
 import Icon from "@/components/Icon";
-import Art from "@/components/ui/Art";
+import HeroLattice from "./HeroLattice";
 
 /**
  * Home hero: the line, one sentence and two actions on the left; on the right the Nunnari mark
- * lives as a lattice of points: a signal runs along its N, the points part around the cursor,
- * and a tap sends a ripple through it.
+ * lives as a crisp network (HeroLattice): a signal runs along its N, nodes reach for the cursor,
+ * and a click sends a ripple through it.
  */
 export default function Hero() {
   return (
@@ -29,7 +29,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero__visual" data-in="" style={{ "--d": ".3s" } as React.CSSProperties}>
-          <Art name="mark" label="The Nunnari Academy mark as a lattice of points, a signal running along its N" />
+          <HeroLattice />
         </div>
       </div>
     </section>
