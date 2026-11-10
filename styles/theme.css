@@ -1271,3 +1271,7 @@ a.company__logo:hover { opacity: .75; transform: translateY(-2px); }
 a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset: 6px; }
 .company__card { grid-template-rows: 56px auto 1fr; }
 .company__where { margin-top: 0; font-size: .95rem; color: var(--muted); }
+/* the three marks at one optical size: similar width, centred on the same line, same ink */
+.company__logo { height: 52px; }
+.company__ta { font-size: 29px; font-weight: 600; line-height: 1; padding: 0; background: none; color: var(--ink); -webkit-text-fill-color: currentColor; letter-spacing: 0; }
+.company__ta { font-weight: 500; transform: translateY(-3px); }

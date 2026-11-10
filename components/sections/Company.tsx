@@ -20,12 +20,12 @@ export default function Company() {
 
         <div className="company__cards">
           <article className="card company__card" data-reveal="">
-            <a className="company__logo" href="https://nunnarilabs.com/" target="_blank" rel="noopener noreferrer" aria-label="Nunnari Labs website (opens in a new tab)"><Image src="/assets/brand/nunnari-labs-horizontal.svg" alt="" width={345} height={116} style={{ height: 44, width: "auto" }} /></a>
+            <a className="company__logo" href="https://nunnarilabs.com/" target="_blank" rel="noopener noreferrer" aria-label="Nunnari Labs website (opens in a new tab)"><Image src="/assets/brand/nunnari-labs-horizontal.svg" alt="" width={345} height={116} style={{ height: 46, width: "auto" }} /></a>
             <div><h3 className="sr-only">Nunnari Labs</h3><span className="company__where">Coimbatore, India</span></div>
             <ul className="company__list"><li>AI engineering company</li><li>ISO/IEC 42001 certified</li></ul>
           </article>
           <article className="card company__card" data-reveal="" style={{ "--d": ".06s" } as React.CSSProperties}>
-            <a className="company__logo" href="https://deepweaver.ai/" target="_blank" rel="noopener noreferrer" aria-label="DeepWeaver website (opens in a new tab)"><Image src="/assets/logos/deepweaver.webp" alt="" width={560} height={110} style={{ height: 30, width: "auto" }} /></a>
+            <a className="company__logo" href="https://deepweaver.ai/" target="_blank" rel="noopener noreferrer" aria-label="DeepWeaver website (opens in a new tab)"><Image src="/assets/logos/deepweaver.webp" alt="" width={560} height={110} style={{ height: 31, width: "auto" }} /></a>
             <div><h3 className="sr-only">DeepWeaver</h3><span className="company__where">Sydney, Australia</span></div>
             <ul className="company__list"><li>Enterprise AI services</li><li>Weaving human-led AI into the enterprise</li></ul>
           </article>
