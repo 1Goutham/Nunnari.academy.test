@@ -38,7 +38,7 @@ export default function ProgramPage({ id }: { id: ProgramKey }) {
               {p.forWho.map((c, i) => <Card key={c.title} icon={c.icon} title={c.title} text={c.text} k={i} />)}
             </div>
           </div>
-          <div data-reveal=""><Stairs steps={p.outcomes.map((o) => o.title)} /></div>
+          <div data-reveal=""><Stairs steps={p.outcomes.map((o) => ({ title: o.title, icon: o.icon }))} /></div>
         </div>
       </section>
 
