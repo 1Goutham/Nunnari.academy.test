@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { programs } from "@/lib/programs";
 import { partners } from "@/lib/partners";
+import { ToolMark } from "./Tools";
 
 /**
  * Illustration panels as small, real-looking scenes of the thing itself (a lesson player, a 12-week
@@ -45,71 +46,70 @@ function Stage({ name, children }: { name: string; children: ReactNode }) {
   return <div ref={ref} className={`vg vg--${name}`}><div className="vg__scene">{children}</div></div>;
 }
 
-/* ---------- programmes ---------- */
+/* ---------- programmes: one isometric, exploded stack each, with the programme's tools ---------- */
+
+// tool tile slots around the stack (percent of the base plane)
+const SLOTS: [number, number][] = [[-24, 4], [92, -16], [114, 40], [98, 104], [12, 128], [30, -30]];
+
+function Iso({ name, main, side, tools }: { name: string; main: ReactNode; side: ReactNode; tools: string[] }) {
+  return (
+    <Stage name={`iso vg--${name}`}>
+      <div className="iso__world">
+        <div className="iso__base" />
+        <div className="iso__layer iso__main vg-card" style={{ "--h": 1 } as CSSProperties}>{main}</div>
+        <div className="iso__layer iso__side vg-card" style={{ "--h": 2.2 } as CSSProperties}>{side}</div>
+        {tools.slice(0, SLOTS.length).map((k, i) => (
+          <div key={k} className="iso__layer iso__tool" style={{ "--h": 3 + (i % 3) * 0.5, left: `${SLOTS[i][0]}%`, top: `${SLOTS[i][1]}%`, "--d": `${i * -0.7}s` } as CSSProperties}>
+            <i><ToolMark k={k} size={64} /></i>
+          </div>
+        ))}
+      </div>
+    </Stage>
+  );
+}
 
 function Recorded() {
   const p = programs.recorded;
   return (
-    <Stage name="recorded">
-      <Layer z={6} i={0} className="vg-card vg-player">
+    <Iso name="recorded" tools={p.tools}
+      main={<div className="vg-player">
         <div className="vg-player__screen">
           <span className="vg-play" />
           <span className="vg-player__lang"><b>English</b><b lang="ta">தமிழ்</b></span>
         </div>
-        <div className="vg-player__meta">
-          <strong>{p.outcomes[0].title}</strong>
-          <span>{p.facts[2].sub}</span>
-        </div>
+        <div className="vg-player__meta"><strong>{p.outcomes[0].title}</strong><span>{p.facts[2].sub}</span></div>
         <div className="vg-bar"><i /></div>
-      </Layer>
-      <Layer z={16} i={1} className="vg-card vg-list">
-        {p.outcomes.map((o, k) => <span key={o.title} className={k === 0 ? "is-now" : undefined}><em>{k + 1}</em>{o.title}</span>)}
-      </Layer>
-      <Layer z={24} i={2} className="vg-card vg-chip">
-        <strong>{p.facts[1].title}</strong><span>{p.facts[1].sub}</span>
-      </Layer>
-    </Stage>
+      </div>}
+      side={<div className="vg-list">{p.outcomes.map((o, k) => <span key={o.title} className={k === 0 ? "is-now" : undefined}><em>{k + 1}</em>{o.title}</span>)}</div>}
+    />
   );
 }
 
 function Regular() {
   const p = programs.regular;
   return (
-    <Stage name="regular">
-      <Layer z={6} i={0} className="vg-card vg-weeks">
+    <Iso name="regular" tools={p.tools}
+      main={<div className="vg-weeks">
         <div className="vg-head"><strong>{p.facts[1].title}</strong><span>{p.facts[0].sub}</span></div>
-        <div className="vg-weeks__grid">
-          {Array.from({ length: 12 }, (_, k) => <span key={k} style={{ "--k": k } as CSSProperties}>W{k + 1}</span>)}
-        </div>
+        <div className="vg-weeks__grid">{Array.from({ length: 12 }, (_, k) => <span key={k} style={{ "--k": k } as CSSProperties}>W{k + 1}</span>)}</div>
         <div className="vg-steps">{p.outcomes.map((o) => <span key={o.title}>{o.title}</span>)}</div>
-      </Layer>
-      <Layer z={20} i={1} className="vg-card vg-live">
-        <span className="vg-live__dot" /><strong>{p.facts[2].title}</strong><span>{p.facts[2].sub}</span>
-      </Layer>
-      <Layer z={14} i={2} className="vg-card vg-tools">
-        {["Python", "Pandas", "NumPy", "Jupyter"].map((t) => <span key={t}>{t}</span>)}
-      </Layer>
-    </Stage>
+      </div>}
+      side={<div className="vg-live"><span className="vg-live__dot" /><strong>{p.facts[2].title}</strong><span>{p.facts[2].sub}</span></div>}
+    />
   );
 }
 
 function Premium() {
   const p = programs.premium;
   return (
-    <Stage name="premium">
-      <Layer z={6} i={0} className="vg-card vg-level">
+    <Iso name="premium" tools={p.tools}
+      main={<div className="vg-level">
         <div className="vg-head"><strong>{p.facts[0].title}</strong><span>{p.facts[0].sub}</span></div>
         <div className="vg-level__meter"><span>L1</span><span>L2</span><span className="is-on">L3+</span></div>
         <div className="vg-level__rows">{p.outcomes.map((o) => <span key={o.title}>{o.title}</span>)}</div>
-      </Layer>
-      <Layer z={22} i={1} className="vg-card vg-seal">
-        <span className="vg-seal__mark" />
-        <strong>{p.facts[1].title}</strong><span>{p.facts[1].sub}</span>
-      </Layer>
-      <Layer z={14} i={2} className="vg-card vg-chip">
-        <strong>{p.facts[2].title}</strong><span>{p.facts[2].sub}</span>
-      </Layer>
-    </Stage>
+      </div>}
+      side={<div className="vg-seal"><span className="vg-seal__mark" /><strong>{p.facts[1].title}</strong><span>{p.facts[1].sub}</span></div>}
+    />
   );
 }
 

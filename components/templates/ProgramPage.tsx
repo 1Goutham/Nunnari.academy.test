@@ -2,7 +2,8 @@ import Icon from "@/components/Icon";
 import Faq from "@/components/ui/Faq";
 import BrochureButton from "@/components/ui/BrochureButton";
 import { Card, Cta, Head, PageHero } from "@/components/ui/Blocks";
-import { programs, roles, tools, type ProgramKey } from "@/lib/programs";
+import ToolGrid from "@/components/ui/Tools";
+import { programs, roles, type ProgramKey } from "@/lib/programs";
 
 /** One template for every programme page: hero → who it's for → (extras) → outcomes → FAQ → CTA. */
 export default function ProgramPage({ id }: { id: ProgramKey }) {
@@ -63,16 +64,12 @@ export default function ProgramPage({ id }: { id: ProgramKey }) {
         </div>
       </section>
 
-      {id === "regular" && (
-        <section className="section">
-          <div className="container">
-            <Head pill="Tools you'll use" title={<>Industry-standard <span className="grad">tools.</span></>} />
-            <div className="logos" style={{ "--n": 4 } as React.CSSProperties}>
-              {tools.map((t) => <div key={t} className="card logo-tile" style={{ minHeight: 96 }} data-reveal=""><span className="wm">{t}</span></div>)}
-            </div>
-          </div>
-        </section>
-      )}
+      <section className="section">
+        <div className="container">
+          <Head pill="Tools you'll use" title={<>The stack you will <span className="grad">build with.</span></>} />
+          <div data-reveal=""><ToolGrid keys={p.tools} /></div>
+        </div>
+      </section>
 
       <section className="section">
         <div className="container">

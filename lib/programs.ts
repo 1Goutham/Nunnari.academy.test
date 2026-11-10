@@ -16,6 +16,7 @@ type Program = {
   outcomes: { icon: IconName; title: string; text: string }[];
   faqCats: { key: string; label: string }[];
   faq: QA[];
+  tools: string[];          // keys of lib/toolIcons
 };
 
 /** All programme content in one place. Every programme page renders from this. */
@@ -49,39 +50,41 @@ export const programs: Record<ProgramKey, Program> = {
       { q: "What will I have at the end?", cats: ["program"], a: "Foundational AI skills, real projects, and a portfolio built with guided exercises." },
       { q: "How do I access the lessons?", cats: ["access"], a: "Online, through our learning platform." },
     ],
+    tools: ["python", "jupyter", "googlecolab", "claude", "googlegemini", "streamlit"],
   },
   regular: {
     key: "regular",
     num: "02",
     name: "Regular Programme",
-    short: "Beginners (L1)",
-    title: ["Build a strong foundation in", "AI & ML."],
-    lead: "A 12-week, hands-on programme for beginners, college students and early learners.",
+    short: "Beginners & career switchers (L1 & L2)",
+    title: ["Build a strong foundation in", "GenAI and Agentic AI."],
+    lead: "A 12-week, hands-on programme in GenAI and Agentic AI for beginners and career switchers.",
     art: "regular",
     facts: [
-      { icon: "user", title: "Beginners", sub: "Level 1 (L1)" },
+      { icon: "user", title: "Beginners & career switchers", sub: "L1 & L2" },
       { icon: "clock", title: "12 Weeks", sub: "Guided learning" },
       { icon: "laptop", title: "Live + hands-on", sub: "Online / Offline" },
     ],
     forWho: [
-      { icon: "cap", title: "College students", text: "Build core skills, work on real projects, and get industry-ready before you graduate." },
-      { icon: "briefcase", title: "Early professionals", text: "Upgrade your skills and make the move into AI and ML roles with guided support." },
+      { icon: "cap", title: "Beginners", text: "Start from the basics and build real GenAI and agentic AI projects, with guided support at every step." },
+      { icon: "briefcase", title: "Career switchers", text: "Move into GenAI and Agentic AI roles with hands-on projects and a portfolio that shows your skills." },
     ],
     outcomes: [
-      { icon: "book", title: "Learn", text: "Build a strong foundation in AI and ML with clear, structured lessons." },
+      { icon: "book", title: "Learn", text: "Build a strong foundation in GenAI and Agentic AI with clear, structured lessons." },
       { icon: "code", title: "Practice", text: "Apply every concept through hands-on exercises with industry tools." },
       { icon: "layers", title: "Build", text: "Create real-world projects and a portfolio that shows your skills." },
       { icon: "rocket", title: "Impact", text: "Gain industry readiness and access to career opportunities." },
     ],
     faqCats: [{ key: "program", label: "Programme" }, { key: "eligibility", label: "Eligibility" }, { key: "curriculum", label: "Curriculum" }],
     faq: [
-      { q: "Who should join the Regular Programme?", cats: ["program", "eligibility"], a: "Beginners, college students and early professionals who want real AI & ML skills and practical projects." },
-      { q: "Is it suitable for complete beginners?", cats: ["eligibility"], a: "Yes. It is built for beginners (L1) and starts with a strong foundation before moving to projects." },
+      { q: "Who should join the Regular Programme?", cats: ["program", "eligibility"], a: "Beginners and career switchers who want real GenAI and Agentic AI skills and practical projects." },
+      { q: "Is it suitable for complete beginners?", cats: ["eligibility"], a: "Yes. It is built for beginners and career switchers (L1 & L2) and starts with a strong foundation before moving to projects." },
       { q: "How long is the programme?", cats: ["program"], a: "12 weeks of guided, hands-on learning with live sessions, projects and mentorship." },
       { q: "Is it online or offline?", cats: ["program"], a: "Both. Talk to our team to find the batch that suits you." },
-      { q: "Which tools will I use?", cats: ["curriculum"], a: "Python, Pandas, NumPy, Scikit-learn, Matplotlib, Jupyter, VS Code and Git & GitHub." },
+      { q: "Which tools will I use?", cats: ["curriculum"], a: "Python, LangChain, LangGraph, CrewAI, Hugging Face, Ollama, Claude, Gemini, n8n, FastAPI, Docker and GitHub." },
       { q: "What will I build?", cats: ["curriculum"], a: "Real-world projects and a portfolio, from fundamentals to portfolio-ready work." },
     ],
+    tools: ["python", "langchain", "langgraph", "crewai", "huggingface", "ollama", "claude", "googlegemini", "n8n", "fastapi", "docker", "github"],
   },
   premium: {
     key: "premium",
@@ -112,13 +115,14 @@ export const programs: Record<ProgramKey, Program> = {
       { q: "How long is it?", cats: ["program"], a: "12 weeks." },
       { q: "How do I join?", cats: ["program"], a: "Talk to our team and we will connect you within 24 to 48 hours." },
     ],
+    tools: ["pytorch", "huggingface", "langgraph", "crewai", "claude", "mistralai", "ollama", "docker"],
   },
 };
 export const programList = [programs.recorded, programs.regular, programs.premium];
 
 /** Regular programme extras */
 export const roles = ["AI Engineer", "Machine Learning Engineer", "ML Scientist", "Generative AI Engineer", "MLOps Engineer", "Applied AI Engineer"];
-export const tools = ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Jupyter", "VS Code", "Git & GitHub"];
+
 
 /** 12-week Regular programme tracks (from the previous nunnari.academy course library). */
 export const tracks: { title: string; tag: string; icon: IconName; desc: string }[] = [

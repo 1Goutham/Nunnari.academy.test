@@ -11,6 +11,7 @@ export type Partner = {
   offers: { icon: IconName; title: string; text: string }[];
   logosTitle: [string, string];
   logos: { src?: string; name: string }[];
+  logoKind?: "wide";        // wide wordmarks (600x200) rather than square crests
   stats: [number, string, string][]; // value, suffix, label
   charts: "institutions" | "corporates";
   quotes: Quote[];
@@ -61,7 +62,20 @@ export const partners: Record<Partner["key"], Partner> = {
       { icon: "building", title: "Real business use cases", text: "Grounded in real business problems, so learning turns into results." },
     ],
     logosTitle: ["Partners in building", "AI-ready teams."],
-    logos: [{ name: "ZOHO" }, { name: "TATA" }, { name: "Infosys" }, { name: "HCL" }, { name: "accenture" }, { name: "wipro" }],
+    // the companies Nunnari Labs works with (from the Nunnari Labs site's client strip)
+    logos: [
+      { name: "Landcom", src: "/assets/clients/landcom.webp" },
+      { name: "ARB Corporation", src: "/assets/clients/arb.webp" },
+      { name: "Scaler", src: "/assets/clients/scaler.webp" },
+      { name: "iCliniq", src: "/assets/clients/icliniq.webp" },
+      { name: "Forge Innovation & Ventures", src: "/assets/clients/forge.webp" },
+      { name: "Saasant", src: "/assets/clients/saasant.webp" },
+      { name: "2B Found", src: "/assets/clients/2bfound.webp" },
+      { name: "Tristha Global", src: "/assets/clients/tristha.webp" },
+      { name: "Martin Group", src: "/assets/clients/martin-group.webp" },
+      { name: "HearSight", src: "/assets/clients/hearsight.webp" },
+    ],
+    logoKind: "wide",
     stats: [[5000, "+", "Professionals trained"], [100, "+", "Organisations partnered"], [200, "+", "Training sessions"], [95, "%", "Participant satisfaction"]],
     charts: "corporates",
     quotes: [

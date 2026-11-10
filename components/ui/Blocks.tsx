@@ -3,6 +3,7 @@ import Link from "next/link";
 import Icon from "@/components/Icon";
 import Split from "@/components/Split";
 import Art from "./Art";
+import WaveLines from "./WaveLines";
 
 /** Section heading: pill + title + optional lead (+ optional action on the right). Same on every page. */
 export function Head({ pill, title, lead, center, action, as = "h2" }: { pill?: string; title: ReactNode; lead?: ReactNode; center?: boolean; action?: ReactNode; as?: "h1" | "h2" }) {
@@ -61,6 +62,7 @@ export function Cta({ title, lead, actions, art = "community" }: { title: ReactN
     <section className="section">
       <div className="container">
         <div className="cta" data-reveal="">
+          <WaveLines count={8} tone="dark" flip />
           <div className="cta__copy">
             <h2 className="t-h2">{title}</h2>
             {lead && <p className="lead">{lead}</p>}

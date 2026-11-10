@@ -36,7 +36,7 @@ export default function HomePage() {
 
       <section className="section" id="programs">
         <div className="container">
-          <Head pill="Our programs" title={<>Learn AI at your own <span className="grad">pace and path.</span></>} action={<Link className="link" href="/programs">All programs <Icon name="arrow-ur" /></Link>} />
+          <Head pill="Our programs" title={<>From first steps <span className="grad">to leading AI.</span></>} action={<Link className="link" href="/programs">All programs <Icon name="arrow-ur" /></Link>} />
           <div data-reveal=""><ProgramsCatalog /></div>
         </div>
       </section>

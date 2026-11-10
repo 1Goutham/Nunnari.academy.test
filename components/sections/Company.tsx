@@ -1,4 +1,5 @@
 import Image from "next/image";
+import WaveLines from "@/components/ui/WaveLines";
 
 const facts = ["Founded in Coimbatore, 2020", "ISO/IEC 42001:2023 certified", "India & Australia"];
 
@@ -6,6 +7,7 @@ const facts = ["Founded in Coimbatore, 2020", "ISO/IEC 42001:2023 certified", "I
 export default function Company() {
   return (
     <section className="section section--band" id="company" aria-labelledby="company-title">
+      <WaveLines count={6} />
       <div className="container">
         <div className="company__top">
           <div className="company__copy">
@@ -20,7 +22,7 @@ export default function Company() {
 
         <div className="company__cards">
           <article className="card company__card" data-reveal="">
-            <div className="company__logo"><Image src="/assets/brand/nunnari-labs-ink.png" alt="Nunnari Labs" width={274} height={322} style={{ height: 52, width: "auto" }} /></div>
+            <div className="company__logo"><Image src="/assets/brand/nunnari-labs-horizontal.svg" alt="Nunnari Labs" width={345} height={116} style={{ height: 44, width: "auto" }} /></div>
             <div><h3>Nunnari Labs</h3><span className="company__where">Coimbatore, India</span></div>
             <ul className="company__list"><li>AI engineering company</li><li>ISO/IEC 42001 certified</li></ul>
           </article>

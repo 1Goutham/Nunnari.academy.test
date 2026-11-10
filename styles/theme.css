@@ -904,3 +904,89 @@ h1, h2, h3, h4 { color: var(--text); }
 @keyframes vg-week { 0% { background: var(--bg-2); color: var(--dim); } 4%, 70% { background: var(--text); color: #fff; } 80%, 100% { background: var(--bg-2); color: var(--dim); } }
 /* the who-we-are posters are drawn in a saturated violet: soften them into the palette */
 .story__img, .story__mobile-img img { filter: saturate(.6) contrast(1.02); }
+
+/* ==========================================================================
+   Hero: gradient wash, flowing lines, fact strip; bigger logo in the nav
+   ========================================================================== */
+.brand__logo { height: 46px; }
+@media (max-width: 1023px) { .brand__logo { height: 40px; } }
+.hero { overflow: hidden; }
+.hero__wash { position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(60% 70% at 85% 40%, rgb(216 211 232 / 55%), transparent 70%),
+    radial-gradient(45% 55% at 10% 90%, rgb(232 229 241 / 80%), transparent 70%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); }
+.hero__flow { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
+.hero::after { content: ""; display: block; position: absolute; inset: auto 0 0; height: 120px; z-index: -1; background: linear-gradient(180deg, transparent, var(--bg)); pointer-events: none; }
+.hero__facts { display: grid; grid-template-columns: repeat(3, auto); gap: 0; margin-top: 8px; padding-top: 22px; border-top: 1px solid var(--line-2); justify-content: start; }
+.hero__facts li { display: flex; gap: 10px; align-items: flex-start; padding-right: 26px; }
+.hero__facts li + li { padding-left: 26px; border-left: 1px solid var(--line-2); }
+.hero__facts .i { width: 20px; height: 20px; color: var(--brand); margin-top: 2px; }
+.hero__facts b { display: block; color: var(--ink); font-weight: 600; font-size: .98rem; line-height: 1.25; }
+.hero__facts span { font-size: .84rem; color: var(--dim); line-height: 1.3; }
+@media (max-width: 560px) {
+  .hero__facts { grid-template-columns: 1fr; gap: 12px; }
+  .hero__facts li, .hero__facts li + li { padding: 0; border: 0; }
+}
+
+/* ==========================================================================
+   Wave lines in bands, the closing band and the footer
+   ========================================================================== */
+.section--band, .site-footer, .cta { position: relative; isolation: isolate; overflow: hidden; }
+.waves { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.waves svg { position: absolute; left: 0; top: 50%; width: 200%; height: 70%; min-height: 260px; translate: 0 -50%; animation: waves-drift 60s linear infinite; will-change: transform; }
+.waves--flip svg { animation-direction: reverse; }
+.waves path { fill: none; stroke: rgb(98 91 137 / 14%); stroke-width: 1.2; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; transition: stroke-dashoffset 2.4s var(--ease); transition-delay: calc(var(--i) * 120ms); }
+.waves--dark path { stroke: rgb(216 211 232 / 16%); }
+.js .waves:not([data-in-view]) path { stroke-dashoffset: 1; }
+@keyframes waves-drift { to { transform: translateX(-50%); } }
+.site-footer .waves svg { top: 0; height: 160px; min-height: 0; translate: none; }
+
+/* ==========================================================================
+   Corporate client wordmarks
+   ========================================================================== */
+.logos > .logo-tile--wide { justify-items: center; align-content: center; padding: 20px 8px 0; }
+.logo-tile--wide img { width: 100%; max-width: 150px; height: auto; max-height: 50px; object-fit: contain; filter: none; mix-blend-mode: normal; opacity: .72; transition: opacity .3s var(--ease); }
+.logo-tile--wide:hover img { opacity: 1; filter: none; }
+
+/* ==========================================================================
+   Tools: logo tiles (programme pages)
+   ========================================================================== */
+.toolgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+.toolgrid__item { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); transition: border-color .3s var(--ease), transform .3s var(--ease); }
+.toolgrid__item:hover { border-color: var(--mist); transform: translateY(-2px); }
+.toolgrid__mark { display: grid; place-items: center; width: 44px; height: 44px; flex: none; border-radius: 12px; background: var(--surface-2); }
+.toolgrid__name { color: var(--ink); font-weight: 500; font-size: .95rem; line-height: 1.25; }
+
+/* ==========================================================================
+   Programme illustrations: an isometric, exploded stack with the programme's tools
+   ========================================================================== */
+.art--scene:has(.vg--iso) { background: radial-gradient(80% 80% at 50% 40%, #FFFFFF 0%, var(--bg-2) 100%); }
+.vg--iso .vg__scene { transform: none; }
+.iso__world { --gap: 4.2cqw; position: absolute; left: 50%; top: 62%; width: 52cqw; height: 42cqw; transform-style: preserve-3d;
+  transform: translate(-50%, -50%) rotateX(calc(54deg - var(--py, 0) * 5deg)) rotateZ(calc(-34deg + var(--px, 0) * 8deg)); }
+.art:hover .iso__world, .art:focus-within .iso__world { --gap: 6.2cqw; }
+.js .vg:not([data-seen]) .iso__world { --gap: 0cqw; }
+.iso__base { position: absolute; inset: 0; border-radius: 3.2cqw; transform-style: preserve-3d;
+  background: linear-gradient(135deg, #FFFFFF, var(--bg-2)), #fff;
+  background-image: linear-gradient(rgb(98 91 137 / 7%) 1px, transparent 1px), linear-gradient(90deg, rgb(98 91 137 / 7%) 1px, transparent 1px), linear-gradient(135deg, #FFFFFF, var(--bg-2));
+  background-size: 4cqw 4cqw, 4cqw 4cqw, auto;
+  box-shadow: 0 0 0 1px var(--mist), 1.2cqw 1.2cqw 0 #E5E1EF, 2.4cqw 2.4cqw 5cqw rgb(21 19 43 / 14%); }
+.iso__layer { position: absolute; transform-style: preserve-3d; transform: translateZ(calc(var(--h, 1) * var(--gap))); transition: transform .9s var(--ease), opacity .6s var(--ease); }
+.js .vg:not([data-seen]) .iso__layer { opacity: 0; }
+.iso__main { left: 6%; top: 8%; width: 62%; padding: 2cqw; box-shadow: -1.2cqw 1.6cqw 3cqw -1cqw rgb(21 19 43 / 22%); }
+.iso__side { left: 58%; top: 44%; width: 38%; box-shadow: -1.2cqw 1.6cqw 3cqw -1cqw rgb(21 19 43 / 22%); }
+.iso__main > *, .iso__side > * { position: static; width: auto; inset: auto; padding: 0; box-shadow: none; border: 0; background: none; }
+.iso__main .vg-player__screen { aspect-ratio: 16 / 8; }
+.iso__tool { width: 10.5cqw; height: 10.5cqw; }
+.iso__tool i { position: absolute; inset: 0; display: grid; place-items: center; border-radius: 2.4cqw; background: #fff; border: 1px solid var(--line); box-shadow: -.8cqw 1.2cqw 2.4cqw -.6cqw rgb(21 19 43 / 24%); transform-style: preserve-3d; }
+.iso__tool svg { width: 58%; height: 58%; }
+.vg[data-on] .iso__tool i { animation: iso-bob 5s var(--d, 0s) ease-in-out infinite; }
+@keyframes iso-bob { 50% { transform: translateZ(1.6cqw); } }
+.iso__side .vg-seal { text-align: center; }
+.iso__side .vg-seal__mark { width: 8cqw; }
+@media (prefers-reduced-motion: reduce) {
+  .iso__world { transform: translate(-50%, -50%) rotateX(54deg) rotateZ(-34deg) !important; }
+  .waves svg { animation: none; }
+  .js .waves:not([data-in-view]) path { stroke-dashoffset: 0; }
+}

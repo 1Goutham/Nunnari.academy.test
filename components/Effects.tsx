@@ -31,7 +31,7 @@ export default function Effects() {
       (es) => es.forEach((e) => { if (e.isIntersecting) { e.target.setAttribute("data-in-view", ""); reveal.unobserve(e.target); } }),
       { rootMargin: "0px 0px -8% 0px", threshold: 0.1 },
     );
-    all("[data-reveal], [data-split], [data-inview], [data-auto-reveal]").forEach((el) => reveal.observe(el));
+    all("[data-reveal], [data-split], [data-inview], [data-auto-reveal], .waves").forEach((el) => reveal.observe(el));
     off.push(() => reveal.disconnect());
 
     /* line-art and marquees only animate while on screen */
