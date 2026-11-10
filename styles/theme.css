@@ -1264,3 +1264,10 @@ h1, h2, h3, h4 { color: var(--text); }
 .page-hero .fact { align-items: flex-start; }
 .page-hero .fact .i { flex: none; margin-top: 2px; }
 @media (max-width: 560px) { .page-hero .facts { grid-template-columns: 1fr 1fr; } }
+
+/* company cards: the logo is the name, and links to the company's site */
+a.company__logo { justify-self: start; border-radius: 8px; transition: opacity .25s, transform .3s var(--ease); }
+a.company__logo:hover { opacity: .75; transform: translateY(-2px); }
+a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset: 6px; }
+.company__card { grid-template-rows: 56px auto 1fr; }
+.company__where { margin-top: 0; font-size: .95rem; color: var(--muted); }
