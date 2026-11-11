@@ -1400,3 +1400,19 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 /* Backed by: one rule per column (the top one); logo, place and points sit close together */
 .company__card { gap: 10px; grid-template-rows: 52px auto 1fr; }
 .company__list { border-top: 0; padding-top: 6px; gap: 8px; }
+/* bug fix: the art-panel entrance offset outranked the in-view reset, leaving panels 30px low and at 96% scale */
+.js .art[data-auto-reveal][data-in-view] { transform: none; }
+
+/* training-session gallery: one photo at a time, crossfade + slow push-in, progress bars (CSS only) */
+.gal__stage { -webkit-mask-image: none; mask-image: none; display: block; position: relative; border-radius: 14px; background: var(--ink); isolation: isolate; }
+.gal__slide { position: absolute; inset: 0; opacity: 0; animation: gal-slide calc(var(--n) * 5s) linear infinite both; animation-delay: calc(var(--i) * 5s); }
+.gal__slide img { width: 100%; height: 100%; object-fit: cover; display: block; animation: gal-push calc(var(--n) * 5s) linear infinite both; animation-delay: inherit; }
+.gal__stage::after { content: ""; position: absolute; inset: auto 0 0; height: 38%; z-index: 1; pointer-events: none; background: linear-gradient(180deg, transparent, rgb(14 10 38 / 55%)); }
+.gal__bars { position: absolute; left: 16px; right: 16px; bottom: 14px; z-index: 2; display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 6px; }
+.gal__bars i { position: relative; height: 3px; border-radius: 3px; overflow: hidden; background: rgb(255 255 255 / 28%); }
+.gal__bars i::after { content: ""; position: absolute; inset: 0; background: #fff; transform-origin: left; transform: scaleX(0); animation: gal-bar calc(var(--n) * 5s) linear infinite both; animation-delay: calc(var(--i) * 5s); }
+.gal:hover .gal__slide, .gal:hover .gal__slide img, .gal:hover .gal__bars i::after { animation-play-state: paused; }
+@keyframes gal-slide { 0% { opacity: 0; } 4% { opacity: 1; } 16.6% { opacity: 1; } 21% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes gal-push { 0% { transform: scale(1.08); } 21% { transform: scale(1); } 100% { transform: scale(1); } }
+@keyframes gal-bar { 0% { transform: scaleX(0); } 16.6% { transform: scaleX(1); } 16.7%, 100% { transform: scaleX(0); } }
+@media (prefers-reduced-motion: reduce) { .gal__slide, .gal__slide img, .gal__bars i::after { animation: none; } .gal__slide:first-child { opacity: 1; } }
