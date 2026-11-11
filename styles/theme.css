@@ -1417,3 +1417,30 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .panel__top { align-items: stretch; }
 .panel__top .art { align-self: center; }
 .linechart .grid line + line { stroke-dasharray: 3 5; opacity: .7; }
+
+/* ---------- impact board: one deep-violet panel, the chart on the left, session photos full-bleed on the right ---------- */
+.impact__board { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); margin-top: 28px; border-radius: var(--r-lg); overflow: hidden; isolation: isolate; min-height: 440px;
+  background: radial-gradient(80% 90% at 0% 0%, rgb(91 75 196 / 38%), transparent 60%), linear-gradient(160deg, #221A5C, #120E33 65%, #0E0A26); box-shadow: 0 30px 70px -40px rgb(43 32 112 / 60%); }
+.ib__chart { margin: 0; padding: clamp(24px, 3.2vw, 40px); display: grid; grid-template-rows: auto 1fr; gap: 18px; }
+.ib__head { display: grid; gap: 10px; }
+.ib__label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B3A9EA; }
+.ib__figure { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.ib__figure strong { font: 600 clamp(2.6rem, 4.6vw, 3.6rem)/1 var(--font-display); letter-spacing: -0.04em; color: #fff; font-variant-numeric: tabular-nums; }
+.ib__figure em { font-style: normal; font-size: .92rem; color: #C3BDE6; }
+.ib__chart svg { align-self: end; margin-top: 0; }
+.impact__board .linechart .grid line { stroke: rgb(221 214 248 / 14%); }
+.impact__board .linechart .line { stroke: #CFC7F4; stroke-width: 2.6; filter: drop-shadow(0 0 6px rgb(179 169 234 / 70%)); }
+.impact__board .linechart .pt { fill: #120E33; stroke: #CFC7F4; }
+.impact__board .linechart .val { fill: #fff; }
+.impact__board .linechart text { fill: #A49DD0; }
+.impact__board .gal { margin: 0; padding: 0; min-height: 0; display: block; border: 0; background: none; }
+.impact__board .gal__stage { height: 100%; min-height: 360px; border-radius: 0; }
+.impact__board .gal__stage::before { content: ""; position: absolute; inset: 0 0 auto; height: 45%; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgb(14 10 38 / 70%), transparent); }
+.impact__board .gal__stage::after { height: 30%; }
+.impact__board .gal__head { position: absolute; left: 24px; right: 24px; top: 22px; z-index: 2; }
+.impact__board .gal__head h3 { color: #fff; font-family: var(--font); font-size: 1.05rem; }
+.impact__board .gal__head p { color: #D6D1F2; margin-top: 4px; font-size: .86rem; }
+.impact__board .gal__bars { left: 24px; right: 24px; bottom: 20px; }
+@media (max-width: 900px) { .impact__board { grid-template-columns: 1fr; } .impact__board .gal__stage { min-height: 300px; } }
+.impact__board .gal { position: relative; }
+.impact__board .gal__head { z-index: 3; }

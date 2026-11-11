@@ -14,10 +14,13 @@ function LineChart() {
     d += ` C${(p1[0] + (p2[0] - p0[0]) * t).toFixed(1)} ${(p1[1] + (p2[1] - p0[1]) * t).toFixed(1)} ${(p2[0] - (p3[0] - p1[0]) * t).toFixed(1)} ${(p2[1] - (p3[1] - p1[1]) * t).toFixed(1)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
   }
   return (
-    <figure className="card chart-card linechart" data-inview="">
-      <h3>Training &amp; speaking engagements per year</h3>
+    <figure className="ib__chart linechart" data-inview="">
+      <figcaption className="ib__head">
+        <span className="ib__label">Training &amp; speaking engagements per year</span>
+        <span className="ib__figure"><strong data-count={data.at(-1)![1]}>{data.at(-1)![1]}</strong><em>in {data.at(-1)![0]}, up from {data[0][1]} in {data[0][0]}</em></span>
+      </figcaption>
       <svg viewBox="0 0 640 336" role="img" aria-label={data.map(([y, v]) => `${y}: ${v}`).join(", ")}>
-        <defs><linearGradient id="lc-grad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#7B6FD0" stopOpacity=".35" /><stop offset="1" stopColor="#7B6FD0" stopOpacity="0" /></linearGradient></defs>
+        <defs><linearGradient id="lc-grad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#9C90E6" stopOpacity=".45" /><stop offset="1" stopColor="#9C90E6" stopOpacity="0" /></linearGradient></defs>
         <g className="grid">{[0, 1, 2, 3].map((k) => <line key={k} x1="20" x2="620" y1={300 - k * 75} y2={300 - k * 75} />)}</g>
         <path className="area" d={`${d} L${pts.at(-1)![0]} 300 L${pts[0][0]} 300Z`} />
         <path className="line" pathLength={1} d={d} />
@@ -44,7 +47,7 @@ export default function Impact() {
           <div className="stat"><strong data-count="85" data-suffix="+">85+</strong><span>Universities &amp; colleges</span></div>
           <div className="stat"><strong data-count="25" data-suffix="+">25+</strong><span>Corporate &amp; government organisations</span></div>
         </div>
-        <div className="impact__split">
+        <div className="impact__board" data-reveal="">
           <LineChart />
           <EventGallery />
         </div>

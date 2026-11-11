@@ -16,7 +16,7 @@ const shots = [
  */
 export default function EventGallery() {
   return (
-    <figure className="card gal" data-reveal="" style={{ "--n": shots.length } as React.CSSProperties}>
+    <figure className="gal" style={{ "--n": shots.length } as React.CSSProperties}>
       <figcaption className="gal__head"><h3>From our training sessions</h3><p>Hands-on sessions and expert panels with our learners.</p></figcaption>
       <div className="gal__stage">
         {shots.map((s, i) => (
