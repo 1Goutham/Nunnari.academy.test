@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Icon, { type IconName } from "@/components/Icon";
+import ProgramFacts from "@/components/ui/ProgramFacts";
 import Art from "@/components/ui/Art";
 import { programList, type ProgramKey } from "@/lib/programs";
 
@@ -46,9 +47,7 @@ export default function ProgramsCatalog() {
               </div>
               <Art name={p.art} />
             </div>
-            <div className="facts-row" style={{ "--n": p.facts.length } as React.CSSProperties}>
-              {p.facts.map((f) => <div key={f.title}><b>{f.title}</b><span>{f.sub}</span></div>)}
-            </div>
+            <ProgramFacts facts={p.facts} />
             <div className="panel__cta">
               <Link className="btn btn--primary btn--lg" href={`/programs/${p.key}`}>View Programme Details <Icon name="arrow" className="i--arrow" /></Link>
             </div>

@@ -100,16 +100,16 @@ function Premium() {
   return (
     <Stage name="premium">
       <Layer z={6} i={0} className="vg-card vg-level">
-        <div className="vg-head"><strong>{p.facts[0].title}</strong><span>{p.facts[0].sub}</span></div>
+        <div className="vg-head"><strong>Advanced</strong><span>L3+</span></div>
         <div className="vg-level__meter"><span>L1</span><span>L2</span><span className="is-on">L3+</span></div>
         <div className="vg-level__rows">{p.outcomes.map((o) => <span key={o.title}>{o.title}</span>)}</div>
       </Layer>
       <Layer z={22} i={1} className="vg-card vg-seal">
         <span className="vg-seal__mark" />
-        <strong>{p.facts[1].title}</strong><span>{p.facts[1].sub}</span>
+        <strong>C-Suite</strong><span>Leadership</span>
       </Layer>
       <Layer z={14} i={2} className="vg-card vg-chip">
-        <strong>{p.facts[2].title}</strong><span>{p.facts[2].sub}</span>
+        <strong>{p.facts[1].title}</strong><span>{p.facts[1].sub}</span>
       </Layer>
     </Stage>
   );

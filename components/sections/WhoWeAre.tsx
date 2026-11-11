@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, type ReactNode } from "react";
 import Icon from "@/components/Icon";
 
-type Chapter = { id: string; label: string; title: ReactNode; text: string; img: string; alt: string; stats?: [number, string][]; link: { href: string; label: string } };
+type Chapter = { id: string; label: string; title: ReactNode; text: string; img: string; alt: string; stats?: [number, string][]; partners?: string[]; link: { href: string; label: string } };
 
 const chapters: Chapter[] = [
   {
@@ -29,6 +29,7 @@ const chapters: Chapter[] = [
     title: <>Real people. <span className="grad">Real progress.</span></>,
     text: "Our learners build projects, get placed, start ventures and work at leading companies.",
     stats: [[500, "Students trained"], [200, "Projects built"], [50, "Placements & internships"]],
+    partners: ["Government", "Indian Navy"],
     link: { href: "/partner/institutions", label: "Partner with us" },
   },
 ];
@@ -74,6 +75,7 @@ export default function WhoWeAre() {
               <h3 className="about-card__title">{c.title}</h3>
               <p className="about-card__text">{c.text}</p>
             </div>
+            {c.partners && <p className="about-card__partners"><span>Partners</span>{c.partners.map((n) => <b key={n}>{n}</b>)}</p>}
             {c.stats && (
               <div className="about-card__stats">
                 {c.stats.map(([n, l]) => <div key={l}><strong data-count={n} data-suffix="+">{n.toLocaleString("en-IN")}+</strong><span>{l}</span></div>)}

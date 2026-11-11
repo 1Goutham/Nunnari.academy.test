@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Icon from "@/components/Icon";
+import ProgramFacts from "@/components/ui/ProgramFacts";
 import Art from "@/components/ui/Art";
 import Faq from "@/components/ui/Faq";
 import TrackList from "@/components/sections/TrackList";
@@ -40,6 +41,7 @@ export default function ProgramsPage() {
                 <div className="event__top"><span className="tag">{p.short}</span><span className="num">{p.num}</span></div>
                 <h3>{p.name}</h3>
                 <p className="clamp3">{p.lead}</p>
+                <ProgramFacts facts={p.facts} compact />
                 <span className="link">View details <Icon name="arrow-ur" /></span>
               </div>
             </Link>

@@ -1281,3 +1281,24 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .page-hero--full .page-hero__copy { justify-items: center; text-align: center; margin-inline: auto; max-width: 860px; }
 .page-hero--full .lead { max-width: 56ch; margin-inline: auto; }
 .page-hero--full .actions { justify-content: center; }
+
+/* programme facts: who / how long / where, same icons on every programme card */
+.pfacts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.pfacts__item { display: flex; align-items: flex-start; gap: 10px; padding: 18px 14px 0 0; min-width: 0; }
+.pfacts__item + .pfacts__item { padding-left: 16px; border-left: 1px solid var(--line); }
+.pfacts__item .i { flex: none; width: 20px; height: 20px; margin-top: 1px; color: var(--brand); }
+.pfacts__item b { display: block; color: var(--ink); font-weight: 500; font-size: .92rem; line-height: 1.3; }
+.pfacts__item span { display: block; margin-top: 2px; font-size: .8rem; color: var(--dim); }
+.pfacts--compact { grid-template-columns: 1fr; border-top: 0; gap: 10px; margin-top: 4px; }
+.pfacts--compact .pfacts__item, .pfacts--compact .pfacts__item + .pfacts__item { padding: 0; border: 0; align-items: center; }
+.pfacts--compact .pfacts__item div { display: flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; }
+.pfacts--compact .pfacts__item span { margin: 0; }
+@media (max-width: 560px) { .pfacts { grid-template-columns: 1fr; } .pfacts__item + .pfacts__item { padding-left: 0; border-left: 0; } .pfacts__item { padding-top: 12px; } }
+.brand__logo { height: 54px; }
+@media (max-width: 1023px) { .brand__logo { height: 44px; } }
+.about-card__partners { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .86rem; }
+.about-card__partners span { color: var(--dim); margin-right: 4px; }
+.about-card__partners b { padding: 5px 12px; border-radius: 999px; background: var(--soft); color: var(--ink); font-weight: 500; }
+/* programme cards: the description takes the slack, so facts and link line up across cards */
+.event__body:has(.pfacts) { grid-template-rows: auto auto 1fr auto auto; }
+.event__body:has(.pfacts) .pfacts { padding-top: 14px; border-top: 1px solid var(--line); }
