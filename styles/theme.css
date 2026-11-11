@@ -42,7 +42,7 @@
   --container: 1200px;
   --gutter: clamp(18px, 4vw, 40px);
   --header-h: 76px;
-  --section-y: clamp(56px, 7vw, 92px);
+  --section-y: clamp(80px, 10vw, 128px);
   color-scheme: light;
 }
 
@@ -1377,11 +1377,6 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .site-footer { border-top: 0; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: #fff; }
-/* tighter rhythm: less empty space between and inside sections */
-.head { margin-bottom: clamp(28px, 3.4vw, 44px); }
-.page-hero { padding: calc(var(--header-h) + clamp(36px, 5vw, 64px)) 0 clamp(44px, 5.5vw, 72px); }
-.page-hero--full { padding-bottom: clamp(44px, 5vw, 72px); }
-.site-footer { padding-top: clamp(48px, 6vw, 72px); }
 .section--dark, .site-footer { --rule-strong: rgb(221 214 248 / 34%); }
 .gal { min-height: 0; }
 .gal__stage { height: clamp(300px, 27vw, 360px); }
@@ -1416,3 +1411,9 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 @keyframes gal-push { 0% { transform: scale(1.08); } 21% { transform: scale(1); } 100% { transform: scale(1); } }
 @keyframes gal-bar { 0% { transform: scaleX(0); } 16.6% { transform: scaleX(1); } 16.7%, 100% { transform: scaleX(0); } }
 @media (prefers-reduced-motion: reduce) { .gal__slide, .gal__slide img, .gal__bars i::after { animation: none; } .gal__slide:first-child { opacity: 1; } }
+/* catalogue card: facts and the action sit in the copy column, beside the illustration (no empty block) */
+.panel__copy .pfacts { padding-top: 16px; border-top: 1px solid var(--line); margin-top: 4px; }
+.panel__copy .panel__cta { justify-content: flex-start; margin-top: 6px; }
+.panel__top { align-items: stretch; }
+.panel__top .art { align-self: center; }
+.linechart .grid line + line { stroke-dasharray: 3 5; opacity: .7; }

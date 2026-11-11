@@ -44,12 +44,12 @@ export default function ProgramsCatalog() {
                 <span className="tag">{p.name}</span>
                 <h3 className="t-h2" style={{ fontSize: "clamp(1.8rem,3vw,2.4rem)" }}><span className="t-2l">{p.title[0]}<br /><span className="grad">{p.title[1]}</span></span></h3>
                 <p>{p.lead}</p>
+                <ProgramFacts facts={p.facts} compact />
+                <div className="panel__cta">
+                  <Link className="btn btn--primary btn--lg" href={`/programs/${p.key}`}>View Programme Details <Icon name="arrow" className="i--arrow" /></Link>
+                </div>
               </div>
               <Art name={p.art} />
-            </div>
-            <ProgramFacts facts={p.facts} />
-            <div className="panel__cta">
-              <Link className="btn btn--primary btn--lg" href={`/programs/${p.key}`}>View Programme Details <Icon name="arrow" className="i--arrow" /></Link>
             </div>
           </section>
         ))}

@@ -5,7 +5,7 @@ const data: [number, number][] = [[2019, 42], [2020, 58], [2021, 64], [2022, 71]
 
 function LineChart() {
   const X = (i: number) => 40 + (i * 560) / (data.length - 1);
-  const Y = (v: number) => 200 - (v / 170) * 150;
+  const Y = (v: number) => 300 - (v / 170) * 250;
   const pts = data.map(([, v], i) => [X(i), Y(v)]);
   let d = `M${pts[0][0]} ${pts[0][1]}`;
   for (let i = 0; i < pts.length - 1; i++) {
@@ -16,16 +16,16 @@ function LineChart() {
   return (
     <figure className="card chart-card linechart" data-inview="">
       <h3>Training &amp; speaking engagements per year</h3>
-      <svg viewBox="0 0 640 236" role="img" aria-label={data.map(([y, v]) => `${y}: ${v}`).join(", ")}>
+      <svg viewBox="0 0 640 336" role="img" aria-label={data.map(([y, v]) => `${y}: ${v}`).join(", ")}>
         <defs><linearGradient id="lc-grad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#7B6FD0" stopOpacity=".35" /><stop offset="1" stopColor="#7B6FD0" stopOpacity="0" /></linearGradient></defs>
-        <g className="grid"><line x1="20" x2="620" y1="200" y2="200" /></g>
-        <path className="area" d={`${d} L${pts.at(-1)![0]} 200 L${pts[0][0]} 200Z`} />
+        <g className="grid">{[0, 1, 2, 3].map((k) => <line key={k} x1="20" x2="620" y1={300 - k * 75} y2={300 - k * 75} />)}</g>
+        <path className="area" d={`${d} L${pts.at(-1)![0]} 300 L${pts[0][0]} 300Z`} />
         <path className="line" pathLength={1} d={d} />
         {data.map(([y, v], k) => (
           <g key={y} style={{ "--k": k } as React.CSSProperties}>
             <circle className="pt" cx={pts[k][0]} cy={pts[k][1]} r={k === data.length - 1 ? 6 : 4.5} style={{ "--k": k } as React.CSSProperties} />
             <text className="val" x={pts[k][0]} y={pts[k][1] - 14} style={{ "--k": k } as React.CSSProperties}>{v}</text>
-            <text x={pts[k][0]} y={224} textAnchor="middle">{y}</text>
+            <text x={pts[k][0]} y={326} textAnchor="middle">{y}</text>
           </g>
         ))}
       </svg>
