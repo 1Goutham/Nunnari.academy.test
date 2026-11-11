@@ -1394,3 +1394,6 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
   --ink: #120E33; --text: #1E1650; --muted: #565078; --dim: #6A6490; --brand: #5B4BC4; --brand-hi: #4A3BAF; --lilac: #5B4BC4; --lilac-2: #7B6FD0;
 }
 .section--dark .hub__core strong { color: #fff; }
+/* Backed by: open columns on the dark band, no box behind the content */
+.section--dark .company__card { background: none; box-shadow: none; padding-left: 0; padding-right: 0; }
+.section--dark .company__card:hover { background: none; }

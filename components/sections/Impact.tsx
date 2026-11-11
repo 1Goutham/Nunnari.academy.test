@@ -1,7 +1,5 @@
 import { Head } from "@/components/ui/Blocks";
 import EventGallery from "@/components/ui/EventGallery";
-import LogoMarquee from "@/components/ui/LogoMarquee";
-import { partners } from "@/lib/partners";
 
 const data: [number, number][] = [[2019, 42], [2020, 58], [2021, 64], [2022, 71], [2023, 68], [2024, 96], [2025, 112], [2026, 158]];
 
@@ -49,10 +47,6 @@ export default function Impact() {
         <div className="impact__split">
           <LineChart />
           <EventGallery />
-        </div>
-        <div className="impact__logos" data-reveal="">
-          <p className="impact__logos-label">Institutions we work with</p>
-          <LogoMarquee logos={partners.institutions.logos} />
         </div>
       </div>
     </section>
