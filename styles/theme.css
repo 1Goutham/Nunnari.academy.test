@@ -1397,3 +1397,6 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 /* Backed by: open columns on the dark band, no box behind the content */
 .section--dark .company__card { background: none; box-shadow: none; padding-left: 0; padding-right: 0; }
 .section--dark .company__card:hover { background: none; }
+/* Backed by: one rule per column (the top one); logo, place and points sit close together */
+.company__card { gap: 10px; grid-template-rows: 52px auto 1fr; }
+.company__list { border-top: 0; padding-top: 6px; gap: 8px; }
