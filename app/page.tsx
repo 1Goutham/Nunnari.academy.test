@@ -12,7 +12,7 @@ import { Cta, Head } from "@/components/ui/Blocks";
 import { getWorkshops } from "@/lib/workshops";
 
 export const metadata: Metadata = {
-  title: { absolute: "Nunnari Academy — Learn AI. Create What Doesn’t Exist Yet." },
+  title: { absolute: "Nunnari Academy — Your School of AI for the Skills of Tomorrow" },
   description: "Practical, hands-on AI programs in English and Tamil. Build real skills, create real projects, and grow with a Pioneering AI community.",
   alternates: { canonical: "/" },
 };

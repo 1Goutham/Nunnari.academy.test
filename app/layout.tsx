@@ -11,7 +11,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: "Nunnari Academy — Learn AI. Create What Doesn’t Exist Yet.", template: "%s | Nunnari Academy" },
+  title: { default: "Nunnari Academy — Your School of AI for the Skills of Tomorrow", template: "%s | Nunnari Academy" },
   description: site.description,
   openGraph: { type: "website", siteName: site.name, locale: "en_IN" },
   twitter: { card: "summary_large_image", site: "@NunnariLabs" },

@@ -1444,3 +1444,11 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 @media (max-width: 900px) { .impact__board { grid-template-columns: 1fr; } .impact__board .gal__stage { min-height: 300px; } }
 .impact__board .gal { position: relative; }
 .impact__board .gal__head { z-index: 3; }
+
+/* Why section: a larger heading, larger point titles and icons, smaller descriptions */
+#why .head .t-h2 { font-size: clamp(2.4rem, 4.8vw, 3.8rem); }
+.why .card h3 { font-size: 1.32rem; line-height: 1.25; }
+.why .card > .ico .i { width: 28px; height: 28px; }
+.why.grid > .card > .ico { transform: translateY(5px); }
+.why .card p { font-size: .88rem; }
+.why.grid > .card { column-gap: 14px; }
