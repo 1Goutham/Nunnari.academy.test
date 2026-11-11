@@ -56,7 +56,7 @@ export default function ExplorePage() {
         </div>
       </section>
 
-      <section className="section" id="testimonials" style={{ overflow: "hidden" }}>
+      <section className="section section--dark" id="testimonials" style={{ overflow: "hidden" }}>
         <div className="container">
           <Head pill="Testimonials" title={<>Learners who found their <span className="grad">next step.</span></>} />
         </div>

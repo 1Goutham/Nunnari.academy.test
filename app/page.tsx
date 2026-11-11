@@ -41,7 +41,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" id="events">
+      <section className="section section--dark" id="events">
         <div className="container">
           <Head pill="Workshops & events" title={<>Where opportunity <span className="grad">evolves.</span></>} action={<Link className="link" href="/explore">View all events <Icon name="arrow-ur" /></Link>} />
           <div data-reveal=""><WorkshopCarousel items={workshops} /></div>

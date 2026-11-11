@@ -24,7 +24,7 @@ export const nav: NavItem[] = [
     label: "Programs",
     key: "programs",
     items: [
-      { href: "/programs/recorded", title: "Recorded Programs", sub: "K12 & College Students", icon: "play" },
+      { href: "/programs/recorded", title: "Self-paced Programs", sub: "K12 & College Students", icon: "play" },
       { href: "/programs/regular", title: "Regular Programs", sub: "Beginners & career switchers (L1 & L2)", icon: "users" },
       { href: "/programs/premium", title: "Premium Programs", sub: "Advanced (L3+) & C-Suite", icon: "crown" },
     ],

@@ -42,7 +42,7 @@ export default function ProgramPage({ id }: { id: ProgramKey }) {
         </div>
       </section>
 
-      <section className="section section--band">
+      <section className="section section--dark">
         <div className="container split split--illus split--rev">
           <div data-reveal=""><SkillsHub core={p.skills.core} chips={p.skills.chips} /></div>
           <div>

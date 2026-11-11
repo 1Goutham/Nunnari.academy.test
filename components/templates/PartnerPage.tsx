@@ -1,4 +1,5 @@
 import Image from "next/image";
+import LogoMarquee from "@/components/ui/LogoMarquee";
 import Icon from "@/components/Icon";
 import { Card, Cta, Head, PageHero } from "@/components/ui/Blocks";
 import { partners, type Partner } from "@/lib/partners";
@@ -56,17 +57,19 @@ export default function PartnerPage({ id }: { id: Partner["key"] }) {
       <section className="section">
         <div className="container">
           <Head pill="Our partners" title={<>{p.logosTitle[0]} <span className="grad">{p.logosTitle[1]}</span></>} />
+          {p.logoKind === "wide" ? (
           <div className="logos" style={{ "--n": p.logos.length > 5 ? 5 : p.logos.length } as React.CSSProperties}>
-            {p.logos.map((l, i) => (
-              <div key={l.name} className={`card logo-tile${p.logoKind === "wide" ? " logo-tile--wide" : ""}`} data-reveal="" style={{ "--d": `${i * 0.05}s`, minHeight: p.logoKind === "wide" ? 96 : l.src ? 180 : 110 } as React.CSSProperties}>
-                {l.src
-                  ? p.logoKind === "wide"
-                    ? <Image src={l.src} alt={l.name} width={600} height={200} />
-                    : <><Image src={l.src} alt={l.name} width={160} height={160} /><span>{l.name}</span></>
-                  : <span className="wm">{l.name}</span>}
-              </div>
-            ))}
-          </div>
+              {p.logos.map((l, i) => (
+                <div key={l.name} className={`card logo-tile${p.logoKind === "wide" ? " logo-tile--wide" : ""}`} data-reveal="" style={{ "--d": `${i * 0.05}s`, minHeight: p.logoKind === "wide" ? 96 : l.src ? 180 : 110 } as React.CSSProperties}>
+                  {l.src
+                    ? p.logoKind === "wide"
+                      ? <Image src={l.src} alt={l.name} width={600} height={200} />
+                      : <><Image src={l.src} alt={l.name} width={160} height={160} /><span>{l.name}</span></>
+                    : <span className="wm">{l.name}</span>}
+                </div>
+              ))}
+            </div>
+          ) : <div data-reveal=""><LogoMarquee logos={p.logos} /></div>}
         </div>
       </section>
 
@@ -80,7 +83,7 @@ export default function PartnerPage({ id }: { id: Partner["key"] }) {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--dark">
         <div className="container">
           <Head pill="Partner voices" title={<>What our partners <span className="grad">say.</span></>} />
           <div className="grid grid--3">

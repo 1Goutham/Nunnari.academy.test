@@ -10,7 +10,7 @@ export type Partner = {
   art: string;
   offers: { icon: IconName; title: string; text: string }[];
   logosTitle: [string, string];
-  logos: { src?: string; name: string }[];
+  logos: { src?: string; name: string; short?: string }[];
   logoKind?: "wide";        // wide wordmarks (600x200) rather than square crests
   stats: [number, string, string][]; // value, suffix, label
   charts: "institutions" | "corporates";
@@ -33,6 +33,7 @@ export const partners: Record<Partner["key"], Partner> = {
     ],
     logosTitle: ["Trusted by", "leading institutions."],
     logos: [
+      { name: "Coimbatore Institute of Technology", short: "CIT" },
       { src: "/assets/partners/sri-krishna-institutions-ink.png", name: "Sri Krishna Institutions" },
       { src: "/assets/partners/sns-college-of-engineering-ink.png", name: "SNS College of Engineering" },
       { src: "/assets/partners/dr-ngp-institute-of-technology-ink.png", name: "Dr. N.G.P. Institute of Technology" },
@@ -66,14 +67,8 @@ export const partners: Record<Partner["key"], Partner> = {
     logos: [
       { name: "Landcom", src: "/assets/clients/landcom.webp" },
       { name: "ARB Corporation", src: "/assets/clients/arb.webp" },
-      { name: "Scaler", src: "/assets/clients/scaler.webp" },
-      { name: "iCliniq", src: "/assets/clients/icliniq.webp" },
-      { name: "Forge Innovation & Ventures", src: "/assets/clients/forge.webp" },
-      { name: "Saasant", src: "/assets/clients/saasant.webp" },
-      { name: "2B Found", src: "/assets/clients/2bfound.webp" },
-      { name: "Tristha Global", src: "/assets/clients/tristha.webp" },
       { name: "Martin Group", src: "/assets/clients/martin-group.webp" },
-      { name: "HearSight", src: "/assets/clients/hearsight.webp" },
+      { name: "Forge Innovation & Ventures", src: "/assets/clients/forge.webp" },
     ],
     logoKind: "wide",
     stats: [[5000, "+", "Professionals trained"], [100, "+", "Organisations partnered"], [200, "+", "Training sessions"], [95, "%", "Participant satisfaction"]],

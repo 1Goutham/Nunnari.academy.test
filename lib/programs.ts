@@ -26,7 +26,7 @@ type Program = {
 const FAQ_CATS = [{ key: "program", label: "Programme" }, { key: "eligibility", label: "Eligibility" }, { key: "certificate", label: "Certificate" }];
 
 const faqFacts: Record<ProgramKey, { name: string; who: string; prior: string; mode: string }> = {
-  recorded: { name: "Recorded Programme", who: "K12 and college students who are new to AI.", prior: "No. It is built for learners who are completely new to AI.", mode: "Online, as recorded lessons you can follow at your own pace." },
+  recorded: { name: "Self-paced Programme", who: "K12 and college students who are new to AI.", prior: "No. It is built for learners who are completely new to AI.", mode: "Online, as recorded lessons you can follow at your own pace." },
   regular: { name: "Regular Programme", who: "Beginners and career switchers (L1 & L2) who want real GenAI and Agentic AI skills and practical projects.", prior: "No. It is built for beginners and career switchers and starts with a strong foundation before moving to projects.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
   premium: { name: "Premium Programme", who: "Advanced learners (L3+) and the C-Suite.", prior: "Yes. It is built for advanced learners (L3+) and leadership teams, with sessions led by industry experts and board-level leaders.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
 };
@@ -60,7 +60,7 @@ export const programs: Record<ProgramKey, Program> = {
   recorded: {
     key: "recorded",
     num: "01",
-    name: "Recorded Programme",
+    name: "Self-paced Programme",
     short: "K12 & college students",
     title: ["Learn AI at your", "own pace."],
     lead: "Affordable, flexible, self-paced AI learning for K12 and college students who are new to AI.",

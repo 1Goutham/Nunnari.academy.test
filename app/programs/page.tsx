@@ -9,14 +9,14 @@ import { Cta, Head, PageHero } from "@/components/ui/Blocks";
 import { programList } from "@/lib/programs";
 
 export const metadata: Metadata = {
-  title: "Programs — Recorded, Regular & Premium",
-  description: "Three 12-week AI programmes: Recorded for K12 & college students, Regular for beginners and career switchers (L1 & L2), Premium for advanced learners (L3+) and the C-Suite.",
+  title: "Programs — Self-paced, Regular & Premium",
+  description: "Three 12-week AI programmes: Self-paced for K12 & college students, Regular for beginners and career switchers (L1 & L2), Premium for advanced learners (L3+) and the C-Suite.",
   alternates: { canonical: "/programs" },
 };
 
 const faqCats = [{ key: "choose", label: "Choosing" }, { key: "enrol", label: "Enrolling" }];
 const faq = [
-  { q: "Which programme is right for me?", cats: ["choose"], a: "Recorded is for K12 and college students, Regular for beginners and career switchers (L1 & L2), and Premium for advanced learners (L3+) and the C-Suite." },
+  { q: "Which programme is right for me?", cats: ["choose"], a: "Self-paced is for K12 and college students, Regular for beginners and career switchers (L1 & L2), and Premium for advanced learners (L3+) and the C-Suite." },
   { q: "How long are the programmes?", cats: ["choose"], a: "All three programmes are 12 weeks." },
   { q: "Which languages are the classes in?", cats: ["choose"], a: "English and Tamil." },
   { q: "How do I enroll?", cats: ["enrol"], a: "Choose a programme and click Enroll Now, or talk to our team. We reach out within 24 to 48 hours." },

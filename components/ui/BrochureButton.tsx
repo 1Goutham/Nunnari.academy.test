@@ -1,7 +1,7 @@
 import Icon from "@/components/Icon";
 import { brochures } from "@/lib/programs";
 
-const names = { recorded: "Recorded Programme", regular: "Regular Programme", premium: "Premium Programme" };
+const names = { recorded: "Self-paced Programme", regular: "Regular Programme", premium: "Premium Programme" };
 
 /** "Download Brochure": direct PDF download when available, otherwise asks for details via the enquiry form. */
 export default function BrochureButton({ program, className = "btn btn--ghost btn--lg" }: { program: keyof typeof brochures; className?: string }) {

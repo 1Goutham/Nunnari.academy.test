@@ -49,7 +49,7 @@ export default function IconSprite() {
         <path d="M12 2c.6 4.8 2.2 6.4 10 10-7.8 3.6-9.4 5.2-10 10-.6-4.8-2.2-6.4-10-10 7.8-3.6 9.4-5.2 10-10z" />
       </symbol>
       <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6" /></symbol>
-      <symbol id="i-lang" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6" /></symbol>
+      <symbol id="i-lang" viewBox="0 0 24 24"><rect x="1.5" y="1.5" width="13.5" height="13.5" rx="3.2" /><path d="M15 9h4.2a3.3 3.3 0 0 1 3.3 3.3v6.9a3.3 3.3 0 0 1-3.3 3.3h-6.9A3.3 3.3 0 0 1 9 19.2V15" /><text x="8.25" y="11.4" textAnchor="middle" fontSize="7.6" fontWeight="700" fill="currentColor" stroke="none" fontFamily="Noto Sans Tamil, Latha, Nirmala UI, sans-serif">அ</text><text x="15.75" y="19.6" textAnchor="middle" fontSize="7.4" fontWeight="700" fill="currentColor" stroke="none" fontFamily="Inter, sans-serif">A</text></symbol>
       <symbol id="i-folder" viewBox="0 0 24 24">
         <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.7-.9l-.8-1.2A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z" />
       </symbol>
