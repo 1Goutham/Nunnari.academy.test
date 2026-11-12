@@ -1488,3 +1488,4 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .past__row:hover .past__meta { color: var(--brand); }
 .past__row:hover .past__meta .i { opacity: 1; transform: none; }
 @media (max-width: 760px) { .past__row { grid-template-columns: 1fr; gap: 4px; } .past__meta { white-space: normal; } }
+.lmq__logo { width: 52px; height: 44px; }
