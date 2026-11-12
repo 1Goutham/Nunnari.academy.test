@@ -12,7 +12,7 @@ export default function WhyCards() {
   return (
     <section className="section" id="why">
       <div className="container">
-        <Head pill="Why Nunnari Academy" title={<>Learn. Build. Grow. With <span className="grad">real support.</span></>} />
+        <Head title={<>Why <span className="grad">Nunnari Academy?</span></>} lead="Learn. Build. Grow. With real support." />
         <div className="grid grid--4 why">
           {items.map((c, i) => <Card key={c.title} icon={c.icon} title={c.title} text={c.text} k={i} />)}
         </div>

@@ -1446,9 +1446,12 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .impact__board .gal__head { z-index: 3; }
 
 /* Why section: a larger heading, larger point titles and icons, smaller descriptions */
-#why .head .t-h2 { font-size: clamp(2.4rem, 4.8vw, 3.8rem); }
 .why .card h3 { font-size: 1.32rem; line-height: 1.25; }
 .why .card > .ico .i { width: 28px; height: 28px; }
 .why.grid > .card > .ico { transform: translateY(5px); }
 .why .card p { font-size: .88rem; }
 .why.grid > .card { column-gap: 14px; }
+
+/* Why heading: "Why Nunnari Academy?" large and bold, the tagline small underneath */
+#why .head .t-h2 { font-size: clamp(2.6rem, 5.6vw, 4.4rem); font-weight: 700; line-height: 1.02; letter-spacing: -0.045em; }
+#why .head .lead { font-size: 1.05rem; color: var(--muted); }
