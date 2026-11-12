@@ -1,23 +1,22 @@
 import Image from "next/image";
 
-// moments from our training sessions (the very wide strip photo is left out: it cannot fill the frame)
+// moments from our events: launches, summits, talks and community meetups
 const shots = [
-  { src: "/assets/img/events/ev2.webp", w: 656, h: 264, alt: "A full training session in progress" },
-  { src: "/assets/img/events/ev6.webp", w: 454, h: 210, alt: "A trainer leading a session" },
-  { src: "/assets/img/events/ev3.webp", w: 656, h: 264, alt: "An expert panel at a session" },
-  { src: "/assets/img/events/ev1.webp", w: 900, h: 269, alt: "Learners and trainers together after a session" },
-  { src: "/assets/img/events/ev7.webp", w: 474, h: 210, alt: "Panellists answering questions" },
-  { src: "/assets/img/events/ev5.webp", w: 374, h: 210, alt: "A speaker during a session" },
+  { src: "/assets/img/events/nvidia-summit.webp", w: 1400, h: 1050, alt: "Our team at the NVIDIA AI Summit" },
+  { src: "/assets/img/events/devfest-talk.webp", w: 1400, h: 933, alt: "A talk on open models at DevFest" },
+  { src: "/assets/img/events/tensorflow-meetup.webp", w: 1400, h: 1050, alt: "TensorFlow User Group Coimbatore meetup" },
+  { src: "/assets/img/events/forge-launch.webp", w: 1400, h: 933, alt: "Students at a program launch at Forge Factory, Coimbatore" },
+  { src: "/assets/img/events/devfest-team.webp", w: 1400, h: 1050, alt: "The DevFest 2023 Coimbatore volunteer team" },
 ];
 
 /**
- * Training sessions: one photo at a time, crossfading with a slow push-in, and a thin progress bar per photo.
+ * Events: one photo at a time, crossfading with a slow push-in, and a thin progress bar per photo.
  * CSS only (each slide runs the same loop, offset by its index); pauses on hover, still under reduced motion.
  */
 export default function EventGallery() {
   return (
     <figure className="gal" style={{ "--n": shots.length } as React.CSSProperties}>
-      <figcaption className="gal__head"><h3>From our training sessions</h3><p>Hands-on sessions and expert panels with our learners.</p></figcaption>
+      <figcaption className="gal__head"><h3>From our events</h3><p>Summits, talks and meetups with our community.</p></figcaption>
       <div className="gal__stage">
         {shots.map((s, i) => (
           <div key={s.src} className="gal__slide" style={{ "--i": i } as React.CSSProperties}>

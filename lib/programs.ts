@@ -23,12 +23,12 @@ type Program = {
 };
 
 /* ---------- FAQ: the same three sections and the same questions on every programme ---------- */
-const FAQ_CATS = [{ key: "program", label: "Programme" }, { key: "eligibility", label: "Eligibility" }, { key: "certificate", label: "Certificate" }];
+const FAQ_CATS = [{ key: "program", label: "Program" }, { key: "eligibility", label: "Eligibility" }, { key: "certificate", label: "Certificate" }];
 
 const faqFacts: Record<ProgramKey, { name: string; who: string; prior: string; mode: string }> = {
-  recorded: { name: "Self-paced Programme", who: "K12 and college students who are new to AI.", prior: "No. It is built for learners who are completely new to AI.", mode: "Online, as recorded lessons you can follow at your own pace." },
-  regular: { name: "Regular Programme", who: "Beginners and career switchers (L1 & L2) who want real GenAI and Agentic AI skills and practical projects.", prior: "No. It is built for beginners and career switchers and starts with a strong foundation before moving to projects.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
-  premium: { name: "Premium Programme", who: "Advanced learners (L3+) and the C-Suite.", prior: "Yes. It is built for advanced learners (L3+) and leadership teams, with sessions led by industry experts and board-level leaders.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
+  recorded: { name: "AI Essentials", who: "School and college students who are new to AI.", prior: "No. It is built for learners who are completely new to AI.", mode: "Online, as recorded sessions you can follow at your own pace." },
+  regular: { name: "Applied AI", who: "Beginners, aspiring professionals and career switchers who want practical, industry-relevant skills in Generative AI and Agentic AI.", prior: "No. It starts with a strong foundation in AI before moving on to building with it.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
+  premium: { name: "Advanced AI & Leadership", who: "Experienced professionals, technical leaders and C-suite executives.", prior: "Yes. It is built for experienced professionals and technical leaders, with sessions led by senior engineers, technology leaders and industry experts.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
 };
 
 const toolNames = (keys: string[]) => keys.map((k) => toolIcons[k]?.title ?? k).join(", ");
@@ -36,14 +36,14 @@ const toolNames = (keys: string[]) => keys.map((k) => toolIcons[k]?.title ?? k).
 function faqFor(key: ProgramKey): QA[] {
   const f = faqFacts[key];
   return [
-    { q: "How long is the programme?", cats: ["program"], a: "12 weeks." },
+    { q: "How long is the program?", cats: ["program"], a: "12 weeks." },
     { q: "Is it online or offline?", cats: ["program"], a: f.mode },
     { q: "Which packages and tools will I use?", cats: ["program"], a: `Packages: ${toolNames(stack[key].packages)}. Tools: ${toolNames(stack[key].tools)}.` },
     { q: "Do I get access to the learning platform?", cats: ["program"], a: "Yes, one year of access to our LMS with all course resources and updates." },
-    { q: `Who is the ${f.name} for?`, cats: ["eligibility"], a: f.who },
+    { q: `Who is ${f.name} for?`, cats: ["eligibility"], a: f.who },
     { q: "Do I need prior experience in AI?", cats: ["eligibility"], a: f.prior },
     { q: "How do I enroll?", cats: ["eligibility"], a: "Click Enroll Now or talk to our team. We reach out within 24 to 48 hours." },
-    { q: "Will I get a certificate?", cats: ["certificate"], a: "Yes. You receive a completion certificate from the Nunnari Academy team when you finish the programme." },
+    { q: "Will I get a certificate?", cats: ["certificate"], a: "Yes. You receive a completion certificate from the Nunnari Academy team when you finish the program." },
   ];
 }
 
@@ -60,18 +60,18 @@ export const programs: Record<ProgramKey, Program> = {
   recorded: {
     key: "recorded",
     num: "01",
-    name: "Self-paced Programme",
-    short: "K12 & college students",
-    title: ["Learn AI at your", "own pace."],
-    lead: "Affordable, flexible, self-paced AI learning for K12 and college students who are new to AI.",
+    name: "AI Essentials",
+    short: "School & college students",
+    title: ["Build your understanding of AI,", "one step at a time."],
+    lead: "Flexible, self-paced learning program introducing school and college students to AI essentials, core concepts and practical applications.",
     art: "recorded",
     facts: [
-      { icon: "user", title: "K12 & college students", sub: "New to AI" },
+      { icon: "user", title: "School & college students", sub: "New to AI" },
       { icon: "clock", title: "12 Weeks", sub: "Self-paced" },
-      { icon: "monitor", title: "Online", sub: "Recorded lessons" },
+      { icon: "monitor", title: "Online", sub: "Recorded sessions" },
     ],
     forWho: [
-      { icon: "book", title: "K12 students", text: "Affordable, self-paced lessons that make AI clear for learners who are completely new to it." },
+      { icon: "book", title: "School students", text: "Affordable, self-paced sessions that make AI clear for learners who are completely new to it." },
       { icon: "cap", title: "College students", text: "Build foundational AI skills and real projects alongside your studies, at a pace that suits you." },
     ],
     outcomes: [
@@ -83,19 +83,19 @@ export const programs: Record<ProgramKey, Program> = {
     faq: faqFor("recorded"),
     packages: stack.recorded.packages,
     tools: stack.recorded.tools,
-    skills: { core: ["12 Weeks", "Self-paced"], chips: ["Fundamentals", "Hands-on projects", "A portfolio", "K12 & college students", "Online", "English & Tamil"], lead: "Build foundational AI skills and real projects alongside your studies, at a pace that suits you." },
+    skills: { core: ["12 Weeks", "Self-paced"], chips: ["Fundamentals", "Hands-on projects", "A portfolio", "School & college students", "Online", "English & Tamil"], lead: "Build foundational AI skills and real projects alongside your studies, at a pace that suits you." },
   },
   regular: {
     key: "regular",
     num: "02",
-    name: "Regular Programme",
-    short: "Beginners & career switchers (L1 & L2)",
-    title: ["Build a strong foundation", "in GenAI and Agentic AI."],
-    lead: "A 12-week, hands-on programme in GenAI and Agentic AI for beginners and career switchers.",
+    name: "Applied AI",
+    short: "Beginners & career switchers",
+    title: ["Move beyond AI fundamentals.", "Learn to build with AI."],
+    lead: "Instructor-led program in Generative AI and Agentic AI, designed for beginners, aspiring professionals and career switchers to develop practical, industry-relevant skills.",
     art: "regular",
     facts: [
-      { icon: "user", title: "Beginners & career switchers", sub: "L1 & L2" },
-      { icon: "clock", title: "12 Weeks", sub: "Guided learning" },
+      { icon: "user", title: "Beginners & career switchers", sub: "Aspiring professionals" },
+      { icon: "clock", title: "12 Weeks", sub: "Instructor-led" },
       { icon: "monitor", title: "Online / Offline", sub: "Live + hands-on" },
     ],
     forWho: [
@@ -103,7 +103,7 @@ export const programs: Record<ProgramKey, Program> = {
       { icon: "briefcase", title: "Career switchers", text: "Move into GenAI and Agentic AI roles with hands-on projects and a portfolio that shows your skills." },
     ],
     outcomes: [
-      { icon: "book", title: "Learn", text: "Build a strong foundation in GenAI and Agentic AI with clear, structured lessons." },
+      { icon: "book", title: "Learn", text: "Build a strong foundation in GenAI and Agentic AI with clear, structured sessions." },
       { icon: "code", title: "Practice", text: "Apply every concept through hands-on exercises with industry tools." },
       { icon: "layers", title: "Build", text: "Create real-world projects and a portfolio that shows your skills." },
       { icon: "rocket", title: "Impact", text: "Gain industry readiness and access to career opportunities." },
@@ -117,33 +117,36 @@ export const programs: Record<ProgramKey, Program> = {
   premium: {
     key: "premium",
     num: "03",
-    name: "Premium Programme",
-    short: "Advanced (L3+) & C-Suite",
-    title: ["Learn from", "industry leaders."],
-    lead: "Led by industry experts and board-level leaders, for advanced learners (L3+) and the C-Suite.",
+    name: "Advanced AI & Leadership",
+    short: "Experienced professionals & C-Suite",
+    title: ["Lead the next wave", "of AI innovation."],
+    lead: "Advanced learning experiences led by senior engineers, technology leaders and industry experts, designed for experienced professionals, technical leaders and C-suite executives.",
     art: "premium",
     facts: [
-      { icon: "user", title: "Advanced & C-Suite", sub: "L3+ & leadership" },
+      { icon: "user", title: "Experienced professionals", sub: "Technical leaders & C-Suite" },
       { icon: "clock", title: "12 Weeks", sub: "Expert-led" },
       { icon: "monitor", title: "Online / Offline", sub: "Live sessions" },
     ],
     forWho: [
-      { icon: "trend", title: "Advanced learners (L3+)", text: "Go beyond the basics with industry experts, in a programme built for advanced learners." },
-      { icon: "briefcase", title: "C-Suite & leadership", text: "Learn from board-level leaders, in a programme designed for leadership teams." },
+      { icon: "trend", title: "Experienced professionals", text: "Go beyond the basics with senior engineers and industry experts, in a program built for experienced professionals." },
+      { icon: "briefcase", title: "C-Suite & leadership", text: "Learn from board-level leaders, in a program designed for technical leaders and C-suite executives." },
     ],
     outcomes: [
       { icon: "award", title: "Expert-led", text: "Sessions are led by industry experts, so you learn from people working in AI." },
-      { icon: "crown", title: "Leadership view", text: "Learn alongside board-level leaders in a programme built for the C-Suite." },
-      { icon: "clock", title: "12 weeks", text: "A structured 12-week programme designed for advanced learners and leadership teams." },
+      { icon: "crown", title: "Leadership view", text: "Learn alongside board-level leaders in a program built for the C-Suite." },
+      { icon: "clock", title: "12 weeks", text: "A structured 12-week program designed for experienced professionals and technical leaders." },
     ],
     faqCats: FAQ_CATS,
     faq: faqFor("premium"),
     packages: stack.premium.packages,
     tools: stack.premium.tools,
-    skills: { core: ["L3+", "Advanced"], chips: ["Expert-led", "Leadership view", "C-Suite", "12 weeks", "Industry experts", "Board-level leaders"], lead: "Go beyond the basics with industry experts and board-level leaders, in a programme built for advanced learners." },
+    skills: { core: ["Advanced", "Experienced professionals"], chips: ["Expert-led", "Leadership view", "C-Suite", "12 weeks", "Industry experts", "Board-level leaders"], lead: "Go beyond the basics with industry experts and board-level leaders, in a program built for experienced professionals." },
   },
 };
 export const programList = [programs.recorded, programs.regular, programs.premium];
+
+/** One title size for every program: the longest title line sets it (bold line counted a little wider). */
+export const TITLE_CH = Math.max(...programList.map((p) => Math.max(p.title[0].length, p.title[1].length * 1.12)));
 
 /** Regular programme extras */
 

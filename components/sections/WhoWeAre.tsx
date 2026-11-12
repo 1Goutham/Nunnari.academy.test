@@ -4,8 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, type ReactNode } from "react";
 import Icon from "@/components/Icon";
+import Marquee from "@/components/ui/Marquee";
 
-type Chapter = { id: string; label: string; title: ReactNode; text: string; img: string; alt: string; stats?: [number, string][]; partners?: string[]; link: { href: string; label: string } };
+type Chapter = { id: string; label: string; title: ReactNode; text: string; img: string; alt: string; stats?: [number, string][]; navy?: boolean; logos?: { src: string; name: string }[]; link: { href: string; label: string } };
+
+// the companies we work with (Nunnari Labs client strip), white artwork for the dark glass strip
+const partnerLogos = [
+  ["landcom", "Landcom"], ["arb", "ARB Corporation"], ["martin-group", "Martin Group"], ["forge", "Forge Innovation & Ventures"], ["scaler", "Scaler"],
+  ["icliniq", "iCliniq"], ["saasant", "Saasant"], ["2bfound", "2B Found"], ["tristha", "Tristha Global"], ["hearsight", "HearSight"],
+].map(([f, name]) => ({ src: `/assets/clients/white/${f}.webp`, name }));
 
 const chapters: Chapter[] = [
   {
@@ -16,8 +23,8 @@ const chapters: Chapter[] = [
     link: { href: "/programs", label: "Explore programs" },
   },
   {
-    id: "community-events", label: "Community & events", img: "/assets/img/about-community.webp",
-    alt: "AI Tamil Nadu and ML.Cbe community meetups, workshops, panels and expert talks",
+    id: "community-events", label: "Community & events", img: "/assets/img/events/tensorflow-meetup.webp",
+    alt: "A community meetup with TensorFlow User Group Coimbatore",
     title: <>A growing community of <span className="grad">AI builders.</span></>,
     text: "Hands-on workshops, hackathons, expert talks and networking, together with AI Tamil Nadu and ML.Cbe.",
     stats: [[10000, "Community members"], [50, "Workshops & events"], [100, "Experts & speakers"]],
@@ -29,7 +36,8 @@ const chapters: Chapter[] = [
     title: <>Real people. <span className="grad">Real progress.</span></>,
     text: "Our learners build projects, get placed, start ventures and work at leading companies.",
     stats: [[500, "Students trained"], [200, "Projects built"], [50, "Placements & internships"]],
-    partners: ["Government", "Indian Navy"],
+    navy: true,
+    logos: partnerLogos,
     link: { href: "/partner/institutions", label: "Partner with us" },
   },
 ];
@@ -75,7 +83,7 @@ export default function WhoWeAre() {
               <h3 className="about-card__title">{c.title}</h3>
               <p className="about-card__text">{c.text}</p>
             </div>
-            {c.partners && <p className="about-card__partners"><span>Partners</span>{c.partners.map((n) => <b key={n}>{n}</b>)}</p>}
+            {c.navy && <p className="about-card__navy"><Icon name="shield" /><span>Proud partners of the <b>Indian Navy</b></span></p>}
             {c.stats && (
               <div className="about-card__stats">
                 {c.stats.map(([n, l]) => <div key={l}><strong data-count={n} data-suffix="+">{n.toLocaleString("en-IN")}+</strong><span>{l}</span></div>)}
@@ -84,7 +92,15 @@ export default function WhoWeAre() {
             <Link className="btn btn--ghost about-card__link" href={c.link.href}>{c.link.label} <Icon name="arrow" className="i--arrow" /></Link>
           </div>
           <div className="about-card__media">
-            <Image src={c.img} alt={c.alt} width={1000} height={1093} sizes="(max-width: 960px) 92vw, 520px" />
+            <Image src={c.img} alt={c.alt} width={1000} height={1093} sizes="(max-width: 960px) 92vw, 520px" className={c.logos ? "about-card__img--lift" : undefined} />
+            {c.logos && (
+              <div className="about-card__partners">
+                <span className="about-card__partners-label">Our partners</span>
+                <Marquee duration={32} className="about-card__marquee">
+                  {c.logos.map((l) => <span key={l.name} className="about-card__logo"><Image src={l.src} alt={l.name} width={600} height={200} sizes="120px" loading="eager" /></span>)}
+                </Marquee>
+              </div>
+            )}
           </div>
         </article>
       ))}

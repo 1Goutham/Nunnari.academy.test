@@ -1258,7 +1258,8 @@ h1, h2, h3, h4 { color: var(--text); }
 
 /* programme titles: always exactly two lines; the type shrinks so the longer line never wraps */
 .page-hero__copy, .panel__copy { container-type: inline-size; }
-.t-2l { display: block; white-space: nowrap; font-size: min(1em, 100cqi / 12.6); }
+.t-2l { display: block; white-space: nowrap; font-size: min(1em, 100cqi / (var(--ch, 24) * .46)); }
+.panel__copy .t-2l { font-size: min(1em, 100cqi / (var(--ch, 24) * .58)); }
 /* hero facts: three equal columns on every programme, so the actions sit at the same height */
 .page-hero .facts { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 14px 24px; align-items: start; }
 .page-hero .fact { align-items: flex-start; }
@@ -1296,9 +1297,9 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 @media (max-width: 560px) { .pfacts { grid-template-columns: 1fr; } .pfacts__item + .pfacts__item { padding-left: 0; border-left: 0; } .pfacts__item { padding-top: 12px; } }
 .brand__logo { height: 54px; }
 @media (max-width: 1023px) { .brand__logo { height: 44px; } }
-.about-card__partners { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .86rem; }
-.about-card__partners span { color: var(--dim); margin-right: 4px; }
-.about-card__partners b { padding: 5px 12px; border-radius: 999px; background: var(--soft); color: var(--ink); font-weight: 500; }
+.about-card__partners-old { }
+
+
 /* programme cards: the description takes the slack, so facts and link line up across cards */
 .event__body:has(.pfacts) { grid-template-rows: auto auto 1fr auto auto; }
 .event__body:has(.pfacts) .pfacts { padding-top: 14px; border-top: 1px solid var(--line); }
@@ -1407,9 +1408,9 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .gal__bars i { position: relative; height: 3px; border-radius: 3px; overflow: hidden; background: rgb(255 255 255 / 28%); }
 .gal__bars i::after { content: ""; position: absolute; inset: 0; background: #fff; transform-origin: left; transform: scaleX(0); animation: gal-bar calc(var(--n) * 5s) linear infinite both; animation-delay: calc(var(--i) * 5s); }
 .gal:hover .gal__slide, .gal:hover .gal__slide img, .gal:hover .gal__bars i::after { animation-play-state: paused; }
-@keyframes gal-slide { 0% { opacity: 0; } 4% { opacity: 1; } 16.6% { opacity: 1; } 21% { opacity: 0; } 100% { opacity: 0; } }
-@keyframes gal-push { 0% { transform: scale(1.08); } 21% { transform: scale(1); } 100% { transform: scale(1); } }
-@keyframes gal-bar { 0% { transform: scaleX(0); } 16.6% { transform: scaleX(1); } 16.7%, 100% { transform: scaleX(0); } }
+@keyframes gal-slide { 0% { opacity: 0; } 4% { opacity: 1; } 20% { opacity: 1; } 24% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes gal-push { 0% { transform: scale(1.08); } 24% { transform: scale(1); } 100% { transform: scale(1); } }
+@keyframes gal-bar { 0% { transform: scaleX(0); } 20% { transform: scaleX(1); } 20.1%, 100% { transform: scaleX(0); } }
 @media (prefers-reduced-motion: reduce) { .gal__slide, .gal__slide img, .gal__bars i::after { animation: none; } .gal__slide:first-child { opacity: 1; } }
 /* catalogue card: facts and the action sit in the copy column, beside the illustration (no empty block) */
 .panel__copy .pfacts { padding-top: 16px; border-top: 1px solid var(--line); margin-top: 4px; }
@@ -1511,3 +1512,44 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 /* tool tiles on dark bands: every logo centred at one size inside its tile */
 .section--dark .toolgrid__mark { justify-content: center; align-content: center; place-items: center; padding: 0; }
 .section--dark .toolgrid__mark svg { width: 28px; height: 28px; display: block; }
+
+/* Why cards: on reveal the top rule draws, the icon settles in, then the title rises (quiet, staggered) */
+.js .why .card[data-reveal] > .ico { opacity: 0; transform: translateY(5px) scale(.6) rotate(-12deg); transition: opacity .5s var(--ease), transform .7s cubic-bezier(.34, 1.56, .64, 1); transition-delay: calc(var(--d, 0s) + .25s); }
+.js .why .card[data-reveal] > h3 { opacity: 0; transform: translateY(10px); transition: opacity .6s var(--ease), transform .7s var(--ease); transition-delay: calc(var(--d, 0s) + .35s); }
+.js .why .card[data-reveal] > p { opacity: 0; transition: opacity .7s var(--ease); transition-delay: calc(var(--d, 0s) + .5s); }
+.js .why .card[data-reveal][data-in-view] > .ico { opacity: 1; transform: translateY(5px); }
+.js .why .card[data-reveal][data-in-view] > h3, .js .why .card[data-reveal][data-in-view] > p { opacity: 1; transform: none; }
+.why .card:hover > .ico .i { transform: scale(1.12); }
+.why .card > .ico .i { transition: transform .4s var(--ease); }
+@media (prefers-reduced-motion: reduce) { .js .why .card[data-reveal] > * { opacity: 1 !important; transform: none !important; transition: none !important; } }
+/* past events: rows settle in one after another once the list is in view */
+.js [data-reveal] .past__list li { opacity: 0; transform: translateY(8px); transition: opacity .5s var(--ease), transform .6s var(--ease); transition-delay: calc(.15s + var(--i, 0) * 70ms); }
+.js [data-reveal][data-in-view] .past__list li { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js [data-reveal] .past__list li { opacity: 1; transform: none; transition: none; } }
+
+/* Who we are 03: the building sits higher, a glass strip of partner logos scrolls across the foot of the image */
+.about-card__media { isolation: isolate; }
+.about-card__media img.about-card__img--lift { object-position: center 78%; transform: translateY(-11%) scale(1.06); transform-origin: 50% 0; }
+.about-card__partners { position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 2; display: grid; gap: 10px; padding: 14px 0 16px; border-radius: 16px;
+  background: linear-gradient(180deg, rgb(26 20 71 / 78%), rgb(18 14 51 / 88%)); border: 1px solid rgb(221 214 248 / 18%);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2); backdrop-filter: blur(10px) saturate(1.2); box-shadow: 0 18px 40px -20px rgb(18 14 51 / 70%); overflow: hidden; }
+.about-card__partners-label { padding: 0 16px; font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #CFC7F4; }
+.about-card__marquee { --gap: 6px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.about-card__marquee .marquee__track { align-items: center; justify-content: flex-start; min-width: auto; padding-right: var(--gap); }
+.about-card__logo { display: grid; place-items: center; height: 48px; flex: none; }
+.about-card__logo img { position: static; inset: auto; width: auto; height: 50px; max-width: none; object-fit: contain; opacity: .9; transition: opacity .3s; }
+.about-card__partners:hover .about-card__logo img { opacity: 1; }
+.about-card__navy { display: inline-flex; align-items: center; gap: 10px; justify-self: start; padding: 8px 14px 8px 10px; border-radius: 999px; background: var(--soft); color: var(--text); font-size: .9rem; }
+.about-card__navy .i { width: 18px; height: 18px; color: var(--brand); }
+.about-card__navy b { color: var(--ink); font-weight: 600; }
+@media (max-width: 960px) { .about-card__media img.about-card__img--lift { transform: translateY(-8%) scale(1.04); } }
+/* program heroes: the three leads hold the same number of lines so the facts and actions line up */
+.page-hero__grid .lead { font-size: 1.02rem; line-height: 1.65; }
+@media (min-width: 961px) { .menu { min-width: 340px; } .menu small, .menu .menu__sub { white-space: nowrap; } }
+@media (min-width: 1200px) { .page-hero__grid .lead { min-height: calc(3 * 1.65em); } }
+@media (min-width: 961px) and (max-width: 1199px) { .page-hero__grid .lead { min-height: calc(4 * 1.65em); } }
+/* program cards: the longer descriptions get four full lines */
+.event__body:has(.pfacts) .clamp3 { display: block; -webkit-line-clamp: unset; line-clamp: unset; overflow: visible; min-height: 0; }
+/* program cards: the description takes the slack, so the facts and the link sit on one line across all three */
+.event__body:has(.pfacts) { grid-template-rows: auto auto 1fr auto auto; }
+.event__body:has(.pfacts) .pfacts--compact .pfacts__item { min-height: 2.6em; align-items: flex-start; }

@@ -21,8 +21,8 @@ export default function PastEvents({ items, builtAt, limit = 6 }: { items: Item[
     <div className="past">
       <p className="past__label">Past events</p>
       <ul className="past__list">
-        {past.map((w) => (
-          <li key={w.slug}>
+        {past.map((w, i) => (
+          <li key={w.slug} style={{ "--i": i } as React.CSSProperties}>
             <Link href={`/workshops/${w.slug}`} className="past__row">
               <span className="past__date">{fmt(w.start)}</span>
               <span className="past__title">{w.title}</span>

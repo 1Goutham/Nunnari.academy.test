@@ -24,9 +24,9 @@ export const nav: NavItem[] = [
     label: "Programs",
     key: "programs",
     items: [
-      { href: "/programs/recorded", title: "Self-paced Programs", sub: "K12 & College Students", icon: "play" },
-      { href: "/programs/regular", title: "Regular Programs", sub: "Beginners & career switchers (L1 & L2)", icon: "users" },
-      { href: "/programs/premium", title: "Premium Programs", sub: "Advanced (L3+) & C-Suite", icon: "crown" },
+      { href: "/programs/recorded", title: "AI Essentials", sub: "School & college students", icon: "play" },
+      { href: "/programs/regular", title: "Applied AI", sub: "Beginners & career switchers", icon: "users" },
+      { href: "/programs/premium", title: "Advanced AI & Leadership", sub: "Experienced professionals & C-Suite", icon: "crown" },
     ],
   },
   {

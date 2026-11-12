@@ -100,8 +100,8 @@ function Premium() {
   return (
     <Stage name="premium">
       <Layer z={6} i={0} className="vg-card vg-level">
-        <div className="vg-head"><strong>Advanced</strong><span>L3+</span></div>
-        <div className="vg-level__meter"><span>L1</span><span>L2</span><span className="is-on">L3+</span></div>
+        <div className="vg-head"><strong>Advanced</strong><span>Experienced</span></div>
+        <div className="vg-level__meter"><span>Essentials</span><span>Applied</span><span className="is-on">Advanced</span></div>
         <div className="vg-level__rows">{p.outcomes.map((o) => <span key={o.title}>{o.title}</span>)}</div>
       </Layer>
       <Layer z={22} i={1} className="vg-card vg-seal">

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Icon from "@/components/Icon";
 import { tracks } from "@/lib/programs";
 
-/** 12-week tracks: three shown, "Explore All Programmes" reveals the rest. */
+/** 12-week tracks: three shown, "Explore All Programs" reveals the rest. */
 export default function TrackList() {
   const [all, setAll] = useState(false);
   return (
@@ -21,7 +21,7 @@ export default function TrackList() {
       </div>
       <div style={{ display: "flex", justifyContent: "center", marginTop: 36 }}>
         <button className="btn btn--ghost btn--lg" type="button" aria-expanded={all} aria-controls="track-list" onClick={() => setAll((v) => !v)}>
-          {all ? "Show fewer" : "Explore All Programmes"} <Icon name="chevron" />
+          {all ? "Show fewer" : "Explore All Programs"} <Icon name="chevron" />
         </button>
       </div>
     </>

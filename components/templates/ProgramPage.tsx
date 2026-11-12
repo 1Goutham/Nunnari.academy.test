@@ -4,7 +4,7 @@ import BrochureButton from "@/components/ui/BrochureButton";
 import { Card, Cta, Head, PageHero } from "@/components/ui/Blocks";
 import ToolGrid from "@/components/ui/Tools";
 import { SkillsHub, Stairs, StackRows, ToolsOrbit } from "@/components/ui/Illus";
-import { programs, type ProgramKey } from "@/lib/programs";
+import { programs, TITLE_CH, type ProgramKey } from "@/lib/programs";
 
 /**
  * One template for every programme page, the same sections in the same order:
@@ -23,7 +23,7 @@ export default function ProgramPage({ id }: { id: ProgramKey }) {
       <PageHero
         crumbs={[{ href: "/programs", label: "Programs" }, { href: `/programs/${id}`, label: p.name }]}
         pill={`${p.name} · ${p.num}`}
-        title={<span className="t-2l">{p.title[0]}<br /><span className="grad">{p.title[1]}</span></span>}
+        title={<span className="t-2l" style={{ "--ch": TITLE_CH } as React.CSSProperties}>{p.title[0]}<br /><span className="grad">{p.title[1]}</span></span>}
         lead={p.lead}
         facts={p.facts}
         art={p.art}

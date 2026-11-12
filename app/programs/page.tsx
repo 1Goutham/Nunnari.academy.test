@@ -9,17 +9,17 @@ import { Cta, Head, PageHero } from "@/components/ui/Blocks";
 import { programList } from "@/lib/programs";
 
 export const metadata: Metadata = {
-  title: "Programs — Self-paced, Regular & Premium",
-  description: "Three 12-week AI programmes: Self-paced for K12 & college students, Regular for beginners and career switchers (L1 & L2), Premium for advanced learners (L3+) and the C-Suite.",
+  title: "Programs — AI Essentials, Applied AI & Advanced AI & Leadership",
+  description: "Three 12-week AI programs: AI Essentials for school and college students, Applied AI for beginners, aspiring professionals and career switchers, and Advanced AI & Leadership for experienced professionals, technical leaders and C-suite executives.",
   alternates: { canonical: "/programs" },
 };
 
 const faqCats = [{ key: "choose", label: "Choosing" }, { key: "enrol", label: "Enrolling" }];
 const faq = [
-  { q: "Which programme is right for me?", cats: ["choose"], a: "Self-paced is for K12 and college students, Regular for beginners and career switchers (L1 & L2), and Premium for advanced learners (L3+) and the C-Suite." },
-  { q: "How long are the programmes?", cats: ["choose"], a: "All three programmes are 12 weeks." },
+  { q: "Which program is right for me?", cats: ["choose"], a: "AI Essentials is for school and college students, Applied AI for beginners, aspiring professionals and career switchers, and Advanced AI & Leadership for experienced professionals, technical leaders and C-suite executives." },
+  { q: "How long are the programs?", cats: ["choose"], a: "All three programs are 12 weeks." },
   { q: "Which languages are the classes in?", cats: ["choose"], a: "English and Tamil." },
-  { q: "How do I enroll?", cats: ["enrol"], a: "Choose a programme and click Enroll Now, or talk to our team. We reach out within 24 to 48 hours." },
+  { q: "How do I enroll?", cats: ["enrol"], a: "Choose a program and click Enroll Now, or talk to our team. We reach out within 24 to 48 hours." },
   { q: "Do I get access to the learning platform?", cats: ["enrol"], a: "Yes, one year of access to our LMS with all course resources and updates." },
 ];
 
@@ -29,7 +29,7 @@ export default function ProgramsPage() {
       <PageHero
         pill="Programs"
         title={<>From first steps <span className="grad">to leading AI.</span></>}
-        lead="Three 12-week programmes, from your first steps in AI to leading it."
+        lead="Three 12-week programs, from your first steps in AI to leading it."
       />
 
       <section className="section section--dark">
@@ -51,7 +51,7 @@ export default function ProgramsPage() {
 
       <section className="section">
         <div className="container">
-          <Head pill="Regular programme tracks" title={<>12-week tracks for <span className="grad">every path.</span></>} />
+          <Head pill="Applied AI tracks" title={<>12-week tracks for <span className="grad">every path.</span></>} />
           <TrackList />
         </div>
       </section>
@@ -66,8 +66,8 @@ export default function ProgramsPage() {
       <Cta
         art="regular"
         title={<>Not sure where <span className="grad">to start?</span></>}
-        lead="Talk to our team and we will help you choose the right programme."
-        actions={<button className="btn btn--primary btn--lg" type="button" data-enquire="Help me choose a programme">Talk to us <Icon name="arrow" className="i--arrow" /></button>}
+        lead="Talk to our team and we will help you choose the right program."
+        actions={<button className="btn btn--primary btn--lg" type="button" data-enquire="Help me choose a program">Talk to us <Icon name="arrow" className="i--arrow" /></button>}
       />
     </>
   );
