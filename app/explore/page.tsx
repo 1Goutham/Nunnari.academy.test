@@ -50,13 +50,17 @@ export default function ExplorePage() {
             <Art name="saturday" />
           </div>
 
-          <div style={{ marginTop: 56 }}>
-            <WorkshopList items={all.filter((w) => w.slug !== spot?.slug)} />
-          </div>
         </div>
       </section>
 
-      <section className="section" id="testimonials" style={{ overflow: "hidden" }}>
+      <section className="section" id="all-workshops">
+        <div className="container">
+          <Head pill="All workshops" title={<>Every session, <span className="grad">in one place.</span></>} />
+          <WorkshopList items={all.filter((w) => w.slug !== spot?.slug)} />
+        </div>
+      </section>
+
+      <section className="section section--dark" id="testimonials" style={{ overflow: "hidden" }}>
         <div className="container">
           <Head pill="Testimonials" title={<>Learners who found their <span className="grad">next step.</span></>} />
         </div>
