@@ -1546,10 +1546,10 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 /* program heroes: the three leads hold the same number of lines so the facts and actions line up */
 .page-hero__grid .lead { font-size: 1.02rem; line-height: 1.65; }
 @media (min-width: 961px) { .menu { min-width: 340px; } .menu small, .menu .menu__sub { white-space: nowrap; } }
-@media (min-width: 1200px) { .page-hero__grid .lead { min-height: calc(3 * 1.65em); } }
-@media (min-width: 961px) and (max-width: 1199px) { .page-hero__grid .lead { min-height: calc(4 * 1.65em); } }
+@media (min-width: 1200px) { .page-hero__grid .lead { min-height: calc(2 * 1.65em); } }
+@media (min-width: 961px) and (max-width: 1199px) { .page-hero__grid .lead { min-height: calc(2 * 1.65em); } }
 /* program cards: the longer descriptions get four full lines */
-.event__body:has(.pfacts) .clamp3 { -webkit-line-clamp: 3; line-clamp: 3; min-height: calc(3 * 1.6em); }
+.event__body:has(.pfacts) .clamp3 { -webkit-line-clamp: 2; line-clamp: 2; min-height: calc(2 * 1.6em); }
 /* program cards: the description takes the slack, so the facts and the link sit on one line across all three */
 .event__body:has(.pfacts) { grid-template-rows: auto auto 1fr auto auto; }
 .event__body:has(.pfacts) .pfacts--compact .pfacts__item { align-items: flex-start; }
@@ -1560,10 +1560,14 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .about-card__partners:hover .about-card__logo img { opacity: .85; }
 .about-card__marquee { -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); }
 /* program descriptions: same height everywhere they appear */
-@media (min-width: 861px) and (max-width: 1099px) { .event__body:has(.pfacts) .clamp3 { -webkit-line-clamp: 4; line-clamp: 4; min-height: calc(4 * 1.6em); } }
-.panel__copy > p { min-height: calc(3 * 1.7em); }
+@media (min-width: 861px) and (max-width: 1199px) { .event__body:has(.pfacts) .clamp3 { -webkit-line-clamp: 3; line-clamp: 3; min-height: calc(3 * 1.6em); } }
+.panel__copy > p { min-height: calc(2 * 1.7em); }
 @media (min-width: 761px) and (max-width: 1199px) { .panel__copy > p { font-size: .9rem; line-height: 1.65; min-height: calc(3 * 1.65em); } }
 
 @media (min-width: 861px) and (max-width: 1099px) { .event__body:has(.pfacts) .event__top { min-height: 42px; align-items: flex-start; } }
 /* phones: the chapter image shows whole (all three illustrations are 1000 × 1093) */
 @media (max-width: 960px) { .about-card__media { aspect-ratio: 1000 / 1093; } .about-card__media img:not(.about-card__img--lift) { object-position: center top; } }
+.page-hero__grid .lead { min-height: calc(2 * 1.65em); }
+@media (max-width: 760px) { .panel__copy > p { min-height: calc(3 * 1.7em); } }
+/* hero facts: reserve the same height on every program when the column is narrow */
+@media (min-width: 961px) and (max-width: 1199px) { .page-hero__grid .facts { min-height: 82px; align-content: start; } }

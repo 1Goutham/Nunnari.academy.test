@@ -63,7 +63,7 @@ export const programs: Record<ProgramKey, Program> = {
     name: "AI Essentials",
     short: "School & college students",
     title: ["Build your understanding of AI,", "one step at a time."],
-    lead: "A flexible, self-paced program introducing school and college students to AI and its practical uses.",
+    lead: "Self-paced AI for school and college students, from core ideas to practical uses.",
     art: "recorded",
     facts: [
       { icon: "user", title: "School & college students", sub: "" },
@@ -91,7 +91,7 @@ export const programs: Record<ProgramKey, Program> = {
     name: "Applied AI",
     short: "Beginners & career switchers",
     title: ["Move beyond AI fundamentals.", "Learn to build with AI."],
-    lead: "Instructor-led Generative and Agentic AI for beginners and career switchers, building practical, industry-ready skills.",
+    lead: "Instructor-led Generative and Agentic AI for beginners and career switchers.",
     art: "regular",
     facts: [
       { icon: "user", title: "Beginners & career switchers", sub: "" },
@@ -120,7 +120,7 @@ export const programs: Record<ProgramKey, Program> = {
     name: "Advanced AI & Leadership",
     short: "Experienced professionals & C-Suite",
     title: ["Lead the next wave", "of AI innovation."],
-    lead: "Led by senior engineers and industry experts, for experienced professionals, tech leaders and the C-suite.",
+    lead: "Led by senior engineers and experts, for experienced professionals and the C-suite.",
     art: "premium",
     facts: [
       { icon: "user", title: "Experienced professionals", sub: "" },
