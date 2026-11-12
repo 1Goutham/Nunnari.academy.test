@@ -30,7 +30,7 @@ export default function ProgramPage({ id }: { id: ProgramKey }) {
         actions={actions}
       />
 
-      <section className="section">
+      <section className="section section--dark">
         <div className="container split split--illus">
           <div>
             <Head pill="Who it's for" title={<>Who can <span className="grad">join?</span></>} />
@@ -42,7 +42,7 @@ export default function ProgramPage({ id }: { id: ProgramKey }) {
         </div>
       </section>
 
-      <section className="section section--dark">
+      <section className="section">
         <div className="container split split--illus split--rev">
           <div data-reveal=""><SkillsHub core={p.skills.core} chips={p.skills.chips} /></div>
           <div>
@@ -52,7 +52,7 @@ export default function ProgramPage({ id }: { id: ProgramKey }) {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--dark">
         <div className="container">
           <Head pill="Packages & tools" title={<>The stack you will <span className="grad">build with.</span></>} />
           <div data-reveal=""><StackRows packages={p.packages} tools={p.tools} Grid={ToolGrid} /></div>
@@ -76,7 +76,7 @@ export default function ProgramPage({ id }: { id: ProgramKey }) {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--dark">
         <div className="container">
           <Head pill="FAQ" title={<>Questions, <span className="grad">answered.</span></>} />
           <Faq cats={p.faqCats} items={p.faq} />

@@ -1460,3 +1460,14 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .t-display .grad, .t-h1 .grad, .t-h2 .grad, .about-card__title .grad { font-weight: 700; letter-spacing: -0.04em; }
 #company-title { font-weight: 700; }
 #company-title .soft { font-weight: 300; color: inherit; -webkit-text-fill-color: currentColor; }
+
+/* ---------- components on the dark bands ---------- */
+.section--dark .btn--primary { background: #fff; color: #120E33; }
+.section--dark .btn--primary:hover { background: #ECE8FC; color: #120E33; }
+.section--dark .tab { background: rgb(255 255 255 / 3%); }
+.section--dark .tab[aria-selected="true"] { background: rgb(255 255 255 / 10%); border-color: rgb(207 199 244 / 55%); }
+.section--dark .tab .ico .i { color: #CFC7F4; }
+/* tool logos keep their brand colours on a small light tile, so dark marks stay visible */
+.section--dark .toolgrid__mark { display: inline-grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; background: #fff; box-shadow: 0 10px 24px -14px rgb(0 0 0 / 60%); }
+.section--dark .toolgrid__name { color: var(--text); }
+.section--dark .seg, .section--dark .filter { border-color: var(--rule); }

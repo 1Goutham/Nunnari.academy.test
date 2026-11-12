@@ -47,7 +47,7 @@ export default function PartnerPage({ id }: { id: Partner["key"] }) {
     <>
       <PageHero pill={p.pill} title={<>{p.title[0]} <span className="grad">{p.title[1]}</span></>} lead={p.lead} art={p.art} actions={btn()} />
 
-      <section className="section">
+      <section className="section section--dark">
         <div className="container">
           <Head pill="What we bring" title={<>Built for <span className="grad">real impact.</span></>} />
           <div className={`grid grid--${p.offers.length}`}>{p.offers.map((o, i) => <Card key={o.title} icon={o.icon} title={o.title} text={o.text} k={i} />)}</div>
@@ -73,7 +73,7 @@ export default function PartnerPage({ id }: { id: Partner["key"] }) {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--dark">
         <div className="container">
           <Head pill="Our impact" title={<>Partnerships that turn into <span className="grad">progress.</span></>} />
           <div className="stats" style={{ "--n": p.stats.length } as React.CSSProperties} data-reveal="">
@@ -83,7 +83,7 @@ export default function PartnerPage({ id }: { id: Partner["key"] }) {
         </div>
       </section>
 
-      <section className="section section--dark">
+      <section className="section">
         <div className="container">
           <Head pill="Partner voices" title={<>What our partners <span className="grad">say.</span></>} />
           <div className="grid grid--3">

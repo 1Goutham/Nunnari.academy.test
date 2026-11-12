@@ -32,7 +32,7 @@ export default function ProgramsPage() {
         lead="Three 12-week programmes, from your first steps in AI to leading it."
       />
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section section--dark">
         <div className="container grid grid--3">
           {programList.map((p, i) => (
             <Link key={p.key} href={`/programs/${p.key}`} className="card event card--link" data-reveal="" style={{ "--d": `${i * 0.08}s` } as React.CSSProperties}>
@@ -56,7 +56,7 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--dark">
         <div className="container">
           <Head pill="FAQ" title={<>Questions, <span className="grad">answered.</span></>} />
           <Faq cats={faqCats} items={faq} />

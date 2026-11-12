@@ -33,7 +33,7 @@ export default function ExplorePage() {
         }
       />
 
-      <section className="section" id="workshops">
+      <section className="section section--dark" id="workshops">
         <div className="container">
           <Head pill="Workshops" title={<>Learn live. <span className="grad">Watch anytime.</span></>} lead="Register for upcoming sessions, or watch recordings and summaries of completed ones." />
           {spot && <Spotlight w={spot} />}
@@ -56,7 +56,7 @@ export default function ExplorePage() {
         </div>
       </section>
 
-      <section className="section section--dark" id="testimonials" style={{ overflow: "hidden" }}>
+      <section className="section" id="testimonials" style={{ overflow: "hidden" }}>
         <div className="container">
           <Head pill="Testimonials" title={<>Learners who found their <span className="grad">next step.</span></>} />
         </div>

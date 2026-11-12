@@ -13,7 +13,7 @@ export default function HelpPage() {
   return (
     <>
       <PageHero pill="Support" title={<>Help &amp; <span className="grad">support.</span></>} lead="Questions about programs, payments or platform access? We’re here to help." />
-      <section className="section" style={{ paddingTop: 0 }} id="contact">
+      <section className="section section--dark" id="contact">
         <div className="container"><div className="grid grid--2" style={{ maxWidth: 820 }}>
           <a className="card card--link" href={site.phone.href} data-reveal="">
             <span className="ico"><Icon name="phone" /></span><h3>Call us</h3><p>{site.phone.label}</p>

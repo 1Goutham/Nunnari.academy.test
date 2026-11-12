@@ -34,14 +34,14 @@ export default function HomePage() {
       <Company />
       <Impact />
 
-      <section className="section" id="programs">
+      <section className="section section--dark" id="programs">
         <div className="container">
           <Head pill="Our programs" title={<>From first steps <span className="grad">to leading AI.</span></>} action={<Link className="link" href="/programs">All programs <Icon name="arrow-ur" /></Link>} />
           <div data-reveal=""><ProgramsCatalog /></div>
         </div>
       </section>
 
-      <section className="section section--dark" id="events">
+      <section className="section" id="events">
         <div className="container">
           <Head pill="Workshops & events" title={<>Where opportunity <span className="grad">evolves.</span></>} action={<Link className="link" href="/explore">View all events <Icon name="arrow-ur" /></Link>} />
           <div data-reveal=""><WorkshopCarousel items={workshops} /></div>

@@ -10,7 +10,7 @@ const items = [
 /** The four reasons that used to sit in the hero — now their own section. */
 export default function WhyCards() {
   return (
-    <section className="section" id="why">
+    <section className="section section--dark" id="why">
       <div className="container">
         <Head pill="Why choose us" title={<>Why <span className="grad">Nunnari Academy?</span></>} lead="Learn. Build. Grow. With real support." />
         <div className="grid grid--4 why">
