@@ -1549,7 +1549,7 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 @media (min-width: 1200px) { .page-hero__grid .lead { min-height: calc(3 * 1.65em); } }
 @media (min-width: 961px) and (max-width: 1199px) { .page-hero__grid .lead { min-height: calc(4 * 1.65em); } }
 /* program cards: the longer descriptions get four full lines */
-.event__body:has(.pfacts) .clamp3 { display: block; -webkit-line-clamp: unset; line-clamp: unset; overflow: visible; min-height: 0; }
+.event__body:has(.pfacts) .clamp3 { -webkit-line-clamp: 3; line-clamp: 3; min-height: calc(3 * 1.6em); }
 /* program cards: the description takes the slack, so the facts and the link sit on one line across all three */
 .event__body:has(.pfacts) { grid-template-rows: auto auto 1fr auto auto; }
 .event__body:has(.pfacts) .pfacts--compact .pfacts__item { min-height: 2.6em; align-items: flex-start; }
@@ -1559,3 +1559,10 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .about-card__logo img { opacity: .62; filter: brightness(0) saturate(100%) invert(26%) sepia(38%) saturate(1500%) hue-rotate(228deg) brightness(.92); mix-blend-mode: multiply; }
 .about-card__partners:hover .about-card__logo img { opacity: .85; }
 .about-card__marquee { -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); }
+/* program descriptions: same height everywhere they appear */
+@media (min-width: 861px) and (max-width: 1099px) { .event__body:has(.pfacts) .clamp3 { -webkit-line-clamp: 4; line-clamp: 4; min-height: calc(4 * 1.6em); } }
+.panel__copy > p { min-height: calc(3 * 1.7em); }
+@media (min-width: 761px) and (max-width: 1199px) { .panel__copy > p { min-height: calc(4 * 1.7em); } }
+
+.panel__copy .pfacts--compact .pfacts__item { min-height: 2.6em; align-items: flex-start; }
+@media (min-width: 861px) and (max-width: 1099px) { .event__body:has(.pfacts) .event__top { min-height: 42px; align-items: flex-start; } }
