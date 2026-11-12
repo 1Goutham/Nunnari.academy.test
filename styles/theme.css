@@ -1453,5 +1453,10 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .why.grid > .card { column-gap: 14px; }
 
 /* Why heading: "Why Nunnari Academy?" large and bold, the tagline small underneath */
-#why .head .t-h2 { font-size: clamp(2.6rem, 5.6vw, 4.4rem); font-weight: 700; line-height: 1.02; letter-spacing: -0.045em; }
 #why .head .lead { font-size: 1.05rem; color: var(--muted); }
+
+/* ---------- headings: a light lead-in and a bold key phrase, in the same ink ---------- */
+.t-display, .t-h1, .t-h2, .about-card__title { font-weight: 300; }
+.t-display .grad, .t-h1 .grad, .t-h2 .grad, .about-card__title .grad { font-weight: 700; letter-spacing: -0.04em; }
+#company-title { font-weight: 700; }
+#company-title .soft { font-weight: 300; color: inherit; -webkit-text-fill-color: currentColor; }
