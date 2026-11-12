@@ -1508,3 +1508,6 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .tw-fit__bg { position: absolute; inset: -12%; width: 124%; height: 124%; object-fit: cover; filter: blur(22px) saturate(1.2) brightness(.55); z-index: -1; }
 .tw-fit__img { position: relative; height: 88%; width: auto; border-radius: 8px; box-shadow: 0 14px 34px -12px rgb(0 0 0 / 75%); transition: transform .6s var(--ease); }
 .event:hover .tw-fit__img { transform: scale(1.04); }
+/* tool tiles on dark bands: every logo centred at one size inside its tile */
+.section--dark .toolgrid__mark { justify-content: center; align-content: center; place-items: center; padding: 0; }
+.section--dark .toolgrid__mark svg { width: 28px; height: 28px; display: block; }
