@@ -1489,3 +1489,18 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .past__row:hover .past__meta .i { opacity: 1; transform: none; }
 @media (max-width: 760px) { .past__row { grid-template-columns: 1fr; gap: 4px; } .past__meta { white-space: normal; } }
 .lmq__logo { width: 52px; height: 44px; }
+
+/* test page: workshop posters (app/testworkshop) */
+.tw-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.tw-crop { aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--line); background: #0E0A26; }
+.tw-crop img, .tw-full img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; transition: transform .6s var(--ease); }
+.tw-full { aspect-ratio: 4 / 5; overflow: hidden; background: #0E0A26; }
+.event:hover .tw-crop img, .event:hover .tw-full img { transform: scale(1.03); }
+.tw-detail { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
+.tw-detail__copy { display: grid; gap: 18px; justify-items: start; }
+.tw-detail__poster { border-radius: var(--r-lg); box-shadow: 0 30px 70px -30px rgb(0 0 0 / 70%); }
+.tw-facts { display: grid; gap: 10px; }
+.tw-facts li { display: flex; gap: 10px; align-items: center; color: var(--text); }
+.tw-facts .i { width: 18px; height: 18px; color: var(--brand); }
+@media (max-width: 960px) { .tw-grid { grid-template-columns: 1fr 1fr; } .tw-detail { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .tw-grid { grid-template-columns: 1fr; } }
