@@ -23,8 +23,8 @@ const chapters: Chapter[] = [
     link: { href: "/programs", label: "Explore programs" },
   },
   {
-    id: "community-events", label: "Community & events", img: "/assets/img/events/tensorflow-meetup.webp",
-    alt: "A community meetup with TensorFlow User Group Coimbatore",
+    id: "community-events", label: "Community & events", img: "/assets/img/about-community-2.webp",
+    alt: "A collage of our community: meetups, workshops, Google Developer Groups, expert panels and talks, above the Coimbatore skyline",
     title: <>A growing community of <span className="grad">AI builders.</span></>,
     text: "Hands-on workshops, hackathons, expert talks and networking, together with AI Tamil Nadu and ML.Cbe.",
     stats: [[10000, "Community members"], [50, "Workshops & events"], [100, "Experts & speakers"]],

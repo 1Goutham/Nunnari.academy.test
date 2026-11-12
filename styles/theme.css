@@ -1566,3 +1566,5 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 
 .panel__copy .pfacts--compact .pfacts__item { min-height: 2.6em; align-items: flex-start; }
 @media (min-width: 861px) and (max-width: 1099px) { .event__body:has(.pfacts) .event__top { min-height: 42px; align-items: flex-start; } }
+/* phones: the chapter image shows whole (all three illustrations are 1000 × 1093) */
+@media (max-width: 960px) { .about-card__media { aspect-ratio: 1000 / 1093; } .about-card__media img:not(.about-card__img--lift) { object-position: center top; } }
