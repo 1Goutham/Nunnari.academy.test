@@ -8,6 +8,7 @@ import Company from "@/components/sections/Company";
 import Impact from "@/components/sections/Impact";
 import ProgramsCatalog from "@/components/sections/ProgramsCatalog";
 import WorkshopCarousel from "@/components/events/WorkshopCarousel";
+import PastEvents from "@/components/events/PastEvents";
 import { Cta, Head } from "@/components/ui/Blocks";
 import { getWorkshops } from "@/lib/workshops";
 
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const workshops = getWorkshops().slice(0, 6).map(({ summaryHtml: _s, ...w }) => w);
+  const workshops = getWorkshops().slice(0, 12).map(({ summaryHtml: _s, ...w }) => w);
   return (
     <>
       <Hero />
@@ -45,6 +46,7 @@ export default function HomePage() {
         <div className="container">
           <Head pill="Workshops & events" title={<>Where opportunity <span className="grad">evolves.</span></>} action={<Link className="link" href="/explore">View all events <Icon name="arrow-ur" /></Link>} />
           <div data-reveal=""><WorkshopCarousel items={workshops} /></div>
+          <div data-reveal=""><PastEvents items={workshops} builtAt={Date.now()} /></div>
         </div>
       </section>
 

@@ -1474,3 +1474,17 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 /* eyebrow labels: text only, no leading dash */
 .pill::before { display: none; content: none; }
 .pill { gap: 0; }
+
+/* past events: a quiet ledger under the event cards */
+.past { margin-top: clamp(36px, 4vw, 52px); padding-top: 28px; border-top: 1px solid var(--line); }
+.past__label { font-size: .9rem; font-weight: 600; color: var(--dim); margin-bottom: 10px; }
+.past__list { display: grid; }
+.past__row { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); color: var(--text); transition: color .25s; }
+.past__date { color: var(--dim); font-variant-numeric: tabular-nums; }
+.past__title { font-weight: 500; color: var(--ink); }
+.past__meta { display: inline-flex; align-items: center; gap: 6px; color: var(--dim); font-size: .94rem; white-space: nowrap; }
+.past__meta .i { width: 14px; height: 14px; opacity: 0; transform: translate(-4px, 4px); transition: opacity .25s, transform .3s var(--ease); }
+.past__row:hover .past__title { color: var(--brand); }
+.past__row:hover .past__meta { color: var(--brand); }
+.past__row:hover .past__meta .i { opacity: 1; transform: none; }
+@media (max-width: 760px) { .past__row { grid-template-columns: 1fr; gap: 4px; } .past__meta { white-space: normal; } }
