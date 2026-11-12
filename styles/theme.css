@@ -1562,7 +1562,7 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 /* program descriptions: same height everywhere they appear */
 @media (min-width: 861px) and (max-width: 1099px) { .event__body:has(.pfacts) .clamp3 { -webkit-line-clamp: 4; line-clamp: 4; min-height: calc(4 * 1.6em); } }
 .panel__copy > p { min-height: calc(3 * 1.7em); }
-@media (min-width: 761px) and (max-width: 1199px) { .panel__copy > p { min-height: calc(4 * 1.7em); } }
+@media (min-width: 761px) and (max-width: 1199px) { .panel__copy > p { font-size: .9rem; line-height: 1.65; min-height: calc(3 * 1.65em); } }
 
 .panel__copy .pfacts--compact .pfacts__item { min-height: 2.6em; align-items: flex-start; }
 @media (min-width: 861px) and (max-width: 1099px) { .event__body:has(.pfacts) .event__top { min-height: 42px; align-items: flex-start; } }

@@ -66,7 +66,7 @@ export const programs: Record<ProgramKey, Program> = {
     lead: "A flexible, self-paced program introducing school and college students to AI and its practical uses.",
     art: "recorded",
     facts: [
-      { icon: "user", title: "School & college students", sub: "New to AI" },
+      { icon: "user", title: "School & college students", sub: "" },
       { icon: "clock", title: "12 Weeks", sub: "Self-paced" },
       { icon: "monitor", title: "Online", sub: "Recorded sessions" },
     ],
@@ -94,7 +94,7 @@ export const programs: Record<ProgramKey, Program> = {
     lead: "Instructor-led Generative and Agentic AI for beginners and career switchers, building practical, industry-ready skills.",
     art: "regular",
     facts: [
-      { icon: "user", title: "Beginners & career switchers", sub: "Aspiring professionals" },
+      { icon: "user", title: "Beginners & career switchers", sub: "" },
       { icon: "clock", title: "12 Weeks", sub: "Instructor-led" },
       { icon: "monitor", title: "Online / Offline", sub: "Live + hands-on" },
     ],
@@ -123,7 +123,7 @@ export const programs: Record<ProgramKey, Program> = {
     lead: "Led by senior engineers and industry experts, for experienced professionals, tech leaders and the C-suite.",
     art: "premium",
     facts: [
-      { icon: "user", title: "Experienced professionals", sub: "Technical leaders & C-Suite" },
+      { icon: "user", title: "Experienced professionals & C-Suite", sub: "" },
       { icon: "clock", title: "12 Weeks", sub: "Expert-led" },
       { icon: "monitor", title: "Online / Offline", sub: "Live sessions" },
     ],

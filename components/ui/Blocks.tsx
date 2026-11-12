@@ -42,7 +42,7 @@ export function PageHero({ crumbs, pill, title, lead, facts, actions, art, child
             {lead && <p className="lead" data-reveal="" style={{ "--d": ".15s" } as React.CSSProperties}>{lead}</p>}
             {facts && (
               <div className="facts" data-reveal="" style={{ "--d": ".25s" } as React.CSSProperties}>
-                {facts.map((f) => <div className="fact" key={f.title}><Icon name={f.icon} /><div><b>{f.title}</b><span>{f.sub}</span></div></div>)}
+                {facts.map((f) => <div className="fact" key={f.title}><Icon name={f.icon} /><div><b>{f.title}</b>{f.sub && <span>{f.sub}</span>}</div></div>)}
               </div>
             )}
             {actions && <div className="actions" data-reveal="" style={{ "--d": ".35s" } as React.CSSProperties}>{actions}</div>}

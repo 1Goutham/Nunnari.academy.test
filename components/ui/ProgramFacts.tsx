@@ -7,7 +7,7 @@ export default function ProgramFacts({ facts, compact }: { facts: { icon: IconNa
       {facts.map((f) => (
         <div key={f.title} className="pfacts__item">
           <Icon name={f.icon} />
-          <div><b>{f.title}</b><span>{f.sub}</span></div>
+          <div><b>{f.title}</b>{f.sub && <span>{f.sub}</span>}</div>
         </div>
       ))}
     </div>

@@ -79,7 +79,7 @@ function Regular() {
   return (
     <Stage name="regular">
       <Layer z={6} i={0} className="vg-card vg-weeks">
-        <div className="vg-head"><strong>{p.facts[1].title}</strong><span>{p.facts[0].sub}</span></div>
+        <div className="vg-head"><strong>{p.facts[1].title}</strong><span>{p.facts[1].sub}</span></div>
         <div className="vg-weeks__grid">
           {Array.from({ length: 12 }, (_, k) => <span key={k} style={{ "--k": k } as CSSProperties}>W{k + 1}</span>)}
         </div>
