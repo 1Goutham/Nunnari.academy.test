@@ -123,7 +123,7 @@ export const programs: Record<ProgramKey, Program> = {
     lead: "Led by senior engineers and industry experts, for experienced professionals, tech leaders and the C-suite.",
     art: "premium",
     facts: [
-      { icon: "user", title: "Experienced professionals & C-Suite", sub: "" },
+      { icon: "user", title: "Experienced professionals", sub: "" },
       { icon: "clock", title: "12 Weeks", sub: "Expert-led" },
       { icon: "monitor", title: "Online / Offline", sub: "Live sessions" },
     ],

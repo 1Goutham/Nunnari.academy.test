@@ -1552,7 +1552,7 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .event__body:has(.pfacts) .clamp3 { -webkit-line-clamp: 3; line-clamp: 3; min-height: calc(3 * 1.6em); }
 /* program cards: the description takes the slack, so the facts and the link sit on one line across all three */
 .event__body:has(.pfacts) { grid-template-rows: auto auto 1fr auto auto; }
-.event__body:has(.pfacts) .pfacts--compact .pfacts__item { min-height: 2.6em; align-items: flex-start; }
+.event__body:has(.pfacts) .pfacts--compact .pfacts__item { align-items: flex-start; }
 /* 03 partner logos: no panel, no label; they drift across a soft fade at the foot of the image, tinted into its violet */
 .about-card__partners { left: 0; right: 0; bottom: 0; padding: 64px 0 22px; border: 0; border-radius: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none;
   background: linear-gradient(180deg, transparent, rgb(236 232 252 / 70%) 45%, rgb(221 214 248 / 92%)); }
@@ -1564,7 +1564,6 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .panel__copy > p { min-height: calc(3 * 1.7em); }
 @media (min-width: 761px) and (max-width: 1199px) { .panel__copy > p { font-size: .9rem; line-height: 1.65; min-height: calc(3 * 1.65em); } }
 
-.panel__copy .pfacts--compact .pfacts__item { min-height: 2.6em; align-items: flex-start; }
 @media (min-width: 861px) and (max-width: 1099px) { .event__body:has(.pfacts) .event__top { min-height: 42px; align-items: flex-start; } }
 /* phones: the chapter image shows whole (all three illustrations are 1000 × 1093) */
 @media (max-width: 960px) { .about-card__media { aspect-ratio: 1000 / 1093; } .about-card__media img:not(.about-card__img--lift) { object-position: center top; } }
