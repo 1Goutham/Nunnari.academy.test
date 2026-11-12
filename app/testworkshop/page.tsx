@@ -49,9 +49,9 @@ export default function TestWorkshopPage() {
 
       <section className="section section--dark">
         <div className="container">
-          <Head pill="B · Poster, cropped" title={<>Poster in the <span className="grad">card frame.</span></>} lead="The poster fills the same 16:9 frame, showing its upper part. Card sizes stay identical to today." />
-          <div className="tw-grid">{items.slice(0, 3).map((it) => (
-            <article key={it.poster} className="card event"><div className="tw-crop"><Image src={it.poster} alt={`${it.title} poster`} width={1000} height={1250} sizes="(max-width: 960px) 92vw, 380px" /></div><Body it={it} /></article>
+          <Head pill="B · Poster, fitted" title={<>Full poster in the <span className="grad">card frame.</span></>} lead="The whole poster fits inside the same 16:9 frame, on a soft blur of itself. Card sizes stay identical to today." />
+          <div className="tw-grid">{items.map((it) => (
+            <article key={it.poster} className="card event"><div className="tw-fit"><Image className="tw-fit__bg" src={it.poster} alt="" aria-hidden width={1000} height={1250} sizes="200px" /><Image className="tw-fit__img" src={it.poster} alt={`${it.title} poster`} width={1000} height={1250} sizes="(max-width: 960px) 60vw, 220px" /></div><Body it={it} /></article>
           ))}</div>
         </div>
       </section>

@@ -1504,3 +1504,7 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .tw-facts .i { width: 18px; height: 18px; color: var(--brand); }
 @media (max-width: 960px) { .tw-grid { grid-template-columns: 1fr 1fr; } .tw-detail { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .tw-grid { grid-template-columns: 1fr; } }
+.tw-fit { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #0E0A26; border-bottom: 1px solid var(--line); display: grid; place-items: center; isolation: isolate; }
+.tw-fit__bg { position: absolute; inset: -12%; width: 124%; height: 124%; object-fit: cover; filter: blur(22px) saturate(1.2) brightness(.55); z-index: -1; }
+.tw-fit__img { position: relative; height: 88%; width: auto; border-radius: 8px; box-shadow: 0 14px 34px -12px rgb(0 0 0 / 75%); transition: transform .6s var(--ease); }
+.event:hover .tw-fit__img { transform: scale(1.04); }
