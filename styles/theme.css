@@ -1553,3 +1553,9 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 /* program cards: the description takes the slack, so the facts and the link sit on one line across all three */
 .event__body:has(.pfacts) { grid-template-rows: auto auto 1fr auto auto; }
 .event__body:has(.pfacts) .pfacts--compact .pfacts__item { min-height: 2.6em; align-items: flex-start; }
+/* 03 partner logos: no panel, no label; they drift across a soft fade at the foot of the image, tinted into its violet */
+.about-card__partners { left: 0; right: 0; bottom: 0; padding: 64px 0 22px; border: 0; border-radius: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none;
+  background: linear-gradient(180deg, transparent, rgb(236 232 252 / 70%) 45%, rgb(221 214 248 / 92%)); }
+.about-card__logo img { opacity: .62; filter: brightness(0) saturate(100%) invert(26%) sepia(38%) saturate(1500%) hue-rotate(228deg) brightness(.92); mix-blend-mode: multiply; }
+.about-card__partners:hover .about-card__logo img { opacity: .85; }
+.about-card__marquee { -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); }

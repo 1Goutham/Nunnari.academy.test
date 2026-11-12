@@ -94,8 +94,7 @@ export default function WhoWeAre() {
           <div className="about-card__media">
             <Image src={c.img} alt={c.alt} width={1000} height={1093} sizes="(max-width: 960px) 92vw, 520px" className={c.logos ? "about-card__img--lift" : undefined} />
             {c.logos && (
-              <div className="about-card__partners">
-                <span className="about-card__partners-label">Our partners</span>
+              <div className="about-card__partners" aria-label="Our partners">
                 <Marquee duration={32} className="about-card__marquee">
                   {c.logos.map((l) => <span key={l.name} className="about-card__logo"><Image src={l.src} alt={l.name} width={600} height={200} sizes="120px" loading="eager" /></span>)}
                 </Marquee>
