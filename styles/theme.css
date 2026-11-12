@@ -1471,3 +1471,6 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .section--dark .toolgrid__mark { display: inline-grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; background: #fff; box-shadow: 0 10px 24px -14px rgb(0 0 0 / 60%); }
 .section--dark .toolgrid__name { color: var(--text); }
 .section--dark .seg, .section--dark .filter { border-color: var(--rule); }
+/* eyebrow labels: text only, no leading dash */
+.pill::before { display: none; content: none; }
+.pill { gap: 0; }
