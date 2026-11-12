@@ -2,6 +2,7 @@ import Image from "next/image";
 
 // moments from our events: launches, summits, talks and community meetups
 const shots = [
+  { src: "/assets/img/events/ai-session.webp", w: 1400, h: 933, alt: "An introductory AI session with students" },
   { src: "/assets/img/events/nvidia-summit.webp", w: 1400, h: 1050, alt: "Our team at the NVIDIA AI Summit" },
   { src: "/assets/img/events/devfest-talk.webp", w: 1400, h: 933, alt: "A talk on open models at DevFest" },
   { src: "/assets/img/events/tensorflow-meetup.webp", w: 1400, h: 1050, alt: "TensorFlow User Group Coimbatore meetup" },
