@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import Hero from "@/components/sections/Hero";
@@ -12,11 +13,7 @@ import PastEvents from "@/components/events/PastEvents";
 import { Cta, Head } from "@/components/ui/Blocks";
 import { getWorkshops } from "@/lib/workshops";
 
-export const metadata: Metadata = {
-  title: { absolute: "Nunnari Academy — Your School of AI for the Skills of Tomorrow" },
-  description: "Practical, hands-on AI programs in English and Tamil. Build real skills, create real projects, and grow with a Pioneering AI community.",
-  alternates: { canonical: "/" },
-};
+export const metadata: Metadata = pageMeta({ title: "AI Courses in English & Tamil | Nunnari Academy", absoluteTitle: true, description: "Hands-on AI courses in English and Tamil: AI Essentials for students, Applied Generative and Agentic AI, and Advanced AI & Leadership. Online and offline.", path: "/" });
 
 export default function HomePage() {
   const workshops = getWorkshops().slice(0, 12).map(({ summaryHtml: _s, ...w }) => w);

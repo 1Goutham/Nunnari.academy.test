@@ -3,6 +3,8 @@ import LogoMarquee from "@/components/ui/LogoMarquee";
 import Icon from "@/components/Icon";
 import { Card, Cta, Head, PageHero } from "@/components/ui/Blocks";
 import { partners, type Partner } from "@/lib/partners";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbs, ORG_ID } from "@/lib/schema";
 
 const bars = (years: number[], vals: number[], max: number) => (
   <div className="vbars" data-inview="">
@@ -43,8 +45,14 @@ function Charts({ kind }: { kind: Partner["charts"] }) {
 export default function PartnerPage({ id }: { id: Partner["key"] }) {
   const p = partners[id];
   const btn = (ghost?: boolean) => <button className={`btn btn--lg ${ghost ? "btn--ghost" : "btn--primary"}`} type="button" data-enquire={`${p.cta} (${id === "institutions" ? "Institution" : "Corporate"})`}>{p.cta} <Icon name="arrow" className="i--arrow" /></button>;
+  const path = `/partner/${id}`;
+  const label = id === "institutions" ? "Institutional collaboration" : "Corporate AI training";
   return (
     <>
+      <JsonLd data={[
+        { "@type": "Service", "@id": `https://nunnari.academy${path}#service`, name: label, serviceType: id === "institutions" ? "AI education partnership for colleges and universities" : "Corporate AI training", description: p.lead, provider: { "@id": ORG_ID }, areaServed: { "@type": "Country", name: "India" }, audience: { "@type": "Audience", audienceType: id === "institutions" ? "Colleges and universities" : "Companies and teams" } },
+        breadcrumbs([{ name: label, path }]),
+      ]} />
       <PageHero pill={p.pill} title={<>{p.title[0]} <span className="grad">{p.title[1]}</span></>} lead={p.lead} art={p.art} actions={btn()} />
 
       <section className="section section--dark">

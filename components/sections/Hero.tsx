@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="container hero__inner">
         <div className="hero__copy">
           <h1 className="t-display" id="hero-title">
-            <span className="line" data-in="" style={{ "--d": ".1s" } as React.CSSProperties}>Your School of AI</span>
+            <span className="line" data-in="" style={{ "--d": ".1s" } as React.CSSProperties}>Your School of AI</span>{" "}
             <span className="line" data-in="" style={{ "--d": ".22s" } as React.CSSProperties}>
               <span className="grad">for the Skills of Tomorrow.</span>
             </span>

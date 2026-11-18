@@ -60,3 +60,12 @@ public/assets/           brand logos, partner college logos, illustrations
 - The hero background is a WebGL shader rendered at low resolution. It pauses off screen and falls back to CSS when WebGL is unavailable.
 - Scenes are plain HTML and CSS; their small animations run only while on screen. The hero network is one 2D canvas that pauses off screen. Both hold still under reduced motion.
 - Line-art animations pause off screen. All motion is off for visitors with `prefers-reduced-motion`.
+
+## SEO
+
+- **Page metadata**: every page calls `pageMeta()` (`lib/seo.ts`) for its title, description, canonical and social tags. Keep titles under ~60 characters and descriptions at 140–160.
+- **Share images**: `opengraph-image.tsx` files render branded 1200×630 images at build time (`lib/og.tsx`). Add one to a route folder to give that page its own image, and list the path in `OWN_IMAGE` in `lib/seo.ts`.
+- **Structured data**: `lib/schema.ts` builds schema.org data from the site's own content (Organization and WebSite on every page; Course, FAQPage and BreadcrumbList on program pages; EducationEvent on workshops). Update the content, not the schema.
+- **Program URLs** come from `slug` in `lib/programs.ts` (use `programPath()`). If a slug changes, add a permanent redirect in `next.config.ts`.
+- **Crawl files**: `app/sitemap.ts`, `app/robots.ts` and `/llms.txt` (`app/llms.txt/route.ts`, a plain-text brief for AI assistants) are generated from the same data.
+- **After launch**: verify the domain in Google Search Console and Bing Webmaster Tools and submit `https://nunnari.academy/sitemap.xml`.

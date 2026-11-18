@@ -4,7 +4,7 @@ import Icon from "@/components/Icon";
 import { site } from "@/lib/site";
 
 const cols = [
-  { title: "Programs", links: [["/programs/recorded", "AI Essentials"], ["/programs/regular", "Applied AI"], ["/programs/premium", "Advanced AI & Leadership"], ["/programs", "All programs"]] },
+  { title: "Programs", links: [["/programs/ai-essentials", "AI Essentials"], ["/programs/applied-ai", "Applied AI"], ["/programs/advanced-ai-leadership", "Advanced AI & Leadership"], ["/programs", "All programs"]] },
   { title: "Partner with us", links: [["/partner/institutions", "Institutions"], ["/partner/corporates", "Corporates"]] },
   { title: "Explore", links: [["/explore#workshops", "Workshops"], ["/explore#testimonials", "Testimonials"], ["/explore#community", "Community"], ["/#company", "Nunnari Labs & DeepWeaver"]] },
   { title: "Support", links: [["/help", "Help & contact"], ["/terms", "Terms"], ["/privacy", "Privacy"], ["/refund", "Refund policy"]] },

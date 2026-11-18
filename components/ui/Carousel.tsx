@@ -42,7 +42,8 @@ export default function Carousel({ children, label, nav = "side", renderControls
     t.addEventListener("scroll", onScroll, { passive: true });
     const ro = new ResizeObserver(sync);
     ro.observe(t);
-    const mo = new MutationObserver(() => { t.scrollTo({ left: 0 }); requestAnimationFrame(sync); });
+    // only rewind when the row is actually scrolled: a no-op scroll at load still ends LCP measurement in Chrome
+    const mo = new MutationObserver(() => { if (t.scrollLeft > 0) t.scrollTo({ left: 0 }); requestAnimationFrame(sync); });
     mo.observe(t, { subtree: true, attributes: true, attributeFilter: ["hidden"] });
     return () => { t.removeEventListener("scroll", onScroll); ro.disconnect(); mo.disconnect(); };
   }, [sync]);

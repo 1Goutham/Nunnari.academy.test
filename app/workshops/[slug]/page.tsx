@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { pageMeta } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbs, educationEvent } from "@/lib/schema";
 import Icon from "@/components/Icon";
 import AddToCalendar from "@/components/events/AddToCalendar";
 import YouTube from "@/components/events/YouTube";
@@ -16,7 +19,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const w = getWorkshop((await params).slug);
   if (!w) return {};
-  return { title: w.title, description: w.description || `${w.type} by Nunnari Academy`, alternates: { canonical: `/workshops/${w.slug}` } };
+  // description: the workshop's own line, then the facts (type, date, mode, speaker) so every page has a full, unique snippet
+  const facts = `${w.type} on ${fmtDate(w.start)}, ${w.mode}${w.speaker ? `, with ${w.speaker.split(",")[0]}` : ""}.`;
+  const desc = w.description ? `${w.description.replace(/\.?$/, ".")} ${facts}` : `${w.title}: a Nunnari Academy ${facts} Watch the recording and read the summary.`;
+  return pageMeta({ title: `${w.title} | ${w.type}`, description: desc.length > 160 ? `${desc.slice(0, 157).replace(/\s+\S*$/, "")}…` : desc, path: `/workshops/${w.slug}`, type: "article" });
 }
 
 export default async function WorkshopPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -25,6 +31,7 @@ export default async function WorkshopPage({ params }: { params: Promise<{ slug:
   const yt = youtubeId(w.youtube);
   return (
     <div data-date={w.start} data-end={w.end} data-when={whenOf(w.start, w.end)}>
+      <JsonLd data={[educationEvent(w, yt), breadcrumbs([{ name: "Explore", path: "/explore" }, { name: w.title, path: `/workshops/${w.slug}` }])]} />
       <PageHero
         crumbs={[{ href: "/explore", label: "Explore" }, { href: "/explore#workshops", label: "Workshops" }, { href: `/workshops/${w.slug}`, label: w.title }]}
         pill={w.type}

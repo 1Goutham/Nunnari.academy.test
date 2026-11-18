@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbs, ORG_ID } from "@/lib/schema";
+import { pageMeta } from "@/lib/seo";
 import Icon from "@/components/Icon";
 import { Cta, PageHero } from "@/components/ui/Blocks";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Help & Support",
-  description: "Reach Nunnari Academy for help with programs, payments or platform access.",
-  alternates: { canonical: "/help" },
-};
+export const metadata: Metadata = pageMeta({ title: "Help & Contact", description: "Questions about Nunnari Academy programs, payments or platform access? Call +91 90033 13175 or email enquiry@nunnari.academy. We reply within 24–48 hours.", path: "/help" });
 
 export default function HelpPage() {
   return (
     <>
+      <JsonLd data={[{ "@type": "ContactPage", name: "Help & Contact", url: "https://nunnari.academy/help", about: { "@id": ORG_ID } }, breadcrumbs([{ name: "Help & Contact", path: "/help" }])]} />
       <PageHero pill="Support" title={<>Help &amp; <span className="grad">support.</span></>} lead="Questions about programs, payments or platform access? We’re here to help." />
       <section className="section section--dark" id="contact">
         <div className="container"><div className="grid grid--2" style={{ maxWidth: 820 }}>

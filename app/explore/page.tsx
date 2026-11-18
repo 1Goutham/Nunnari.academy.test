@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbs } from "@/lib/schema";
+import { pageMeta } from "@/lib/seo";
 import Icon from "@/components/Icon";
 import Art from "@/components/ui/Art";
 import Spotlight from "@/components/events/Spotlight";
@@ -8,17 +11,14 @@ import Testimonials from "@/components/sections/Testimonials";
 import { Cta, Head, PageHero } from "@/components/ui/Blocks";
 import { getSpotlight, getWorkshops } from "@/lib/workshops";
 
-export const metadata: Metadata = {
-  title: "Explore — Workshops, Testimonials & Community",
-  description: "Upcoming and past Nunnari Academy workshops with recordings, learner stories, and the AI Tamil Nadu community.",
-  alternates: { canonical: "/explore" },
-};
+export const metadata: Metadata = pageMeta({ title: "Free AI Workshops, Webinars & Community", description: "Free AI workshops and webinars from Nunnari Academy, with recordings and summaries, learner testimonials and a weekly Saturday community session.", path: "/explore" });
 
 export default function ExplorePage() {
   const all = getWorkshops().map(({ summaryHtml: _s, ...w }) => w);
   const spot = getSpotlight(all);
   return (
     <>
+      <JsonLd data={breadcrumbs([{ name: "Explore", path: "/explore" }])} />
       <PageHero
         full
         pill="Explore"

@@ -6,6 +6,7 @@ export type ProgramKey = "recorded" | "regular" | "premium";
 
 type Program = {
   key: ProgramKey;
+  slug: string;             // URL: /programs/<slug>
   num: string;
   name: string;
   short: string;            // audience line (tabs, menus)
@@ -25,10 +26,10 @@ type Program = {
 /* ---------- FAQ: the same three sections and the same questions on every programme ---------- */
 const FAQ_CATS = [{ key: "program", label: "Program" }, { key: "eligibility", label: "Eligibility" }, { key: "certificate", label: "Certificate" }];
 
-const faqFacts: Record<ProgramKey, { name: string; who: string; prior: string; mode: string }> = {
-  recorded: { name: "AI Essentials", who: "School and college students who are new to AI.", prior: "No. It is built for learners who are completely new to AI.", mode: "Online, as recorded sessions you can follow at your own pace." },
-  regular: { name: "Applied AI", who: "Beginners, aspiring professionals and career switchers who want practical, industry-relevant skills in Generative AI and Agentic AI.", prior: "No. It starts with a strong foundation in AI before moving on to building with it.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
-  premium: { name: "Advanced AI & Leadership", who: "Experienced professionals, technical leaders and C-suite executives.", prior: "Yes. It is built for experienced professionals and technical leaders, with sessions led by senior engineers, technology leaders and industry experts.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
+const faqFacts: Record<ProgramKey, { name: string; what: string; who: string; prior: string; mode: string }> = {
+  recorded: { name: "AI Essentials", what: "AI Essentials is a 12-week, self-paced online AI program from Nunnari Academy for school and college students who are new to AI. Through recorded sessions in English and Tamil, learners build AI fundamentals, complete hands-on projects and finish with a portfolio.", who: "School and college students who are new to AI.", prior: "No. It is built for learners who are completely new to AI.", mode: "Online, as recorded sessions you can follow at your own pace." },
+  regular: { name: "Applied AI", what: "Applied AI is a 12-week, instructor-led Generative AI and Agentic AI program from Nunnari Academy for beginners, aspiring professionals and career switchers. Learners practise with industry tools and build real-world projects and a portfolio, online or offline.", who: "Beginners, aspiring professionals and career switchers who want practical, industry-relevant skills in Generative AI and Agentic AI.", prior: "No. It starts with a strong foundation in AI before moving on to building with it.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
+  premium: { name: "Advanced AI & Leadership", what: "Advanced AI & Leadership is a 12-week Nunnari Academy program for experienced professionals, technical leaders and C-suite executives. It is led by senior engineers, technology leaders and industry experts, with live sessions online or offline.", who: "Experienced professionals, technical leaders and C-suite executives.", prior: "Yes. It is built for experienced professionals and technical leaders, with sessions led by senior engineers, technology leaders and industry experts.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
 };
 
 const toolNames = (keys: string[]) => keys.map((k) => toolIcons[k]?.title ?? k).join(", ");
@@ -36,6 +37,7 @@ const toolNames = (keys: string[]) => keys.map((k) => toolIcons[k]?.title ?? k).
 function faqFor(key: ProgramKey): QA[] {
   const f = faqFacts[key];
   return [
+    { q: `What is ${f.name}?`, cats: ["program"], a: f.what },
     { q: "How long is the program?", cats: ["program"], a: "12 weeks." },
     { q: "Is it online or offline?", cats: ["program"], a: f.mode },
     { q: "Which packages and tools will I use?", cats: ["program"], a: `Packages: ${toolNames(stack[key].packages)}. Tools: ${toolNames(stack[key].tools)}.` },
@@ -59,6 +61,7 @@ export const roles = ["AI Engineer", "Machine Learning Engineer", "ML Scientist"
 export const programs: Record<ProgramKey, Program> = {
   recorded: {
     key: "recorded",
+    slug: "ai-essentials",
     num: "01",
     name: "AI Essentials",
     short: "School & college students",
@@ -87,6 +90,7 @@ export const programs: Record<ProgramKey, Program> = {
   },
   regular: {
     key: "regular",
+    slug: "applied-ai",
     num: "02",
     name: "Applied AI",
     short: "Beginners & career switchers",
@@ -116,6 +120,7 @@ export const programs: Record<ProgramKey, Program> = {
   },
   premium: {
     key: "premium",
+    slug: "advanced-ai-leadership",
     num: "03",
     name: "Advanced AI & Leadership",
     short: "Experienced professionals & C-Suite",
@@ -144,6 +149,9 @@ export const programs: Record<ProgramKey, Program> = {
   },
 };
 export const programList = [programs.recorded, programs.regular, programs.premium];
+
+/** The public URL of a program page. */
+export const programPath = (key: ProgramKey) => `/programs/${programs[key].slug}`;
 
 /** One title size for every program: the longest title line sets it (bold line counted a little wider). */
 export const TITLE_CH = Math.max(...programList.map((p) => Math.max(p.title[0].length, p.title[1].length * 1.12)));

@@ -5,9 +5,9 @@ const legacy: Record<string, string> = {
   "/index.html": "/",
   "/explore.html": "/explore",
   "/programs.html": "/programs",
-  "/recorded-programme.html": "/programs/recorded",
-  "/regular-programme.html": "/programs/regular",
-  "/premium-programme.html": "/programs/premium",
+  "/recorded-programme.html": "/programs/ai-essentials",
+  "/regular-programme.html": "/programs/applied-ai",
+  "/premium-programme.html": "/programs/advanced-ai-leadership",
   "/partner-institutions.html": "/partner/institutions",
   "/partner-corporates.html": "/partner/corporates",
   "/help.html": "/help",
@@ -16,6 +16,10 @@ const legacy: Record<string, string> = {
   "/refund.html": "/refund",
   "/workshops": "/explore",
   "/courses": "/programs",
+  // program pages took keyword URLs
+  "/programs/recorded": "/programs/ai-essentials",
+  "/programs/regular": "/programs/applied-ai",
+  "/programs/premium": "/programs/advanced-ai-leadership",
 };
 
 const nextConfig: NextConfig = {

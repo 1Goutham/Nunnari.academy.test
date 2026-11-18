@@ -4,7 +4,9 @@ import BrochureButton from "@/components/ui/BrochureButton";
 import { Card, Cta, Head, PageHero } from "@/components/ui/Blocks";
 import ToolGrid from "@/components/ui/Tools";
 import { SkillsHub, Stairs, StackRows, ToolsOrbit } from "@/components/ui/Illus";
-import { programs, TITLE_CH, type ProgramKey } from "@/lib/programs";
+import { programs, TITLE_CH, type ProgramKey, programPath } from "@/lib/programs";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbs, course, faqPage } from "@/lib/schema";
 
 /**
  * One template for every programme page, the same sections in the same order:
@@ -20,10 +22,11 @@ export default function ProgramPage({ id }: { id: ProgramKey }) {
   </>;
   return (
     <>
+      <JsonLd data={[course(id), faqPage(p.faq, programPath(id)), breadcrumbs([{ name: "Programs", path: "/programs" }, { name: p.name, path: programPath(id) }])]} />
       <PageHero
-        crumbs={[{ href: "/programs", label: "Programs" }, { href: `/programs/${id}`, label: p.name }]}
+        crumbs={[{ href: "/programs", label: "Programs" }, { href: programPath(id), label: p.name }]}
         pill={`${p.name} · ${p.num}`}
-        title={<span className="t-2l" style={{ "--ch": TITLE_CH } as React.CSSProperties}>{p.title[0]}<br /><span className="grad">{p.title[1]}</span></span>}
+        title={<span className="t-2l" style={{ "--ch": TITLE_CH } as React.CSSProperties}>{p.title[0]}{" "}<br /><span className="grad">{p.title[1]}</span></span>}
         lead={p.lead}
         facts={p.facts}
         art={p.art}
