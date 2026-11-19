@@ -2,14 +2,12 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import Icon from "@/components/Icon";
 
 /**
- * Home hero visual: a student in a deep-violet arch, with three glass cards floating at
- * different depths around him.
+ * Home hero visual: a portrait in a deep-violet arch, a language switch, and a plaque with our numbers.
  *
  * The photo is shot on black, so `mix-blend-mode: lighten` lets the arch's violet replace the
- * backdrop: the student reads as cut out without a mask. Cards lean towards the pointer
+ * backdrop: the student reads as cut out without a mask. Layers drift with the pointer
  * (one rAF loop, only while the hero is on screen; still under reduced motion and on touch).
  *
  * PLACEHOLDER PHOTO: Unsplash (free licence). Swap public/assets/img/hero/student-*.webp for a
@@ -47,24 +45,14 @@ export default function HeroStage() {
           sizes="(max-width: 560px) 260px, (max-width: 960px) 300px, 340px" priority fetchPriority="high" />
       </div>
 
-      {/* three glass cards, each at its own depth (--z), placed clear of his face */}
-      <div className="stage__card stage__card--stat" style={{ "--z": 28 } as React.CSSProperties} aria-hidden="true">
-        <b data-count="10000" data-suffix="+">10,000+</b><small>learners trained</small>
-      </div>
-      <div className="stage__card stage__card--chat" style={{ "--z": 18 } as React.CSSProperties} aria-hidden="true">
-        <span className="stage__icon"><Icon name="spark" /></span>
-        <div>
-          <b>AI tutor</b>
-          <span className="stage__msg stage__msg--q">What is an AI agent?</span>
-          <span className="stage__reply">
-            <span className="stage__typing"><i /><i /><i /></span>
-            <span className="stage__msg stage__msg--a" lang="ta">AI முகவர் என்றால் என்ன?</span>
-          </span>
-        </div>
-      </div>
-      <div className="stage__card stage__card--cert" style={{ "--z": 12 } as React.CSSProperties} aria-hidden="true">
-        <span className="stage__icon"><Icon name="award" /></span>
-        <div><b>Certificate</b><small>On completion</small></div>
+      {/* we teach in both languages: the switch slides between them */}
+      <div className="stage__lang" aria-hidden="true"><span>English</span><span lang="ta">தமிழ்</span></div>
+
+      {/* one plaque at the base of the arch, our numbers in a row */}
+      <div className="stage__plaque" aria-hidden="true">
+        <div><b data-count="10000" data-suffix="+">10,000+</b><small>Learners trained</small></div>
+        <div><b data-count="85" data-suffix="+">85+</b><small>Universities &amp; colleges</small></div>
+        <div><b data-count="25" data-suffix="+">25+</b><small>Corporate &amp; government organisations</small></div>
       </div>
     </div>
   );
