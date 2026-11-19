@@ -1680,3 +1680,46 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
   .stage__card--weeks { top: 58%; }
   .stage__card--cert { bottom: 5%; }
 }
+/* stage, elevated: a second arch for depth, a light rim on the arch, photo parallax, a typing reply, card entrance */
+@property --rim-a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.stage__plate, .stage__rim { position: absolute; inset: 4% 8% 0 14%; border-radius: 240px 240px 36px 36px; pointer-events: none; }
+.stage__plate { z-index: -1; translate: 7% -3.5%; background: linear-gradient(165deg, rgb(123 111 208 / 22%), rgb(123 111 208 / 4%) 70%);
+  border: 1px solid rgb(91 75 196 / 22%); transform: translate3d(calc(var(--px) * 6px), calc(var(--py) * 6px), 0); }
+.stage__rim { padding: 1.5px; z-index: 1;
+  background: conic-gradient(from var(--rim-a), transparent 0 62%, rgb(221 214 248 / 85%) 74%, #fff 78%, rgb(221 214 248 / 85%) 82%, transparent 92%), linear-gradient(180deg, rgb(221 214 248 / 45%), transparent 75%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); animation: stage-rim 9s linear infinite; }
+@keyframes stage-rim { to { --rim-a: 360deg; } }
+.stage__photo img { scale: 1.06; transform: translate3d(calc(var(--px) * -7px), calc(var(--py) * -5px), 0); }
+.stage__glow { transform: translate3d(calc(var(--px) * 14px), calc(var(--py) * 10px), 0); }
+
+.stage__reply { display: grid; }
+.stage__reply > * { grid-area: 1 / 1; }
+.stage__typing { justify-self: start; align-self: start; display: inline-flex; gap: 4px; margin-top: 6px; padding: 9px 12px; border-radius: 10px; background: var(--soft);
+  animation: stage-typing 10s ease infinite; }
+.stage__typing i { width: 5px; height: 5px; border-radius: 50%; background: #5B4BC4; animation: stage-dot 1s ease-in-out infinite; }
+.stage__typing i:nth-child(2) { animation-delay: .15s; } .stage__typing i:nth-child(3) { animation-delay: .3s; }
+.stage__reply p[lang="ta"] { animation: stage-answer 10s ease infinite; }
+@keyframes stage-typing { 0%, 24% { opacity: 1; } 28%, 100% { opacity: 0; } }
+@keyframes stage-answer { 0%, 26% { opacity: 0; translate: 0 6px; } 32%, 90% { opacity: 1; translate: 0 0; } 97%, 100% { opacity: 0; translate: 0 0; } }
+@keyframes stage-dot { 0%, 100% { translate: 0 0; opacity: .45; } 40% { translate: 0 -3px; opacity: 1; } }
+
+.stage__card { animation: stage-in .9s cubic-bezier(.2,.8,.2,1) both, stage-float 7s ease-in-out infinite;
+  animation-delay: calc(.25s + var(--z) * .02s), calc(var(--z) * -0.21s); }
+@keyframes stage-in { from { opacity: 0; scale: .9; } }
+
+@media (max-width: 560px) {
+  .stage__plate, .stage__rim { inset: 6% 12% 0 12%; border-radius: 200px 200px 28px 28px; }
+  .stage__plate { translate: 6% -3%; }
+  .stage__typing { margin-top: 4px; padding: 7px 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage__rim, .stage__typing, .stage__typing i, .stage__reply p[lang="ta"], .stage__card { animation: none; }
+  .stage__typing { opacity: 0; }
+}
+.stage__rim { padding: 2px; background: conic-gradient(from var(--rim-a), transparent 0 55%, rgb(200 190 250 / 90%) 70%, #fff 76%, rgb(200 190 250 / 90%) 82%, transparent 95%), linear-gradient(180deg, rgb(221 214 248 / 70%), rgb(221 214 248 / 10%) 80%); }
+@media (max-width: 560px) {
+  .stage__card--weeks { width: auto; }
+  .stage__card--weeks b, .stage__card--weeks small { white-space: nowrap; }
+  .stage__card--weeks .stage__bars i { width: 7px; }
+}
