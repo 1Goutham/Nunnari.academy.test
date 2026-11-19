@@ -44,7 +44,7 @@ export default function HeroStage() {
       <div className="stage__arch" aria-hidden="true" />
       <div className="stage__photo">
         <Image src="/assets/img/hero/student-1400.webp" alt="A student learning AI on his laptop" width={1400} height={1750}
-          sizes="(max-width: 560px) 76vw, (max-width: 960px) 340px, 400px" priority fetchPriority="high" />
+          sizes="(max-width: 560px) 260px, (max-width: 960px) 300px, 340px" priority fetchPriority="high" />
       </div>
 
       {/* three glass cards, each at its own depth (--z), placed clear of his face */}
