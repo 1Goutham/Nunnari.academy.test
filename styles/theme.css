@@ -1585,3 +1585,98 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 /* the track's 4px focus padding made scroll-snap nudge it 4px on load, a scroll that ends Chrome's LCP measurement */
 .carousel__track { scroll-padding-inline: 4px; }
 .art > svg text, .stairs text { font-family: var(--font); }
+
+/* ==========================================================================
+   Hero stage: a student in a deep-violet portal, glass cards floating at depth
+   ========================================================================== */
+.hero__visual .stage { margin-inline: auto; }
+.stage { --px: 0; --py: 0; position: relative; width: min(100%, 520px); aspect-ratio: 4 / 4.6; justify-self: center; }
+.stage__portal { position: absolute; inset: 4% 8% 0 14%; border-radius: 240px 240px 36px 36px; overflow: hidden; isolation: isolate;
+  background: radial-gradient(70% 55% at 50% 30%, #4A3BAF 0%, #2B2070 45%, #120E33 100%); box-shadow: 0 50px 90px -40px rgb(43 32 112 / 70%), inset 0 0 0 1px rgb(221 214 248 / 14%); }
+.stage__glow { position: absolute; left: 50%; top: 34%; width: 80%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; background: radial-gradient(closest-side, rgb(179 169 234 / 55%), transparent); filter: blur(10px); }
+.stage__mark { position: absolute; left: 50%; top: 8%; width: 70%; translate: -50% 0; opacity: .5; }
+.stage__mark circle { fill: #CFC7F4; }
+.stage__mark polyline { fill: none; stroke: #fff; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px rgb(207 199 244 / 90%)); }
+.stage__orbit { position: absolute; left: 50%; top: 40%; width: 120%; aspect-ratio: 1 / .34; translate: -50% -50%; rotate: -14deg; border-radius: 50%; border: 1px solid rgb(221 214 248 / 28%); }
+.stage__photo { position: absolute; inset: 4% 8% 0 14%; border-radius: 240px 240px 36px 36px; overflow: hidden; }
+.stage__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; mix-blend-mode: lighten; filter: saturate(.92) contrast(1.05);
+  -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent); mask-image: linear-gradient(180deg, #000 70%, transparent); }
+/* glass cards */
+.stage__card { position: absolute; z-index: 2; display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 18px; color: #fff;
+  background: linear-gradient(135deg, rgb(255 255 255 / 18%), rgb(255 255 255 / 6%)); border: 1px solid rgb(255 255 255 / 26%);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4); box-shadow: 0 24px 50px -24px rgb(18 14 51 / 70%), inset 0 1px 0 rgb(255 255 255 / 30%);
+  transform: translate3d(calc(var(--px) * var(--z) * -0.6px), calc(var(--py) * var(--z) * -0.6px), 0); animation: stage-float 7s ease-in-out infinite; animation-delay: calc(var(--z) * -0.21s); }
+.stage__card b { display: block; font-size: .9rem; font-weight: 600; letter-spacing: -0.01em; }
+.stage__card small, .stage__card p { display: block; font-size: .76rem; color: rgb(255 255 255 / 78%); line-height: 1.4; }
+.stage__card--chat { left: 0; top: 18%; max-width: 230px; align-items: flex-start; }
+.stage__card--chat p { padding: 6px 10px; margin-top: 6px; border-radius: 10px; background: rgb(18 14 51 / 45%); }
+.stage__card--chat p[lang="ta"] { background: rgb(123 111 208 / 55%); }
+.stage__ai, .stage__badge { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: #fff; color: #5B4BC4; }
+.stage__ai .i, .stage__badge .i { width: 18px; height: 18px; }
+.stage__card--weeks { right: 0; top: 46%; flex-direction: column; align-items: stretch; gap: 8px; width: 186px; }
+.stage__bars { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; }
+.stage__bars i { height: 16px; border-radius: 3px; background: rgb(255 255 255 / 22%); animation: stage-week 6s ease-in-out infinite; animation-delay: calc(var(--i) * .25s); }
+.stage__card--cert { left: 4%; bottom: 9%; }
+.stage__card--stat { right: 6%; top: 8%; flex-direction: column; align-items: flex-start; gap: 0; padding: 12px 16px; }
+.stage__card--stat b { font: 600 1.5rem/1.1 var(--font-display); letter-spacing: -0.03em; }
+@keyframes stage-float { 50% { translate: 0 -8px; } }
+@keyframes stage-week { 0%, 100% { background: rgb(255 255 255 / 22%); } 40%, 60% { background: #fff; } }
+@media (prefers-reduced-motion: reduce) { .stage__card, .stage__bars i { animation: none; } }
+@media (max-width: 960px) { .stage { width: min(100%, 440px); } }
+@media (max-width: 560px) {
+  .stage { aspect-ratio: 4 / 5; }
+  .stage__card { padding: 10px 12px; border-radius: 14px; gap: 8px; }
+  .stage__card--chat { max-width: 190px; top: 14%; }
+  .stage__card--weeks { width: 150px; }
+  .stage__card b { font-size: .8rem; }
+  .stage__card--stat b { font-size: 1.2rem; }
+}
+/* stage, refined: mark and orbit sit outside the portal; cards are frosted white with ink text */
+.stage__orbit { z-index: 0; left: 52%; top: 52%; width: 112%; aspect-ratio: 1 / .62; border: 1.5px dashed rgb(91 75 196 / 32%); rotate: -10deg; animation: stage-orbit 40s linear infinite; }
+@keyframes stage-orbit { to { rotate: 350deg; } }
+.stage__mark { z-index: 0; left: auto; right: -4%; top: auto; bottom: 2%; width: 30%; translate: none; opacity: 1; }
+.stage__mark circle { fill: rgb(91 75 196 / 45%); }
+.stage__mark polyline { stroke: #5B4BC4; stroke-width: 3; filter: none; }
+.stage__portal, .stage__photo { z-index: 1; }
+.stage__glow { top: 30%; width: 70%; background: radial-gradient(closest-side, rgb(123 111 208 / 42%), transparent); }
+.stage__card { color: var(--ink); background: rgb(255 255 255 / 78%); border: 1px solid rgb(255 255 255 / 90%);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5); backdrop-filter: blur(16px) saturate(1.5);
+  box-shadow: 0 1px 2px rgb(18 14 51 / 6%), 0 26px 50px -26px rgb(43 32 112 / 55%); }
+.stage__card small, .stage__card p { color: var(--muted); }
+.stage__card--chat p { background: var(--soft); color: var(--ink); }
+.stage__card--chat p[lang="ta"] { background: #5B4BC4; color: #fff; }
+.stage__ai, .stage__badge { background: linear-gradient(160deg, #2B2070, #120E33); color: #fff; }
+.stage__bars i { background: var(--soft); }
+@keyframes stage-week { 0%, 100% { background: var(--soft); } 40%, 60% { background: #5B4BC4; } }
+.stage__card--stat b { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .stage__orbit { animation: none; } }
+/* the photo must blend with the portal behind it: no stacking layer between them */
+.stage { isolation: isolate; }
+.stage__portal, .stage__photo { z-index: auto; }
+.stage__orbit, .stage__mark { z-index: -1; }
+.stage__mark { right: -9%; bottom: 0; width: 26%; }
+/* phones: smaller cards placed around the student, never over his face */
+@media (max-width: 560px) {
+  .stage { width: 100%; aspect-ratio: 4 / 4.9; }
+  .stage__portal, .stage__photo { inset: 6% 12% 0 12%; border-radius: 200px 200px 28px 28px; }
+  .stage__card { padding: 8px 10px; gap: 8px; border-radius: 12px; }
+  .stage__card b { font-size: .74rem; }
+  .stage__card small, .stage__card p { font-size: .66rem; }
+  .stage__ai, .stage__badge { width: 26px; height: 26px; border-radius: 8px; }
+  .stage__ai .i, .stage__badge .i { width: 14px; height: 14px; }
+  .stage__card--chat { left: -2%; top: 46%; max-width: 156px; }
+  .stage__card--chat p:not([lang]) { display: none; }
+  .stage__card--chat p { margin-top: 4px; padding: 4px 8px; }
+  .stage__card--stat { right: -2%; top: 10%; padding: 8px 12px; }
+  .stage__card--stat b { font-size: 1.05rem; }
+  .stage__card--weeks { right: -2%; top: 60%; width: 124px; gap: 5px; }
+  .stage__bars { gap: 2px; } .stage__bars i { height: 10px; }
+  .stage__card--cert { left: 2%; bottom: 6%; }
+  .stage__mark { width: 22%; right: -4%; }
+}
+/* tablets: the chat card sits beside the student, below his face */
+@media (min-width: 561px) and (max-width: 960px) {
+  .stage__card--chat { top: 44%; left: -2%; }
+  .stage__card--weeks { top: 58%; }
+  .stage__card--cert { bottom: 5%; }
+}

@@ -1,10 +1,9 @@
 import Icon from "@/components/Icon";
-import HeroLattice from "./HeroLattice";
+import HeroStage from "./HeroStage";
 
 /**
- * Home hero: the line, one sentence and two actions on the left; on the right the Nunnari mark
- * lives as a crisp network (HeroLattice): a signal runs along its N, nodes reach for the cursor,
- * and a click sends a ripple through it.
+ * Home hero: the line, one sentence and two actions on the left; on the right a student in a
+ * deep-violet portal with floating glass UI (HeroStage).
  */
 export default function Hero() {
   return (
@@ -30,7 +29,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero__visual" data-in="" style={{ "--d": ".3s" } as React.CSSProperties}>
-          <HeroLattice />
+          <HeroStage />
         </div>
       </div>
     </section>
