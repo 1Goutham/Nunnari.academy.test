@@ -36,6 +36,9 @@ function Orbit({ half }: { half: "back" | "front" }) {
  * The photo is a transparent cut-out, so layers sit truly behind and in front of him. Each layer drifts
  * with the pointer at its own depth (one rAF loop, only while the hero is on screen; still under reduced
  * motion and on touch). The laptop lid carries the Nunnari mark.
+ *
+ * The jacket seams, visor and watch are animated through masks cut from the photo
+ * (public/assets/img/hero/mask-*.png, same frame as the photo). Replace them together with the photo.
  */
 export default function HeroStage() {
   const ref = useRef<HTMLDivElement>(null);
@@ -71,8 +74,14 @@ export default function HeroStage() {
       <div className="stage__arch" aria-hidden="true"><span className="stage__dots" /></div>
       <Orbit half="back" />
       <div className="stage__learner">
-        <Image src="/assets/img/hero/learner-960.webp" alt="A Nunnari learner with a laptop, looking ahead" width={960} height={1440}
-          sizes="(max-width: 560px) 330px, (max-width: 960px) 380px, 440px" priority fetchPriority="high" />
+        <div className="stage__figure">
+          <Image src="/assets/img/hero/learner-960.webp" alt="A Nunnari learner with a laptop, looking ahead" width={960} height={1440}
+            sizes="(max-width: 560px) 300px, (max-width: 960px) 360px, 400px" priority fetchPriority="high" />
+          {/* light that lives in the photo: each layer shows only through a mask cut from the photo itself */}
+          <span className="stage__glow stage__glow--seams" aria-hidden="true" />
+          <span className="stage__glow stage__glow--visor" aria-hidden="true" />
+          <span className="stage__glow stage__glow--watch" aria-hidden="true" />
+        </div>
       </div>
       <Orbit half="front" />
 

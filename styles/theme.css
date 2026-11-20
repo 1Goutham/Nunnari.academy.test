@@ -1669,3 +1669,40 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .stage__learner img { filter: none; }
 .stage__ring { stroke-width: 2; }
 .stage__orbit--back .stage__ring { opacity: .7; }
+
+/* --------------------------------------------------------------------------
+   Stage, refined: smaller; light that lives in the photo (seams, visor, watch)
+   -------------------------------------------------------------------------- */
+.stage { width: min(100%, 400px); }
+@media (max-width: 960px) { .stage { width: min(100%, 360px); } }
+@media (max-width: 560px) { .stage { width: min(100% - 24px, 300px); } }
+
+/* the figure carries his entrance and float, so the light layers move with him */
+.stage__learner img { animation: none; }
+.stage__figure { position: relative; animation: learner-in 1.2s cubic-bezier(.2,.8,.2,1) .1s both, learner-float 8s ease-in-out 1.4s infinite; }
+.stage__glow { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+
+/* seams: a soft cyan pulse travels down the light lines, over a slow breath */
+.stage__glow--seams { -webkit-mask-image: url(/assets/img/hero/mask-seams.png); mask-image: url(/assets/img/hero/mask-seams.png);
+  background: linear-gradient(180deg, transparent 0 40%, rgb(150 235 255 / 0%) 42%, rgb(205 248 255 / 95%) 50%, rgb(150 235 255 / 0%) 58%, transparent 60% 100%) 0 0 / 100% 300% no-repeat,
+              rgb(120 220 255 / 35%);
+  animation: seam-run 5.5s cubic-bezier(.45,0,.25,1) 2s infinite, seam-breathe 5.5s ease-in-out 2s infinite; }
+@keyframes seam-run { 0% { background-position: 0 0%, 0 0; } 70%, 100% { background-position: 0 100%, 0 0; } }
+@keyframes seam-breathe { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+
+/* visor: a slow holographic highlight sweeps across the lens */
+.stage__glow--visor { -webkit-mask-image: url(/assets/img/hero/mask-visor.png); mask-image: url(/assets/img/hero/mask-visor.png);
+  background: linear-gradient(105deg, transparent 0 38%, rgb(255 190 240 / 35%) 44%, rgb(255 255 255 / 85%) 50%, rgb(150 230 255 / 40%) 56%, transparent 62% 100%) 0 0 / 300% 100% no-repeat;
+  animation: visor-sweep 6s cubic-bezier(.6,0,.3,1) 1.6s infinite; }
+@keyframes visor-sweep { 0% { background-position: 100% 0; } 45%, 100% { background-position: 0% 0; } }
+
+/* watch: a calm heartbeat on the face */
+.stage__glow--watch { -webkit-mask-image: url(/assets/img/hero/mask-watch.png); mask-image: url(/assets/img/hero/mask-watch.png);
+  background: rgb(140 230 255 / 90%); animation: watch-beat 2.8s ease-in-out 2s infinite; }
+@keyframes watch-beat { 0%, 100% { opacity: .1; } 12% { opacity: .75; } 24% { opacity: .25; } 34% { opacity: .6; } 55% { opacity: .1; } }
+
+@media (prefers-reduced-motion: reduce) { .stage__figure { animation: none; } .stage__glow { display: none; } }
+@media (max-width: 560px) { .stage__plaque { left: -11%; right: -11%; } .stage__lang { left: -9%; } }
+@media (max-width: 560px) { .stage__plaque { --w: min(100vw - 32px, 360px); left: 50%; right: auto; width: var(--w); margin-left: calc(var(--w) / -2); } }
+@media (max-width: 380px) { .stage__lang { left: calc(16px - (100vw - 100%) / 2); } }
