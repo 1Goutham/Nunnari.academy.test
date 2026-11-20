@@ -33,11 +33,11 @@ const chapters: Chapter[] = [
   },
 ];
 
-// the companies we work with (Nunnari Labs client strip), in their own colours on the white card
+// the companies we work with (Nunnari Labs client strip), white artwork for the dark card
 const partnerLogos = [
   ["landcom", "Landcom"], ["arb", "ARB Corporation"], ["martin-group", "Martin Group"], ["forge", "Forge Innovation & Ventures"], ["scaler", "Scaler"],
   ["icliniq", "iCliniq"], ["saasant", "Saasant"], ["2bfound", "2B Found"], ["tristha", "Tristha Global"], ["hearsight", "HearSight"],
-].map(([f, name]) => ({ src: `/assets/clients/${f}.webp`, name }));
+].map(([f, name]) => ({ src: `/assets/clients/white/${f}.webp`, name }));
 
 /*
  * The collage: our own photos, scattered on a plane larger than the frame.
@@ -64,8 +64,9 @@ const mobile = (i: number) => ({ mx: 1.5 + i * 8.2, my: i % 2 ? 51 + (i % 3) * 3
 
 /**
  * Who we are: an explorable collage of our own photos with the three chapters in a card at its centre.
- * Move the pointer to pan (with depth), drag on touch; it drifts slowly when idle. Choosing a chapter
- * brings its photos forward; clicking a photo opens its chapter. Still under reduced motion.
+ * Move the pointer to pan (with depth), drag on touch; it drifts slowly when idle. The chapters advance
+ * on their own (a thin timer under the active tab; paused on hover); choosing one brings its photos
+ * forward, and clicking a photo opens its chapter. Still under reduced motion.
  */
 export default function WhoWeAre() {
   const [active, setActive] = useState<ChapterId>("mission");
@@ -116,6 +117,8 @@ export default function WhoWeAre() {
     return () => { io.disconnect(); f.removeEventListener("pointermove", move); f.removeEventListener("pointerdown", down); removeEventListener("pointerup", up); removeEventListener("pointercancel", up); cancelAnimationFrame(raf); };
   }, []);
 
+  const next = () => setActive((a) => chapters[(chapters.findIndex((c) => c.id === a) + 1) % chapters.length].id);
+
   // tabs: arrow keys move between chapters
   const onKey = (e: KeyboardEvent<HTMLDivElement>) => {
     const i = chapters.findIndex((c) => c.id === active);
@@ -143,7 +146,6 @@ export default function WhoWeAre() {
             );
           })}
         </div>
-        <span className="who__hint" aria-hidden="true">Move or drag to explore</span>
       </div>
 
       <div className="who__card">
@@ -152,6 +154,8 @@ export default function WhoWeAre() {
             <button key={c.id} id={`who-tab-${c.id}`} type="button" role="tab" aria-selected={active === c.id} aria-controls={`who-panel-${c.id}`}
               tabIndex={active === c.id ? 0 : -1} className="who__tab" onClick={() => setActive(c.id)}>
               <span>0{i + 1}</span>{c.label}
+              {/* the active chapter's timer: when it fills, the next chapter opens (paused on hover; off under reduced motion) */}
+              <i className="who__bar" aria-hidden="true">{active === c.id && <i key={c.id} onAnimationEnd={next} />}</i>
             </button>
           ))}
         </div>

@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 // one orbit, split in two: the far half is drawn behind the learner, the near half in front of him
+const PHOTO = "/assets/img/hero/learner-960.webp";
+const SIZES = "(max-width: 560px) 300px, (max-width: 960px) 360px, 400px";
+
 const RING = "M20,100 A280,62 0 1,1 580,100 A280,62 0 1,1 20,100";
 
 function Orbit({ half }: { half: "back" | "front" }) {
@@ -37,8 +40,9 @@ function Orbit({ half }: { half: "back" | "front" }) {
  * with the pointer at its own depth (one rAF loop, only while the hero is on screen; still under reduced
  * motion and on touch). The laptop lid carries the Nunnari mark.
  *
- * The jacket seams, visor and watch are animated through masks cut from the photo
- * (public/assets/img/hero/mask-*.png: seams, visor lens, HUD icons, temple LED, watch screen; same frame as the photo). Replace them together with the photo.
+ * The visor, jacket seams and watch are animated through masks cut from the photo itself
+ * (public/assets/img/hero/fx/*.png, same frame as the photo; the lens and visor are traced outlines).
+ * Replace them together with the photo. The visor and lens layers reuse the same image URL, so no extra download.
  */
 export default function HeroStage() {
   const ref = useRef<HTMLDivElement>(null);
@@ -75,16 +79,25 @@ export default function HeroStage() {
       <Orbit half="back" />
       <div className="stage__learner">
         <div className="stage__figure">
-          {/* an iridescent halo behind his head, in the visor's colours */}
-          <span className="stage__halo" aria-hidden="true" />
-          <Image src="/assets/img/hero/learner-960.webp" alt="A Nunnari learner with a laptop, looking ahead" width={960} height={1440}
-            sizes="(max-width: 560px) 300px, (max-width: 960px) 360px, 400px" priority fetchPriority="high" />
+          <Image src={PHOTO} alt="A Nunnari learner with a laptop, looking ahead" width={960} height={1440} sizes={SIZES} priority fetchPriority="high" />
+          {/* the visor, cut out and rebuilt above the face: a soft contact shadow, then the visor itself,
+              then the lens (its own pixels, slowly shifting through their iridescence) with a moving reflection and scan */}
+          <span className="fx fx--vshadow" aria-hidden="true" />
+          <span className="fx fx--visor" aria-hidden="true">
+            <Image src={PHOTO} alt="" width={960} height={1440} sizes={SIZES} priority />
+            <span className="fx fx--lens">
+              <Image src={PHOTO} alt="" width={960} height={1440} sizes={SIZES} priority />
+              <span className="fx__spec" />
+              <span className="fx__scan" />
+            </span>
+          </span>
           {/* light that lives in the photo: each layer shows only through a mask cut from the photo itself */}
-          <span className="stage__glow stage__glow--seams" aria-hidden="true" />
-          <span className="stage__glow stage__glow--visor" aria-hidden="true" />
-          <span className="stage__glow stage__glow--hud" aria-hidden="true" />
-          <span className="stage__glow stage__glow--led" aria-hidden="true" />
-          <span className="stage__glow stage__glow--watch" aria-hidden="true" />
+          <span className="fx fx--glow fx--hud" aria-hidden="true" />
+          <span className="fx fx--glow fx--led" aria-hidden="true" />
+          <span className="fx fx--glow fx--seams-bloom" aria-hidden="true" />
+          <span className="fx fx--glow fx--seams" aria-hidden="true" />
+          <span className="fx fx--glow fx--watch-bloom" aria-hidden="true" />
+          <span className="fx fx--glow fx--watch" aria-hidden="true" />
         </div>
       </div>
       <Orbit half="front" />
