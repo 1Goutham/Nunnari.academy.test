@@ -3,22 +3,51 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
+// one orbit, split in two: the far half is drawn behind the learner, the near half in front of him
+const RING = "M20,100 A280,62 0 1,1 580,100 A280,62 0 1,1 20,100";
+
+function Orbit({ half }: { half: "back" | "front" }) {
+  const id = `stage-${half}`;
+  return (
+    <svg className={`stage__orbit stage__orbit--${half}`} viewBox="0 0 600 200" focusable="false" aria-hidden="true">
+      <defs>
+        {/* the ring's far half is above its centre line, the near half below it */}
+        <clipPath id={id}><rect x="0" y={half === "back" ? 0 : 100} width="600" height="100" /></clipPath>
+        <linearGradient id={`${id}-g`} x1="0" x2="1">
+          <stop offset="0" stopColor="#7B6FD0" stopOpacity=".15" />
+          <stop offset=".5" stopColor="#8F83E6" stopOpacity="1" />
+          <stop offset="1" stopColor="#7B6FD0" stopOpacity=".15" />
+        </linearGradient>
+      </defs>
+      <g clipPath={`url(#${id})`}>
+        <path className="stage__ring" d={RING} pathLength={1} stroke={`url(#${id}-g)`} />
+        {/* two light points travel the orbit, passing behind him and back out in front */}
+        <circle className="stage__spark" r="4"><animateMotion dur="9s" repeatCount="indefinite" path={RING} /></circle>
+        <circle className="stage__spark stage__spark--soft" r="3"><animateMotion dur="9s" begin="-4.5s" repeatCount="indefinite" path={RING} /></circle>
+      </g>
+    </svg>
+  );
+}
+
 /**
- * Home hero visual: a portrait in a deep-violet arch, a language switch, and a plaque with our numbers.
+ * Home hero visual: a learner stepping out of a deep-violet arch, an orbit that passes behind and in
+ * front of him, a language switch, and a plaque with our numbers.
  *
- * The photo is shot on black, so `mix-blend-mode: lighten` lets the arch's violet replace the
- * backdrop: the student reads as cut out without a mask. Layers drift with the pointer
- * (one rAF loop, only while the hero is on screen; still under reduced motion and on touch).
- *
- * PLACEHOLDER PHOTO: Unsplash (free licence). Swap public/assets/img/hero/student-*.webp for a
- * consented photo of a real Nunnari learner, same crop (4:5, waist-up, dark background).
+ * The photo is a transparent cut-out, so layers sit truly behind and in front of him. Each layer drifts
+ * with the pointer at its own depth (one rAF loop, only while the hero is on screen; still under reduced
+ * motion and on touch). The laptop lid carries the Nunnari mark.
  */
 export default function HeroStage() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches || !matchMedia("(hover: hover)").matches) return;
+    if (!el) return;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.querySelectorAll("svg").forEach((s) => s.pauseAnimations());
+      return;
+    }
+    if (!matchMedia("(hover: hover)").matches) return;
     const s = { x: 0, y: 0, tx: 0, ty: 0 };
     let raf = 0, on = false;
     const tick = () => {
@@ -39,16 +68,18 @@ export default function HeroStage() {
 
   return (
     <div className="stage" ref={ref}>
-      <div className="stage__arch" aria-hidden="true" />
-      <div className="stage__photo">
-        <Image src="/assets/img/hero/student-1400.webp" alt="A student learning AI on his laptop" width={1400} height={1750}
-          sizes="(max-width: 560px) 260px, (max-width: 960px) 300px, 340px" priority fetchPriority="high" />
+      <div className="stage__arch" aria-hidden="true"><span className="stage__dots" /></div>
+      <Orbit half="back" />
+      <div className="stage__learner">
+        <Image src="/assets/img/hero/learner-960.webp" alt="A Nunnari learner with a laptop, looking ahead" width={960} height={1440}
+          sizes="(max-width: 560px) 330px, (max-width: 960px) 380px, 440px" priority fetchPriority="high" />
       </div>
+      <Orbit half="front" />
 
       {/* we teach in both languages: the switch slides between them */}
       <div className="stage__lang" aria-hidden="true"><span>English</span><span lang="ta">தமிழ்</span></div>
 
-      {/* one plaque at the base of the arch, our numbers in a row */}
+      {/* one plaque at the base, our numbers in a row */}
       <div className="stage__plaque" aria-hidden="true">
         <div><b data-count="10000" data-suffix="+">10,000+</b><small>Learners trained</small></div>
         <div><b data-count="85" data-suffix="+">85+</b><small>Universities &amp; colleges</small></div>
