@@ -1706,3 +1706,46 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 @media (max-width: 560px) { .stage__plaque { left: -11%; right: -11%; } .stage__lang { left: -9%; } }
 @media (max-width: 560px) { .stage__plaque { --w: min(100vw - 32px, 360px); left: 50%; right: auto; width: var(--w); margin-left: calc(var(--w) / -2); } }
 @media (max-width: 380px) { .stage__lang { left: calc(16px - (100vw - 100%) / 2); } }
+
+/* --------------------------------------------------------------------------
+   Stage, light v2: precise masks for the lens, HUD icons, temple LED and watch
+   screen; an iridescent halo behind his head
+   -------------------------------------------------------------------------- */
+/* halo: a fine conic ring centred on his head, with a soft bloom; it moves with him */
+.stage__halo { position: absolute; left: 54.5%; top: 13.5%; width: 62%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; pointer-events: none;
+  background: conic-gradient(from var(--halo-a), #FF9AE0, #9D8CFF, #8FE3FF, #FFD9A0, #FF9AE0);
+  -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px), #000 100%, transparent 100%);
+  mask: radial-gradient(closest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px), #000 100%, transparent 100%);
+  opacity: .85; animation: halo-turn 14s linear infinite, halo-in 1.2s ease 1s both; }
+.stage__halo::after { content: ""; position: absolute; inset: -8%; border-radius: 50%; background: inherit; filter: blur(18px); opacity: .5;
+  -webkit-mask: radial-gradient(closest-side, transparent 78%, #000 92%, transparent 100%); mask: radial-gradient(closest-side, transparent 78%, #000 92%, transparent 100%); }
+@property --halo-a { syntax: "<angle>"; inherits: true; initial-value: 0deg; }
+@keyframes halo-turn { to { --halo-a: 360deg; } }
+@keyframes halo-in { from { opacity: 0; scale: .9; } }
+
+/* lens: a slow iridescent drift; a fine scan line (its own layer, clipped by the same lens mask) passes down it */
+.stage__glow--visor { background: linear-gradient(100deg, rgb(255 154 224 / 28%), rgb(143 227 255 / 28%), rgb(157 140 255 / 28%), rgb(255 154 224 / 28%)) 0 0 / 300% 100%;
+  animation: lens-drift 12s linear infinite; opacity: .9; }
+.stage__glow--visor::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3%;
+  background: linear-gradient(180deg, transparent, rgb(235 250 255 / 95%), transparent); box-shadow: 0 0 10px 2px rgb(190 240 255 / 50%);
+  animation: lens-scan 5s cubic-bezier(.5,0,.3,1) 2.2s infinite both; }
+@keyframes lens-drift { to { background-position: 300% 0; } }
+@keyframes lens-scan { 0% { translate: 0 120%; opacity: 0; } 6% { opacity: 1; } 50% { translate: 0 1000%; opacity: 1; } 56%, 100% { translate: 0 1000%; opacity: 0; } }
+
+/* HUD icons: a data pulse lights them left to right, over a steady faint glow */
+.stage__glow--hud { -webkit-mask-image: url(/assets/img/hero/mask-hud.png); mask-image: url(/assets/img/hero/mask-hud.png);
+  background: linear-gradient(90deg, transparent 0 44%, rgb(170 240 255 / 0%) 45%, rgb(225 250 255 / 100%) 50%, rgb(170 240 255 / 0%) 55%, transparent 56% 100%) 0 0 / 400% 100% no-repeat,
+              rgb(160 230 255 / 30%);
+  animation: hud-pulse 4.5s cubic-bezier(.45,0,.3,1) 2.6s infinite; }
+@keyframes hud-pulse { 0% { background-position: 100% 0, 0 0; } 50%, 100% { background-position: 0% 0, 0 0; } }
+
+/* temple LED: a soft breathing blink */
+.stage__glow--led { -webkit-mask-image: url(/assets/img/hero/mask-led.png); mask-image: url(/assets/img/hero/mask-led.png);
+  background: rgb(190 245 255); animation: led-breathe 3.2s ease-in-out 2s infinite; }
+@keyframes led-breathe { 0%, 100% { opacity: .15; } 50% { opacity: .95; } }
+
+/* watch: only the screen's light, surging twice like a heartbeat */
+.stage__glow--watch { background: rgb(180 245 255); animation: watch-beat 2.6s ease-in-out 2s infinite; }
+@keyframes watch-beat { 0%, 100% { opacity: 0; } 10% { opacity: .95; } 20% { opacity: .2; } 30% { opacity: .8; } 50% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) { .stage__halo { animation: none; } .stage__glow--visor::after { display: none; } }
