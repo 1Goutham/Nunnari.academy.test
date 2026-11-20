@@ -4,7 +4,7 @@ import { useState } from "react";
 import Icon from "@/components/Icon";
 import { tracks } from "@/lib/programs";
 
-/** 12-week tracks: three shown, "Explore All Programs" reveals the rest. */
+/** AI Engineering tracks: three shown, "Explore All Programs" reveals the rest. */
 export default function TrackList() {
   const [all, setAll] = useState(false);
   return (
@@ -15,7 +15,6 @@ export default function TrackList() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}><span className="ico"><Icon name={t.icon} /></span><span className="tag">{t.tag}</span></div>
             <h3>{t.title}</h3>
             <p className="clamp3">{t.desc}</p>
-            <span className="card__meta"><Icon name="clock" />12 weeks</span>
           </article>
         ))}
       </div>

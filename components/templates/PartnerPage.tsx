@@ -41,7 +41,7 @@ function Charts({ kind }: { kind: Partner["charts"] }) {
   );
 }
 
-/** One template for both partner pages: hero → what we bring → partners → impact → voices → CTA. */
+/** One template for both partner pages: hero → what we bring + what we offer → partners → impact → voices → CTA. */
 export default function PartnerPage({ id }: { id: Partner["key"] }) {
   const p = partners[id];
   const btn = (ghost?: boolean) => <button className={`btn btn--lg ${ghost ? "btn--ghost" : "btn--primary"}`} type="button" data-enquire={`${p.cta} (${id === "institutions" ? "Institution" : "Corporate"})`}>{p.cta} <Icon name="arrow" className="i--arrow" /></button>;
@@ -59,6 +59,20 @@ export default function PartnerPage({ id }: { id: Partner["key"] }) {
         <div className="container">
           <Head pill="What we bring" title={<>Built for <span className="grad">real impact.</span></>} />
           <div className={`grid grid--${p.offers.length}`}>{p.offers.map((o, i) => <Card key={o.title} icon={o.icon} title={o.title} text={o.text} k={i} />)}</div>
+
+          {/* what we offer: the formats we run with the partner */}
+          <div className="formats">
+            <Head pill="What we offer" title={<>{p.formatsTitle[0]} <span className="grad">{p.formatsTitle[1]}</span></>} />
+            <ol className={`formats__list formats__list--${p.formats.length}`}>
+              {p.formats.map((o, i) => (
+                <li key={o.title} className="formats__item" data-reveal="" style={{ "--d": `${i * 0.06}s` } as React.CSSProperties}>
+                  <span className="formats__num">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="formats__ico"><Icon name={o.icon} /></span>
+                  <h3>{o.title}</h3>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
 

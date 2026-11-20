@@ -24,9 +24,9 @@ export const nav: NavItem[] = [
     label: "Programs",
     key: "programs",
     items: [
-      { href: "/programs/ai-essentials", title: "AI Essentials", sub: "School & college students", icon: "play" },
-      { href: "/programs/applied-ai", title: "Applied AI", sub: "Beginners & career switchers", icon: "users" },
-      { href: "/programs/advanced-ai-leadership", title: "Advanced AI & Leadership", sub: "Experienced professionals & C-Suite", icon: "crown" },
+      { href: "/programs/genai-essentials", title: "GenAI Essentials", sub: "School & college students", icon: "play" },
+      { href: "/programs/ai-engineering", title: "AI Engineering", sub: "Beginners & career switchers", icon: "users" },
+      { href: "/programs/advanced-genai-leadership", title: "Advanced GenAI & Leadership", sub: "Experienced professionals & C-Suite", icon: "crown" },
     ],
   },
   {

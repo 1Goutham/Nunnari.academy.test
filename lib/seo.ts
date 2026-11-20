@@ -7,7 +7,7 @@ import { site } from "./site";
  * Share images come from the file-based opengraph-image routes.
  */
 // routes that render their own share image (app/**/opengraph-image.tsx); every other page uses the site image
-const OWN_IMAGE = new Set(["/programs", "/programs/ai-essentials", "/programs/applied-ai", "/programs/advanced-ai-leadership", "/partner/institutions", "/partner/corporates", "/explore"]);
+const OWN_IMAGE = new Set(["/programs", "/programs/genai-essentials", "/programs/ai-engineering", "/programs/advanced-genai-leadership", "/partner/institutions", "/partner/corporates", "/explore"]);
 const shareImageFor = (path: string, alt: string) => ({ url: OWN_IMAGE.has(path) ? `${path}/opengraph-image` : "/opengraph-image", width: 1200, height: 630, alt });
 
 export function pageMeta({ title, description, path, absoluteTitle, type = "website" }: {

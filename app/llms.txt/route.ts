@@ -23,8 +23,8 @@ export function GET() {
 > ${site.name} (நுண்ணறி Academy) is a school of AI offering practical, hands-on AI programs in English and Tamil, from first steps for school and college students to Generative AI, Agentic AI and AI leadership. It is backed by Nunnari Labs (Coimbatore, India) and DeepWeaver (Sydney, Australia).
 
 Key facts:
-- Three 12-week programs: AI Essentials, Applied AI, and Advanced AI & Leadership.
-- Taught in English and Tamil; online, and online or offline for Applied AI and Advanced AI & Leadership.
+- Three programs: GenAI Essentials (4 weeks), AI Engineering (4 weeks) and Advanced GenAI & Leadership (8 weeks).
+- Taught in English and Tamil; online, and online or offline for AI Engineering and Advanced GenAI & Leadership.
 - Every learner gets one year of access to the learning platform (LMS) and a completion certificate.
 - 10,000+ learners trained, 85+ universities and colleges, 25+ corporate and government organisations.
 - Community: 10,000+ members with AI Tamil Nadu and ML.Cbe; a free community session every Saturday.

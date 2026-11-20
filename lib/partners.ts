@@ -9,6 +9,9 @@ export type Partner = {
   cta: string;
   art: string;
   offers: { icon: IconName; title: string; text: string }[];
+  // what we offer: the formats we run with the partner (titles only)
+  formats: { icon: IconName; title: string }[];
+  formatsTitle: [string, string];
   logosTitle: [string, string];
   logos: { src?: string; name: string; short?: string }[];
   logoKind?: "wide";        // wide wordmarks (600x200) rather than square crests
@@ -30,6 +33,15 @@ export const partners: Record<Partner["key"], Partner> = {
       { icon: "cap", title: "Industry-aligned learning", text: "Programs built around what the industry expects from graduates today." },
       { icon: "users", title: "Expert-led programs", text: "Industry experts bring real projects and practical experience to campus." },
       { icon: "briefcase", title: "Real-world opportunities", text: "Projects, internships and careers through meaningful industry collaborations." },
+    ],
+    formatsTitle: ["Ways we work with", "your institution."],
+    formats: [
+      { icon: "cap", title: "1-credit semester program" },
+      { icon: "layers", title: "Value-added course" },
+      { icon: "briefcase", title: "Placement training" },
+      { icon: "code", title: "Workshops & hackathons" },
+      { icon: "bulb", title: "Research collaboration" },
+      { icon: "uni", title: "Center of excellence" },
     ],
     logosTitle: ["Trusted by", "leading institutions."],
     logos: [
@@ -63,6 +75,11 @@ export const partners: Record<Partner["key"], Partner> = {
       { icon: "users", title: "Experienced practitioners", text: "AI experts who help teams adapt, apply and innovate with AI." },
       { icon: "wrench", title: "Hands-on workshops", text: "Teams learn by doing, with exercises they take straight back to work." },
       { icon: "building", title: "Real business use cases", text: "Grounded in real business problems, so learning turns into results." },
+    ],
+    formatsTitle: ["Ways we work with", "your teams."],
+    formats: [
+      { icon: "crown", title: "Leadership enablement sessions" },
+      { icon: "cpu", title: "Engineering development training" },
     ],
     logosTitle: ["Partners in building", "AI-ready teams."],
     // the companies Nunnari Labs works with (from the Nunnari Labs site's client strip)

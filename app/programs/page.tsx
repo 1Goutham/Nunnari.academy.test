@@ -11,14 +11,14 @@ import { programList, programPath } from "@/lib/programs";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbs, course, faqPage, programItemList } from "@/lib/schema";
 
-export const metadata: Metadata = pageMeta({ title: "AI Courses for Every Level", description: "Compare Nunnari Academy's three 12-week AI programs: AI Essentials for students, Applied Generative and Agentic AI, and Advanced AI & Leadership.", path: "/programs" });
+export const metadata: Metadata = pageMeta({ title: "AI Courses for Every Level", description: "Compare Nunnari Academy's three AI programs: GenAI Essentials for students, AI Engineering in Generative and Agentic AI, and Advanced GenAI & Leadership.", path: "/programs" });
 
 const faqCats = [{ key: "choose", label: "Choosing" }, { key: "enrol", label: "Enrolling" }];
 const faq = [
-  { q: "What AI courses does Nunnari Academy offer?", cats: ["choose"], a: "Three 12-week programs: AI Essentials, a self-paced course for school and college students; Applied AI, an instructor-led Generative AI and Agentic AI course for beginners and career switchers; and Advanced AI & Leadership, for experienced professionals, technical leaders and C-suite executives." },
-  { q: "Are the programs online or offline?", cats: ["choose"], a: "AI Essentials is online, with recorded sessions you follow at your own pace. Applied AI and Advanced AI & Leadership run both online and offline." },
-  { q: "Which program is right for me?", cats: ["choose"], a: "AI Essentials is for school and college students, Applied AI for beginners, aspiring professionals and career switchers, and Advanced AI & Leadership for experienced professionals, technical leaders and C-suite executives." },
-  { q: "How long are the programs?", cats: ["choose"], a: "All three programs are 12 weeks." },
+  { q: "What AI courses does Nunnari Academy offer?", cats: ["choose"], a: "Three programs: GenAI Essentials, a 4-week self-paced course for school and college students; AI Engineering, a 4-week instructor-led Generative AI and Agentic AI course for beginners and career switchers; and Advanced GenAI & Leadership, an 8-week program for experienced professionals, technical leaders and C-suite executives." },
+  { q: "Are the programs online or offline?", cats: ["choose"], a: "GenAI Essentials is online, with recorded sessions you follow at your own pace. AI Engineering and Advanced GenAI & Leadership run both online and offline." },
+  { q: "Which program is right for me?", cats: ["choose"], a: "GenAI Essentials is for school and college students, AI Engineering for beginners, aspiring professionals and career switchers, and Advanced GenAI & Leadership for experienced professionals, technical leaders and C-suite executives." },
+  { q: "How long are the programs?", cats: ["choose"], a: "GenAI Essentials and AI Engineering are 4 weeks each; Advanced GenAI & Leadership is 8 weeks." },
   { q: "Which languages are the classes in?", cats: ["choose"], a: "English and Tamil." },
   { q: "How do I enroll?", cats: ["enrol"], a: "Choose a program and click Enroll Now, or talk to our team. We reach out within 24 to 48 hours." },
   { q: "Do I get access to the learning platform?", cats: ["enrol"], a: "Yes, one year of access to our LMS with all course resources and updates." },
@@ -31,7 +31,7 @@ export default function ProgramsPage() {
       <PageHero
         pill="Programs"
         title={<>From first steps <span className="grad">to leading AI.</span></>}
-        lead="Three 12-week programs, from your first steps in AI to leading it."
+        lead="Three programs, from your first steps in AI to leading it."
       />
 
       <section className="section section--dark">
@@ -53,7 +53,7 @@ export default function ProgramsPage() {
 
       <section className="section">
         <div className="container">
-          <Head pill="Applied AI tracks" title={<>12-week tracks for <span className="grad">every path.</span></>} />
+          <Head pill="AI Engineering tracks" title={<>Tracks for <span className="grad">every path.</span></>} />
           <TrackList />
         </div>
       </section>

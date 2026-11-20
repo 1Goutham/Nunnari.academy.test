@@ -5,9 +5,9 @@ const legacy: Record<string, string> = {
   "/index.html": "/",
   "/explore.html": "/explore",
   "/programs.html": "/programs",
-  "/recorded-programme.html": "/programs/ai-essentials",
-  "/regular-programme.html": "/programs/applied-ai",
-  "/premium-programme.html": "/programs/advanced-ai-leadership",
+  "/recorded-programme.html": "/programs/genai-essentials",
+  "/regular-programme.html": "/programs/ai-engineering",
+  "/premium-programme.html": "/programs/advanced-genai-leadership",
   "/partner-institutions.html": "/partner/institutions",
   "/partner-corporates.html": "/partner/corporates",
   "/help.html": "/help",
@@ -17,9 +17,13 @@ const legacy: Record<string, string> = {
   "/workshops": "/explore",
   "/courses": "/programs",
   // program pages took keyword URLs
-  "/programs/recorded": "/programs/ai-essentials",
-  "/programs/regular": "/programs/applied-ai",
-  "/programs/premium": "/programs/advanced-ai-leadership",
+  "/programs/recorded": "/programs/genai-essentials",
+  "/programs/regular": "/programs/ai-engineering",
+  "/programs/premium": "/programs/advanced-genai-leadership",
+  // the programs were renamed (GenAI Essentials, AI Engineering, Advanced GenAI & Leadership)
+  "/programs/ai-essentials": "/programs/genai-essentials",
+  "/programs/applied-ai": "/programs/ai-engineering",
+  "/programs/advanced-ai-leadership": "/programs/advanced-genai-leadership",
 };
 
 const nextConfig: NextConfig = {

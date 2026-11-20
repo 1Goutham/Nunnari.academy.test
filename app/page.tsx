@@ -13,7 +13,7 @@ import PastEvents from "@/components/events/PastEvents";
 import { Cta, Head } from "@/components/ui/Blocks";
 import { getWorkshops } from "@/lib/workshops";
 
-export const metadata: Metadata = pageMeta({ title: "AI Courses in English & Tamil | Nunnari Academy", absoluteTitle: true, description: "Hands-on AI courses in English and Tamil: AI Essentials for students, Applied Generative and Agentic AI, and Advanced AI & Leadership. Online and offline.", path: "/" });
+export const metadata: Metadata = pageMeta({ title: "AI Courses in English & Tamil | Nunnari Academy", absoluteTitle: true, description: "Hands-on AI courses in English and Tamil: GenAI Essentials for students, AI Engineering in Generative and Agentic AI, and Advanced GenAI & Leadership. Online and offline.", path: "/" });
 
 export default function HomePage() {
   const workshops = getWorkshops().slice(0, 12).map(({ summaryHtml: _s, ...w }) => w);

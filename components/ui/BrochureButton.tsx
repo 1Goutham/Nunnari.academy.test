@@ -1,7 +1,7 @@
 import Icon from "@/components/Icon";
 import { brochures } from "@/lib/programs";
 
-const names = { recorded: "AI Essentials", regular: "Applied AI", premium: "Advanced AI & Leadership" };
+const names = { recorded: "GenAI Essentials", regular: "AI Engineering", premium: "Advanced GenAI & Leadership" };
 
 /** "Download Brochure": direct PDF download when available, otherwise asks for details via the enquiry form. */
 export default function BrochureButton({ program, className = "btn btn--ghost btn--lg" }: { program: keyof typeof brochures; className?: string }) {

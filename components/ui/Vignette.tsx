@@ -7,7 +7,7 @@ import { toolIcons } from "@/lib/toolIcons";
 import Globe from "./Globe";
 
 /**
- * Illustration panels as small, real-looking scenes of the thing itself (a lesson player, a 12-week
+ * Illustration panels as small, real-looking scenes of the thing itself (a lesson player, a week-by-week
  * tracker, partner figures, a calendar), built in HTML from the site's own facts.
  *
  * Interaction: the scene tilts toward the pointer and its layers move at different depths;
@@ -76,12 +76,14 @@ function Recorded() {
 
 function Regular() {
   const p = programs.regular;
+  const weeks = parseInt(p.facts[1].title, 10) || 4;
   return (
     <Stage name="regular">
       <Layer z={6} i={0} className="vg-card vg-weeks">
         <div className="vg-head"><strong>{p.facts[1].title}</strong><span>{p.facts[1].sub}</span></div>
-        <div className="vg-weeks__grid">
-          {Array.from({ length: 12 }, (_, k) => <span key={k} style={{ "--k": k } as CSSProperties}>W{k + 1}</span>)}
+        {/* one cell per week of the program (from its duration fact, e.g. "4 Weeks") */}
+        <div className="vg-weeks__grid" style={{ "--n": weeks, "--cols": Math.min(weeks, 6) } as CSSProperties}>
+          {Array.from({ length: weeks }, (_, k) => <span key={k} style={{ "--k": k } as CSSProperties}>W{k + 1}</span>)}
         </div>
         <div className="vg-steps">{p.outcomes.map((o) => <span key={o.title}>{o.title}</span>)}</div>
       </Layer>
@@ -101,7 +103,7 @@ function Premium() {
     <Stage name="premium">
       <Layer z={6} i={0} className="vg-card vg-level">
         <div className="vg-head"><strong>Advanced</strong><span>Experienced</span></div>
-        <div className="vg-level__meter"><span>Essentials</span><span>Applied</span><span className="is-on">Advanced</span></div>
+        <div className="vg-level__meter"><span>Essentials</span><span>Engineering</span><span className="is-on">Advanced</span></div>
         <div className="vg-level__rows">{p.outcomes.map((o) => <span key={o.title}>{o.title}</span>)}</div>
       </Layer>
       <Layer z={22} i={1} className="vg-card vg-seal">

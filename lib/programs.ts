@@ -26,10 +26,10 @@ type Program = {
 /* ---------- FAQ: the same three sections and the same questions on every programme ---------- */
 const FAQ_CATS = [{ key: "program", label: "Program" }, { key: "eligibility", label: "Eligibility" }, { key: "certificate", label: "Certificate" }];
 
-const faqFacts: Record<ProgramKey, { name: string; what: string; who: string; prior: string; mode: string }> = {
-  recorded: { name: "AI Essentials", what: "AI Essentials is a 12-week, self-paced online AI program from Nunnari Academy for school and college students who are new to AI. Through recorded sessions in English and Tamil, learners build AI fundamentals, complete hands-on projects and finish with a portfolio.", who: "School and college students who are new to AI.", prior: "No. It is built for learners who are completely new to AI.", mode: "Online, as recorded sessions you can follow at your own pace." },
-  regular: { name: "Applied AI", what: "Applied AI is a 12-week, instructor-led Generative AI and Agentic AI program from Nunnari Academy for beginners, aspiring professionals and career switchers. Learners practise with industry tools and build real-world projects and a portfolio, online or offline.", who: "Beginners, aspiring professionals and career switchers who want practical, industry-relevant skills in Generative AI and Agentic AI.", prior: "No. It starts with a strong foundation in AI before moving on to building with it.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
-  premium: { name: "Advanced AI & Leadership", what: "Advanced AI & Leadership is a 12-week Nunnari Academy program for experienced professionals, technical leaders and C-suite executives. It is led by senior engineers, technology leaders and industry experts, with live sessions online or offline.", who: "Experienced professionals, technical leaders and C-suite executives.", prior: "Yes. It is built for experienced professionals and technical leaders, with sessions led by senior engineers, technology leaders and industry experts.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
+const faqFacts: Record<ProgramKey, { name: string; weeks: number; what: string; who: string; prior: string; mode: string }> = {
+  recorded: { name: "GenAI Essentials", weeks: 4, what: "GenAI Essentials is a 4-week, self-paced online AI program from Nunnari Academy for school and college students who are new to AI. Through recorded sessions in English and Tamil, learners build AI fundamentals, complete hands-on projects and finish with a portfolio.", who: "School and college students who are new to AI.", prior: "No. It is built for learners who are completely new to AI.", mode: "Online, as recorded sessions you can follow at your own pace." },
+  regular: { name: "AI Engineering", weeks: 4, what: "AI Engineering is a 4-week, instructor-led Generative AI and Agentic AI program from Nunnari Academy for beginners, aspiring professionals and career switchers. Learners practise with industry tools and build real-world projects and a portfolio, online or offline.", who: "Beginners, aspiring professionals and career switchers who want practical, industry-relevant skills in Generative AI and Agentic AI.", prior: "No. It starts with a strong foundation in AI before moving on to building with it.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
+  premium: { name: "Advanced GenAI & Leadership", weeks: 8, what: "Advanced GenAI & Leadership is an 8-week Nunnari Academy program for experienced professionals, technical leaders and C-suite executives. It is led by senior engineers, technology leaders and industry experts, with live sessions online or offline.", who: "Experienced professionals, technical leaders and C-suite executives.", prior: "Yes. It is built for experienced professionals and technical leaders, with sessions led by senior engineers, technology leaders and industry experts.", mode: "Both online and offline. Talk to our team to find the batch that suits you." },
 };
 
 const toolNames = (keys: string[]) => keys.map((k) => toolIcons[k]?.title ?? k).join(", ");
@@ -38,7 +38,7 @@ function faqFor(key: ProgramKey): QA[] {
   const f = faqFacts[key];
   return [
     { q: `What is ${f.name}?`, cats: ["program"], a: f.what },
-    { q: "How long is the program?", cats: ["program"], a: "12 weeks." },
+    { q: "How long is the program?", cats: ["program"], a: `${f.weeks} weeks.` },
     { q: "Is it online or offline?", cats: ["program"], a: f.mode },
     { q: "Which packages and tools will I use?", cats: ["program"], a: `Packages: ${toolNames(stack[key].packages)}. Tools: ${toolNames(stack[key].tools)}.` },
     { q: "Do I get access to the learning platform?", cats: ["program"], a: "Yes, one year of access to our LMS with all course resources and updates." },
@@ -61,16 +61,16 @@ export const roles = ["AI Engineer", "Machine Learning Engineer", "ML Scientist"
 export const programs: Record<ProgramKey, Program> = {
   recorded: {
     key: "recorded",
-    slug: "ai-essentials",
+    slug: "genai-essentials",
     num: "01",
-    name: "AI Essentials",
+    name: "GenAI Essentials",
     short: "School & college students",
     title: ["Build your understanding of AI,", "one step at a time."],
     lead: "Self-paced AI for school and college students, from core ideas to practical uses.",
     art: "recorded",
     facts: [
       { icon: "user", title: "School & college students", sub: "" },
-      { icon: "clock", title: "12 Weeks", sub: "Self-paced" },
+      { icon: "clock", title: "4 Weeks", sub: "Self-paced" },
       { icon: "monitor", title: "Online", sub: "Recorded sessions" },
     ],
     forWho: [
@@ -86,20 +86,20 @@ export const programs: Record<ProgramKey, Program> = {
     faq: faqFor("recorded"),
     packages: stack.recorded.packages,
     tools: stack.recorded.tools,
-    skills: { core: ["12 Weeks", "Self-paced"], chips: ["Fundamentals", "Hands-on projects", "A portfolio", "School & college students", "Online", "English & Tamil"], lead: "Build foundational AI skills and real projects alongside your studies, at a pace that suits you." },
+    skills: { core: ["4 Weeks", "Self-paced"], chips: ["Fundamentals", "Hands-on projects", "A portfolio", "School & college students", "Online", "English & Tamil"], lead: "Build foundational AI skills and real projects alongside your studies, at a pace that suits you." },
   },
   regular: {
     key: "regular",
-    slug: "applied-ai",
+    slug: "ai-engineering",
     num: "02",
-    name: "Applied AI",
+    name: "AI Engineering",
     short: "Beginners & career switchers",
     title: ["Move beyond AI fundamentals.", "Learn to build with AI."],
     lead: "Instructor-led Generative and Agentic AI for beginners and career switchers.",
     art: "regular",
     facts: [
       { icon: "user", title: "Beginners & career switchers", sub: "" },
-      { icon: "clock", title: "12 Weeks", sub: "Instructor-led" },
+      { icon: "clock", title: "4 Weeks", sub: "Instructor-led" },
       { icon: "monitor", title: "Online / Offline", sub: "Live + hands-on" },
     ],
     forWho: [
@@ -120,16 +120,16 @@ export const programs: Record<ProgramKey, Program> = {
   },
   premium: {
     key: "premium",
-    slug: "advanced-ai-leadership",
+    slug: "advanced-genai-leadership",
     num: "03",
-    name: "Advanced AI & Leadership",
+    name: "Advanced GenAI & Leadership",
     short: "Experienced professionals & C-Suite",
     title: ["Lead the next wave", "of AI innovation."],
     lead: "Led by senior engineers and experts, for experienced professionals and the C-suite.",
     art: "premium",
     facts: [
       { icon: "user", title: "Experienced professionals", sub: "" },
-      { icon: "clock", title: "12 Weeks", sub: "Expert-led" },
+      { icon: "clock", title: "8 Weeks", sub: "Expert-led" },
       { icon: "monitor", title: "Online / Offline", sub: "Live sessions" },
     ],
     forWho: [
@@ -139,13 +139,13 @@ export const programs: Record<ProgramKey, Program> = {
     outcomes: [
       { icon: "award", title: "Expert-led", text: "Sessions are led by industry experts, so you learn from people working in AI." },
       { icon: "crown", title: "Leadership view", text: "Learn alongside board-level leaders in a program built for the C-Suite." },
-      { icon: "clock", title: "12 weeks", text: "A structured 12-week program designed for experienced professionals and technical leaders." },
+      { icon: "clock", title: "8 weeks", text: "A structured 8-week program designed for experienced professionals and technical leaders." },
     ],
     faqCats: FAQ_CATS,
     faq: faqFor("premium"),
     packages: stack.premium.packages,
     tools: stack.premium.tools,
-    skills: { core: ["Advanced", "Experienced professionals"], chips: ["Expert-led", "Leadership view", "C-Suite", "12 weeks", "Industry experts", "Board-level leaders"], lead: "Go beyond the basics with industry experts and board-level leaders, in a program built for experienced professionals." },
+    skills: { core: ["Advanced", "Experienced professionals"], chips: ["Expert-led", "Leadership view", "C-Suite", "8 weeks", "Industry experts", "Board-level leaders"], lead: "Go beyond the basics with industry experts and board-level leaders, in a program built for experienced professionals." },
   },
 };
 export const programList = [programs.recorded, programs.regular, programs.premium];
@@ -159,7 +159,7 @@ export const TITLE_CH = Math.max(...programList.map((p) => Math.max(p.title[0].l
 /** Regular programme extras */
 
 
-/** 12-week Regular programme tracks (from the previous nunnari.academy course library). */
+/** AI Engineering programme tracks (from the previous nunnari.academy course library). */
 export const tracks: { title: string; tag: string; icon: IconName; desc: string }[] = [
   { title: "Generative & Agentic AI", tag: "AI", icon: "cpu", desc: "Build AI systems that generate content, reason through problems and act autonomously." },
   { title: "Machine Learning & Deep Learning", tag: "ML/DL", icon: "layers", desc: "Learn how models are built to analyse data, recognise patterns and make predictions." },
