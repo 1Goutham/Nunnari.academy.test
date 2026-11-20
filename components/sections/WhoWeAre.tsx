@@ -25,7 +25,7 @@ const chapters: Chapter[] = [
   },
   {
     id: "learners", label: "Learners & partners",
-    title: <>Real people. <span className="grad">Real progress.</span></>,
+    title: <>Real people.<br /><span className="grad">Real progress.</span></>,
     text: "Our learners build projects, get placed, start ventures and work at leading companies.",
     stats: [[500, "Students trained"], [200, "Projects built"], [50, "Placements & internships"]],
     navy: true, logos: true,

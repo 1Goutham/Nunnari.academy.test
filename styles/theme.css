@@ -1834,3 +1834,20 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
   .stage__plaque b { font-size: .98rem; }
   .stage__plaque small { font-size: .6rem; }
 }
+
+/* Who we are card: one size for every chapter. The panels share one cell (the card takes the tallest),
+   each is a column with the title and text at the top and the button pinned to the bottom edge. */
+.who__panel, .who__panel[data-on] { display: flex; flex-direction: column; gap: 0; visibility: hidden; opacity: 0; animation: none; transition: opacity .45s ease, translate .5s cubic-bezier(.2,.8,.2,1), visibility 0s .45s; translate: 0 8px; }
+.who__panel[data-on] { visibility: visible; opacity: 1; translate: 0 0; transition-delay: .05s, .05s, 0s; }
+.who__panel > * + * { margin-top: 14px; }
+.who__panel .who__text { margin-top: 12px; }
+.who__panel .who__navy { margin-top: 18px; }
+.who__panel .who__stats { margin-top: 18px; }
+.who__panel .who__logos { margin-top: 16px; }
+/* a flexible spacer (at least 22px) pushes the button to the bottom edge */
+.who__panel::after { content: ""; order: 98; flex: 1 0 22px; }
+.who__panel .who__link { order: 99; margin-top: 0; }
+@media (prefers-reduced-motion: reduce) { .who__panel { transition: none; } }
+.who__panel, .who__panel[data-on] { align-items: flex-start; }
+.who__panel .who__stats, .who__panel .who__logos { align-self: stretch; }
+.who__panel .who__title { min-height: calc(2 * 1.12em); }
