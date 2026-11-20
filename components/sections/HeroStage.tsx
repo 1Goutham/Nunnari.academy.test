@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // one orbit, split in two: the far half is drawn behind the learner, the near half in front of him
 const PHOTO = "/assets/img/hero/learner-960.webp";
@@ -46,6 +46,12 @@ function Orbit({ half }: { half: "back" | "front" }) {
  */
 export default function HeroStage() {
   const ref = useRef<HTMLDivElement>(null);
+  // the light layers wait for the photo: before it loads they would float on an empty arch
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const img = ref.current?.querySelector<HTMLImageElement>(".stage__figure > img");
+    if (img?.complete && img.naturalWidth) setReady(true);
+  }, []);
 
   useEffect(() => {
     const el = ref.current;
@@ -78,8 +84,8 @@ export default function HeroStage() {
       <div className="stage__arch" aria-hidden="true"><span className="stage__dots" /></div>
       <Orbit half="back" />
       <div className="stage__learner">
-        <div className="stage__figure">
-          <Image src={PHOTO} alt="A Nunnari learner with a laptop, looking ahead" width={960} height={1440} sizes={SIZES} priority fetchPriority="high" />
+        <div className="stage__figure" data-ready={ready || undefined}>
+          <Image src={PHOTO} alt="A Nunnari learner with a laptop, looking ahead" width={960} height={1440} sizes={SIZES} priority fetchPriority="high" onLoad={() => setReady(true)} />
           {/* the visor, cut out and rebuilt above the face: a soft contact shadow, then the visor itself,
               then the lens (its own pixels, slowly shifting through their iridescence) with a moving reflection and scan */}
           <span className="fx fx--vshadow" aria-hidden="true" />

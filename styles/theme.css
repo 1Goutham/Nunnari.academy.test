@@ -1851,3 +1851,8 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .who__panel, .who__panel[data-on] { align-items: flex-start; }
 .who__panel .who__stats, .who__panel .who__logos { align-self: stretch; }
 .who__panel .who__title { min-height: calc(2 * 1.12em); }
+
+/* the photo's light layers stay hidden until the photo itself has loaded, then fade in */
+/* (a filter, not opacity: the glows animate their own opacity, which would override a static value) */
+.stage__figure .fx { filter: opacity(0); transition: filter .6s ease; }
+.stage__figure[data-ready] .fx { filter: opacity(1); }
