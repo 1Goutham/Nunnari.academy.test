@@ -31,7 +31,7 @@ export default function ProgramsPage() {
       <PageHero
         pill="Programs"
         title={<>From first steps <span className="grad">to leading AI.</span></>}
-        lead="Three programs, from your first steps in AI to leading it."
+        lead="GenAI Essentials, AI Engineering and Advanced GenAI & Leadership: four to eight weeks, in English and Tamil."
       />
 
       <section className="section section--dark">

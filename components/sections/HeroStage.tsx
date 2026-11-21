@@ -24,6 +24,9 @@ function Orbit({ half }: { half: "back" | "front" }) {
       </defs>
       <g clipPath={`url(#${id})`}>
         <path className="stage__ring" d={RING} pathLength={1} stroke={`url(#${id}-g)`} />
+        {/* comet tails: a short dash travelling the ring at the sparks' speed, one behind each spark */}
+        <path className="stage__trail" d={RING} pathLength={1} />
+        <path className="stage__trail stage__trail--soft" d={RING} pathLength={1} />
         {/* two light points travel the orbit, passing behind him and back out in front */}
         <circle className="stage__spark" r="4"><animateMotion dur="9s" repeatCount="indefinite" path={RING} /></circle>
         <circle className="stage__spark stage__spark--soft" r="3"><animateMotion dur="9s" begin="-4.5s" repeatCount="indefinite" path={RING} /></circle>
