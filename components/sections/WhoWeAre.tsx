@@ -82,27 +82,7 @@ export default function WhoWeAre() {
     let raf = 0, visible = false, last = 0, drag: { x: number; y: number; tx: number; ty: number } | null = null;
     const max = () => ({ x: Math.max(0, (p.offsetWidth - f.offsetWidth) / 2), y: Math.max(0, (p.offsetHeight - f.offsetHeight) / 2) });
     const clamp = (v: number, m: number) => Math.max(-m, Math.min(m, v));
-    // neural links: from the card's centre to each photo, following the pan and each photo's depth
-    const svg = p.querySelector<SVGSVGElement>(".who__links");
-    const lines = Array.from(p.querySelectorAll<SVGLineElement>(".who__links line"));
-    const figs = Array.from(p.querySelectorAll<HTMLElement>(".who__ph"));
-    let box: { cx: number; cy: number; d: number }[] = [];
-    const measure = () => {
-      box = figs.map((el) => ({ cx: el.offsetLeft + el.offsetWidth / 2, cy: el.offsetTop + el.offsetHeight / 2, d: parseFloat(el.style.getPropertyValue("--d")) || 1 }));
-      svg?.setAttribute("viewBox", `0 0 ${p.offsetWidth} ${p.offsetHeight}`);
-    };
-    const links = () => {
-      const ox = p.offsetWidth / 2 - s.x, oy = p.offsetHeight / 2 - s.y;
-      lines.forEach((ln, i) => {
-        const b = box[i]; if (!b) return;
-        ln.setAttribute("x1", ox.toFixed(1)); ln.setAttribute("y1", oy.toFixed(1));
-        ln.setAttribute("x2", (b.cx + s.x * (b.d - 1)).toFixed(1)); ln.setAttribute("y2", (b.cy + s.y * (b.d - 1)).toFixed(1));
-      });
-    };
-    const ro = new ResizeObserver(() => { measure(); links(); });
-    ro.observe(p);
-    measure();
-    const apply = () => { f.style.setProperty("--px", s.x.toFixed(1)); f.style.setProperty("--py", s.y.toFixed(1)); links(); };
+    const apply = () => { f.style.setProperty("--px", s.x.toFixed(1)); f.style.setProperty("--py", s.y.toFixed(1)); };
     const tick = (t: number) => {
       raf = 0;
       if (!visible) return;
@@ -134,7 +114,7 @@ export default function WhoWeAre() {
     f.addEventListener("pointerdown", down);
     addEventListener("pointerup", up);
     addEventListener("pointercancel", up);
-    return () => { ro.disconnect(); io.disconnect(); f.removeEventListener("pointermove", move); f.removeEventListener("pointerdown", down); removeEventListener("pointerup", up); removeEventListener("pointercancel", up); cancelAnimationFrame(raf); };
+    return () => { io.disconnect(); f.removeEventListener("pointermove", move); f.removeEventListener("pointerdown", down); removeEventListener("pointerup", up); removeEventListener("pointercancel", up); cancelAnimationFrame(raf); };
   }, []);
 
   const next = () => setActive((a) => chapters[(chapters.findIndex((c) => c.id === a) + 1) % chapters.length].id);
@@ -154,16 +134,6 @@ export default function WhoWeAre() {
     <div className="who">
       <div className="who__field" ref={field} data-focus={active}>
         <div className="who__plane" ref={plane}>
-          {/* neural links from the card to the active chapter's photos (drawn behind them) */}
-          <svg className="who__links" aria-hidden="true" focusable="false" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="who-link" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stopColor="#7B6FD0" />
-                <stop offset="1" stopColor="#B9AEF5" />
-              </linearGradient>
-            </defs>
-            {photos.map((p) => <line key={p.src} className={p.ch.includes(active) ? "is-on" : undefined} />)}
-          </svg>
           {photos.map((p, i) => {
             const m = mobile(i);
             return (

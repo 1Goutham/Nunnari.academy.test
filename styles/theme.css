@@ -1888,11 +1888,9 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .page-hero--center .lead { max-width: 60ch; margin-inline: auto; }
 
 /* ==========================================================================
-   Hero, elevated: the stage tilts toward the pointer (on top of the layered
-   parallax), an aurora drifts inside the arch with a spotlight that follows
-   the pointer, and the orbit's sparks trail comet tails.
+   Hero, elevated: an aurora drifts inside the arch with a spotlight that
+   follows the pointer, and the orbit's sparks trail comet tails.
    ========================================================================== */
-.stage { transform: perspective(1400px) rotateY(calc(var(--px) * 5deg)) rotateX(calc(var(--py) * -4deg)); transform-origin: 50% 60%; }
 .stage__arch::before { content: ""; position: absolute; inset: -30%; pointer-events: none;
   background: radial-gradient(30% 26% at 30% 30%, rgb(157 140 255 / 38%), transparent 70%), radial-gradient(26% 22% at 72% 42%, rgb(143 227 255 / 22%), transparent 70%), radial-gradient(28% 24% at 45% 72%, rgb(255 154 224 / 16%), transparent 70%);
   filter: blur(18px); animation: aurora 22s ease-in-out infinite alternate; }
@@ -1903,16 +1901,11 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
   animation: trail 9s linear 0s infinite, spark-in .6s ease 2.2s both; }
 .stage__trail--soft { stroke: rgb(185 174 245 / 60%); stroke-width: 2; animation-delay: -4.5s, 2.2s; }
 @keyframes trail { to { stroke-dashoffset: -.93; } }
-@media (prefers-reduced-motion: reduce) { .stage { transform: none; } .stage__arch::before, .stage__trail { animation: none; } .stage__trail { display: none; } }
+@media (prefers-reduced-motion: reduce) { .stage__arch::before, .stage__trail { animation: none; } .stage__trail { display: none; } }
 
 /* ==========================================================================
-   Who we are, elevated: neural links from the card to the active chapter's
-   photos (flowing, behind the photos), and a light that traces the card edge
+   Who we are, elevated: a light that traces the card edge
    ========================================================================== */
-.who__links { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-.who__links line { stroke: rgb(123 111 208 / 55%); stroke-width: 1.4; stroke-dasharray: 2 7; stroke-linecap: round; opacity: 0; transition: opacity .7s ease; animation: who-flow 1.6s linear infinite; }
-.who__links line.is-on { opacity: 1; }
-@keyframes who-flow { to { stroke-dashoffset: -18; } }
 /* the card's edge: a slow trace of light circling it */
 @property --who-a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 .who__card::before { content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; pointer-events: none;
@@ -1920,11 +1913,9 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); animation: who-trace 7s linear infinite; }
 @keyframes who-trace { to { --who-a: 360deg; } }
-@media (max-width: 760px) { .who__links { display: none; } }
-@media (prefers-reduced-motion: reduce) { .who__links line, .who__card::before { animation: none; } .who__card::before { display: none; } }
+@media (prefers-reduced-motion: reduce) { .who__card::before { animation: none; display: none; } }
 /* comet tails: a little longer and brighter */
 .stage__trail { stroke-dasharray: .1 .9; stroke-dashoffset: .1; stroke-width: 2.8; }
 @keyframes trail { to { stroke-dashoffset: -.9; } }
 /* programs hero lead: balanced lines */
 .page-hero--center .lead { text-wrap: balance; }
-.who__links line { stroke: rgb(123 111 208 / 75%); stroke-width: 1.7; stroke-dasharray: 2.5 7; }
