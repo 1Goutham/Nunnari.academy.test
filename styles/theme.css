@@ -1919,3 +1919,28 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 @keyframes trail { to { stroke-dashoffset: -.9; } }
 /* programs hero lead: balanced lines */
 .page-hero--center .lead { text-wrap: balance; }
+
+/* --------------------------------------------------------------------------
+   Hero polish: the language switch reveals white text exactly where the pill
+   is (one clip, so no word is ever half-covered mid-slide); the plaque is
+   solid (no ghost of the photo through it) and sits on a soft contact shadow.
+   -------------------------------------------------------------------------- */
+.stage__lang { display: grid; }
+.stage__lang::before { content: none; }
+.stage__lang-row { grid-area: 1 / 1; display: grid; grid-template-columns: 1fr 1fr; }
+.stage__lang .stage__lang-row > span { padding: 7px 16px; text-align: center; font-size: .75rem; font-weight: 600; line-height: 1.2; color: var(--ink); animation: none; }
+.stage__lang-row--on { border-radius: 999px; background: var(--ink);
+  clip-path: inset(0 50% 0 0 round 999px); animation: lang-pill 8s cubic-bezier(.7,0,.3,1) 2s infinite; }
+.stage__lang .stage__lang-row--on > span { color: #fff; }
+@keyframes lang-pill { 0%, 44% { clip-path: inset(0 50% 0 0 round 999px); } 50%, 94% { clip-path: inset(0 0 0 50% round 999px); } 100% { clip-path: inset(0 50% 0 0 round 999px); } }
+@media (max-width: 560px) { .stage__lang .stage__lang-row > span { padding: 6px 12px; font-size: .7rem; } }
+@media (prefers-reduced-motion: reduce) { .stage__lang-row--on { animation: none; } }
+
+.stage__plaque { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.stage::after { content: ""; position: absolute; z-index: 0; left: 8%; right: 8%; bottom: -5%; height: 6%; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgb(18 14 51 / 22%), transparent); filter: blur(6px); }
+.stage__lang { grid-template-columns: max-content; width: max-content; }
+/* the rows are spans too: beat the old `.stage__lang span` rule (padding, colour animation) */
+.stage__lang > .stage__lang-row { padding: 0; animation: none; color: var(--ink); }
+.stage__lang > .stage__lang-row--on { animation: lang-pill 8s cubic-bezier(.7,0,.3,1) 2s infinite; }
+@media (prefers-reduced-motion: reduce) { .stage__lang > .stage__lang-row--on { animation: none; } }

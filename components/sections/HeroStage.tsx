@@ -88,14 +88,14 @@ export default function HeroStage() {
       <Orbit half="back" />
       <div className="stage__learner">
         <div className="stage__figure" data-ready={ready || undefined}>
-          <Image src={PHOTO} alt="A Nunnari learner with a laptop, looking ahead" width={960} height={1440} sizes={SIZES} priority fetchPriority="high" onLoad={() => setReady(true)} />
+          <Image src={PHOTO} alt="A Nunnari learner with a laptop, looking ahead" width={960} height={1440} sizes={SIZES} quality={90} priority fetchPriority="high" onLoad={() => setReady(true)} />
           {/* the visor, cut out and rebuilt above the face: a soft contact shadow, then the visor itself,
               then the lens (its own pixels, slowly shifting through their iridescence) with a moving reflection and scan */}
           <span className="fx fx--vshadow" aria-hidden="true" />
           <span className="fx fx--visor" aria-hidden="true">
-            <Image src={PHOTO} alt="" width={960} height={1440} sizes={SIZES} priority />
+            <Image src={PHOTO} alt="" width={960} height={1440} sizes={SIZES} quality={90} priority />
             <span className="fx fx--lens">
-              <Image src={PHOTO} alt="" width={960} height={1440} sizes={SIZES} priority />
+              <Image src={PHOTO} alt="" width={960} height={1440} sizes={SIZES} quality={90} priority />
               <span className="fx__spec" />
               <span className="fx__scan" />
             </span>
@@ -112,7 +112,11 @@ export default function HeroStage() {
       <Orbit half="front" />
 
       {/* we teach in both languages: the switch slides between them */}
-      <div className="stage__lang" aria-hidden="true"><span>English</span><span lang="ta">தமிழ்</span></div>
+      <div className="stage__lang" aria-hidden="true">
+        <span className="stage__lang-row"><span>English</span><span lang="ta">தமிழ்</span></span>
+        {/* the same labels in white, shown only where the thumb is, so neither word is ever half-covered */}
+        <span className="stage__lang-row stage__lang-row--on"><span>English</span><span lang="ta">தமிழ்</span></span>
+      </div>
 
       {/* one plaque at the base, our numbers in a row */}
       <div className="stage__plaque" aria-hidden="true">
