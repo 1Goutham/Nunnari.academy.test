@@ -1944,3 +1944,6 @@ a.company__logo:focus-visible { outline: 2px solid var(--brand); outline-offset:
 .stage__lang > .stage__lang-row { padding: 0; animation: none; color: var(--ink); }
 .stage__lang > .stage__lang-row--on { animation: lang-pill 8s cubic-bezier(.7,0,.3,1) 2s infinite; }
 @media (prefers-reduced-motion: reduce) { .stage__lang > .stage__lang-row--on { animation: none; } }
+/* Who we are card: the chapter button is solid white on the dark card, so it stands out */
+.who__link { background: #fff; color: var(--ink); border-color: #fff; }
+.who__link:hover { background: #ECE8FC; border-color: #ECE8FC; color: var(--ink); }
