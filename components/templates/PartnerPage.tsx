@@ -78,7 +78,7 @@ export default function PartnerPage({ id }: { id: Partner["key"] }) {
 
       <section className="section">
         <div className="container">
-          <Head pill="Our partners" title={<>{p.logosTitle[0]} <span className="grad">{p.logosTitle[1]}</span></>} />
+          <Head pill={p.logosPill} title={<>{p.logosTitle[0]} <span className="grad">{p.logosTitle[1]}</span></>} />
           {p.logoKind === "wide" ? (
           <div className="logos" style={{ "--n": p.logos.length > 5 ? 5 : p.logos.length } as React.CSSProperties}>
               {p.logos.map((l, i) => (

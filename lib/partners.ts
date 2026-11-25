@@ -13,6 +13,7 @@ export type Partner = {
   formats: { icon: IconName; title: string }[];
   formatsTitle: [string, string];
   logosTitle: [string, string];
+  logosPill: string;          // the label above the logos ("Our partners" / "Our clients")
   logos: { src?: string; name: string; short?: string }[];
   logoKind?: "wide";        // wide wordmarks (600x200) rather than square crests
   stats: [number, string, string][]; // value, suffix, label
@@ -44,6 +45,7 @@ export const partners: Record<Partner["key"], Partner> = {
       { icon: "uni", title: "Center of excellence" },
     ],
     logosTitle: ["Trusted by", "leading institutions."],
+    logosPill: "Our partners",
     logos: [
       { src: "/assets/partners/cit-color.webp", name: "Coimbatore Institute of Technology" },
       { src: "/assets/partners/psg-color.webp", name: "PSG College of Technology" },
@@ -81,8 +83,9 @@ export const partners: Record<Partner["key"], Partner> = {
       { icon: "crown", title: "Leadership enablement sessions" },
       { icon: "cpu", title: "Engineering development training" },
     ],
-    logosTitle: ["Partners in building", "AI-ready teams."],
-    // the companies Nunnari Labs works with (from the Nunnari Labs site's client strip)
+    logosTitle: ["Clients building", "AI-ready teams."],
+    logosPill: "Our clients",
+    // clients: the companies Nunnari Labs works with (from the Nunnari Labs site's client strip)
     logos: [
       { name: "Landcom", src: "/assets/clients/landcom.webp" },
       { name: "ARB Corporation", src: "/assets/clients/arb.webp" },
