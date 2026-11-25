@@ -115,7 +115,7 @@ export const programs: Record<ProgramKey, Program> = {
     faq: faqFor("regular"),
     packages: stack.regular.packages,
     tools: stack.regular.tools,
-    skills: { core: ["4 Weeks", "AI Engineering"], chips: ["Intermediate", "Hands-on projects", "Live", "Beginners & career switchers", "Online / Offline", "English & Tamil"], lead: "Gain in-demand skills, build a portfolio, and get guidance to start your journey in GenAI and Agentic AI." },
+    skills: { core: ["4 Weeks", "AI Engineering"], chips: ["Intermediate", "Hands-on projects", "Live classes", "Beginners & career switchers", "Online / Offline", "English & Tamil"], lead: "Gain in-demand skills, build a portfolio, and get guidance to start your journey in GenAI and Agentic AI." },
   },
   premium: {
     key: "premium",
@@ -144,7 +144,7 @@ export const programs: Record<ProgramKey, Program> = {
     faq: faqFor("premium"),
     packages: stack.premium.packages,
     tools: stack.premium.tools,
-    skills: { core: ["8 Weeks", "Advanced GenAI & Leadership"], chips: ["Advanced", "Hands-on", "Live", "Professionals & board-level leaders", "Online / Offline", "English & Tamil"], lead: "Go beyond the basics with industry experts and board-level leaders, in a program built for experienced professionals." },
+    skills: { core: ["8 Weeks", "Advanced GenAI & Leadership"], chips: ["Advanced", "Hands-on", "Live classes", "Professionals & board-level leaders", "Online / Offline", "English & Tamil"], lead: "Go beyond the basics with industry experts and board-level leaders, in a program built for experienced professionals." },
   },
 };
 export const programList = [programs.recorded, programs.regular, programs.premium];
