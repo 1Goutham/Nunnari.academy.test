@@ -7,13 +7,17 @@ import Icon from "@/components/Icon";
 import Marquee from "@/components/ui/Marquee";
 
 type ChapterId = "mission" | "community" | "learners";
-type Chapter = { id: ChapterId; label: string; title: ReactNode; text: string; stats?: [number, string][]; navy?: boolean; logos?: boolean; link: { href: string; label: string } };
+type Chapter = { id: ChapterId; label: string; title: ReactNode; text: string; mv?: [string, string][]; stats?: [number, string][]; navy?: boolean; logos?: boolean; link: { href: string; label: string } };
 
 const chapters: Chapter[] = [
   {
     id: "mission", label: "Mission & vision",
     title: <>Making AI learning accessible <span className="grad">for everyone.</span></>,
     text: "We empower students and professionals with real AI skills, whatever their background, language or location.",
+    mv: [
+      ["Mission", "We empower students and professionals with real AI skills, whatever their background, language or location."],
+      ["Vision", "Practical, accessible, future-ready AI education, from India for global learners."],
+    ],
     link: { href: "/programs", label: "Explore programs" },
   },
   {
@@ -164,7 +168,9 @@ export default function WhoWeAre() {
             <div key={c.id} id={`who-panel-${c.id}`} role="tabpanel" aria-labelledby={`who-tab-${c.id}`} className="who__panel"
               data-on={active === c.id || undefined} inert={active !== c.id} aria-hidden={active !== c.id}>
               <h3 className="who__title">{c.title}</h3>
-              <p className="who__text">{c.text}</p>
+              {c.mv ? (
+                <dl className="who__mv">{c.mv.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
+              ) : <p className="who__text">{c.text}</p>}
               {c.navy && <p className="who__navy"><Icon name="shield" /><span>Proud partners of the <b>Indian Navy</b></span></p>}
               {c.stats && (
                 <div className="who__stats">
